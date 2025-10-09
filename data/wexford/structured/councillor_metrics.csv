@@ -1,0 +1,840 @@
+councillor,meetings_attended,apologies_recorded,motions_proposed,motions_seconded
+Pat Barden,42,0,6,27
+Anthony Donohoe,41,0,51,59
+Donal Kenny,36,1,4,35
+Aidan Browne,33,3,19,23
+Jim Moore,33,10,80,79
+Kathleen Codd-Nolan,33,1,14,18
+Leonard Kelly,33,6,36,46
+John Hegarty,32,5,55,52
+Michael Sheehan,32,20,302,185
+David Hynes,31,7,69,94
+Joe Sullivan,31,3,39,41
+John Fleming,31,18,73,70
+Mary Farrell,31,3,35,72
+Michael Whelan,31,8,49,59
+Pip Breen,31,6,71,95
+Tom Forde,30,26,86,45
+Willie Kavanagh,30,4,13,31
+Oliver Walsh,28,7,36,74
+Anthony Connick,27,3,23,44
+Diarmuid Devereux,27,1,0,0
+Maura Bell,27,3,17,39
+Gary Laffan,26,0,19,27
+John O'Rourke,26,1,42,32
+Cathal Byrne,25,2,0,0
+Fionntain O'Suilleabhain,25,1,4,1
+Andrew Bolger,24,2,10,9
+George Lawlor,23,5,109,103
+Lisa Mcdonald,23,9,47,39
+Jackser Owens,20,5,4,31
+Codd Carthy,19,0,2,5
+Jim Ger,19,0,0,0
+Frank Staples,18,6,6,21
+Bridin Murphy,16,3,160,116
+Barbara-Anne Murphy,12,3,0,0
+Ger Codd,11,0,0,0
+Codd Byrne,10,0,0,0
+Kavanagh Cathal,10,0,0,0
+Barbara Murphy,9,0,0,0
+Bolger Murphy,9,0,0,0
+In Illeabh,9,0,0,0
+O'Rourke John,9,0,0,0
+Bell Mcdonald,8,0,2,1
+Browne John,8,0,0,0
+Farrell Maura,8,0,0,0
+Fleming Andrew,8,0,0,0
+Jim Lisa,8,0,0,0
+Murphy John,8,0,0,0
+Bell Barden,7,0,2,0
+Bolger Bell,7,0,2,0
+Forde Pip,7,0,0,0
+Hynes Cathal,7,0,0,0
+Jim Jackser,7,0,0,0
+Kenny Kathleen,7,0,0,0
+Moore Mary,7,0,0,0
+Owens Willie,7,0,0,0
+Whelan Lisa,7,0,0,0
+Anne Barbara,6,0,0,0
+Codd-Nolan Codd,6,0,78,113
+Garry Laffan,6,4,0,0
+Hegarty Aidan,6,0,0,0
+Laffan Anthony,6,0,0,0
+Of Business,6,0,0,0
+Sullivan Donal,6,0,0,0
+The Concluded,6,0,0,0
+Walsh Gary,6,0,0,0
+Breen Bridin,5,0,0,0
+Byrne Browne,5,0,9,1
+Concluded This,5,2,0,0
+Fionnt In,5,0,0,0
+Forde Andrew,5,0,0,0
+Kavanagh Jim,5,0,0,0
+Lawlor Diarmuid,5,0,0,0
+O'Rourke Tom,5,0,0,0
+Pip Andrew,5,0,0,0
+Sheehan David,5,0,0,0
+Staples Leonard,5,0,0,0
+The Of,5,2,0,0
+Walsh George,5,0,0,0
+Whelan George,5,0,0,0
+Anthony Conncik,4,0,1,1
+Breen Bolger,4,0,0,0
+Brid Barbara-Anne,4,0,0,0
+Brid Murphy,4,0,0,0
+Browne Breen,4,0,1,2
+Business The,4,2,0,0
+Byrne Fionntain,4,0,0,0
+Carthy Byrne,4,0,249,148
+Cathal Aidan,4,0,0,0
+Codd-Nolan Frank,4,0,0,0
+Connick Michael,4,0,0,0
+Devereux Joe,4,0,0,0
+Hegarty Pip,4,0,0,0
+Hynes Aidan,4,0,0,0
+Jim Codd,4,7,16,34
+John Bridin,4,0,0,0
+Laffan Kathleen,4,0,0,0
+Mcdonald Anthony,4,0,0,0
+Michael Jackser,4,0,0,0
+Michael Oliver,4,0,0,0
+Murphy Mary,4,0,0,0
+O'Rourke Murphy,4,0,0,0
+Sheehan Willie,4,0,0,0
+Walsh Donal,4,0,0,0
+Andrew Maura,3,0,0,0
+Barbara-Anne Jim,3,0,0,0
+Bolger John,3,0,0,0
+Bridin Barbara-Anne,3,0,0,0
+Byrne Jackser,3,0,0,0
+Carthy Jackser,3,0,0,0
+Carthy Michael,3,0,0,0
+Cathal Codd,3,0,0,0
+Codd-Nolan Michael,3,0,0,0
+Codd-Nolan Oliver,3,0,0,0
+Connick Frank,3,0,0,0
+Devereux Connick,3,0,0,1
+Devereux Oliver,3,0,0,0
+Donohoe Oliver,3,0,0,0
+Farrell Donohoe,3,0,0,0
+Fleming John,3,0,0,0
+Forde Tom,3,0,0,0
+Joe Frank,3,0,0,0
+Kelly Michael,3,0,0,0
+Kenny Jim,3,0,0,0
+Kenny Joe,3,0,0,0
+Maura Pat,3,0,0,0
+Mcdonald Diarmuid,3,0,0,0
+Michael Joe,3,0,0,0
+O'Suilleabhain David,3,0,0,0
+Sheehan Owens,3,0,0,0
+Staples Donal,3,0,0,0
+Sullivan Gary,3,0,0,0
+Sullivan Willie,3,0,0,0
+Walsh Sullivan,3,0,1,0
+Whelan Garry,3,0,0,0
+Aidan Pip,2,0,0,0
+Anthony Fleming,2,0,0,0
+As As,2,0,0,0
+Barbara O'Rourke,2,0,0,0
+Bell Murphy,2,0,0,0
+Bolger Bridin,2,0,0,0
+Breen John,2,0,0,0
+Bridin Anne,2,0,1,4
+Browne Jackser,2,0,0,0
+Byrne Michael,2,0,0,0
+Carthy Frank,2,0,0,0
+Carthy Staples,2,0,0,0
+Codd-Nolan Jim,2,0,0,0
+Codd-Nolan Lisa,2,0,0,0
+Connick Joe,2,0,0,0
+Devereux Michael,2,0,0,0
+Farrell Mary,2,0,0,0
+Fleming Maura,2,0,0,0
+Frank Michael,2,0,0,0
+George Gary,2,0,0,0
+Ger Carthy,2,14,52,63
+Ger Cathal,2,0,0,0
+Hegarty Andrew,2,0,0,0
+Hegarty Forde,2,0,4,2
+Hegarty John,2,0,0,0
+Jim Willie,2,0,0,0
+John Tom,2,0,0,0
+Kavanagh Aidan,2,0,0,0
+Kavanagh Hynes,2,0,2,0
+Kelly Kavanagh,2,0,54,70
+Laffan Joe,2,0,0,0
+Lawlor Kathleen,2,0,0,0
+Lawlor Laffan,2,0,0,0
+Mary Mcdonald,2,0,0,0
+Mcdonald George,2,0,0,0
+Moore Diarmuid,2,0,0,0
+Moore John,2,0,0,0
+Murphy Andrew,2,0,0,0
+Murphy Anthony,2,0,0,0
+Murphy Murphy,2,0,20,18
+Murphy Tom,2,0,0,0
+O'Suilleabhain John,2,0,0,0
+O'Suilleabhain O'Rourke,2,0,0,0
+Oliver Joe,2,0,0,0
+Owens David,2,0,0,0
+Sheehan Jim,2,0,0,0
+Staples Sheehan,2,0,10,1
+Sullivan Leonard,2,0,0,0
+Sullivan Staples,2,0,4,8
+Walsh Garry,2,0,0,0
+Whelan Walsh,2,0,12,18
+Willie David,2,0,0,0
+Aib Gaa,1,0,0,0
+Ailg Lama,1,0,0,0
+Anthony Dempsey,1,0,48,34
+Anthony Diarmuid,1,0,0,0
+Anthony Kathleen,1,0,0,0
+Anthony Laffan,1,0,0,0
+As Anthony,1,0,0,0
+Barbara-Anne Kenny,1,0,0,0
+Barden Candidate,1,0,0,0
+Bell Anne,1,0,0,0
+Bell Bridin,1,0,0,0
+Bolger Barden,1,0,0,0
+Bolger Moore,1,0,0,0
+Bolger O'Rourke,1,0,0,0
+Breen Michael,1,0,0,0
+Breen O'Rourke,1,0,0,0
+Brid Owens,1,0,0,0
+Bridin Jim,1,0,0,0
+Browne Joe,1,0,0,0
+Buisness The,1,0,0,0
+Byrne Breen,1,0,0,0
+Byrne On-Line,1,0,0,0
+Byrnemalcolm Breenpip,1,0,0,0
+Candidate Councillor,1,0,0,0
+Carthy David,1,0,0,0
+Carthy Garry,1,0,0,0
+Cathal Hegarty,1,0,0,0
+Cathal Willie,1,0,0,0
+Ceo Hse,1,0,0,0
+Codd Jim,1,0,0,0
+Codd-Nolan Ger,1,0,0,0
+Codd-Nolankathleen Carthyger,1,0,0,0
+Connick Anthony,1,0,0,0
+Connick Codd-Nolan,1,0,0,0
+Connick Jim,1,0,0,0
+Connick Kathleen,1,0,0,0
+Connick Murphy,1,0,0,0
+Connick Oliver,1,0,0,0
+Cpg Spc,1,0,0,0
+Darragh Mcdonald,1,0,1,3
+David Hegarty,1,0,0,0
+David Jim,1,0,0,0
+David John,1,0,0,0
+Dempseytony Connickanthony,1,0,0,0
+Devereux Anne,1,0,0,0
+Devereux Codd-Nolan,1,0,0,0
+Devereux Kelly,1,0,0,0
+Devereux Lawlor,1,0,0,0
+Devereux Lisa,1,0,0,0
+Diarmuid Anthony,1,0,0,0
+Diarmuid Connick,1,0,0,0
+Diarmuid Lawlor,1,0,0,0
+Diarmuid Oliver,1,0,0,0
+Donal Leonard,1,0,0,0
+Donal Sheehan,1,0,0,0
+Donal Staples,1,0,0,0
+Donal Willie,1,0,0,0
+Donohoe Devereux,1,0,9,11
+Donohoe Murphy,1,0,0,0
+Donohoe Tony,1,0,0,0
+Doyle Anthony,1,0,0,0
+Doyle Mcdonald,1,0,0,0
+Doylekeith Donohoeanthony,1,0,0,0
+Dr Dr,1,2,0,0
+Etc Nrtc,1,0,0,0
+Etc Wbc,1,0,0,0
+Farrell Ab,1,0,0,0
+Farrell Anne,1,0,0,0
+Farrell Doyle,1,0,28,45
+Farrell Murphy,1,0,0,0
+Fionnatn O'Suilleabhain,1,0,0,0
+Fionnt Owens,1,0,0,0
+Fionntan John,1,0,0,0
+Fionntan O'Suilleabhain,1,0,0,0
+Fitzharriswillie Farrellmary,1,0,0,0
+Fleming Anne,1,0,0,0
+Fleming Bridin,1,0,0,0
+Fleming Farrell,1,0,0,0
+Fleming Fitzharris,1,0,2,9
+Forde Fleming,1,0,1,1
+Fordetom Flemingjohn,1,0,0,0
+Frank Sheehan,1,0,0,0
+Frank Whelan,1,0,0,0
+Gary Donal,1,0,0,0
+Gary Walsh,1,0,0,0
+George Moore,1,0,0,0
+Ger Kelly,1,0,0,0
+Gva Gva,1,0,0,0
+Hap Hap,1,1,0,0
+Hap Ras,1,0,0,0
+Hgv' Td,1,0,0,0
+Hynes Hegarty,1,0,2,0
+Hynes Jackser,1,0,0,0
+Hynes Joe,1,0,0,0
+Hynes Pip,1,0,0,0
+Hynesdavid Hegartyjohn,1,0,0,0
+Ida Ida,1,0,0,0
+Ida O'C,1,0,0,0
+Ireton Hynes,1,0,0,0
+Jackser Online,1,0,0,0
+Jackser Whelan,1,0,2,3
+Jim Michael,1,0,0,0
+Jim O'Rourke,1,0,0,0
+Joe Jackser,1,0,0,0
+Joe Whelan,1,0,0,0
+John Aidan,1,0,0,0
+John Dwyer,1,4,14,10
+John Forde,1,0,0,0
+John Jim,1,0,0,0
+John Marty,1,0,0,0
+John Mary,1,0,0,0
+John Murphy,1,0,0,0
+John Willie,1,0,0,0
+Kathleen Hynes,1,0,0,0
+Kathleen Jim,1,0,0,0
+Kathleen John,1,0,0,0
+Kavanagh Kavanagh,1,0,0,0
+Kavanagh O'Rourke,1,0,0,0
+Kavanagh Pip,1,0,0,0
+Kavanaghpaddy Iretonrobert,1,0,0,0
+Keith Lawlor,1,0,0,0
+Kelly Cathal,1,0,0,0
+Kelly Jim,1,0,0,0
+Kelly Staples,1,0,0,0
+Kenny Diarmuid,1,0,0,0
+Kenny Kelly,1,0,28,29
+Laffan Cathal,1,0,0,0
+Laffan Jim,1,0,0,0
+Laffan Kenny,1,0,0,0
+Laffan Lawlor,1,0,0,0
+Laffan Michael,1,0,0,0
+Laffan Staples,1,0,0,0
+Laffan Whelan,1,0,0,0
+Larry Johnny,1,0,0,0
+Lawlor Garry,1,0,0,0
+Lawlor Jim,1,0,0,0
+Lawlorgeorge Kavanaghwillie,1,0,0,0
+Leas-Cathaoirleach Councillor,1,0,0,0
+Leonard Owens,1,0,0,0
+Leonard Willie,1,0,0,0
+Lisa George,1,0,0,0
+Lisa Michael,1,0,0,0
+Lisa Murphy,1,0,0,0
+Malcolm Pip,1,0,0,0
+Martin Barbara-Anne,1,0,0,0
+Mary Anthony,1,0,0,0
+Mary Jim,1,0,0,0
+Mary Marie,1,0,0,0
+Maura Bolger,1,0,0,0
+Maura Murphy,1,0,0,0
+Mcdonald Ger,1,0,0,0
+Mcdonald Lawlor,1,0,9,0
+Mcdonald Oliver,1,0,0,0
+Michael Mick,1,0,0,0
+Moore Anthony,1,0,0,0
+Moore Kathleen,1,0,0,0
+Moore Lisa,1,0,0,0
+Moore Maura,1,0,0,0
+Moore Mcdonald,1,0,0,0
+Moorejim Mcdonaldlisa,1,0,0,0
+Murphy Craig,1,0,0,0
+Murphy Diarmuid,1,0,0,0
+Murphymartin Murphybarbara-Anne,1,0,0,0
+Nicky Boland,1,0,0,2
+O'Brien Mythen,1,0,36,47
+O'Brienlarry Mythenjohnny,1,0,0,0
+O'Rourkejohn O'Connelloisin,1,0,0,0
+O'S O'R,1,0,0,0
+Ofm O'K,1,1,0,0
+Oliver Anthony,1,0,0,0
+Oliver Catherine,1,0,0,0
+Oliver Michael,1,0,0,0
+Online Lisa,1,0,0,0
+Owens Fionntain,1,0,0,0
+Owens John,1,0,0,0
+Owens Paddy,1,0,0,0
+Pat Bolger,1,0,0,0
+Pat Breen,1,0,0,0
+Pat Donohoe,1,0,0,0
+Pat Kehoe,1,1,25,27
+Pat Moore,1,0,1,0
+Pip Hegarty,1,0,0,0
+Pyrite Mica,1,0,0,0
+Raymond Shannon,1,2,0,7
+Robbie Frank,1,0,0,0
+Robert David,1,0,0,0
+Roche Fionntain,1,0,0,0
+Rochemick O'Suilleabhainfionntain,1,0,0,0
+Sheehan Leonard,1,0,0,0
+Sheehan Sullivan,1,0,0,0
+Sipo Sipo,1,0,0,0
+Sipo' Ce,1,0,0,0
+Spc Lcdc,1,0,0,0
+Staples Garry,1,0,0,0
+Staples Lawlor,1,0,0,0
+Staples Willie,1,0,0,0
+Staplesfrank Sheehanmichael,1,0,0,0
+Sullivan Devereux,1,0,0,0
+Tom Fleming,1,0,0,0
+Tom Hynes,1,0,0,0
+Tom John,1,0,0,0
+Vat Td,1,0,0,0
+Walsh David,1,0,0,0
+Walsh Walsh,1,0,0,0
+Walshanthony Sullivanjoe,1,0,0,0
+Whelan Oliver,1,0,0,0
+Whelanmichael Walsholiver,1,0,0,0
+Willie Paddy,1,0,0,0
+A Donoghue,0,0,0,3
+A Donohue,0,0,1,2
+A Fenlon,0,0,1,6
+A O'Brien,0,0,16,18
+A R,0,0,3,3
+Allen,0,2,0,0
+"Andrew Bolger 
+Cllr",0,1,0,0
+Anna Fenlon,0,2,0,0
+"Anthony Connick 
+
+Following",0,1,0,0
+Anthony Kelly,0,5,0,0
+"Anthony Kelly 
+
+The Cathaoirleach",0,1,0,0
+Anthony Kelly’S,0,1,0,0
+Aoife Rose O' Brien,0,1,0,0
+Aoife Rose O'Brien,0,4,0,0
+Aoife Rose O’Brien,0,7,0,0
+"Aoife Rose O’Brien 
+
+Page",0,1,0,0
+Aoiferose O'Brien,0,1,0,0
+B A,0,0,13,8
+B Ireton,0,0,2,5
+"Ba 
+Murphy",0,1,0,0
+Ba  Murphy,0,1,0,0
+Ba Murphy,0,6,0,0
+"Ba Murphy 
+Cathaoirleach",0,2,0,0
+"Barbara 
+Anne Murphy",0,1,0,0
+Barbara Ann,0,0,1,0
+Barbara Ann Murphy,0,1,0,0
+Barbara Anne Murphy,0,4,0,0
+"Barbara Anne Murphy 
+
+Page",0,1,0,0
+"Barbara-Anne Murphy 
+
+Cathaoirleach 
+
+David Minogue",0,1,0,0
+"Barbara-Anne Murphy 
+Cathaoirleach",0,8,0,0
+Barden,0,3,0,0
+Barron,0,1,0,0
+Bell,0,2,0,0
+Bernard  Crosbie,0,1,0,0
+Boland,0,1,0,0
+Br,0,1,0,0
+Breen,0,4,0,0
+Breen And,0,0,0,1
+Breen Approved,0,0,0,1
+Breen’S,0,1,0,0
+Brid,0,5,0,1
+"Bridin Murphy 
+
+Votes",0,1,0,0
+Browne,0,4,0,0
+Byrne,0,9,0,0
+Byrne And,0,0,1,0
+C B,0,0,3,0
+Carthy,0,14,0,0
+Carthy And,0,0,1,0
+Carthy’S,0,1,0,0
+"Cathal Byrne 
+
+Page",0,1,0,0
+Catherine Walsh,0,1,0,0
+Cllr A,0,0,1,0
+Cllr F,0,0,1,1
+Codd,0,3,0,0
+"Codd 
+Nolan’S",0,1,0,0
+Codd Nolan,0,2,0,0
+"Codd- 
+Nolan",0,1,0,0
+Codd-Nolan,0,1,0,0
+Connick,0,3,0,0
+Craig Doyle,0,3,0,0
+Curtis,0,1,0,0
+D Kennedy,0,0,19,30
+D Macpartlin,0,0,30,6
+D Wadding,0,0,32,38
+"David 
+Hynes 
+
+Special County Council Meeting",0,1,0,0
+"David 
+Hynes 
+
+To",0,1,0,0
+Davy Hynes,0,9,0,0
+Declan Macpartlin,0,2,0,0
+Deirdre Wadding,0,1,0,0
+Dempsey’S,0,1,0,0
+Denis Kennedy,0,1,0,0
+"Diarmuid Devereux 
+
+Votes",0,1,0,0
+"Diarmuid Devereux 
+Cllr",0,2,0,0
+Doyle,0,1,0,0
+Doyle And,0,0,0,3
+Dwyer,0,1,0,0
+Dwyer’S,0,1,0,0
+Eu Eu,0,1,0,0
+F,0,0,38,35
+F O,0,0,4,1
+F O',0,0,0,2
+F O'S,0,0,1,2
+F O'Sullivan,0,0,1,0
+F Os,0,0,2,5
+F S,0,0,1,2
+Farrell,0,2,0,0
+Farrell And,0,0,0,4
+Fenlon,0,2,0,0
+Fergie  Kehoe,0,1,0,0
+Fergie Kehoe,0,3,0,0
+Fergie Kehoe’S,0,2,0,0
+Fionnt,0,14,0,0
+Fitzharris,0,2,0,0
+Fleming,0,4,0,0
+Forde,0,15,0,0
+Forde And,0,0,2,1
+Forde Following,0,0,0,1
+Forde Page,0,0,0,1
+Forde’S,0,2,0,0
+Forde’S October,0,1,0,0
+"Frank 
+Staples",0,2,0,0
+"Frank Staples 
+
+Votes",0,1,0,0
+G Carty,0,0,1,1
+"George 
+Lawlor",0,2,0,0
+"George Lawlor 
+
+At",0,1,0,0
+"George Lawlor 
+Cathaoirleach",0,15,0,0
+"Ger 
+
+Wxf-C",0,1,0,0
+"Ger 
+Carthy",0,2,0,0
+"Ger Carthy 
+Cathaoirleach",0,5,0,0
+"Ger Carthy 
+Leas Cathaoirleach",0,1,0,0
+Hegarty,0,4,0,0
+Hegarty And,0,0,1,0
+Hse Alone,0,1,0,0
+Hse Td,0,1,0,0
+Hynes,0,7,0,0
+Hynes And,0,0,1,0
+Hynes Seconded,0,0,1,0
+Ireton,0,0,1,0
+Ireton And,0,0,0,1
+J Curtis,0,0,2,3
+J O',0,0,1,0
+"Jackser 
+Owens",0,1,0,0
+"Jackser Owens 
+
+Michael",0,1,0,0
+"Jackser Owens 
+
+Page",0,1,0,0
+"Jackser Owens 
+
+Votes",0,1,0,0
+James Browne,0,3,0,0
+"Jim 
+
+Codd 
+
+Cllr Jim 
+
+Moore 
+
+Cllr",0,1,0,0
+Jim  Moore,0,1,0,0
+Jimmy Fleming,0,1,0,0
+Joe  Sullivan,0,1,0,0
+"Joe Sullivan 
+
+Cathaoirleach  
+
+Michael Drea",0,2,0,0
+"Joe Sullivan 
+Cathaoirleach",0,2,0,0
+Joe Sullivan’S,0,1,0,0
+John,0,1,0,0
+"John Fleming 
+
+Cathaoirleach  
+
+Michael Drea",0,7,0,0
+"John Fleming 
+
+Cathaoirleach  
+
+Susan Doran",0,1,0,0
+"John Fleming 
+
+Page",0,1,0,0
+"John Fleming 
+Cathaoirleach",0,3,0,0
+"John Fleming  
+
+Cathaoirleach 
+
+Michael Drea  
+
+County Secretary",0,1,0,0
+"John Fleming  
+Cathaoirleach",0,1,0,0
+John Fleming Referred,0,1,0,0
+"John Hegarty 
+
+Mr",0,1,0,0
+John O’Rourke,0,3,0,0
+"John O’Rourke 
+
+Frank  
+
+Robbie",0,1,0,0
+Johnny  Mythen,0,1,0,0
+Johnny Mythen,0,3,0,0
+K,0,0,1,0
+K Codd-,0,0,3,4
+K Nolan,0,0,0,2
+Kathleen  Codd-Nolan,0,1,0,0
+Kathleen Codd Nolan,0,12,0,0
+"Kathleen Codd Nolan 
+
+Cllr",0,1,0,0
+Kavanagh,0,4,0,0
+Kavanagh’S,0,1,0,0
+Kehoe,0,2,0,0
+Kehoe’S,0,2,0,0
+Keith Doyle,0,1,0,0
+Kelly,0,6,0,0
+Kelly’S,0,1,0,0
+Kennedy,0,2,0,0
+Kennedy’S,0,1,0,0
+Kenny,0,1,0,0
+Kenny And,0,0,0,1
+Kenny Following,0,0,0,1
+L Allen,0,0,9,6
+L Cllr,0,0,0,1
+L O',0,0,0,3
+L O'Brien,0,0,60,61
+L Seconded,0,0,1,0
+Lac Xi,0,1,0,0
+Laffan,0,3,0,0
+Laffan And,0,0,1,0
+Larry O’Brien,0,3,0,0
+Lawlor,0,10,0,0
+Lawlor Following,0,0,1,0
+Leader Leader,0,1,0,0
+"Leonard 
+Kelly",0,1,0,0
+"Leonard Kelly 
+Cllr",0,3,0,0
+"Lisa 
+
+Ballygillane 
+
+Residents 
+
+Mcdonald 
+
+Association 
+
+Cllr Jim 
+
+Codd 
+
+Cllr Jim 
+Moore",0,1,0,0
+"Lisa 
+
+Mcdonald 
+
+Cllr Jim 
+
+Codd 
+
+Cllr Jim 
+
+Moore",0,1,0,0
+"Lisa 
+
+Residents 
+
+Mcdonald 
+
+Association 
+
+Special County Council Meeting",0,1,0,0
+"Lisa Mcdonald 
+
+Votes",0,1,0,0
+Lorcan Allen,0,1,0,0
+M Ball,0,0,1,0
+M Kinsella,0,0,31,22
+M Roche,0,0,14,26
+Macpartlin Seconded,0,0,1,0
+Malcolm Byrne,0,10,0,0
+"Malcolm Byrne 
+
+       Smoky Coal Ban  
+
+ Noting 
+
+ County Council Meeting",0,1,0,0
+"Malcolm Byrne 
+Noting",0,1,0,0
+Marie Doyle,0,1,0,0
+Martin Murphy,0,3,0,0
+Marty Murphy,0,1,0,0
+"Mary Farrell 
+
+Votes",0,1,0,0
+"Mary Farrell 
+Cllr",0,1,0,0
+"Maura Bell 
+
+Expressions",0,1,0,0
+Maurice Roche,0,1,0,0
+Mcdonald,0,5,0,0
+Mcdonald And,0,0,1,2
+"Michael 
+Whelan 
+
+Wxf-C",0,1,0,0
+Michael  Kinsella,0,1,0,0
+Michael  Whelan,0,2,0,0
+Michael Kinsella,0,1,0,0
+"Michael Sheehan 
+
+Congratulations",0,1,0,0
+"Michael Whelan   
+
+For",0,1,0,0
+Michael Whelan’S,0,1,0,0
+Mick Roche,0,1,0,0
+Moore,0,5,0,0
+Moore’S,0,1,0,0
+Murphy,0,4,0,0
+Mythen,0,3,0,0
+Mythen And,0,0,0,1
+O O',0,0,1,2
+O O'Connell,0,0,16,10
+O'Brien Following,0,0,0,1
+O'Connell To,0,0,0,1
+O'S,0,0,4,1
+O'Suilleabhain,0,1,0,0
+Oisin O’Connell,0,1,0,0
+Owens,0,1,0,0
+O’  Brien,0,1,0,0
+O’ Brien,0,2,0,0
+O’Brien,0,5,0,0
+O’Brien’S,0,1,0,0
+O’Connell,0,1,0,0
+O’Rourke,0,3,0,0
+O’S,0,5,0,0
+O’Suilleabhain,0,2,0,0
+P Cody,0,0,7,13
+P Reck,0,0,48,16
+Paddy Kavanagh,0,8,0,0
+"Paddy Kavanagh 
+
+Page",0,1,0,0
+"Pat 
+Barden",0,1,0,0
+"Pat Codd 
+Cllr",0,1,0,0
+Pat Cody,0,2,0,0
+Patricia Byrne,0,1,0,0
+Patricia Roe,0,2,0,0
+Pip  Breen,0,1,0,0
+"Pip Breen 
+
+Votes",0,1,0,0
+"Pip Breen 
+Cathaoirleach",0,1,0,0
+"Pip Breen  
+
+Cathaoirleach  
+
+Michael Drea",0,2,0,0
+"Pip Breen  
+Cathaoirleach",0,12,0,0
+Pso Td,0,1,0,0
+R Ireeton,0,0,0,1
+R Ireton,0,0,25,31
+Robert Ireton,0,3,0,0
+Roche,0,1,0,1
+Roche A,0,0,0,1
+Seo O'G,0,1,0,0
+Sheehan,0,14,0,0
+Sheehan And,0,0,0,2
+Sheehan Following,0,0,1,0
+Sheehan Seconded,0,0,2,0
+Staples,0,5,0,0
+Staples And,0,0,0,1
+Sullivan,0,3,0,0
+Sullivan’S,0,1,0,0
+T Howlin,0,0,25,32
+Tb Bcg,0,1,0,0
+Td O'S,0,1,0,0
+Ted Howlin,0,1,0,0
+Thomas,0,1,0,0
+"Tom Forde 
+Mr",0,1,0,0
+Tom Moorehouse,0,1,0,0
+"Tony 
+Dempsey",0,1,0,0
+Tony  Walsh,0,1,0,0
+Tony Dempsey,0,5,0,0
+Tony Walsh,0,2,0,0
+V Barron,0,0,6,7
+Vicky Barron,0,2,0,0
+"Vicky Barron 
+
+Page",0,1,0,0
+Wadding,0,2,0,0
+Wadding’S,0,1,0,0
+Walsh,0,9,0,0
+Walsh’S,0,1,0,0
+Whelan,0,4,0,0
+Whelan Following,0,0,1,1
+"William 
+Shaw",0,1,0,0
+"Willie 
+
+Kavanagh",0,1,0,0
+Willie Fitzharris,0,1,0,0
