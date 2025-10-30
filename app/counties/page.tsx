@@ -12,12 +12,24 @@ async function getCounties() {
     const result = await db.query(`
       SELECT
         c.*,
-        COUNT(DISTINCT p.id) as politician_count,
-        COUNT(DISTINCT pr.id) as promise_count
+        COALESCE(pol_counts.politician_count, 0) as politician_count,
+        COALESCE(promise_counts.promise_count, 0) as promise_count
       FROM counties c
-      LEFT JOIN politicians p ON p.county_id = c.id AND p.active = true
-      LEFT JOIN promises pr ON pr.politician_id = p.id
-      GROUP BY c.id, c.name, c.province, c.created_at, c.updated_at
+      LEFT JOIN (
+        SELECT
+          county_id,
+          COUNT(*) FILTER (WHERE active) as politician_count
+        FROM politicians
+        GROUP BY county_id
+      ) pol_counts ON pol_counts.county_id = c.id
+      LEFT JOIN (
+        SELECT
+          pol.county_id,
+          COUNT(pr.*) as promise_count
+        FROM promises pr
+        JOIN politicians pol ON pol.id = pr.politician_id
+        GROUP BY pol.county_id
+      ) promise_counts ON promise_counts.county_id = c.id
       ORDER BY c.province, c.name
     `)
     return result.rows
