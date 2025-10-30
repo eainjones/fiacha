@@ -2,6 +2,10 @@ import Nav from '@/components/Nav'
 import Link from 'next/link'
 import PoliticiansList from '@/components/PoliticiansList'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 async function getPoliticians() {
   const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
   const res = await fetch(`${baseUrl}/api/politicians`, { cache: 'no-store' })
