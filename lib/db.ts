@@ -1,4 +1,8 @@
 import { Pool } from 'pg'
+import * as dns from 'dns'
+
+// Force IPv4 resolution for Supabase (Vercel doesn't support IPv6)
+dns.setDefaultResultOrder('ipv4first')
 
 let pool: Pool | null = null
 
@@ -6,8 +10,6 @@ export function getDb() {
   if (!pool) {
     pool = new Pool({
       connectionString: process.env.DATABASE_URL,
-      // Force IPv4 to avoid ENETUNREACH errors on Vercel
-      host: process.env.DATABASE_URL?.match(/@([^:]+):/)?.[1],
       ssl: {
         rejectUnauthorized: false,
       },
