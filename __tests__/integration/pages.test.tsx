@@ -43,6 +43,8 @@ describe('Page Integration Tests', () => {
       counties.forEach((county: any) => {
         expect(county.name).toBeTruthy()
         expect(county.province).toBeTruthy()
+        expect(typeof county.politician_count).toBe('number')
+        expect(typeof county.promise_count).toBe('number')
       })
 
       // Verify we have counties from each province

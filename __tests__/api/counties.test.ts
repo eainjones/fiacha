@@ -29,6 +29,10 @@ describe('/api/counties', () => {
       expect(county).toHaveProperty('id')
       expect(county).toHaveProperty('name')
       expect(county).toHaveProperty('province')
+      expect(county).toHaveProperty('politician_count')
+      expect(county).toHaveProperty('promise_count')
+      expect(typeof county.politician_count).toBe('number')
+      expect(typeof county.promise_count).toBe('number')
     })
 
     it('should return counties sorted by province then name', async () => {

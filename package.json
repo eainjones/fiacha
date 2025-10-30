@@ -13,7 +13,12 @@
     "deploy:staging": "./scripts/deploy-staging.sh",
     "deploy:production": "./scripts/deploy-production.sh",
     "migrate:staging": "./scripts/apply-migrations-simple.sh fiacha-staging-db",
-    "migrate:production": "./scripts/apply-migrations-simple.sh fiacha-production-db"
+    "migrate:production": "./scripts/apply-migrations-simple.sh fiacha-production-db",
+    "setup:supabase": "./scripts/setup-supabase.sh",
+    "migrate:supabase": "./scripts/migrate-supabase.sh",
+    "setup:vercel": "./scripts/setup-vercel.sh",
+    "vercel:deploy": "vercel",
+    "vercel:prod": "vercel --prod"
   },
   "dependencies": {
     "@types/pg": "^8.15.5",

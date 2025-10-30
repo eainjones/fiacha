@@ -22,6 +22,9 @@ MIGRATION_FILES=(
     "db/migrations/003_seed_real_politicians.sql"
     "db/migrations/004_seed_real_promises.sql"
     "db/migrations/005_seed_councillors.sql"
+    "db/migrations/006_seed_remaining_tds.sql"
+    "db/migrations/007_seed_wexford_councillors.sql"
+    "db/migrations/008_add_missing_tds_and_fix_party.sql"
 )
 
 for file in "${MIGRATION_FILES[@]}"; do

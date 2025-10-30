@@ -1,34 +1,15 @@
 import Nav from '@/components/Nav'
 import Link from 'next/link'
 
-async function getCountiesWithStats() {
+async function getCounties() {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
   const res = await fetch(`${baseUrl}/api/counties`, { cache: 'no-store' })
   if (!res.ok) return []
-
-  const counties = await res.json()
-
-  // Fetch politicians to get counts per county
-  const polRes = await fetch(`${baseUrl}/api/politicians`, { cache: 'no-store' })
-  const politicians = polRes.ok ? await polRes.json() : []
-
-  // Fetch promises to get counts
-  const promRes = await fetch(`${baseUrl}/api/promises`, { cache: 'no-store' })
-  const promises = promRes.ok ? await promRes.json() : []
-
-  // Add stats to each county
-  return counties.map((county: any) => ({
-    ...county,
-    politician_count: politicians.filter((p: any) => p.county_id === county.id).length,
-    promise_count: promises.filter((pr: any) => {
-      const politician = politicians.find((p: any) => p.id === pr.politician_id)
-      return politician?.county_id === county.id
-    }).length
-  }))
+  return res.json()
 }
 
 export default async function CountiesPage() {
-  const counties = await getCountiesWithStats()
+  const counties = await getCounties()
 
   // Group by province
   const provinces = counties.reduce((acc: any, county: any) => {

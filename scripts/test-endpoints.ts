@@ -114,6 +114,15 @@ async function testEndpoints() {
       passed: hasFourProvinces,
       details: `Found provinces: ${[...provinces].join(', ')}`
     })
+
+    const hasCountFields = counties.every((c: any) =>
+      typeof c.politician_count === 'number' && typeof c.promise_count === 'number'
+    )
+    results.push({
+      test: 'GET /api/counties - Includes aggregated counts',
+      passed: hasCountFields,
+      details: hasCountFields ? 'All counties include promise and politician counts' : 'Missing aggregated count fields'
+    })
   } catch (error) {
     results.push({
       test: 'GET /api/counties',
