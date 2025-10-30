@@ -3,22 +3,54 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Nav from '@/components/Nav'
+import { createClient } from '@/lib/supabase'
 
 export default function AddPage() {
   const router = useRouter()
+  const supabase = createClient()
   const [activeTab, setActiveTab] = useState<'politician' | 'promise'>('politician')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   const [politicians, setPoliticians] = useState<any[]>([])
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
 
   useEffect(() => {
+    // Check authentication
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession()
+      if (!session) {
+        router.push('/auth/sign-in')
+        return
+      }
+      setIsAuthenticated(true)
+    }
+
+    checkAuth()
+
     // Fetch politicians for the dropdown in promise form
     fetch('/api/politicians')
       .then(res => res.json())
       .then(data => setPoliticians(data))
       .catch(err => console.error('Failed to load politicians', err))
-  }, [])
+  }, [router, supabase.auth])
+
+  // Show loading state while checking auth
+  if (isAuthenticated === null) {
+    return (
+      <>
+        <Nav />
+        <main className="min-h-screen flex items-center justify-center bg-gray-50">
+          <div className="text-xl text-gray-600">Loading...</div>
+        </main>
+      </>
+    )
+  }
+
+  // Don't render form if not authenticated (will redirect)
+  if (!isAuthenticated) {
+    return null
+  }
 
   const handlePoliticianSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
