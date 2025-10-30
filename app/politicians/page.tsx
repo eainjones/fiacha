@@ -3,7 +3,8 @@ import Link from 'next/link'
 import PoliticiansList from '@/components/PoliticiansList'
 
 async function getPoliticians() {
-  const res = await fetch('/api/politicians', { cache: 'no-store' })
+  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+  const res = await fetch(`${baseUrl}/api/politicians`, { cache: 'no-store' })
   if (!res.ok) return []
   return res.json()
 }

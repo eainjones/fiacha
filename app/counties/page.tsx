@@ -2,7 +2,8 @@ import Nav from '@/components/Nav'
 import Link from 'next/link'
 
 async function getCounties() {
-  const res = await fetch('/api/counties', { cache: 'no-store' })
+  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+  const res = await fetch(`${baseUrl}/api/counties`, { cache: 'no-store' })
   if (!res.ok) return []
   return res.json()
 }

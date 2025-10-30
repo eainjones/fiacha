@@ -1,11 +1,13 @@
 async function getPromises() {
-  const res = await fetch('/api/promises', { cache: 'no-store' })
+  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+  const res = await fetch(`${baseUrl}/api/promises`, { cache: 'no-store' })
   if (!res.ok) return []
   return res.json()
 }
 
 async function getPoliticians() {
-  const polRes = await fetch('/api/politicians', { cache: 'no-store' })
+  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+  const polRes = await fetch(`${baseUrl}/api/politicians`, { cache: 'no-store' })
   if (!polRes.ok) return []
   return polRes.json()
 }
