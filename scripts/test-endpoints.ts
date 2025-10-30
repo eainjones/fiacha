@@ -21,6 +21,7 @@ interface TestResult {
 }
 
 const results: TestResult[] = []
+// LEAVE THIS for dev:
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 
 async function fetchJSON(url: string) {

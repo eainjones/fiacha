@@ -2,8 +2,7 @@ import Nav from '@/components/Nav'
 import Link from 'next/link'
 
 async function getCounties() {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
-  const res = await fetch(`${baseUrl}/api/counties`, { cache: 'no-store' })
+  const res = await fetch('/api/counties', { cache: 'no-store' })
   if (!res.ok) return []
   return res.json()
 }

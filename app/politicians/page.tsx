@@ -3,8 +3,7 @@ import Link from 'next/link'
 import PoliticiansList from '@/components/PoliticiansList'
 
 async function getPoliticians() {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
-  const res = await fetch(`${baseUrl}/api/politicians`, { cache: 'no-store' })
+  const res = await fetch('/api/politicians', { cache: 'no-store' })
   if (!res.ok) return []
   return res.json()
 }

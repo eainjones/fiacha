@@ -1,15 +1,13 @@
 async function getPromises() {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
-  const res = await fetch(`${baseUrl}/api/promises`, { cache: 'no-store' })
+  const res = await fetch('/api/promises', { cache: 'no-store' })
   if (!res.ok) return []
   return res.json()
 }
 
 async function getPoliticians() {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
-  const res = await fetch(`${baseUrl}/api/politicians`, { cache: 'no-store' })
-  if (!res.ok) return []
-  return res.json()
+  const polRes = await fetch('/api/politicians', { cache: 'no-store' })
+  if (!polRes.ok) return []
+  return polRes.json()
 }
 
 import Nav from '@/components/Nav'

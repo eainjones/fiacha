@@ -3,17 +3,15 @@ import Link from 'next/link'
 import PromisesList from '@/components/PromisesList'
 
 async function getPromises() {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
-  const res = await fetch(`${baseUrl}/api/promises`, { cache: 'no-store' })
+  const res = await fetch('/api/promises', { cache: 'no-store' })
   if (!res.ok) return []
   return res.json()
 }
 
 async function getPoliticians() {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
-  const res = await fetch(`${baseUrl}/api/politicians`, { cache: 'no-store' })
-  if (!res.ok) return []
-  return res.json()
+  const politiciansRes = await fetch('/api/politicians', { cache: 'no-store' })
+  if (!politiciansRes.ok) return []
+  return politiciansRes.json()
 }
 
 export default async function PromisesPage() {
