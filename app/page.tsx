@@ -1,24 +1,18 @@
-function getBaseUrl() {
-  // For Vercel deployments
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
-  }
-  // For local development
-  return 'http://localhost:3000';
-}
+import { getDb } from '@/lib/db'
 
 async function getPromises() {
   try {
-    const baseUrl = getBaseUrl();
-    const res = await fetch(`${baseUrl}/api/promises`, {
-      cache: 'no-store',
-      next: { revalidate: 0 }
-    })
-    if (!res.ok) {
-      console.error('Failed to fetch promises:', res.status, res.statusText);
-      return []
-    }
-    return res.json()
+    const db = getDb()
+    const result = await db.query(`
+      SELECT
+        p.*,
+        pol.name as politician_name,
+        pol.party
+      FROM promises p
+      LEFT JOIN politicians pol ON p.politician_id = pol.id
+      ORDER BY p.created_at DESC
+    `)
+    return result.rows
   } catch (error) {
     console.error('Error fetching promises:', error);
     return []
@@ -27,16 +21,20 @@ async function getPromises() {
 
 async function getPoliticians() {
   try {
-    const baseUrl = getBaseUrl();
-    const polRes = await fetch(`${baseUrl}/api/politicians`, {
-      cache: 'no-store',
-      next: { revalidate: 0 }
-    })
-    if (!polRes.ok) {
-      console.error('Failed to fetch politicians:', polRes.status, polRes.statusText);
-      return []
-    }
-    return polRes.json()
+    const db = getDb()
+    const result = await db.query(`
+      SELECT
+        p.*,
+        c.name as county_name,
+        c.province,
+        la.name as local_authority_name
+      FROM politicians p
+      LEFT JOIN counties c ON p.county_id = c.id
+      LEFT JOIN local_authorities la ON p.local_authority_id = la.id
+      WHERE p.active = true
+      ORDER BY p.name
+    `)
+    return result.rows
   } catch (error) {
     console.error('Error fetching politicians:', error);
     return []
