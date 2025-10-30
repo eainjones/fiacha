@@ -1,19 +1,51 @@
 import Nav from '@/components/Nav'
 import Link from 'next/link'
 import PromisesList from '@/components/PromisesList'
+import { getDb } from '@/lib/db'
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 async function getPromises() {
-  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
-  const res = await fetch(`${baseUrl}/api/promises`, { cache: 'no-store' })
-  if (!res.ok) return []
-  return res.json()
+  try {
+    const db = getDb()
+    const result = await db.query(`
+      SELECT
+        p.*,
+        pol.name as politician_name,
+        pol.party
+      FROM promises p
+      LEFT JOIN politicians pol ON p.politician_id = pol.id
+      ORDER BY p.created_at DESC
+    `)
+    return result.rows
+  } catch (error) {
+    console.error('Error fetching promises:', error);
+    return []
+  }
 }
 
 async function getPoliticians() {
-  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
-  const politiciansRes = await fetch(`${baseUrl}/api/politicians`, { cache: 'no-store' })
-  if (!politiciansRes.ok) return []
-  return politiciansRes.json()
+  try {
+    const db = getDb()
+    const result = await db.query(`
+      SELECT
+        p.*,
+        c.name as county_name,
+        c.province,
+        la.name as local_authority_name
+      FROM politicians p
+      LEFT JOIN counties c ON p.county_id = c.id
+      LEFT JOIN local_authorities la ON p.local_authority_id = la.id
+      WHERE p.active = true
+      ORDER BY p.name
+    `)
+    return result.rows
+  } catch (error) {
+    console.error('Error fetching politicians:', error);
+    return []
+  }
 }
 
 export default async function PromisesPage() {

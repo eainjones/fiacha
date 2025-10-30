@@ -1,11 +1,30 @@
 import Nav from '@/components/Nav'
 import Link from 'next/link'
+import { getDb } from '@/lib/db'
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 async function getCounties() {
-  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
-  const res = await fetch(`${baseUrl}/api/counties`, { cache: 'no-store' })
-  if (!res.ok) return []
-  return res.json()
+  try {
+    const db = getDb()
+    const result = await db.query(`
+      SELECT
+        c.*,
+        COUNT(DISTINCT p.id) as politician_count,
+        COUNT(DISTINCT pr.id) as promise_count
+      FROM counties c
+      LEFT JOIN politicians p ON p.county_id = c.id AND p.active = true
+      LEFT JOIN promises pr ON pr.politician_id = p.id
+      GROUP BY c.id, c.name, c.province, c.created_at, c.updated_at
+      ORDER BY c.province, c.name
+    `)
+    return result.rows
+  } catch (error) {
+    console.error('Error fetching counties:', error);
+    return []
+  }
 }
 
 export default async function CountiesPage() {
