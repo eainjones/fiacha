@@ -13,6 +13,9 @@ export function getDb() {
       ssl: {
         rejectUnauthorized: false,
       },
+      max: 1, // Limit connections for serverless
+      idleTimeoutMillis: 0, // Disable idle timeout
+      connectionTimeoutMillis: 10000, // 10 second connection timeout
     })
   }
   return pool
