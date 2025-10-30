@@ -130,10 +130,78 @@ If this is your first time setting up auth, you may need to enable it:
 - Always use HTTPS in production
 - Consider enabling Multi-Factor Authentication (MFA) for admin users
 
+## Step 6: Enable Google OAuth (Optional)
+
+The application supports Google OAuth sign-in as an alternative to email/password authentication.
+
+### Create Google OAuth Credentials
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project or select an existing one
+3. Navigate to **APIs & Services** → **Credentials**
+4. Click **Create Credentials** → **OAuth 2.0 Client ID**
+5. If prompted, configure the OAuth consent screen:
+   - User Type: **External**
+   - App name: `Fiacha` (or your preferred name)
+   - User support email: Your email
+   - Developer contact: Your email
+   - Scopes: Add `email` and `profile` (or use defaults)
+6. Create OAuth Client ID:
+   - Application type: **Web application**
+   - Name: `Fiacha Web App`
+   - Authorized JavaScript origins:
+     - `https://fiacha.vercel.app` (your production URL)
+     - `http://localhost:3000` (for local development)
+   - Authorized redirect URIs:
+     - `https://hgjefllkbbwevpyiazhx.supabase.co/auth/v1/callback`
+     - (Replace `hgjefllkbbwevpyiazhx` with your Supabase project reference)
+7. Copy the **Client ID** and **Client Secret**
+
+### Configure Google OAuth in Supabase
+
+1. Go to your Supabase dashboard → **Authentication** → **Providers**
+2. Find **Google** in the provider list
+3. Enable the Google provider
+4. Paste your **Client ID** and **Client Secret** from Google Cloud Console
+5. Click **Save**
+
+### Configure Redirect URLs
+
+Ensure your redirect URLs are configured in Supabase:
+1. Go to **Authentication** → **URL Configuration**
+2. Add these redirect URLs:
+   - `https://fiacha.vercel.app/auth/callback`
+   - `http://localhost:3000/auth/callback`
+
+### Test Google OAuth
+
+1. Navigate to your sign-in page (`/auth/sign-in`)
+2. Click **Sign in with Google**
+3. You'll be redirected to Google's login page
+4. Sign in with your Google account
+5. Grant permission to the app
+6. You'll be redirected back to the `/add` page as an authenticated user
+
+### Troubleshooting Google OAuth
+
+**"Error 400: redirect_uri_mismatch"**
+- Verify the redirect URI in Google Cloud Console matches exactly: `https://[your-project-ref].supabase.co/auth/v1/callback`
+- Check for trailing slashes - they must match exactly
+
+**"Invalid OAuth Configuration"**
+- Ensure both Client ID and Client Secret are correctly entered in Supabase
+- Check for extra spaces or missing characters
+- Try regenerating the credentials in Google Cloud Console
+
+**OAuth Consent Screen Errors**
+- Make sure your OAuth consent screen is published (or in testing mode with your email added as a test user)
+- For development, use "Testing" mode and add test users
+- For production, submit for verification
+
 ## Next Steps
 
 Once authentication is working:
 - Consider adding role-based access control (RBAC)
 - Set up email templates in Supabase for better branded emails
-- Add social login providers (Google, GitHub, etc.)
+- Add additional social login providers (GitHub, Facebook, etc.)
 - Implement password reset functionality
