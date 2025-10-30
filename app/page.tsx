@@ -1,15 +1,46 @@
+function getBaseUrl() {
+  // For Vercel deployments
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  // For local development
+  return 'http://localhost:3000';
+}
+
 async function getPromises() {
-  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
-  const res = await fetch(`${baseUrl}/api/promises`, { cache: 'no-store' })
-  if (!res.ok) return []
-  return res.json()
+  try {
+    const baseUrl = getBaseUrl();
+    const res = await fetch(`${baseUrl}/api/promises`, {
+      cache: 'no-store',
+      next: { revalidate: 0 }
+    })
+    if (!res.ok) {
+      console.error('Failed to fetch promises:', res.status, res.statusText);
+      return []
+    }
+    return res.json()
+  } catch (error) {
+    console.error('Error fetching promises:', error);
+    return []
+  }
 }
 
 async function getPoliticians() {
-  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
-  const polRes = await fetch(`${baseUrl}/api/politicians`, { cache: 'no-store' })
-  if (!polRes.ok) return []
-  return polRes.json()
+  try {
+    const baseUrl = getBaseUrl();
+    const polRes = await fetch(`${baseUrl}/api/politicians`, {
+      cache: 'no-store',
+      next: { revalidate: 0 }
+    })
+    if (!polRes.ok) {
+      console.error('Failed to fetch politicians:', polRes.status, polRes.statusText);
+      return []
+    }
+    return polRes.json()
+  } catch (error) {
+    console.error('Error fetching politicians:', error);
+    return []
+  }
 }
 
 import Nav from '@/components/Nav'
