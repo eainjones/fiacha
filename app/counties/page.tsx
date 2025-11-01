@@ -25,7 +25,7 @@ async function getCounties() {
       LEFT JOIN (
         SELECT
           pol.county_id,
-          COUNT(pr.*) as promise_count
+          COUNT(pr.id) as promise_count
         FROM promises pr
         JOIN politicians pol ON pol.id = pr.politician_id
         GROUP BY pol.county_id
@@ -52,8 +52,8 @@ export default async function CountiesPage() {
 
   const provinceOrder = ['Leinster', 'Munster', 'Connacht', 'Ulster']
 
-  const totalPoliticians = counties.reduce((sum: number, c: any) => sum + c.politician_count, 0)
-  const totalPromises = counties.reduce((sum: number, c: any) => sum + c.promise_count, 0)
+  const totalPoliticians = counties.reduce((sum: number, c: any) => sum + Number(c.politician_count), 0)
+  const totalPromises = counties.reduce((sum: number, c: any) => sum + Number(c.promise_count), 0)
 
   return (
     <>
@@ -135,7 +135,7 @@ export default async function CountiesPage() {
                             </svg>
                             Politicians
                           </span>
-                          <span className="text-lg font-bold text-gray-900">{county.politician_count}</span>
+                          <span className="text-lg font-bold text-gray-900">{Number(county.politician_count)}</span>
                         </div>
 
                         <div className="flex items-center justify-between">
@@ -145,7 +145,7 @@ export default async function CountiesPage() {
                             </svg>
                             Promises
                           </span>
-                          <span className="text-lg font-bold text-gray-900">{county.promise_count}</span>
+                          <span className="text-lg font-bold text-gray-900">{Number(county.promise_count)}</span>
                         </div>
                       </div>
 
