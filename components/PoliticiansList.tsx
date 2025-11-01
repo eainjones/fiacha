@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import PartyBadge from './PartyBadge'
 
 interface Politician {
   id: number
@@ -150,9 +151,7 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
                     <div className="text-sm font-bold text-gray-900">{pol.name}</div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
-                      {pol.party}
-                    </span>
+                    <PartyBadge party={pol.party} size="sm" />
                   </td>
                   <td className="px-6 py-4">
                     <div className="text-sm text-gray-900">{pol.constituency}</div>

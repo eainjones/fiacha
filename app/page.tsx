@@ -1,4 +1,5 @@
 import { getDb } from '@/lib/db'
+import PartyBadge from '@/components/PartyBadge'
 
 async function getPromises() {
   try {
@@ -115,7 +116,9 @@ export default async function Home() {
                     {politicians.slice(0, 5).map((pol: any) => (
                       <tr key={pol.id} className="hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 whitespace-nowrap font-semibold text-gray-900">{pol.name}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-gray-700">{pol.party}</td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <PartyBadge party={pol.party} size="sm" />
+                        </td>
                         <td className="px-6 py-4 whitespace-nowrap text-gray-600">{pol.constituency}</td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{pol.role}</td>
                       </tr>
