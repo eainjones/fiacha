@@ -1,0 +1,291 @@
+
+[
+  {
+    "name": "Damien Geoghegan",
+    "party": "Fine Gael",
+    "electoral_area": "Dungarvan",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Conor D. McGuinness",
+    "party": "Sinn Fein",
+    "electoral_area": "Dungarvan",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Tom Cronin",
+    "party": "Fianna Fáil",
+    "electoral_area": "Dungarvan",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Pat Nugent",
+    "party": "Fine Gael",
+    "electoral_area": "Dungarvan",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Thomas Phelan",
+    "party": "Labour",
+    "electoral_area": "Dungarvan",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Joe O'Riordan",
+    "party": "Independent",
+    "electoral_area": "Dungarvan",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "John Pratt",
+    "party": "Labour",
+    "electoral_area": "Lismore",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Niamh O'Donovan",
+    "party": "Fine Gael",
+    "electoral_area": "Lismore",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Donnchadh Mulcahy",
+    "party": "Sinn Féin",
+    "electoral_area": "Lismore",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Liam Brazil",
+    "party": "Fine Gael",
+    "electoral_area": "Portlaw–Kilmacthomas",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Seánie Power",
+    "party": "Fine Gael",
+    "electoral_area": "Portlaw–Kilmacthomas",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "John O'Leary",
+    "party": "Fianna Fáil",
+    "electoral_area": "Portlaw–Kilmacthomas",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Declan Clune",
+    "party": "Independent",
+    "electoral_area": "Portlaw–Kilmacthomas",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Catherine Burke",
+    "party": "Sinn Féin",
+    "electoral_area": "Portlaw–Kilmacthomas",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Sandra Conway",
+    "party": "Independent",
+    "electoral_area": "Tramore–Waterford City West",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Jim Griffin",
+    "party": "Sinn Féin",
+    "electoral_area": "Tramore–Waterford City West",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Blaise Hannigan",
+    "party": "Independent",
+    "electoral_area": "Tramore–Waterford City West",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Joe Kelly",
+    "party": "Independent",
+    "electoral_area": "Tramore–Waterford City West",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Lola O'Sullivan",
+    "party": "Fine Gael",
+    "electoral_area": "Tramore–Waterford City West",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Eamon Quinlan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Tramore–Waterford City West",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Declan Barry",
+    "party": "Independent",
+    "electoral_area": "Waterford City East",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "David Daniels",
+    "party": "Independent",
+    "electoral_area": "Waterford City East",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Jim Darcy",
+    "party": "Fine Gael",
+    "electoral_area": "Waterford City East",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Pat Fitzgerald",
+    "party": "Sinn Féin",
+    "electoral_area": "Waterford City East",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Mary Roche",
+    "party": "Social Democrats",
+    "electoral_area": "Waterford City East",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Adam Wyse",
+    "party": "Fianna Fáil",
+    "electoral_area": "Waterford City East",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Joeanne Bailey",
+    "party": "Sinn Féin",
+    "electoral_area": "Waterford City South",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Donal Barry",
+    "party": "Independent",
+    "electoral_area": "Waterford City South",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "John Hearne",
+    "party": "Sinn Féin",
+    "electoral_area": "Waterford City South",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Jason Murphy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Waterford City South",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Frank Quinlan",
+    "party": "Fine Gael",
+    "electoral_area": "Waterford City South",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Séamus Ryan",
+    "party": "Labour Party",
+    "electoral_area": "Waterford City South",
+    "role": "Councillor",
+    "county": "Waterford",
+    "local_authority": "Waterford City and County Council"
+  },
+  {
+    "name": "Mary Butler",
+    "party": "Fianna Fáil",
+    "constituency": "Waterford",
+    "role": "TD",
+    "county": "Waterford",
+    "local_authority": null
+  },
+  {
+    "name": "David Cullinane",
+    "party": "Sinn Féin",
+    "constituency": "Waterford",
+    "role": "TD",
+    "county": "Waterford",
+    "local_authority": null
+  },
+  {
+    "name": "John Cummins",
+    "party": "Fine Gael",
+    "constituency": "Waterford",
+    "role": "TD",
+    "county": "Waterford",
+    "local_authority": null
+  },
+  {
+    "name": "Conor D. McGuinness",
+    "party": "Sinn Féin",
+    "constituency": "Waterford",
+    "role": "TD",
+    "county": "Waterford",
+    "local_authority": null
+  }
+]

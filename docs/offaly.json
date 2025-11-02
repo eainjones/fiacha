@@ -1,0 +1,179 @@
+
+[
+  {
+    "name": "Peter Ormond",
+    "party": "Fianna Fáil",
+    "electoral_area": "Birr",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "John Leahy",
+    "party": "Non-Party",
+    "electoral_area": "Birr",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "John Clendennen",
+    "party": "Fine Gael",
+    "electoral_area": "Birr",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Hugh Egan",
+    "party": "Fine Gael",
+    "electoral_area": "Birr",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Audrey Hennessy-Kennedy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Birr",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Sean Maher",
+    "party": "Sinn Féin",
+    "electoral_area": "Birr",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Eddie Fitzpatrick",
+    "party": "Fianna Fáil",
+    "electoral_area": "Edenderry",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Fergus McDonnell",
+    "party": "Independent Ireland",
+    "electoral_area": "Edenderry",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Claire Murray",
+    "party": "Fianna Fáil",
+    "electoral_area": "Edenderry",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Liam Quinn",
+    "party": "Fine Gael",
+    "electoral_area": "Edenderry",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Noel Cribbin",
+    "party": "Fine Gael",
+    "electoral_area": "Edenderry",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Claire Murray",
+    "party": "Sinn Féin",
+    "electoral_area": "Edenderry",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Neil Feighery",
+    "party": "Fine Gael",
+    "electoral_area": "Tullamore",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Frank Moran",
+    "party": "Fianna Fáil",
+    "electoral_area": "Tullamore",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Sean O'Brien",
+    "party": "Non-Party",
+    "electoral_area": "Tullamore",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Tony McCormack",
+    "party": "Fianna Fáil",
+    "electoral_area": "Tullamore",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Aoife Masterson",
+    "party": "Sinn Féin",
+    "electoral_area": "Tullamore",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Declan Harvey",
+    "party": "Fianna Fáil",
+    "electoral_area": "Tullamore",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Ollie Bryant",
+    "party": "Fianna Fáil",
+    "electoral_area": "Tullamore",
+    "role": "Councillor",
+    "county": "Offaly",
+    "local_authority": "Offaly County Council"
+  },
+  {
+    "name": "Carol Nolan",
+    "party": "Independent",
+    "constituency": "Offaly",
+    "role": "TD",
+    "county": "Offaly",
+    "local_authority": null
+  },
+  {
+    "name": "John Clendennen",
+    "party": "Fine Gael",
+    "constituency": "Offaly",
+    "role": "TD",
+    "county": "Offaly",
+    "local_authority": null
+  },
+  {
+    "name": "Tony McCormack",
+    "party": "Fianna Fáil",
+    "constituency": "Offaly",
+    "role": "TD",
+    "county": "Offaly",
+    "local_authority": null
+  }
+]

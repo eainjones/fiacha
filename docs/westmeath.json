@@ -1,0 +1,203 @@
+
+[
+  {
+    "name": "John Dolan",
+    "party": "Fine Gael",
+    "electoral_area": "Athlone",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Paul Hogan",
+    "party": "Independent Ireland",
+    "electoral_area": "Athlone",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Aengus O'Rourke",
+    "party": "Fianna Fáil",
+    "electoral_area": "Athlone",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Frankie Keena",
+    "party": "Independent",
+    "electoral_area": "Athlone",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Vinny McCormack",
+    "party": "Fianna Fáil",
+    "electoral_area": "Athlone",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "David Jones",
+    "party": "Sinn Féin",
+    "electoral_area": "Kinnegad",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Alfie Devine",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kinnegad",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Niall Gaffney",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kinnegad",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Emily Wallace",
+    "party": "Fine Gael",
+    "electoral_area": "Kinnegad",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Denis Leonard",
+    "party": "Labour",
+    "electoral_area": "Kinnegad",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Tom Farrell",
+    "party": "Independent",
+    "electoral_area": "Moate",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Vinny McCormack",
+    "party": "Fianna Fáil",
+    "electoral_area": "Moate",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Liam McDaniel",
+    "party": "Fianna Fáil",
+    "electoral_area": "Moate",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Johnnie Penrose",
+    "party": "Labour",
+    "electoral_area": "Moate",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Mick Dollard",
+    "party": "Independent",
+    "electoral_area": "Mullingar",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Ken Glynn",
+    "party": "Fianna Fáil",
+    "electoral_area": "Mullingar",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Julie McCourt",
+    "party": "Sinn Féin",
+    "electoral_area": "Mullingar",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Andrew Duncan",
+    "party": "Fine Gael",
+    "electoral_area": "Mullingar",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Aoife Davitt",
+    "party": "Fianna Fáil",
+    "electoral_area": "Mullingar",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Bill Collentine",
+    "party": "Fianna Fáil",
+    "electoral_area": "Mullingar",
+    "role": "Councillor",
+    "county": "Westmeath",
+    "local_authority": "Westmeath County Council"
+  },
+  {
+    "name": "Joe Flaherty",
+    "party": "Fianna Fáil",
+    "constituency": "Longford–Westmeath",
+    "role": "TD",
+    "county": "Westmeath",
+    "local_authority": null
+  },
+  {
+    "name": "Kevin Boxer Moran",
+    "party": "Independent",
+    "constituency": "Longford–Westmeath",
+    "role": "TD",
+    "county": "Westmeath",
+    "local_authority": null
+  },
+  {
+    "name": "Willie Penrose",
+    "party": "Labour",
+    "constituency": "Longford–Westmeath",
+    "role": "TD",
+    "county": "Westmeath",
+    "local_authority": null
+  },
+  {
+    "name": "Peter Burke",
+    "party": "Fine Gael",
+    "constituency": "Longford–Westmeath",
+    "role": "TD",
+    "county": "Westmeath",
+    "local_authority": null
+  },
+  {
+    "name": "Sorcha Clarke",
+    "party": "Sinn Féin",
+    "constituency": "Longford–Westmeath",
+    "role": "TD",
+    "county": "Westmeath",
+    "local_authority": null
+  }
+]

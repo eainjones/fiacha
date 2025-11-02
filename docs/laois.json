@@ -1,0 +1,179 @@
+
+[
+  {
+    "name": "Conor Bergin",
+    "party": "Fine Gael",
+    "electoral_area": "Borris-in-Ossory–Mountmellick",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "John King",
+    "party": "Fine Gael",
+    "electoral_area": "Borris-in-Ossory–Mountmellick",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Paddy Bracken",
+    "party": "Fianna Fáil",
+    "electoral_area": "Borris-in-Ossory–Mountmellick",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Seamus McDonald",
+    "party": "Fianna Fáil",
+    "electoral_area": "Borris-in-Ossory–Mountmellick",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Ollie Clooney",
+    "party": "Non-party/Independent",
+    "electoral_area": "Borris-in-Ossory–Mountmellick",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "James Kelly",
+    "party": "Non-party/Independent",
+    "electoral_area": "Borris-in-Ossory–Mountmellick",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Aidan Mullins",
+    "party": "Sinn Féin",
+    "electoral_area": "Graiguecullen–Portarlington",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Ben Brennan",
+    "party": "Independent",
+    "electoral_area": "Graiguecullen–Portarlington",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Paschal McEvoy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Graiguecullen–Portarlington",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Padraig Fleming",
+    "party": "Fianna Fáil",
+    "electoral_area": "Graiguecullen–Portarlington",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Aisling Moran",
+    "party": "Independent",
+    "electoral_area": "Graiguecullen–Portarlington",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Vivienne Phelan",
+    "party": "Fine Gael",
+    "electoral_area": "Graiguecullen–Portarlington",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Willie Aird",
+    "party": "Fine Gael",
+    "electoral_area": "Portlaoise",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Caroline Dwane-Stanley",
+    "party": "Sinn Féin",
+    "electoral_area": "Portlaoise",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Tommy Mulligan",
+    "party": "Independent",
+    "electoral_area": "Portlaoise",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "John Joe Fennelly",
+    "party": "Fianna Fáil",
+    "electoral_area": "Portlaoise",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Catherine Fitzgerald",
+    "party": "Fianna Fáil",
+    "electoral_area": "Portlaoise",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Marie Tuohy",
+    "party": "Labour",
+    "electoral_area": "Portlaoise",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "Barry Walsh",
+    "party": "Fine Gael",
+    "electoral_area": "Portlaoise",
+    "role": "Councillor",
+    "county": "Laois",
+    "local_authority": "Laois County Council"
+  },
+  {
+    "name": "William Aird",
+    "party": "Fine Gael",
+    "constituency": "Laois",
+    "role": "TD",
+    "county": "Laois",
+    "local_authority": null
+  },
+  {
+    "name": "Seán Fleming",
+    "party": "Fianna Fáil",
+    "constituency": "Laois",
+    "role": "TD",
+    "county": "Laois",
+    "local_authority": null
+  },
+  {
+    "name": "Brian Stanley",
+    "party": "Sinn Féin",
+    "constituency": "Laois",
+    "role": "TD",
+    "county": "Laois",
+    "local_authority": null
+  }
+]

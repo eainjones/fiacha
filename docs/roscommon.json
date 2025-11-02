@@ -1,0 +1,171 @@
+
+[
+  {
+    "name": "Valerie Byrne",
+    "party": "Non Party",
+    "electoral_area": "Boyle Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Liam Callaghan",
+    "party": "Fine Gael",
+    "electoral_area": "Boyle Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Tom Crosby",
+    "party": "Non Party",
+    "electoral_area": "Boyle Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Leah Cull",
+    "party": "Sinn Féin",
+    "electoral_area": "Boyle Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Michéal Frain",
+    "party": "Non Party",
+    "electoral_area": "Boyle Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Sean Moylan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Boyle Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Paschal Fitzmaurice",
+    "party": "Fianna Fáil",
+    "electoral_area": "Roscommon Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Larry Brennan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Roscommon Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Marty McDermott",
+    "party": "Fianna Fáil",
+    "electoral_area": "Roscommon Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Nigel Dineen",
+    "party": "Independent Ireland",
+    "electoral_area": "Roscommon Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Gareth Scahill",
+    "party": "Fine Gael",
+    "electoral_area": "Roscommon Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Tony Waldron",
+    "party": "Independent",
+    "electoral_area": "Roscommon Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Emer Kelly",
+    "party": "Independent",
+    "electoral_area": "Athlone Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Tony Ward",
+    "party": "Independent",
+    "electoral_area": "Athlone Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "John Naughten",
+    "party": "Fine Gael",
+    "electoral_area": "Athlone Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Laurence Fallon",
+    "party": "Independent",
+    "electoral_area": "Athlone Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Domnick Connolly",
+    "party": "Fine Gael",
+    "electoral_area": "Athlone Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "John Keogh",
+    "party": "Fianna Fáil",
+    "electoral_area": "Athlone Electoral Area",
+    "role": "Councillor",
+    "county": "Roscommon",
+    "local_authority": "Roscommon County Council"
+  },
+  {
+    "name": "Michael Fitzmaurice",
+    "party": "Independent Ireland",
+    "constituency": "Roscommon–Galway",
+    "role": "TD",
+    "county": "Roscommon",
+    "local_authority": null
+  },
+  {
+    "name": "Martin Daly",
+    "party": "Fianna Fáil",
+    "constituency": "Roscommon–Galway",
+    "role": "TD",
+    "county": "Roscommon",
+    "local_authority": null
+  },
+  {
+    "name": "Claire Kerrane",
+    "party": "Sinn Féin",
+    "constituency": "Roscommon–Galway",
+    "role": "TD",
+    "county": "Roscommon",
+    "local_authority": null
+  }
+]

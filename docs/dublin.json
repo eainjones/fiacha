@@ -1,0 +1,1883 @@
+
+[
+  {
+    "name": "Declan Flanagan",
+    "party": "Fine Gael",
+    "electoral_area": "Artane–Whitehall",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Racheal Batten",
+    "party": "Fianna Fáil",
+    "electoral_area": "Artane–Whitehall",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "John Lyons",
+    "party": "Independent",
+    "electoral_area": "Artane–Whitehall",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Edel Moran",
+    "party": "Sinn Féin",
+    "electoral_area": "Artane–Whitehall",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Jesslyn Henry",
+    "party": "Social Democrats",
+    "electoral_area": "Artane–Whitehall",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Aishling Silke",
+    "party": "Social Democrats",
+    "electoral_area": "Artane–Whitehall",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Ray Cunningham",
+    "party": "Green Party",
+    "electoral_area": "Ballyfermot–Drimnagh",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Hazel De Nortuín",
+    "party": "People Before Profit, Solidarity",
+    "electoral_area": "Ballyfermot–Drimnagh",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Daithí Doolan",
+    "party": "Sinn Féin",
+    "electoral_area": "Ballyfermot–Drimnagh",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Vincent Jackson",
+    "party": "Independent",
+    "electoral_area": "Ballyfermot–Drimnagh",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Philip Sutcliffe",
+    "party": "Independent Ireland",
+    "electoral_area": "Ballyfermot–Drimnagh",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Keith Connolly",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballymun–Finglas",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Anthony Connaghan",
+    "party": "Sinn Féin",
+    "electoral_area": "Ballymun–Finglas",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Mary Callaghan",
+    "party": "Social Democrats",
+    "electoral_area": "Ballymun–Finglas",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Leslie Kane",
+    "party": "Sinn Féin",
+    "electoral_area": "Ballymun–Finglas",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Conor Reddy",
+    "party": "People Before Profit",
+    "electoral_area": "Ballymun–Finglas",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Gavin Pepper",
+    "party": "Independent",
+    "electoral_area": "Ballymun–Finglas",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Cat O'Driscoll",
+    "party": "Social Democrats",
+    "electoral_area": "Cabra–Glasnevin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Feljin Jose",
+    "party": "Green Party",
+    "electoral_area": "Cabra–Glasnevin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Colm O'Rourke",
+    "party": "Fine Gael",
+    "electoral_area": "Cabra–Glasnevin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Gayle Ralph",
+    "party": "Fine Gael",
+    "electoral_area": "Cabra–Glasnevin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "John Stephens",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cabra–Glasnevin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Séamus McGrattan",
+    "party": "Sinn Féin",
+    "electoral_area": "Cabra–Glasnevin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Cieran Perry",
+    "party": "Independent",
+    "electoral_area": "Cabra–Glasnevin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Donna Cooney",
+    "party": "Green Party",
+    "electoral_area": "Clontarf",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Deirdre Heney",
+    "party": "Fianna Fáil",
+    "electoral_area": "Clontarf",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Alison Field",
+    "party": "Labour",
+    "electoral_area": "Clontarf",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Kevin Breen",
+    "party": "Independent",
+    "electoral_area": "Clontarf",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Clodagh Ní Mhuirí",
+    "party": "Fine Gael",
+    "electoral_area": "Clontarf",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Catherine Stocker",
+    "party": "Social Democrats",
+    "electoral_area": "Clontarf",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Barry Heneghan",
+    "party": "Independent",
+    "electoral_area": "Clontarf",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Tom Brabazon",
+    "party": "Fianna Fáil",
+    "electoral_area": "Donaghmede",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Daryl Barron",
+    "party": "Fianna Fáil",
+    "electoral_area": "Donaghmede",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Mícheál MacDonncha",
+    "party": "Sinn Féin",
+    "electoral_area": "Donaghmede",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Paddy Monahan",
+    "party": "Social Democrats",
+    "electoral_area": "Donaghmede",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Supriya Singh",
+    "party": "Fine Gael",
+    "electoral_area": "Donaghmede",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Pat Dunne",
+    "party": "Independent, Right To Change",
+    "electoral_area": "Kimmage–Rathmines",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Carolyn Moore",
+    "party": "Green Party",
+    "electoral_area": "Kimmage–Rathmines",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Fiona Connelly",
+    "party": "Labour",
+    "electoral_area": "Kimmage–Rathmines",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Punam Rane",
+    "party": "Fine Gael",
+    "electoral_area": "Kimmage–Rathmines",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Patrick Kinsella",
+    "party": "Fine Gael",
+    "electoral_area": "Kimmage–Rathmines",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Eoin Hayes",
+    "party": "Social Democrats",
+    "electoral_area": "Kimmage–Rathmines",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Ray McAdam",
+    "party": "Fine Gael",
+    "electoral_area": "North Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Janet Horner",
+    "party": "Green Party",
+    "electoral_area": "North Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Christy Burke",
+    "party": "Independent",
+    "electoral_area": "North Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Malachy Steenson",
+    "party": "Independent",
+    "electoral_area": "North Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Nial Ring",
+    "party": "Independent",
+    "electoral_area": "North Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Janice Boylan",
+    "party": "Sinn Féin",
+    "electoral_area": "North Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Daniel Ennis",
+    "party": "Social Democrats",
+    "electoral_area": "North Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "David Coffey",
+    "party": "Fine Gael",
+    "electoral_area": "Pembroke",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Hazel Chu",
+    "party": "Green Party",
+    "electoral_area": "Pembroke",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Emma Blain",
+    "party": "Fine Gael",
+    "electoral_area": "Pembroke",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Dermot Lacey",
+    "party": "Labour",
+    "electoral_area": "Pembroke",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Paddy McCartan",
+    "party": "Fine Gael",
+    "electoral_area": "Pembroke",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Claire Byrne",
+    "party": "Green Party",
+    "electoral_area": "South East Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Kourtney Kenny",
+    "party": "Sinn Féin",
+    "electoral_area": "South East Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Danny Byrne",
+    "party": "Fine Gael",
+    "electoral_area": "South East Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Cian Farrell",
+    "party": "Social Democrats",
+    "electoral_area": "South East Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Mannix Flynn",
+    "party": "Independent",
+    "electoral_area": "South East Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Michael Pidgeon",
+    "party": "Green Party",
+    "electoral_area": "South West Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Darragh Moriarty",
+    "party": "Labour",
+    "electoral_area": "South West Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Máire Devine",
+    "party": "Sinn Féin",
+    "electoral_area": "South West Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Jen Cummins",
+    "party": "Social Democrats",
+    "electoral_area": "South West Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Ammar Ali",
+    "party": "Fianna Fáil",
+    "electoral_area": "South West Inner City",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dublin City Council"
+  },
+  {
+    "name": "Marie Baker",
+    "party": "Fine Gael",
+    "electoral_area": "Blackrock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Dan Carson",
+    "party": "Fine Gael",
+    "electoral_area": "Blackrock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Michael Clark",
+    "party": "Fianna Fáil",
+    "electoral_area": "Blackrock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Maurice Dockrell",
+    "party": "Fine Gael",
+    "electoral_area": "Blackrock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Conor Dowling",
+    "party": "Green Party",
+    "electoral_area": "Blackrock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Martha Fanning",
+    "party": "Labour",
+    "electoral_area": "Blackrock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Shay Brennan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Dundrum",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Anne Colgan",
+    "party": "Independent",
+    "electoral_area": "Dundrum",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Daniel Dunne",
+    "party": "Green Party",
+    "electoral_area": "Dundrum",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Anna Grainger",
+    "party": "Fine Gael",
+    "electoral_area": "Dundrum",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Sean McLoughlin",
+    "party": "Independent",
+    "electoral_area": "Dundrum",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Peter O'Brien",
+    "party": "Labour",
+    "electoral_area": "Dundrum",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Jim O'Leary",
+    "party": "Fine Gael",
+    "electoral_area": "Dundrum",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Melisa Halpin",
+    "party": "People Before Profit",
+    "electoral_area": "Dún Laoghaire",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Thomas Joseph",
+    "party": "Labour",
+    "electoral_area": "Dún Laoghaire",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Lorraine Hall",
+    "party": "Fine Gael",
+    "electoral_area": "Dún Laoghaire",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Mary Fayne",
+    "party": "Fine Gael",
+    "electoral_area": "Dún Laoghaire",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "JP Durkan",
+    "party": "Fine Gael",
+    "electoral_area": "Dún Laoghaire",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Tom Kivlehan",
+    "party": "Green Party",
+    "electoral_area": "Dún Laoghaire",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Justin Moylan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Dún Laoghaire",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Michael Fleming",
+    "party": "Independent",
+    "electoral_area": "Glencullen-Sandyford",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Lettie McCarthy",
+    "party": "Labour",
+    "electoral_area": "Glencullen-Sandyford",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Oisín O'Connor",
+    "party": "Green Party",
+    "electoral_area": "Glencullen-Sandyford",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Pierce Dargan",
+    "party": "Fine Gael",
+    "electoral_area": "Glencullen-Sandyford",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Kazi Ahmed",
+    "party": "Fine Gael",
+    "electoral_area": "Glencullen-Sandyford",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Tom Murphy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Glencullen-Sandyford",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Kevin Daly",
+    "party": "Independent",
+    "electoral_area": "Glencullen-Sandyford",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Jacqueline Burke",
+    "party": "Fine Gael",
+    "electoral_area": "Killiney-Shankill",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Jim Gildea",
+    "party": "Fine Gael",
+    "electoral_area": "Killiney-Shankill",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Hugh Lewis",
+    "party": "Independent",
+    "electoral_area": "Killiney-Shankill",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Frank McNamara",
+    "party": "Fine Gael",
+    "electoral_area": "Killiney-Shankill",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Dave O'Keeffe",
+    "party": "People Before Profit",
+    "electoral_area": "Killiney-Shankill",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Carrie Smyth",
+    "party": "Labour",
+    "electoral_area": "Killiney-Shankill",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Lauren Tuite",
+    "party": "Green Party",
+    "electoral_area": "Killiney-Shankill",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "John Kennedy",
+    "party": "Fine Gael",
+    "electoral_area": "Stillorgan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Eoin O'Driscoll",
+    "party": "Fine Gael",
+    "electoral_area": "Stillorgan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Barry Saul",
+    "party": "Fine Gael",
+    "electoral_area": "Stillorgan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "John Hurley",
+    "party": "Social Democrats",
+    "electoral_area": "Stillorgan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Eva Dowling",
+    "party": "Green Party",
+    "electoral_area": "Stillorgan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Liam Dockery",
+    "party": "Fianna Fáil",
+    "electoral_area": "Stillorgan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Dún Laoghaire–Rathdown County Council"
+  },
+  {
+    "name": "Gráinne Maguire",
+    "party": "Independent",
+    "electoral_area": "Balbriggan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Tony Murphy",
+    "party": "Independent",
+    "electoral_area": "Balbriggan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Tom O'Leary",
+    "party": "Fine Gael",
+    "electoral_area": "Balbriggan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Malachy Quinn",
+    "party": "Sinn Féin",
+    "electoral_area": "Balbriggan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Brendan Ryan",
+    "party": "Labour",
+    "electoral_area": "Balbriggan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "John Burtchaell",
+    "party": "People Before Profit–Solidarity",
+    "electoral_area": "Blanchardstown–Mulhuddart",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Breda Hanaphy",
+    "party": "Sinn Féin",
+    "electoral_area": "Blanchardstown–Mulhuddart",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Mary McCamley",
+    "party": "Labour",
+    "electoral_area": "Blanchardstown–Mulhuddart",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "JK Onwumereh",
+    "party": "Fianna Fáil",
+    "electoral_area": "Blanchardstown–Mulhuddart",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Patrick Quinlan",
+    "party": "National Party",
+    "electoral_area": "Blanchardstown–Mulhuddart",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Ted Leddy",
+    "party": "Fine Gael",
+    "electoral_area": "Castleknock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "John Walsh",
+    "party": "Labour",
+    "electoral_area": "Castleknock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Siobhan Shovlin",
+    "party": "Fine Gael",
+    "electoral_area": "Castleknock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Ellen Troy",
+    "party": "Aontú",
+    "electoral_area": "Castleknock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Ruth Coppinger",
+    "party": "People Before Profit-Solidarity",
+    "electoral_area": "Castleknock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Eimear Carbone-Mangan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Castleknock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Helen Redwood",
+    "party": "Solidarity",
+    "electoral_area": "Castleknock",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Joan Hopkins",
+    "party": "Social Democrats",
+    "electoral_area": "Howth–Malahide",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Brian Mc Donagh",
+    "party": "Labour",
+    "electoral_area": "Howth–Malahide",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "David Healy",
+    "party": "Green Party",
+    "electoral_area": "Howth–Malahide",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Aoibhinn Tormey",
+    "party": "Fine Gael",
+    "electoral_area": "Howth–Malahide",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Jimmy Guerin",
+    "party": "Independent",
+    "electoral_area": "Howth–Malahide",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Eoghan O'Brien",
+    "party": "Fianna Fáil",
+    "electoral_area": "Howth–Malahide",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Cathal Haughey",
+    "party": "Fianna Fáil",
+    "electoral_area": "Howth–Malahide",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Tania Doyle",
+    "party": "Independent",
+    "electoral_area": "Ongar",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Angela Donnelly",
+    "party": "Sinn Féin",
+    "electoral_area": "Ongar",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Gerard Sheehan",
+    "party": "Aontú",
+    "electoral_area": "Ongar",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Kieran Dennison",
+    "party": "Fine Gael",
+    "electoral_area": "Ongar",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Tom Kitt",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ongar",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Robert O'Donoghue",
+    "party": "Labour",
+    "electoral_area": "Rush–Lusk",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Corina Johnston",
+    "party": "Labour",
+    "electoral_area": "Rush–Lusk",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Eoghan Dockrell",
+    "party": "Fine Gael",
+    "electoral_area": "Rush–Lusk",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Paul Mulville",
+    "party": "Social Democrats",
+    "electoral_area": "Rush–Lusk",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Cathal Boland",
+    "party": "Independent",
+    "electoral_area": "Rush–Lusk",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Darragh Butler",
+    "party": "Fianna Fáil",
+    "electoral_area": "Swords",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Luke Corkery",
+    "party": "Fine Gael",
+    "electoral_area": "Swords",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "James Humphreys",
+    "party": "Labour",
+    "electoral_area": "Swords",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Dean Mulligan",
+    "party": "Independents 4 Change",
+    "electoral_area": "Swords",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Joe Newman",
+    "party": "Independent",
+    "electoral_area": "Swords",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Marian Buckley",
+    "party": "Sinn Féin",
+    "electoral_area": "Swords",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Darren Jack Kelly",
+    "party": "Independent",
+    "electoral_area": "Swords",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "John Smyth",
+    "party": "Sinn Féin",
+    "electoral_area": "Swords",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "Fingal County Council"
+  },
+  {
+    "name": "Darragh Adelaide",
+    "party": "People Before Profit/Solidarity",
+    "electoral_area": "Clondalkin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "William Carey",
+    "party": "Sinn Féin",
+    "electoral_area": "Clondalkin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Linda De Courcy",
+    "party": "Independent Ireland",
+    "electoral_area": "Clondalkin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Trevor Gilligan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Clondalkin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Eoin Ó Broin",
+    "party": "Social Democrats",
+    "electoral_area": "Clondalkin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Shirley O'Hara",
+    "party": "Fine Gael",
+    "electoral_area": "Clondalkin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Francis Timmons",
+    "party": "Independent",
+    "electoral_area": "Clondalkin",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Alan Edge",
+    "party": "Independent",
+    "electoral_area": "Firhouse–Bohernabreena",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Brian Lawlor",
+    "party": "Fine Gael",
+    "electoral_area": "Firhouse–Bohernabreena",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Emma Murphy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Firhouse–Bohernabreena",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Sarah Barnes",
+    "party": "Fine Gael",
+    "electoral_area": "Firhouse–Bohernabreena",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Róisín Mannion",
+    "party": "Sinn Féin",
+    "electoral_area": "Firhouse–Bohernabreena",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Paul Nicholas Gogarty",
+    "party": "Independent",
+    "electoral_area": "Lucan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Vicki Casserly",
+    "party": "Fine Gael",
+    "electoral_area": "Lucan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Liona O'Toole",
+    "party": "Independent",
+    "electoral_area": "Lucan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Caroline Brady",
+    "party": "Fine Gael",
+    "electoral_area": "Lucan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Joanna Tuffy",
+    "party": "Labour",
+    "electoral_area": "Lucan",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Shane Moynihan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Palmerstown–Fonthill",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Alan Hayes",
+    "party": "Independent",
+    "electoral_area": "Palmerstown–Fonthill",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Niamh Fennell",
+    "party": "Sinn Féin",
+    "electoral_area": "Palmerstown–Fonthill",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Glen Moore",
+    "party": "Irish Freedom Party",
+    "electoral_area": "Palmerstown–Fonthill",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Madeleine Johansson",
+    "party": "People Before Profit-Solidarity",
+    "electoral_area": "Palmerstown–Fonthill",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Pamela Kearns",
+    "party": "Labour",
+    "electoral_area": "Rathfarnham–Templeogue",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Ronan McMahon",
+    "party": "Independent",
+    "electoral_area": "Rathfarnham–Templeogue",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Ciarán Ahern",
+    "party": "Labour",
+    "electoral_area": "Rathfarnham–Templeogue",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Lyn McCrave",
+    "party": "Fine Gael",
+    "electoral_area": "Rathfarnham–Templeogue",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "David McManus",
+    "party": "Fine Gael",
+    "electoral_area": "Rathfarnham–Templeogue",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Yvonne Collins",
+    "party": "Fianna Fáil",
+    "electoral_area": "Rathfarnham–Templeogue",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Justin Sinnott",
+    "party": "Social Democrats",
+    "electoral_area": "Rathfarnham–Templeogue",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Mick Duff",
+    "party": "Independent",
+    "electoral_area": "Tallaght Central",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Britto Pereppadan",
+    "party": "Fine Gael",
+    "electoral_area": "Tallaght Central",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Teresa Costello",
+    "party": "Fianna Fáil",
+    "electoral_area": "Tallaght Central",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Jess Spear",
+    "party": "People Before Profit",
+    "electoral_area": "Tallaght Central",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Paddy Holohan",
+    "party": "Independent",
+    "electoral_area": "Tallaght Central",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Yan Mac Oireachtaigh",
+    "party": "The National Party",
+    "electoral_area": "Tallaght Central",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Patrick Pearse Holohan",
+    "party": "Independent",
+    "electoral_area": "Tallaght South",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Baby Pereppadan",
+    "party": "Fine Gael",
+    "electoral_area": "Tallaght South",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Dermot Richardson",
+    "party": "Independent",
+    "electoral_area": "Tallaght South",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Louise Dunne",
+    "party": "Sinn Féin",
+    "electoral_area": "Tallaght South",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Kay Keane",
+    "party": "People Before Profit - Solidarity",
+    "electoral_area": "Tallaght South",
+    "role": "Councillor",
+    "county": "Dublin",
+    "local_authority": "South Dublin County Council"
+  },
+  {
+    "name": "Tom Brabazon",
+    "party": "Fianna Fáil",
+    "constituency": "Dublin Bay North",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Barry Heneghan",
+    "party": "Independent",
+    "constituency": "Dublin Bay North",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Denise Mitchell",
+    "party": "Sinn Féin",
+    "constituency": "Dublin Bay North",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Naoise Ó Muirí",
+    "party": "Fine Gael",
+    "constituency": "Dublin Bay North",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Cian O'Callaghan",
+    "party": "Social Democrats",
+    "constituency": "Dublin Bay North",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Ivana Bacik",
+    "party": "Labour Party",
+    "constituency": "Dublin Bay South",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "James Geoghegan",
+    "party": "Fine Gael",
+    "constituency": "Dublin Bay South",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Eoin Hayes",
+    "party": "Social Democrats",
+    "constituency": "Dublin Bay South",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Jim O'Callaghan",
+    "party": "Fianna Fáil",
+    "constituency": "Dublin Bay South",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Paschal Donohoe",
+    "party": "Fine Gael",
+    "constituency": "Dublin Central",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Gary Gannon",
+    "party": "Social Democrats",
+    "constituency": "Dublin Central",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Mary Lou McDonald",
+    "party": "Sinn Féin",
+    "constituency": "Dublin Central",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Marie Sherlock",
+    "party": "Labour Party",
+    "constituency": "Dublin Central",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Ann Graves",
+    "party": "Sinn Féin",
+    "constituency": "Dublin Fingal East",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Darragh O'Brien",
+    "party": "Fianna Fáil",
+    "constituency": "Dublin Fingal East",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Duncan Smith",
+    "party": "Labour Party",
+    "constituency": "Dublin Fingal East",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Grace Boland",
+    "party": "Fine Gael",
+    "constituency": "Dublin Fingal West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Robert O'Donoghue",
+    "party": "Labour Party",
+    "constituency": "Dublin Fingal West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Louise O'Reilly",
+    "party": "Sinn Féin",
+    "constituency": "Dublin Fingal West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Paul Gogarty",
+    "party": "Independent",
+    "constituency": "Dublin Mid-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Emer Higgins",
+    "party": "Fine Gael",
+    "constituency": "Dublin Mid-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Shane Moynihan",
+    "party": "Fianna Fáil",
+    "constituency": "Dublin Mid-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Eoin Ó Broin",
+    "party": "Sinn Féin",
+    "constituency": "Dublin Mid-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Mark Ward",
+    "party": "Sinn Féin",
+    "constituency": "Dublin Mid-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Dessie Ellis",
+    "party": "Sinn Féin",
+    "constituency": "Dublin North-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Rory Hearne",
+    "party": "Social Democrats",
+    "constituency": "Dublin North-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Paul McAuliffe",
+    "party": "Fianna Fáil",
+    "constituency": "Dublin North-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Shay Brennan",
+    "party": "Fianna Fáil",
+    "constituency": "Dublin Rathdown",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Sinéad Gibney",
+    "party": "Social Democrats",
+    "constituency": "Dublin Rathdown",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Maeve O'Connell",
+    "party": "Fine Gael",
+    "constituency": "Dublin Rathdown",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Neale Richmond",
+    "party": "Fine Gael",
+    "constituency": "Dublin Rathdown",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Aengus Ó Snodaigh",
+    "party": "Sinn Féin",
+    "constituency": "Dublin South-Central",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Catherine Ardagh",
+    "party": "Fianna Fáil",
+    "constituency": "Dublin South-Central",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Jen Cummins",
+    "party": "Social Democrats",
+    "constituency": "Dublin South-Central",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Máire Devine",
+    "party": "Sinn Féin",
+    "constituency": "Dublin South-Central",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Ciarán Ahern",
+    "party": "Labour",
+    "constituency": "Dublin South-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Colm Brophy",
+    "party": "Fine Gael",
+    "constituency": "Dublin South-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Seán Crowe",
+    "party": "Sinn Féin",
+    "constituency": "Dublin South-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "John Lahart",
+    "party": "Fianna Fáil",
+    "constituency": "Dublin South-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Paul Murphy",
+    "party": "People Before Profit–Solidarity",
+    "constituency": "Dublin South-West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Jack Chambers",
+    "party": "Fianna Fáil",
+    "constituency": "Dublin West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Paul Donnelly",
+    "party": "Sinn Féin",
+    "constituency": "Dublin West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Emer Currie",
+    "party": "Fine Gael",
+    "constituency": "Dublin West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Ruth Coppinger",
+    "party": "People Before Profit-Solidarity",
+    "constituency": "Dublin West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Roderic O'Gorman",
+    "party": "Green Party",
+    "constituency": "Dublin West",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Richard Boyd Barrett",
+    "party": "People Before Profit-Solidarity",
+    "constituency": "Dún Laoghaire",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Jennifer Carroll MacNeill",
+    "party": "Fine Gael",
+    "constituency": "Dún Laoghaire",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Cormac Devlin",
+    "party": "Fianna Fáil",
+    "constituency": "Dún Laoghaire",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  },
+  {
+    "name": "Barry Ward",
+    "party": "Fine Gael",
+    "constituency": "Dún Laoghaire",
+    "role": "TD",
+    "county": "Dublin",
+    "local_authority": null
+  }
+]

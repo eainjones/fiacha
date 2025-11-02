@@ -1,0 +1,179 @@
+
+[
+  {
+    "name": "Liam Brennan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballymote–Tubbercurry",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Michael Clarke",
+    "party": "Non-Party/Independent",
+    "electoral_area": "Ballymote–Tubbercurry",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Barry Gallagher",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballymote–Tubbercurry",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Gerard Mullaney",
+    "party": "Fine Gael",
+    "electoral_area": "Ballymote–Tubbercurry",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Dara Mulvey",
+    "party": "Fine Gael",
+    "electoral_area": "Ballymote–Tubbercurry",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Joseph Queenan",
+    "party": "Independent",
+    "electoral_area": "Ballymote–Tubbercurry",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Paul Taylor",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballymote–Tubbercurry",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Marie Casserly",
+    "party": "Independent",
+    "electoral_area": "Sligo–Drumcliff",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Dónal Gilroy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Sligo–Drumcliff",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Thomas Healy",
+    "party": "Sinn Féin",
+    "electoral_area": "Sligo–Drumcliff",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Edel McSharry",
+    "party": "Fianna Fáil",
+    "electoral_area": "Sligo–Drumcliff",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Thomas Walsh",
+    "party": "Fine Gael",
+    "electoral_area": "Sligo–Drumcliff",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Fergal Nealon",
+    "party": "Fine Gael",
+    "electoral_area": "Sligo–Strandhill",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Declan Bree",
+    "party": "Independent",
+    "electoral_area": "Sligo–Strandhill",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Ann Higgins",
+    "party": "The Labour Party",
+    "electoral_area": "Sligo–Strandhill",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Arthur Gibbons",
+    "party": "Sinn Féin",
+    "electoral_area": "Sligo–Strandhill",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Tom MacSharry",
+    "party": "Fianna Fáil",
+    "electoral_area": "Sligo–Strandhill",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Gino O'Boyle",
+    "party": "People Before Profit",
+    "electoral_area": "Sligo–Strandhill",
+    "role": "Councillor",
+    "county": "Sligo",
+    "local_authority": "Sligo County Council"
+  },
+  {
+    "name": "Frank Feighan",
+    "party": "Fine Gael",
+    "constituency": "Sligo–Leitrim",
+    "role": "TD",
+    "county": "Sligo",
+    "local_authority": null
+  },
+  {
+    "name": "Marc MacSharry",
+    "party": "Fianna Fáil",
+    "constituency": "Sligo–Leitrim",
+    "role": "TD",
+    "county": "Sligo",
+    "local_authority": null
+  },
+  {
+    "name": "Martin Kenny",
+    "party": "Sinn Féin",
+    "constituency": "Sligo–Leitrim",
+    "role": "TD",
+    "county": "Sligo",
+    "local_authority": null
+  },
+  {
+    "name": "Marian Harkin",
+    "party": "Independent",
+    "constituency": "Sligo–Leitrim",
+    "role": "TD",
+    "county": "Sligo",
+    "local_authority": null
+  }
+]

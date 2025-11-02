@@ -1,0 +1,331 @@
+
+[
+  {
+    "name": "Aidan Browne",
+    "party": "Fianna Fáil",
+    "electoral_area": "Enniscorthy",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Cathal Byrne",
+    "party": "Fine Gael",
+    "electoral_area": "Enniscorthy",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Pat Kehoe",
+    "party": "Fine Gael",
+    "electoral_area": "Enniscorthy",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Barbara-Anne Murphy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Enniscorthy",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Kathleen Codd-Nolan",
+    "party": "Independent",
+    "electoral_area": "Enniscorthy",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "John O'Rourke",
+    "party": "Sinn Féin",
+    "electoral_area": "Enniscorthy",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Donal Kenny",
+    "party": "Fianna Fáil",
+    "electoral_area": "Gorey",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Nicky Boland",
+    "party": "Wexford Independent Alliance",
+    "electoral_area": "Gorey",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Darragh McDonald",
+    "party": "Fine Gael",
+    "electoral_area": "Gorey",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Joe Sullivan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Gorey",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Anthony Donohoe",
+    "party": "Fine Gael",
+    "electoral_area": "Gorey",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Fionntán Ó Súilleabháin",
+    "party": "Sinn Féin",
+    "electoral_area": "Gorey",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Mary Farrell",
+    "party": "Independent",
+    "electoral_area": "Kilmuckridge",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Pip Breen",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kilmuckridge",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Oliver Walsh",
+    "party": "Fine Gael",
+    "electoral_area": "Kilmuckridge",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Paddy Kavanagh",
+    "party": "Independent",
+    "electoral_area": "Kilmuckridge",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Pat Barden",
+    "party": "Wexford Independent Alliance",
+    "electoral_area": "New Ross",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Marty Murphy",
+    "party": "Wexford Independent Alliance",
+    "electoral_area": "New Ross",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Michael Sheehan",
+    "party": "Fianna Fáil",
+    "electoral_area": "New Ross",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Jimmy Fleming",
+    "party": "Fianna Fáil",
+    "electoral_area": "New Ross",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Bridín Murphy",
+    "party": "Fine Gael",
+    "electoral_area": "New Ross",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "John Fleming",
+    "party": "Fianna Fáil",
+    "electoral_area": "New Ross",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Jim Codd",
+    "party": "Aontú",
+    "electoral_area": "Rosslare",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Ger Carthy",
+    "party": "Independent",
+    "electoral_area": "Rosslare",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Lisa McDonald",
+    "party": "Fianna Fáil",
+    "electoral_area": "Rosslare",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Aoife Rose O'Brien",
+    "party": "Sinn Féin",
+    "electoral_area": "Rosslare",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Frank Staples",
+    "party": "Fine Gael",
+    "electoral_area": "Rosslare",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "George Lawlor",
+    "party": "Labour",
+    "electoral_area": "Wexford",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Robbie Staples",
+    "party": "Fine Gael",
+    "electoral_area": "Wexford",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Garry Laffan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Wexford",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Leonard Kelly",
+    "party": "Independent",
+    "electoral_area": "Wexford",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Tom Forde",
+    "party": "Sinn Féin",
+    "electoral_area": "Wexford",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Catherine 'Biddy' Walsh",
+    "party": "Labour",
+    "electoral_area": "Wexford",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "Raymond Shannon",
+    "party": "Wexford Independent Alliance",
+    "electoral_area": "Wexford",
+    "role": "Councillor",
+    "county": "Wexford",
+    "local_authority": "Wexford County Council"
+  },
+  {
+    "name": "James Browne",
+    "party": "Fianna Fáil",
+    "constituency": "Wexford",
+    "role": "TD",
+    "county": "Wexford",
+    "local_authority": null
+  },
+  {
+    "name": "George Lawlor",
+    "party": "Labour",
+    "constituency": "Wexford",
+    "role": "TD",
+    "county": "Wexford",
+    "local_authority": null
+  },
+  {
+    "name": "Verona Murphy",
+    "party": "Independent",
+    "constituency": "Wexford",
+    "role": "TD",
+    "county": "Wexford",
+    "local_authority": null
+  },
+  {
+    "name": "Johnny Mythen",
+    "party": "Sinn Féin",
+    "constituency": "Wexford",
+    "role": "TD",
+    "county": "Wexford",
+    "local_authority": null
+  },
+  {
+    "name": "Brian Brennan",
+    "party": "Fine Gael",
+    "constituency": "Wicklow-Wexford",
+    "role": "TD",
+    "county": "Wexford",
+    "local_authority": null
+  },
+  {
+    "name": "Malcolm Byrne",
+    "party": "Fianna Fáil",
+    "constituency": "Wicklow-Wexford",
+    "role": "TD",
+    "county": "Wexford",
+    "local_authority": null
+  },
+  {
+    "name": "Fionntán Ó Súilleabháin",
+    "party": "Sinn Féin",
+    "constituency": "Wicklow-Wexford",
+    "role": "TD",
+    "county": "Wexford",
+    "local_authority": null
+  }
+]

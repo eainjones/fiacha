@@ -26,20 +26,32 @@ Contact the project administrator to get:
 ## Current Data Coverage
 
 ### Complete Coverage (TDs + Councillors)
-- ✅ Dublin (69 total)
-- ✅ Cork (45 total)
-- ✅ Wexford (39 total)
-- ✅ Cavan (22 total)
-- ✅ Carlow (20 total)
-- ✅ Galway (17 total)
-
-### Needs Councillors (TDs Only)
-- ⚠️ Kildare, Meath, Limerick, Tipperary, Mayo, Louth, Wicklow, Kerry, Donegal
-- ⚠️ Sligo, Clare, Waterford, Roscommon, Kilkenny, Laois, Longford
-- ⚠️ Offaly, Westmeath, Monaghan
-
-### Needs Everything
-- ❌ Leitrim (no data)
+- ✅ Carlow
+- ✅ Cavan
+- ✅ Clare
+- ✅ Cork
+- ✅ Donegal
+- ✅ Dublin
+- ✅ Galway
+- ✅ Kerry
+- ✅ Kildare
+- ✅ Kilkenny
+- ✅ Laois
+- ✅ Leitrim
+- ✅ Limerick
+- ✅ Longford
+- ✅ Louth
+- ✅ Mayo
+- ✅ Meath
+- ✅ Monaghan
+- ✅ Offaly
+- ✅ Roscommon
+- ✅ Sligo
+- ✅ Tipperary
+- ✅ Waterford
+- ✅ Westmeath
+- ✅ Wexford
+- ✅ Wicklow
 
 ## Part 1: Adding Politicians
 

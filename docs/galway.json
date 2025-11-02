@@ -1,0 +1,547 @@
+
+[
+  {
+    "name": "Aisling Burke",
+    "party": "Sinn Féin",
+    "electoral_area": "Galway City East",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Shane Forde",
+    "party": "Fine Gael",
+    "electoral_area": "Galway City East",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Declan McDonnell",
+    "party": "Independent",
+    "electoral_area": "Galway City East",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Helen Uchechukwu Ogbu",
+    "party": "Labour",
+    "electoral_area": "Galway City East",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Terry O'Flaherty",
+    "party": "Independent",
+    "electoral_area": "Galway City East",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Alan Cheevers",
+    "party": "Fianna Fáil",
+    "electoral_area": "Galway City East",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Eibhlín Seoighthe",
+    "party": "Independent",
+    "electoral_area": "Galway City Central",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "John McDonagh",
+    "party": "Labour",
+    "electoral_area": "Galway City Central",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Mike Cubbard",
+    "party": "Independent",
+    "electoral_area": "Galway City Central",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Peter Keane",
+    "party": "Fianna Fáil",
+    "electoral_area": "Galway City Central",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Frank Fahy",
+    "party": "Fine Gael",
+    "electoral_area": "Galway City Central",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Josie Forde",
+    "party": "Fianna Fáil",
+    "electoral_area": "Galway City Central",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Eddie Hoare",
+    "party": "Fine Gael",
+    "electoral_area": "Galway City Central",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Alan Curran",
+    "party": "Social Democrats",
+    "electoral_area": "Galway City West",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Clodagh Higgins",
+    "party": "Fine Gael",
+    "electoral_area": "Galway City West",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Donal Lyons",
+    "party": "Independent",
+    "electoral_area": "Galway City West",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Níall McNelis",
+    "party": "Labour",
+    "electoral_area": "Galway City West",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Michael J. Crowe",
+    "party": "Fianna Fáil",
+    "electoral_area": "Galway City West",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway City Council"
+  },
+  {
+    "name": "Albert Dolan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Athenry–Oranmore",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Tomas Grealish",
+    "party": "Independent",
+    "electoral_area": "Athenry–Oranmore",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "David Collins",
+    "party": "Fine Gael",
+    "electoral_area": "Athenry–Oranmore",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "James Charity",
+    "party": "Independent",
+    "electoral_area": "Athenry–Oranmore",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Peter Feeney",
+    "party": "Fine Gael",
+    "electoral_area": "Athenry–Oranmore",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Cillian Keane",
+    "party": "Fianna Fáil",
+    "electoral_area": "Athenry–Oranmore",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Shelly Herterich Quinn",
+    "party": "Fianna Fáil",
+    "electoral_area": "Athenry–Oranmore",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Evelyn Parsons",
+    "party": "Independent",
+    "electoral_area": "Ballinasloe",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Donal Burke",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballinasloe",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Michael Connolly",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballinasloe",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Alan Harney",
+    "party": "Fine Gael",
+    "electoral_area": "Ballinasloe",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Dermot Connolly",
+    "party": "Sinn Féin",
+    "electoral_area": "Ballinasloe",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Peter Keaveney",
+    "party": "Fine Gael",
+    "electoral_area": "Ballinasloe",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Thomas Welby",
+    "party": "Independent",
+    "electoral_area": "Conamara North",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Eileen Mannion",
+    "party": "Fine Gael",
+    "electoral_area": "Conamara North",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Gerry King",
+    "party": "Fianna Fáil",
+    "electoral_area": "Conamara North",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Seamus Walsh",
+    "party": "Independent Ireland",
+    "electoral_area": "Conamara North",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Noel Thomas",
+    "party": "Independent Ireland",
+    "electoral_area": "Conamara South",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Pádraig Mac an Iomaire",
+    "party": "Fine Gael",
+    "electoral_area": "Conamara South",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Tomas Ó Curraoin",
+    "party": "Non party/Independent",
+    "electoral_area": "Conamara South",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Michael Leainde",
+    "party": "Independent Ireland",
+    "electoral_area": "Conamara South",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Máirtín Lee",
+    "party": "Fianna Fail",
+    "electoral_area": "Conamara South",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "P.J. Murphy",
+    "party": "Fine Gael",
+    "electoral_area": "Gort–Kinvara",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Martina Kinane",
+    "party": "Fianna Fáil",
+    "electoral_area": "Gort–Kinvara",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Geraldine Donohue",
+    "party": "Independent",
+    "electoral_area": "Gort–Kinvara",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Paul Killilea",
+    "party": "Fine Gael",
+    "electoral_area": "Gort–Kinvara",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Gerry Finnerty",
+    "party": "Fianna Fáil",
+    "electoral_area": "Gort–Kinvara",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Shane Curley",
+    "party": "Fianna Fáil",
+    "electoral_area": "Loughrea",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Jimmy McClearn",
+    "party": "Fine Gael",
+    "electoral_area": "Loughrea",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Declan Kelly",
+    "party": "Independent Ireland",
+    "electoral_area": "Loughrea",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Michael Moegie Maher",
+    "party": "Fine Gael",
+    "electoral_area": "Loughrea",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Ivan Canning",
+    "party": "Fianna Fáil",
+    "electoral_area": "Loughrea",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Andrew Reddington",
+    "party": "Fine Gael",
+    "electoral_area": "Tuam",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Pete Roche",
+    "party": "Fine Gael",
+    "electoral_area": "Tuam",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Mary Hoade",
+    "party": "Fianna Fáil",
+    "electoral_area": "Tuam",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Donagh Killilea",
+    "party": "Fianna Fáil",
+    "electoral_area": "Tuam",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Karey McHugh",
+    "party": "Non-party/Independent",
+    "electoral_area": "Tuam",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Joe Sheridan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Tuam",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Ollie Turner",
+    "party": "Fine Gael",
+    "electoral_area": "Tuam",
+    "role": "Councillor",
+    "county": "Galway",
+    "local_authority": "Galway County Council"
+  },
+  {
+    "name": "Seán Canney",
+    "party": "Independent",
+    "constituency": "Galway East",
+    "role": "TD",
+    "county": "Galway",
+    "local_authority": null
+  },
+  {
+    "name": "Albert Dolan",
+    "party": "Fianna Fáil",
+    "constituency": "Galway East",
+    "role": "TD",
+    "county": "Galway",
+    "local_authority": null
+  },
+  {
+    "name": "Louis O'Hara",
+    "party": "Sinn Féin",
+    "constituency": "Galway East",
+    "role": "TD",
+    "county": "Galway",
+    "local_authority": null
+  },
+  {
+    "name": "Peter Roche",
+    "party": "Fine Gael",
+    "constituency": "Galway East",
+    "role": "TD",
+    "county": "Galway",
+    "local_authority": null
+  },
+  {
+    "name": "John Connolly",
+    "party": "Fianna Fáil",
+    "constituency": "Galway West",
+    "role": "TD",
+    "county": "Galway",
+    "local_authority": null
+  },
+  {
+    "name": "Mairéad Farrell",
+    "party": "Sinn Féin",
+    "constituency": "Galway West",
+    "role": "TD",
+    "county": "Galway",
+    "local_authority": null
+  },
+  {
+    "name": "Noel Grealish",
+    "party": "Independent",
+    "constituency": "Galway West",
+    "role": "TD",
+    "county": "Galway",
+    "local_authority": null
+  },
+  {
+    "name": "Hildegarde Naughton",
+    "party": "Fine Gael",
+    "constituency": "Galway West",
+    "role": "TD",
+    "county": "Galway",
+    "local_authority": null
+  },
+  {
+    "name": "Martin Daly",
+    "party": "Fianna Fáil",
+    "constituency": "Roscommon-Galway",
+    "role": "TD",
+    "county": "Galway",
+    "local_authority": null
+  },
+  {
+    "name": "Michael Fitzmaurice",
+    "party": "Independent Ireland",
+    "constituency": "Roscommon-Galway",
+    "role": "TD",
+    "county": "Galway",
+    "local_authority": null
+  },
+  {
+    "name": "Claire Kerrane",
+    "party": "Sinn Féin",
+    "constituency": "Roscommon-Galway",
+    "role": "TD",
+    "county": "Galway",
+    "local_authority": null
+  }
+]

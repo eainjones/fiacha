@@ -1,0 +1,283 @@
+
+[
+  {
+    "name": "Mark Duffy",
+    "party": "Independent",
+    "electoral_area": "Ballina",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "John O'Hara",
+    "party": "Fine Gael",
+    "electoral_area": "Ballina",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Annie May Reape",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballina",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Michael Loftus",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballina",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Jarlath Munnelly",
+    "party": "Fine Gael",
+    "electoral_area": "Ballina",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Joe Faughnan",
+    "party": "Independent",
+    "electoral_area": "Ballina",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Paul McNamara",
+    "party": "Fianna Fáil",
+    "electoral_area": "Belmullet",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Sean Carey",
+    "party": "Fianna Fáil",
+    "electoral_area": "Belmullet",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Gerry Coyle",
+    "party": "Fine Gael",
+    "electoral_area": "Belmullet",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Ger Deere",
+    "party": "Fine Gael",
+    "electoral_area": "Castlebar",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Donna Sheridan",
+    "party": "Fine Gael",
+    "electoral_area": "Castlebar",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Cyril Burke",
+    "party": "Fine Gael",
+    "electoral_area": "Castlebar",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Blackie Gavin",
+    "party": "Fianna Fáil",
+    "electoral_area": "Castlebar",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Al McDonnell",
+    "party": "Fianna Fáil",
+    "electoral_area": "Castlebar",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Michael Kilcoyne",
+    "party": "Independent",
+    "electoral_area": "Castlebar",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Harry Barrett",
+    "party": "Independent",
+    "electoral_area": "Castlebar",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Patsy O'Brien",
+    "party": "Independent",
+    "electoral_area": "Claremorris",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Richard Finn",
+    "party": "Independent",
+    "electoral_area": "Claremorris",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Damien Ryan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Claremorris",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Alma Gallagher",
+    "party": "Fine Gael",
+    "electoral_area": "Claremorris",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Michael Burke",
+    "party": "Fine Gael",
+    "electoral_area": "Claremorris",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Paul Lawless",
+    "party": "Aontú",
+    "electoral_area": "Claremorris",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "John Caulfield",
+    "party": "Fianna Fáil",
+    "electoral_area": "Swinford",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Adrian Forkan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Swinford",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Gerry Murray",
+    "party": "Sinn Féin",
+    "electoral_area": "Swinford",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Neil Cruise",
+    "party": "Fine Gael",
+    "electoral_area": "Swinford",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Brendan Mulroy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Westport",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "John O'Malley",
+    "party": "Independent",
+    "electoral_area": "Westport",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Peter Flynn",
+    "party": "Fine Gael",
+    "electoral_area": "Westport",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Chris Maxwell",
+    "party": "Independent Ireland",
+    "electoral_area": "Westport",
+    "role": "Councillor",
+    "county": "Mayo",
+    "local_authority": "Mayo County Council"
+  },
+  {
+    "name": "Dara Calleary",
+    "party": "Fianna Fáil",
+    "constituency": "Mayo",
+    "role": "TD",
+    "county": "Mayo",
+    "local_authority": null
+  },
+  {
+    "name": "Rose Conway-Walsh",
+    "party": "Sinn Féin",
+    "constituency": "Mayo",
+    "role": "TD",
+    "county": "Mayo",
+    "local_authority": null
+  },
+  {
+    "name": "Alan Dillon",
+    "party": "Fine Gael",
+    "constituency": "Mayo",
+    "role": "TD",
+    "county": "Mayo",
+    "local_authority": null
+  },
+  {
+    "name": "Keira Keogh",
+    "party": "Fine Gael",
+    "constituency": "Mayo",
+    "role": "TD",
+    "county": "Mayo",
+    "local_authority": null
+  },
+  {
+    "name": "Paul Lawless",
+    "party": "Aontú",
+    "constituency": "Mayo",
+    "role": "TD",
+    "county": "Mayo",
+    "local_authority": null
+  }
+]

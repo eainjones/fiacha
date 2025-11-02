@@ -1,0 +1,187 @@
+
+[
+  {
+    "name": "Séamus Coyle",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballybay–Clones",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Sean Gilliland",
+    "party": "Fine Gael",
+    "electoral_area": "Ballybay–Clones",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Pat Treanor",
+    "party": "Sinn Féin",
+    "electoral_area": "Ballybay–Clones",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Richard Truell",
+    "party": "Fine Gael",
+    "electoral_area": "Ballybay–Clones",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Sinéad Flynn",
+    "party": "Sinn Féin",
+    "electoral_area": "Ballybay–Clones",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Aidan Campbell",
+    "party": "Fine Gael",
+    "electoral_area": "Carrickmacross–Castleblayney",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Colm Carthy",
+    "party": "Sinn Féin",
+    "electoral_area": "Carrickmacross–Castleblayney",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Noel Keelan",
+    "party": "Sinn Féin",
+    "electoral_area": "Carrickmacross–Castleblayney",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "P.J. O'Hanlon",
+    "party": "Fianna Fáil",
+    "electoral_area": "Carrickmacross–Castleblayney",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Peter Conlon",
+    "party": "Fine Gael",
+    "electoral_area": "Carrickmacross–Castleblayney",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Paul Gibbons",
+    "party": "Sinn Féin",
+    "electoral_area": "Carrickmacross–Castleblayney",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Seán Conlon",
+    "party": "Sinn Féin",
+    "electoral_area": "Monaghan",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Pauric Clerkin",
+    "party": "Fine Gael",
+    "electoral_area": "Monaghan",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "David Maxwell",
+    "party": "Fine Gael",
+    "electoral_area": "Monaghan",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Bronagh McAree",
+    "party": "Sinn Féin",
+    "electoral_area": "Monaghan",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Cathy Bennett",
+    "party": "Sinn Féin",
+    "electoral_area": "Monaghan",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Raymond Aughey",
+    "party": "Fianna Fáil",
+    "electoral_area": "Monaghan",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Seamus Treanor",
+    "party": "Independent",
+    "electoral_area": "Monaghan",
+    "role": "Councillor",
+    "county": "Monaghan",
+    "local_authority": "Monaghan County Council"
+  },
+  {
+    "name": "Brendan Smith",
+    "party": "Fianna Fáil",
+    "constituency": "Cavan–Monaghan",
+    "role": "TD",
+    "county": "Monaghan",
+    "local_authority": null
+  },
+  {
+    "name": "Matt Carthy",
+    "party": "Sinn Féin",
+    "constituency": "Cavan–Monaghan",
+    "role": "TD",
+    "county": "Monaghan",
+    "local_authority": null
+  },
+  {
+    "name": "Niamh Smyth",
+    "party": "Fianna Fáil",
+    "constituency": "Cavan–Monaghan",
+    "role": "TD",
+    "county": "Monaghan",
+    "local_authority": null
+  },
+  {
+    "name": "Robbie Gallagher",
+    "party": "Fianna Fáil",
+    "constituency": "Cavan–Monaghan",
+    "role": "TD",
+    "county": "Monaghan",
+    "local_authority": null
+  },
+  {
+    "name": "Heather Humphreys",
+    "party": "Fine Gael",
+    "constituency": "Cavan–Monaghan",
+    "role": "TD",
+    "county": "Monaghan",
+    "local_authority": null
+  }
+]

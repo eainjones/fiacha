@@ -1,0 +1,379 @@
+
+[
+  {
+    "name": "Joe Bonner",
+    "party": "Independent",
+    "electoral_area": "Ashbourne",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Amanda Smith",
+    "party": "Independent",
+    "electoral_area": "Ashbourne",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Alan Tobin",
+    "party": "Fine Gael",
+    "electoral_area": "Ashbourne",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Suzanne Jamal",
+    "party": "Fine Gael",
+    "electoral_area": "Ashbourne",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Conor Tormey",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ashbourne",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Helen Meyer",
+    "party": "Sinn Féin",
+    "electoral_area": "Ashbourne",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Sean Drew",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kells",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Eugene Cassidy",
+    "party": "Fine Gael",
+    "electoral_area": "Kells",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Mike Bray",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kells",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Peter Caffrey",
+    "party": "Sinn Féin",
+    "electoral_area": "Kells",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Michael Gallagher",
+    "party": "Sinn Féin",
+    "electoral_area": "Kells",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "David Gilroy",
+    "party": "Non-Party/Independent",
+    "electoral_area": "Kells",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Sarah Reilly",
+    "party": "Fine Gael",
+    "electoral_area": "Kells",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Sharon Tolan",
+    "party": "Fine Gael",
+    "electoral_area": "Laytown–Bettystown",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Maria White",
+    "party": "Sinn Féin",
+    "electoral_area": "Laytown–Bettystown",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Wayne Harding",
+    "party": "Fianna Fáil",
+    "electoral_area": "Laytown–Bettystown",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Geraldine Keogan",
+    "party": "Non-Party/Independent",
+    "electoral_area": "Laytown–Bettystown",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Carol Lennon",
+    "party": "Non-Party/Independent",
+    "electoral_area": "Laytown–Bettystown",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Stephen McKee",
+    "party": "Fianna Fáil",
+    "electoral_area": "Laytown–Bettystown",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Paddy Meade",
+    "party": "Fine Gael",
+    "electoral_area": "Laytown–Bettystown",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Padraig Fitzsimons",
+    "party": "Fianna Fáil",
+    "electoral_area": "Navan",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Francis Deane",
+    "party": "Non-Party",
+    "electoral_area": "Navan",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Yemi Adenuga",
+    "party": "Fine Gael",
+    "electoral_area": "Navan",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "John Duffy",
+    "party": "Fine Gael",
+    "electoral_area": "Navan",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Edward Fennessy",
+    "party": "Sinn Féin",
+    "electoral_area": "Navan",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Alan Lawes",
+    "party": "Non-Party",
+    "electoral_area": "Navan",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Emer Tóibín",
+    "party": "Aontú",
+    "electoral_area": "Navan",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Gillian Toole",
+    "party": "Independent",
+    "electoral_area": "Ratoath",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Mariah Murphy",
+    "party": "Fine Gael",
+    "electoral_area": "Ratoath",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Caroline O'Reilly",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ratoath",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Brian Fitzgerald",
+    "party": "Independent",
+    "electoral_area": "Ratoath",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Nick Killian",
+    "party": "Independent",
+    "electoral_area": "Ratoath",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Gerry O'Connor",
+    "party": "Fine Gael",
+    "electoral_area": "Ratoath",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Fionnan Blake",
+    "party": "Sinn Féin",
+    "electoral_area": "Ratoath",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Noel French",
+    "party": "Non-Party/Independent",
+    "electoral_area": "Trim",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Joe Fox",
+    "party": "Fine Gael",
+    "electoral_area": "Trim",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Aisling Dempsey",
+    "party": "Fianna Fáil",
+    "electoral_area": "Trim",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Ronan Moore",
+    "party": "Social Democrats",
+    "electoral_area": "Trim",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Dave Boyne",
+    "party": "Aontú",
+    "electoral_area": "Trim",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Padraig Coffey",
+    "party": "Fianna Fáil",
+    "electoral_area": "Trim",
+    "role": "Councillor",
+    "county": "Meath",
+    "local_authority": "Meath County Council"
+  },
+  {
+    "name": "Thomas Byrne",
+    "party": "Fianna Fáil",
+    "constituency": "Meath East",
+    "role": "TD",
+    "county": "Meath",
+    "local_authority": null
+  },
+  {
+    "name": "Helen McEntee",
+    "party": "Fine Gael",
+    "constituency": "Meath East",
+    "role": "TD",
+    "county": "Meath",
+    "local_authority": null
+  },
+  {
+    "name": "Darren O'Rourke",
+    "party": "Sinn Féin",
+    "constituency": "Meath East",
+    "role": "TD",
+    "county": "Meath",
+    "local_authority": null
+  },
+  {
+    "name": "Gillian Toole",
+    "party": "Independent",
+    "constituency": "Meath East",
+    "role": "TD",
+    "county": "Meath",
+    "local_authority": null
+  },
+  {
+    "name": "Aisling Dempsey",
+    "party": "Fianna Fáil",
+    "constituency": "Meath West",
+    "role": "TD",
+    "county": "Meath",
+    "local_authority": null
+  },
+  {
+    "name": "Johnny Guirke",
+    "party": "Sinn Féin",
+    "constituency": "Meath West",
+    "role": "TD",
+    "county": "Meath",
+    "local_authority": null
+  },
+  {
+    "name": "Peadar Tóibín",
+    "party": "Aontú",
+    "constituency": "Meath West",
+    "role": "TD",
+    "county": "Meath",
+    "local_authority": null
+  }
+]

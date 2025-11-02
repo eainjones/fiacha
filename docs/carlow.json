@@ -1,0 +1,186 @@
+[
+  {
+    "name": "Andrea Dalton",
+    "party": "Fianna Fáil",
+    "electoral_area": "Municipal District of Carlow",
+    "role": "Councillor",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Fintan Phelan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Municipal District of Carlow",
+    "role": "Councillor",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Thomas Kinsella",
+    "party": "Fine Gael",
+    "electoral_area": "Municipal District of Muinebheag",
+    "role": "Councillor",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "John Pender",
+    "party": "Fianna Fáil",
+    "electoral_area": "Municipal District of Tullow",
+    "role": "Cathaoirleach- Tullow",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Fergal Browne",
+    "party": "Fine Gael",
+    "electoral_area": "Municipal District of Carlow",
+    "role": "Deputy Mayor of Carlow",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "John Cassin",
+    "party": "Independent Ireland",
+    "electoral_area": "Municipal District of Carlow",
+    "role": "Councillor",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Michael Doran",
+    "party": "Fine Gael",
+    "electoral_area": "Municipal District of Muinebheag",
+    "role": "Leas Cathaoirleach- Muinebheag",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Andy Gladney",
+    "party": "Sinn Féin",
+    "electoral_area": "Municipal District of Muinebheag",
+    "role": "Councillor",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Ken Murnane",
+    "party": "Fianna Fáil",
+    "electoral_area": "Municipal District of Carlow",
+    "role": "Cathaoirleach",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Charlie Murphy",
+    "party": "Independent",
+    "electoral_area": "Municipal District of Tullow",
+    "role": "Councillor",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Brian O’Donoghue",
+    "party": "Fine Gael",
+    "electoral_area": "Municipal District of Tullow",
+    "role": "Leas Cathaoirleach- Tullow",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Will Paton",
+    "party": "Independent",
+    "electoral_area": "Municipal District of Tullow",
+    "role": "Councillor",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Willie Quinn",
+    "party": "Labour",
+    "electoral_area": "Municipal District of Muinebheag",
+    "role": "Councillor",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Jim Deane",
+    "party": "Sinn Féin",
+    "electoral_area": "Municipal District of Tullow",
+    "role": "Councillor",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Paul Doogue",
+    "party": "Fine Gael",
+    "electoral_area": "Municipal District of Carlow",
+    "role": "Mayor of Carlow",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Daniel Pender",
+    "party": "Fianna Fáil",
+    "electoral_area": "Municipal District of Muinebheag",
+    "role": "Cathaoirleach- Muinebheag",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Adrienne Wallace",
+    "party": "People Before Profit–Solidarity",
+    "electoral_area": "Municipal District of Carlow",
+    "role": "Councillor",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Ben Ward",
+    "party": "Fine Gael",
+    "electoral_area": "Municipal District of Tullow",
+    "role": "Councillor",
+    "county": "Carlow",
+    "local_authority": "Carlow County Council"
+  },
+  {
+    "name": "Catherine Callaghan",
+    "party": "Fine Gael",
+    "constituency": "Carlow-Kilkenny",
+    "role": "TD",
+    "county": "Carlow",
+    "local_authority": null
+  },
+  {
+    "name": "Peter \"Chap\" Cleere",
+    "party": "Fianna Fáil",
+    "constituency": "Carlow-Kilkenny",
+    "role": "TD",
+    "county": "Carlow",
+    "local_authority": null
+  },
+  {
+    "name": "John McGuinness",
+    "party": "Fianna Fáil",
+    "constituency": "Carlow-Kilkenny",
+    "role": "TD",
+    "county": "Carlow",
+    "local_authority": null
+  },
+  {
+    "name": "Jennifer Murnane O'Connor",
+    "party": "Fianna Fáil",
+    "constituency": "Carlow-Kilkenny",
+    "role": "TD",
+    "county": "Carlow",
+    "local_authority": null
+  },
+  {
+    "name": "Natasha Newsome Drennan",
+    "party": "Sinn Féin",
+    "constituency": "Carlow-Kilkenny",
+    "role": "TD",
+    "county": "Carlow",
+    "local_authority": null
+  }
+]

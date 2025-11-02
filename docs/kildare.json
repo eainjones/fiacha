@@ -1,0 +1,395 @@
+
+[
+  {
+    "name": "Aoife Breslin",
+    "party": "Labour",
+    "electoral_area": "Athy",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Ivan Keatley",
+    "party": "Fine Gael",
+    "electoral_area": "Athy",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Mark Leigh",
+    "party": "Labour",
+    "electoral_area": "Athy",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Brian Dooley",
+    "party": "Fianna Fáil",
+    "electoral_area": "Athy",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Veralouise Behan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Athy",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "David Trost",
+    "party": "Fianna Fáil",
+    "electoral_area": "Celbridge",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Claire O'Rourke",
+    "party": "Social Democrats",
+    "electoral_area": "Celbridge",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Lumi Panaite Fahey",
+    "party": "Fine Gael",
+    "electoral_area": "Celbridge",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Rupert Heather",
+    "party": "Labour",
+    "electoral_area": "Celbridge",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Brendan Wyse",
+    "party": "Fine Gael",
+    "electoral_area": "Clane",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Pádraig McEvoy",
+    "party": "Independent",
+    "electoral_area": "Clane",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Aidan Farrelly",
+    "party": "Social Democrats",
+    "electoral_area": "Clane",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "William Durkan",
+    "party": "Fine Gael",
+    "electoral_area": "Clane",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Daragh Fitzpatrick",
+    "party": "Fianna Fáil",
+    "electoral_area": "Clane",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Suzanne Doyle",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kildare",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Kevin Duffy",
+    "party": "Fine Gael",
+    "electoral_area": "Kildare",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Pat Balfe",
+    "party": "Social Democrats",
+    "electoral_area": "Kildare",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Shónagh Ní Raghallaigh",
+    "party": "Sinn Féin",
+    "electoral_area": "Kildare",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Mark Stafford",
+    "party": "Fine Gael",
+    "electoral_area": "Kildare",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Joe Neville",
+    "party": "Fine Gael",
+    "electoral_area": "Leixlip",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Nuala Killeen",
+    "party": "Social Democrats",
+    "electoral_area": "Leixlip",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Bernard Caldwell",
+    "party": "Fianna Fáil",
+    "electoral_area": "Leixlip",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Naoise Ó Cearúil",
+    "party": "Fianna Fáil",
+    "electoral_area": "Maynooth",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Tim Durkan",
+    "party": "Fine Gael",
+    "electoral_area": "Maynooth",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Peter Melrose",
+    "party": "Social Democrats",
+    "electoral_area": "Maynooth",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Angela Feeney",
+    "party": "Labour",
+    "electoral_area": "Maynooth",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Paul Ward",
+    "party": "Fianna Fáil",
+    "electoral_area": "Maynooth",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Bill Clear",
+    "party": "Social Democrats",
+    "electoral_area": "Naas",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Fintan Brett",
+    "party": "Fine Gael",
+    "electoral_area": "Naas",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Evie Sammon",
+    "party": "Fine Gael",
+    "electoral_area": "Naas",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Anne Breen",
+    "party": "Labour",
+    "electoral_area": "Naas",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Seamie Moore",
+    "party": "Non-Party",
+    "electoral_area": "Naas",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Carmel Kelly",
+    "party": "Fianna Fáil",
+    "electoral_area": "Naas",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Ger Dunne",
+    "party": "Independent Ireland",
+    "electoral_area": "Naas",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Tracey O'Dwyer",
+    "party": "Fine Gael",
+    "electoral_area": "Newbridge",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Peggy O'Dwyer",
+    "party": "Fine Gael",
+    "electoral_area": "Newbridge",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Chris Pender",
+    "party": "Social Democrats",
+    "electoral_area": "Newbridge",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Noel Heavey",
+    "party": "Fianna Fáil",
+    "electoral_area": "Newbridge",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Rob Power",
+    "party": "Fianna Fáil",
+    "electoral_area": "Newbridge",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Tom McDonnell",
+    "party": "Labour",
+    "electoral_area": "Newbridge",
+    "role": "Councillor",
+    "county": "Kildare",
+    "local_authority": "Kildare County Council"
+  },
+  {
+    "name": "Réada Cronin",
+    "party": "Sinn Féin",
+    "constituency": "Kildare North",
+    "role": "TD",
+    "county": "Kildare",
+    "local_authority": null
+  },
+  {
+    "name": "Aidan Farrelly",
+    "party": "Social Democrats",
+    "constituency": "Kildare North",
+    "role": "TD",
+    "county": "Kildare",
+    "local_authority": null
+  },
+  {
+    "name": "James Lawless",
+    "party": "Fianna Fáil",
+    "constituency": "Kildare North",
+    "role": "TD",
+    "county": "Kildare",
+    "local_authority": null
+  },
+  {
+    "name": "Joe Neville",
+    "party": "Fine Gael",
+    "constituency": "Kildare North",
+    "role": "TD",
+    "county": "Kildare",
+    "local_authority": null
+  },
+  {
+    "name": "Naoise Ó Cearúil",
+    "party": "Fianna Fáil",
+    "constituency": "Kildare North",
+    "role": "TD",
+    "county": "Kildare",
+    "local_authority": null
+  },
+  {
+    "name": "Martin Heydon",
+    "party": "Fine Gael",
+    "constituency": "Kildare South",
+    "role": "TD",
+    "county": "Kildare",
+    "local_authority": null
+  },
+  {
+    "name": "Shónagh Ní Raghallaigh",
+    "party": "Sinn Féin",
+    "constituency": "Kildare South",
+    "role": "TD",
+    "county": "Kildare",
+    "local_authority": null
+  },
+  {
+    "name": "Seán Ó Fearghaíl",
+    "party": "Fianna Fáil",
+    "constituency": "Kildare South",
+    "role": "TD",
+    "county": "Kildare",
+    "local_authority": null
+  },
+  {
+    "name": "Mark Wall",
+    "party": "Labour Party",
+    "constituency": "Kildare South",
+    "role": "TD",
+    "county": "Kildare",
+    "local_authority": null
+  }
+]

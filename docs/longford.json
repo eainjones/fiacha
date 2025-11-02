@@ -1,0 +1,187 @@
+
+[
+  {
+    "name": "Paul Ross",
+    "party": "Fine Gael",
+    "electoral_area": "Ballymahon",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Mick Cahill",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballymahon",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Pat O'Toole",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballymahon",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Mark Casey",
+    "party": "Independent",
+    "electoral_area": "Ballymahon",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Sean Mimnagh",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballymahon",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Martin Skelly",
+    "party": "Fine Gael",
+    "electoral_area": "Ballymahon",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Garry Murtagh",
+    "party": "Fine Gael",
+    "electoral_area": "Granard",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Paraic Brady",
+    "party": "Fine Gael",
+    "electoral_area": "Granard",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Turlough McGovern",
+    "party": "Independent",
+    "electoral_area": "Granard",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "David Cassidy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Granard",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Padraig McNamara",
+    "party": "Fine Gael",
+    "electoral_area": "Granard",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Gerry Hagan",
+    "party": "Fine Gael",
+    "electoral_area": "Longford",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Martin Monaghan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Longford",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Seamus Butler",
+    "party": "Fianna Fáil",
+    "electoral_area": "Longford",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Peggy Nolan",
+    "party": "Fine Gael",
+    "electoral_area": "Longford",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Niall Gannon",
+    "party": "Fine Gael",
+    "electoral_area": "Longford",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Kevin Hussey",
+    "party": "Fianna Fáil",
+    "electoral_area": "Longford",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Uruemu Adejinmi",
+    "party": "Fianna Fáil",
+    "electoral_area": "Longford",
+    "role": "Councillor",
+    "county": "Longford",
+    "local_authority": "Longford County Council"
+  },
+  {
+    "name": "Peter Burke",
+    "party": "Fine Gael",
+    "constituency": "Longford–Westmeath",
+    "role": "TD",
+    "county": "Longford",
+    "local_authority": null
+  },
+  {
+    "name": "Micheál Carrigy",
+    "party": "Fine Gael",
+    "constituency": "Longford–Westmeath",
+    "role": "TD",
+    "county": "Longford",
+    "local_authority": null
+  },
+  {
+    "name": "Sorca Clarke",
+    "party": "Sinn Féin",
+    "constituency": "Longford–Westmeath",
+    "role": "TD",
+    "county": "Longford",
+    "local_authority": null
+  },
+  {
+    "name": "Kevin \"Boxer\" Moran",
+    "party": "Independent",
+    "constituency": "Longford–Westmeath",
+    "role": "TD",
+    "county": "Longford",
+    "local_authority": null
+  },
+  {
+    "name": "Robert Troy",
+    "party": "Fianna Fáil",
+    "constituency": "Longford–Westmeath",
+    "role": "TD",
+    "county": "Longford",
+    "local_authority": null
+  }
+]

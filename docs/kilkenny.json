@@ -1,0 +1,234 @@
+[
+  {
+    "name": "Peter 'Chap' Cleere",
+    "party": "Fianna Fáil",
+    "electoral_area": "Callan-Thomastown",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Joe Sheridan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Callan-Thomastown",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Joe Lyons",
+    "party": "Fine Gael",
+    "electoral_area": "Callan-Thomastown",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Deirdre Cullen",
+    "party": "Fianna Fáil",
+    "electoral_area": "Callan-Thomastown",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Michael Doyle",
+    "party": "Fine Gael",
+    "electoral_area": "Callan-Thomastown",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Stephanie Doheny",
+    "party": "Sinn Féin",
+    "electoral_area": "Callan-Thomastown",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Pat Fitzpatrick",
+    "party": "Fianna Fáil",
+    "electoral_area": "Castlecomer",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Mary Hilda Cavanagh",
+    "party": "Fine Gael",
+    "electoral_area": "Castlecomer",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Michael McCarthy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Castlecomer",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "John Brennan",
+    "party": "Fine Gael",
+    "electoral_area": "Castlecomer",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Maurice Shortall",
+    "party": "Non-Party",
+    "electoral_area": "Castlecomer",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Michael Delaney",
+    "party": "Fianna Fáil",
+    "electoral_area": "Castlecomer",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Andrew McGuinness",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kilkenny",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "David Fitzgerald",
+    "party": "Fine Gael",
+    "electoral_area": "Kilkenny",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Eugene McGuinness",
+    "party": "Independent",
+    "electoral_area": "Kilkenny",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Joe Malone",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kilkenny",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Seán Ó hArgáin",
+    "party": "Labour",
+    "electoral_area": "Kilkenny",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "John Coonan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kilkenny",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Maria Dollard",
+    "party": "Green Party",
+    "electoral_area": "Kilkenny",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Patrick Dunphy",
+    "party": "Fine Gael",
+    "electoral_area": "Piltown",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Tomás Breathnach",
+    "party": "The Labour Party",
+    "electoral_area": "Piltown",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Fidelis Doherty",
+    "party": "Fine Gael",
+    "electoral_area": "Piltown",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Ger Frisby",
+    "party": "Fianna Fáil",
+    "electoral_area": "Piltown",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Jenny Catt Slattery",
+    "party": "Fianna Fáil",
+    "electoral_area": "Piltown",
+    "role": "Councillor",
+    "county": "Kilkenny",
+    "local_authority": "Kilkenny County Council"
+  },
+  {
+    "name": "Catherine Callaghan",
+    "party": "Fine Gael",
+    "constituency": "Carlow–Kilkenny",
+    "role": "TD",
+    "county": "Kilkenny",
+    "local_authority": null
+  },
+  {
+    "name": "Peter \"Chap\" Cleere",
+    "party": "Fianna Fáil",
+    "constituency": "Carlow–Kilkenny",
+    "role": "TD",
+    "county": "Kilkenny",
+    "local_authority": null
+  },
+  {
+    "name": "John McGuinness",
+    "party": "Fianna Fáil",
+    "constituency": "Carlow–Kilkenny",
+    "role": "TD",
+    "county": "Kilkenny",
+    "local_authority": null
+  },
+  {
+    "name": "Jennifer Murnane O'Connor",
+    "party": "Fianna Fáil",
+    "constituency": "Carlow–Kilkenny",
+    "role": "TD",
+    "county": "Kilkenny",
+    "local_authority": null
+  },
+  {
+    "name": "Natasha Newsome Drennan",
+    "party": "Sinn Féin",
+    "constituency": "Carlow–Kilkenny",
+    "role": "TD",
+    "county": "Kilkenny",
+    "local_authority": null
+  }
+]

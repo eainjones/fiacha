@@ -1,0 +1,315 @@
+
+[
+  {
+    "name": "Pat Kennedy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Arklow",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Peir Leonard",
+    "party": "Independent",
+    "electoral_area": "Arklow",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Sylvester Bourke",
+    "party": "Fine Gael",
+    "electoral_area": "Arklow",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Pat Fitzgerald",
+    "party": "Fianna Fáil",
+    "electoral_area": "Arklow",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Miriam Murphy",
+    "party": "Independent",
+    "electoral_area": "Arklow",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Warren O'Toole",
+    "party": "Sinn Féin",
+    "electoral_area": "Arklow",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Gerry O'Neill",
+    "party": "Independent",
+    "electoral_area": "Baltinglass",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Edward Timmins",
+    "party": "Fine Gael",
+    "electoral_area": "Baltinglass",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Vincent Blake",
+    "party": "Fine Gael",
+    "electoral_area": "Baltinglass",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Avril Cronin",
+    "party": "Fine Gael",
+    "electoral_area": "Baltinglass",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Patsy Glennon",
+    "party": "Fianna Fáil",
+    "electoral_area": "Baltinglass",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Jason Mulhall",
+    "party": "Independent",
+    "electoral_area": "Baltinglass",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Malachi Duddy",
+    "party": "Independent",
+    "electoral_area": "Bray East",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Ian Neary",
+    "party": "Independent Ireland",
+    "electoral_area": "Bray East",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Aoife Flynn Kennedy",
+    "party": "Fine Gael",
+    "electoral_area": "Bray East",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Erika Doyle",
+    "party": "Green Party",
+    "electoral_area": "Bray East",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Joe Behan",
+    "party": "Independent",
+    "electoral_area": "Bray West",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Melanie Corrigan",
+    "party": "Fine Gael",
+    "electoral_area": "Bray West",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Dermot 'Daisy' O'Brien",
+    "party": "Sinn Féin",
+    "electoral_area": "Bray West",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Frank Kelly",
+    "party": "Fianna Fáil",
+    "electoral_area": "Bray West",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Stephen Stokes",
+    "party": "Independent",
+    "electoral_area": "Greystones",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Tom Fortune",
+    "party": "Independent",
+    "electoral_area": "Greystones",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Lourda Scott",
+    "party": "Green Party",
+    "electoral_area": "Greystones",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Orla Finn",
+    "party": "Independent",
+    "electoral_area": "Greystones",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Louise Fenelon Gaskin",
+    "party": "Fine Gael",
+    "electoral_area": "Greystones",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Mark Barry",
+    "party": "Social Democrats",
+    "electoral_area": "Greystones",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "John Snell",
+    "party": "Independent",
+    "electoral_area": "Wicklow",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Danny Alvey",
+    "party": "Social Democrats",
+    "electoral_area": "Wicklow",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Paul O'Brien",
+    "party": "Labour",
+    "electoral_area": "Wicklow",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Gail Dunne",
+    "party": "Fianna Fáil",
+    "electoral_area": "Wicklow",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Shane Langrell",
+    "party": "Fine Gael",
+    "electoral_area": "Wicklow",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "Graham Richmond",
+    "party": "Fine Gael",
+    "electoral_area": "Wicklow",
+    "role": "Councillor",
+    "county": "Wicklow",
+    "local_authority": "Wicklow County Council"
+  },
+  {
+    "name": "John Brady",
+    "party": "Sinn Féin",
+    "constituency": "Wicklow",
+    "role": "TD",
+    "county": "Wicklow",
+    "local_authority": null
+  },
+  {
+    "name": "Simon Harris",
+    "party": "Fine Gael",
+    "constituency": "Wicklow",
+    "role": "TD",
+    "county": "Wicklow",
+    "local_authority": null
+  },
+  {
+    "name": "Edward Timmins",
+    "party": "Fine Gael",
+    "constituency": "Wicklow",
+    "role": "TD",
+    "county": "Wicklow",
+    "local_authority": null
+  },
+  {
+    "name": "Jennifer Whitmore",
+    "party": "Social Democrats",
+    "constituency": "Wicklow",
+    "role": "TD",
+    "county": "Wicklow",
+    "local_authority": null
+  },
+  {
+    "name": "Brian Brennan",
+    "party": "Fine Gael",
+    "constituency": "Wicklow-Wexford",
+    "role": "TD",
+    "county": "Wicklow",
+    "local_authority": null
+  },
+  {
+    "name": "Malcolm Byrne",
+    "party": "Fianna Fáil",
+    "constituency": "Wicklow-Wexford",
+    "role": "TD",
+    "county": "Wicklow",
+    "local_authority": null
+  },
+  {
+    "name": "Fionntán Ó Súilleabháin",
+    "party": "Sinn Féin",
+    "constituency": "Wicklow-Wexford",
+    "role": "TD",
+    "county": "Wicklow",
+    "local_authority": null
+  }
+]

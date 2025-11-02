@@ -1,0 +1,371 @@
+
+[
+  {
+    "name": "Máirín McGrath",
+    "party": "Independent",
+    "electoral_area": "Cahir",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Andy Moloney",
+    "party": "Independent",
+    "electoral_area": "Cahir",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Marie Murphy",
+    "party": "Fine Gael",
+    "electoral_area": "Cahir",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Micheál Anglim",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cahir",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Imelda Goldsboro",
+    "party": "Fianna Fáil",
+    "electoral_area": "Carrick-on-Suir",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "David Dunne",
+    "party": "Sinn Féin",
+    "electoral_area": "Carrick-on-Suir",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Michael 'Chicken' Brennan",
+    "party": "Labour",
+    "electoral_area": "Carrick-on-Suir",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Kieran Bourke",
+    "party": "Fianna Fáil",
+    "electoral_area": "Carrick-on-Suir",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Mark Fitzgerald",
+    "party": "Fine Gael",
+    "electoral_area": "Carrick-on-Suir",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Declan Burgess",
+    "party": "Fine Gael",
+    "electoral_area": "Cashel-Tipperary",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "John Crosse",
+    "party": "Fine Gael",
+    "electoral_area": "Cashel-Tipperary",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Mary Hanna Hourigan",
+    "party": "Fine Gael",
+    "electoral_area": "Cashel-Tipperary",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "John O'Heney",
+    "party": "Independent",
+    "electoral_area": "Cashel-Tipperary",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Liam Browne",
+    "party": "Independent",
+    "electoral_area": "Cashel-Tipperary",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Roger Kennedy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cashel-Tipperary",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Annemarie Ryan (Shiner)",
+    "party": "Sinn Féin",
+    "electoral_area": "Cashel-Tipperary",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Siobhán Ambrose",
+    "party": "Fianna Fáil",
+    "electoral_area": "Clonmel",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Pat English",
+    "party": "Workers and Unemployed Action Group",
+    "electoral_area": "Clonmel",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "John Fitzgerald",
+    "party": "Fine Gael",
+    "electoral_area": "Clonmel",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Richie Molloy",
+    "party": "Non-Party",
+    "electoral_area": "Clonmel",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Michael Murphy",
+    "party": "Fine Gael",
+    "electoral_area": "Clonmel",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Catherine Carey",
+    "party": "Sinn Féin",
+    "electoral_area": "Clonmel",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Ryan O'Meara",
+    "party": "Fianna Fáil",
+    "electoral_area": "Nenagh",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Louise Morgan Walsh",
+    "party": "Labour",
+    "electoral_area": "Nenagh",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Joe Hannigan",
+    "party": "Non Party",
+    "electoral_area": "Nenagh",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Seamus Morris",
+    "party": "Non Party",
+    "electoral_area": "Nenagh",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Michael O'Meara",
+    "party": "Non Party",
+    "electoral_area": "Nenagh",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Fiona Bonfield",
+    "party": "Labour",
+    "electoral_area": "Newport",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Pamela Quirke O'Meara",
+    "party": "Non Party/Lowry Team",
+    "electoral_area": "Newport",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Dr. Phyll Bugler",
+    "party": "Fine Gael",
+    "electoral_area": "Newport",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "John Carroll",
+    "party": "Fianna Fáil",
+    "electoral_area": "Newport",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Michael Smith",
+    "party": "Fianna Fáil",
+    "electoral_area": "Roscrea-Templemore",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Shane Lee",
+    "party": "Independent",
+    "electoral_area": "Roscrea-Templemore",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Eddie Moran",
+    "party": "Independent",
+    "electoral_area": "Roscrea-Templemore",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "William Kennedy",
+    "party": "Fine Gael",
+    "electoral_area": "Roscrea-Templemore",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Jim Ryan",
+    "party": "Independent",
+    "electoral_area": "Thurles",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Micheál Lowry",
+    "party": "Independent/Team Lowry",
+    "electoral_area": "Thurles",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Sean Ryan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Thurles",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Kay Cahill Skehan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Thurles",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Peggy Ryan",
+    "party": "Fine Gael",
+    "electoral_area": "Thurles",
+    "role": "Councillor",
+    "county": "Tipperary",
+    "local_authority": "Tipperary County Council"
+  },
+  {
+    "name": "Alan Kelly",
+    "party": "Labour Party",
+    "constituency": "Tipperary North",
+    "role": "TD",
+    "county": "Tipperary",
+    "local_authority": null
+  },
+  {
+    "name": "Michael Lowry",
+    "party": "Independent",
+    "constituency": "Tipperary North",
+    "role": "TD",
+    "county": "Tipperary",
+    "local_authority": null
+  },
+  {
+    "name": "Ryan O'Meara",
+    "party": "Fianna Fáil",
+    "constituency": "Tipperary North",
+    "role": "TD",
+    "county": "Tipperary",
+    "local_authority": null
+  },
+  {
+    "name": "Seamus Healy",
+    "party": "Independent",
+    "constituency": "Tipperary South",
+    "role": "TD",
+    "county": "Tipperary",
+    "local_authority": null
+  },
+  {
+    "name": "Mattie McGrath",
+    "party": "Independent",
+    "constituency": "Tipperary South",
+    "role": "TD",
+    "county": "Tipperary",
+    "local_authority": null
+  },
+  {
+    "name": "Michael Murphy",
+    "party": "Fine Gael",
+    "constituency": "Tipperary South",
+    "role": "TD",
+    "county": "Tipperary",
+    "local_authority": null
+  }
+]

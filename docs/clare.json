@@ -1,0 +1,219 @@
+
+[
+  {
+    "name": "Pat Daly",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ennis",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Mary Howard",
+    "party": "Fine Gael",
+    "electoral_area": "Ennis",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Paul Murphy",
+    "party": "Fine Gael",
+    "electoral_area": "Ennis",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Antoinette Baker Bashua",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ennis",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Tommy Guilfoyle",
+    "party": "Sinn Féin",
+    "electoral_area": "Ennis",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Clare Colleran Molloy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ennis",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Tom O'Callaghan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ennis",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Bill Slattery",
+    "party": "Fine Gael",
+    "electoral_area": "Ennistymon",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Joe Garrihy",
+    "party": "Fine Gael",
+    "electoral_area": "Ennistymon",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Shane Talty",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ennistymon",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Joe Killeen",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ennistymon",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "James Ryan",
+    "party": "Sinn Féin",
+    "electoral_area": "Shannon",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "David Griffin",
+    "party": "Fianna Fáil",
+    "electoral_area": "Shannon",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Rachel Hartigan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Shannon",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "John Crowe",
+    "party": "Fine Gael",
+    "electoral_area": "Shannon",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Patrick O'Gorman",
+    "party": "Fianna Fáil",
+    "electoral_area": "Shannon",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Michael Begley",
+    "party": "Non-Party",
+    "electoral_area": "Shannon",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Tony Mulcahy",
+    "party": "Fine Gael",
+    "electoral_area": "Shannon",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Dinny Gould",
+    "party": "Non-Party",
+    "electoral_area": "Kilrush",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Rita McInerney",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kilrush",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Ian Lynch",
+    "party": "Non-Party",
+    "electoral_area": "Kilrush",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Gabriel Keating",
+    "party": "Fine Gael",
+    "electoral_area": "Kilrush",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Michael Shannon",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kilrush",
+    "role": "Councillor",
+    "county": "Clare",
+    "local_authority": "Clare County Council"
+  },
+  {
+    "name": "Joe Cooney",
+    "party": "Fine Gael",
+    "constituency": "Clare",
+    "role": "TD",
+    "county": "Clare",
+    "local_authority": null
+  },
+  {
+    "name": "Cathal Crowe",
+    "party": "Fianna Fáil",
+    "constituency": "Clare",
+    "role": "TD",
+    "county": "Clare",
+    "local_authority": null
+  },
+  {
+    "name": "Timmy Dooley",
+    "party": "Fianna Fáil",
+    "constituency": "Clare",
+    "role": "TD",
+    "county": "Clare",
+    "local_authority": null
+  },
+  {
+    "name": "Donna McGettigan",
+    "party": "Sinn Féin",
+    "constituency": "Clare",
+    "role": "TD",
+    "county": "Clare",
+    "local_authority": null
+  }
+]

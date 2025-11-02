@@ -1,0 +1,379 @@
+
+[
+  {
+    "name": "Stephen Keary",
+    "party": "Fine Gael",
+    "electoral_area": "Adare-Rathkeale",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Adam Teskey",
+    "party": "Fine Gael",
+    "electoral_area": "Adare-Rathkeale",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Bridie Collins",
+    "party": "Fianna Fáil",
+    "electoral_area": "Adare-Rathkeale",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "John O'Donoghue",
+    "party": "Independent Ireland",
+    "electoral_area": "Adare-Rathkeale",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Tommy Hartigan",
+    "party": "Independent Ireland",
+    "electoral_area": "Adare-Rathkeale",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Ger Ward",
+    "party": "Fianna Fáil",
+    "electoral_area": "Adare-Rathkeale",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Brigid Teefy",
+    "party": "Non Party",
+    "electoral_area": "Cappamore-Kilmallock",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Martin Ryan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cappamore-Kilmallock",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Eddie Ryan",
+    "party": "Non Party",
+    "electoral_area": "Cappamore-Kilmallock",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Noreen Stokes",
+    "party": "Fine Gael",
+    "electoral_area": "Cappamore-Kilmallock",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "PJ Carey",
+    "party": "Sinn Féin",
+    "electoral_area": "Cappamore-Kilmallock",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Gregory Conway",
+    "party": "Fine Gael",
+    "electoral_area": "Cappamore-Kilmallock",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Tommy O'Sullivan",
+    "party": "Fine Gael",
+    "electoral_area": "Cappamore-Kilmallock",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Catherine Slattery",
+    "party": "Fianna Fáil",
+    "electoral_area": "Limerick City East",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Peter Doyle",
+    "party": "Fine Gael",
+    "electoral_area": "Limerick City East",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Joe Pond",
+    "party": "Fianna Fáil",
+    "electoral_area": "Limerick City East",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Elena Secas",
+    "party": "Labour Party",
+    "electoral_area": "Limerick City East",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Sarah Kiely",
+    "party": "Fine Gael",
+    "electoral_area": "Limerick City East",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Sean Hartigan",
+    "party": "Green Party",
+    "electoral_area": "Limerick City East",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Ursula Gavan",
+    "party": "Sinn Féin",
+    "electoral_area": "Limerick City East",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Frankie Daly",
+    "party": "Non-Party",
+    "electoral_area": "Limerick City North",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Conor Sheehan",
+    "party": "Labour",
+    "electoral_area": "Limerick City North",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Olivia O'Sullivan",
+    "party": "Fine Gael",
+    "electoral_area": "Limerick City North",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Kieran O'Hanlon",
+    "party": "Fianna Fáil",
+    "electoral_area": "Limerick City North",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Sharon Benson",
+    "party": "Sinn Féin",
+    "electoral_area": "Limerick City North",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Sarah Beasley",
+    "party": "Aontú",
+    "electoral_area": "Limerick City North",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Shane Hickey-O'Mara",
+    "party": "Social Democrats",
+    "electoral_area": "Limerick City North",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Daniel Butler",
+    "party": "Fine Gael",
+    "electoral_area": "Limerick City West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Dan McSweeney",
+    "party": "Fine Gael",
+    "electoral_area": "Limerick City West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Joe Leddin",
+    "party": "Labour",
+    "electoral_area": "Limerick City West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Fergus Kilcoyne",
+    "party": "Fianna Fáil",
+    "electoral_area": "Limerick City West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Elisa O'Donovan",
+    "party": "Social Democrats",
+    "electoral_area": "Limerick City West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Abul Kalam Azad Talukder",
+    "party": "Fianna Fáil",
+    "electoral_area": "Limerick City West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Maria Donoghue",
+    "party": "Independent",
+    "electoral_area": "Limerick City West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Jerome Scanlan",
+    "party": "Non-Party",
+    "electoral_area": "Newcastle West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Liam Galvin",
+    "party": "Fine Gael",
+    "electoral_area": "Newcastle West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Michael Collins",
+    "party": "Fianna Fáil",
+    "electoral_area": "Newcastle West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Tom Ruddle",
+    "party": "Fine Gael",
+    "electoral_area": "Newcastle West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Francis Foley",
+    "party": "Fianna Fáil",
+    "electoral_area": "Newcastle West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "John Sheahan",
+    "party": "Fine Gael",
+    "electoral_area": "Newcastle West",
+    "role": "Councillor",
+    "county": "Limerick",
+    "local_authority": "Limerick City and County Council"
+  },
+  {
+    "name": "Willie O'Dea",
+    "party": "Fianna Fáil",
+    "constituency": "Limerick City",
+    "role": "TD",
+    "county": "Limerick",
+    "local_authority": null
+  },
+  {
+    "name": "Kieran O'Donnell",
+    "party": "Fine Gael",
+    "constituency": "Limerick City",
+    "role": "TD",
+    "county": "Limerick",
+    "local_authority": null
+  },
+  {
+    "name": "Maurice Quinlivan",
+    "party": "Sinn Féin",
+    "constituency": "Limerick City",
+    "role": "TD",
+    "county": "Limerick",
+    "local_authority": null
+  },
+  {
+    "name": "Conor Sheehan",
+    "party": "Labour Party",
+    "constituency": "Limerick City",
+    "role": "TD",
+    "county": "Limerick",
+    "local_authority": null
+  },
+  {
+    "name": "Patrick O'Donovan",
+    "party": "Fine Gael",
+    "constituency": "Limerick County",
+    "role": "TD",
+    "county": "Limerick",
+    "local_authority": null
+  },
+  {
+    "name": "Niall Collins",
+    "party": "Fianna Fáil",
+    "constituency": "Limerick County",
+    "role": "TD",
+    "county": "Limerick",
+    "local_authority": null
+  },
+  {
+    "name": "Richard O'Donoghue",
+    "party": "Independent Ireland",
+    "constituency": "Limerick County",
+    "role": "TD",
+    "county": "Limerick",
+    "local_authority": null
+  }
+]

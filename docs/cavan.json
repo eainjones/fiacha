@@ -1,0 +1,163 @@
+
+[
+  {
+    "name": "Val Smith",
+    "party": "Fine Gael",
+    "electoral_area": "Bailieborough-Cootehill",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Niall Smith",
+    "party": "Fianna Fáil",
+    "electoral_area": "Bailieborough-Cootehill",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Carmel Brady",
+    "party": "Fine Gael",
+    "electoral_area": "Bailieborough-Cootehill",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Trevor Smith",
+    "party": "Fine Gael",
+    "electoral_area": "Ballyjamesduff",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Shane P O'Reilly",
+    "party": "Independent Ireland",
+    "electoral_area": "Ballyjamesduff",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Noel Connell",
+    "party": "Sinn Féin",
+    "electoral_area": "Ballyjamesduff",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Philip Brady",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballyjamesduff",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "TP O'Reilly",
+    "party": "Fine Gael",
+    "electoral_area": "Ballyjamesduff",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Winston J. Bennett",
+    "party": "Fine Gael",
+    "electoral_area": "Ballyjamesduff",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Áine Smith",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cavan-Belturbet",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Brendan Fay",
+    "party": "Independent",
+    "electoral_area": "Cavan-Belturbet",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Damien Brady",
+    "party": "Sinn Féin",
+    "electoral_area": "Cavan-Belturbet",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "John Paul Feeley",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cavan-Belturbet",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Niamh Brady",
+    "party": "Fine Gael",
+    "electoral_area": "Cavan-Belturbet",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Patricia Walsh",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cavan-Belturbet",
+    "role": "Councillor",
+    "county": "Cavan",
+    "local_authority": "Cavan County Council"
+  },
+  {
+    "name": "Cathy Bennett",
+    "party": "Sinn Féin",
+    "constituency": "Cavan-Monaghan",
+    "role": "TD",
+    "county": "Cavan",
+    "local_authority": null
+  },
+  {
+    "name": "Matt Carthy",
+    "party": "Sinn Féin",
+    "constituency": "Cavan-Monaghan",
+    "role": "TD",
+    "county": "Cavan",
+    "local_authority": null
+  },
+  {
+    "name": "David Maxwell",
+    "party": "Fine Gael",
+    "constituency": "Cavan-Monaghan",
+    "role": "TD",
+    "county": "Cavan",
+    "local_authority": null
+  },
+  {
+    "name": "Brendan Smith",
+    "party": "Fianna Fáil",
+    "constituency": "Cavan-Monaghan",
+    "role": "TD",
+    "county": "Cavan",
+    "local_authority": null
+  },
+  {
+    "name": "Niamh Smyth",
+    "party": "Fianna Fáil",
+    "constituency": "Cavan-Monaghan",
+    "role": "TD",
+    "county": "Cavan",
+    "local_authority": null
+  }
+]

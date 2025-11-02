@@ -1,0 +1,275 @@
+
+[
+  {
+    "name": "Jim Tenanty",
+    "party": "Independent",
+    "electoral_area": "Ardee",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Pearse McGeough",
+    "party": "Sinn Féin",
+    "electoral_area": "Ardee",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Paula Butterly",
+    "party": "Fine Gael",
+    "electoral_area": "Ardee",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "John Sheridan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ardee",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Dolores Minogue",
+    "party": "Fine Gael",
+    "electoral_area": "Ardee",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Bernie Conlon",
+    "party": "Independent",
+    "electoral_area": "Ardee",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Michelle Hall",
+    "party": "Labour",
+    "electoral_area": "Drogheda Rural",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Anne-Marie Ford",
+    "party": "Fine Gael",
+    "electoral_area": "Drogheda Rural",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Declan Power",
+    "party": "Independent",
+    "electoral_area": "Drogheda Rural",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Eric Donovan",
+    "party": "Sinn Féin",
+    "electoral_area": "Drogheda Rural",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Pio Smith",
+    "party": "Labour",
+    "electoral_area": "Drogheda Urban",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Joanna Byrne",
+    "party": "Sinn Féin",
+    "electoral_area": "Drogheda Urban",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Kevin Callan",
+    "party": "Independent",
+    "electoral_area": "Drogheda Urban",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Ejiro O'Hare-Stratton",
+    "party": "Fine Gael",
+    "electoral_area": "Drogheda Urban",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Paddy McQuillan",
+    "party": "Independent",
+    "electoral_area": "Drogheda Urban",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "James Byrne",
+    "party": "Fianna Fáil",
+    "electoral_area": "Drogheda Urban",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Seán Kelly",
+    "party": "Fianna Fáil",
+    "electoral_area": "Dundalk–Carlingford",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Antóin Watters",
+    "party": "Sinn Féin",
+    "electoral_area": "Dundalk–Carlingford",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Fiona Mhic Conchoille",
+    "party": "Sinn Féin",
+    "electoral_area": "Dundalk–Carlingford",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Ciarán Fisher",
+    "party": "Independent",
+    "electoral_area": "Dundalk–Carlingford",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "John Reilly",
+    "party": "Fine Gael",
+    "electoral_area": "Dundalk–Carlingford",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Andrea McKevitt",
+    "party": "Fianna Fáil",
+    "electoral_area": "Dundalk–Carlingford",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Maeve Yore",
+    "party": "Independent",
+    "electoral_area": "Dundalk South",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Robert Nash",
+    "party": "Fine Gael",
+    "electoral_area": "Dundalk South",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Emma Coffey",
+    "party": "Fianna Fáil",
+    "electoral_area": "Dundalk South",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Kevin Meenan",
+    "party": "Sinn Féin",
+    "electoral_area": "Dundalk South",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Sionainn McCann",
+    "party": "Sinn Féin",
+    "electoral_area": "Dundalk South",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Shane McGuinness",
+    "party": "Fianna Fáil",
+    "electoral_area": "Dundalk South",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Marianne Butler",
+    "party": "Green Party",
+    "electoral_area": "Dundalk South",
+    "role": "Councillor",
+    "county": "Louth",
+    "local_authority": "Louth County Council"
+  },
+  {
+    "name": "Paula Butterly",
+    "party": "Fine Gael",
+    "constituency": "Louth",
+    "role": "TD",
+    "county": "Louth",
+    "local_authority": null
+  },
+  {
+    "name": "Joanna Byrne",
+    "party": "Sinn Féin",
+    "constituency": "Louth",
+    "role": "TD",
+    "county": "Louth",
+    "local_authority": null
+  },
+  {
+    "name": "Erin McGreehan",
+    "party": "Fianna Fáil",
+    "constituency": "Louth",
+    "role": "TD",
+    "county": "Louth",
+    "local_authority": null
+  },
+  {
+    "name": "Ged Nash",
+    "party": "Labour",
+    "constituency": "Louth",
+    "role": "TD",
+    "county": "Louth",
+    "local_authority": null
+  },
+  {
+    "name": "Ruairí Ó Murchú",
+    "party": "Sinn Féin",
+    "constituency": "Louth",
+    "role": "TD",
+    "county": "Louth",
+    "local_authority": null
+  }
+]

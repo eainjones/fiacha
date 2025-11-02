@@ -1,0 +1,179 @@
+
+[
+  {
+    "name": "James Gilmartin",
+    "party": "Independent",
+    "electoral_area": "Manorhamilton",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Felim Gurn",
+    "party": "Independent",
+    "electoral_area": "Manorhamilton",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Mary Bohan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Manorhamilton",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Justin Warnock",
+    "party": "Fianna Fáil",
+    "electoral_area": "Manorhamilton",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Eddie Mitchell",
+    "party": "Independent",
+    "electoral_area": "Manorhamilton",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Padraig Fallon",
+    "party": "Sinn Féin",
+    "electoral_area": "Manorhamilton",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Paddy O'Rourke",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballinamore",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Enda McGloin",
+    "party": "Fine Gael",
+    "electoral_area": "Ballinamore",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Brendan Barry",
+    "party": "Sinn Féin",
+    "electoral_area": "Ballinamore",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Gary Prior",
+    "party": "Fianna Fáil",
+    "electoral_area": "Ballinamore",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Ita Reynolds-Flynn",
+    "party": "Fine Gael",
+    "electoral_area": "Ballinamore",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Róisín Kenny",
+    "party": "Sinn Féin",
+    "electoral_area": "Ballinamore",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Enda Stenson",
+    "party": "Independent",
+    "electoral_area": "Carrick-on-Shannon",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Maeve Reynolds",
+    "party": "Fine Gael",
+    "electoral_area": "Carrick-on-Shannon",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Des Guckian",
+    "party": "Independent",
+    "electoral_area": "Carrick-on-Shannon",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Sean McGowan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Carrick-on-Shannon",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Paddy Farrell",
+    "party": "Fianna Fáil",
+    "electoral_area": "Carrick-on-Shannon",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Cormac Flynn",
+    "party": "Sinn Féin",
+    "electoral_area": "Carrick-on-Shannon",
+    "role": "Councillor",
+    "county": "Leitrim",
+    "local_authority": "Leitrim County Council"
+  },
+  {
+    "name": "Frank Feighan",
+    "party": "Fine Gael",
+    "constituency": "Sligo–Leitrim",
+    "role": "TD",
+    "county": "Leitrim",
+    "local_authority": null
+  },
+  {
+    "name": "Marian Harkin",
+    "party": "Independent",
+    "constituency": "Sligo–Leitrim",
+    "role": "TD",
+    "county": "Leitrim",
+    "local_authority": null
+  },
+  {
+    "name": "Martin Kenny",
+    "party": "Sinn Féin",
+    "constituency": "Sligo–Leitrim",
+    "role": "TD",
+    "county": "Leitrim",
+    "local_authority": null
+  },
+  {
+    "name": "Eamon Scanlon",
+    "party": "Fianna Fáil",
+    "constituency": "Sligo–Leitrim",
+    "role": "TD",
+    "county": "Leitrim",
+    "local_authority": null
+  }
+]

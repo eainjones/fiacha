@@ -1,0 +1,339 @@
+
+[
+  {
+    "name": "Joy Beard",
+    "party": "100% Redress",
+    "electoral_area": "Buncrana",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Fionán Bradley",
+    "party": "Fianna Fáil",
+    "electoral_area": "Buncrana",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Paul Canning",
+    "party": "Fianna Fáil",
+    "electoral_area": "Buncrana",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Terry Crossan",
+    "party": "Sinn Féin",
+    "electoral_area": "Buncrana",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Jack Murray",
+    "party": "Sinn Féin",
+    "electoral_area": "Buncrana",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Ali Farren",
+    "party": "100% Redress",
+    "electoral_area": "Carndonagh",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Martin McDermott",
+    "party": "Fianna Fáil",
+    "electoral_area": "Carndonagh",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Albert Doherty",
+    "party": "Sinn Féin",
+    "electoral_area": "Carndonagh",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Martin Farren",
+    "party": "Labour",
+    "electoral_area": "Carndonagh",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Michael Naughton",
+    "party": "Fianna Fáil",
+    "electoral_area": "Donegal",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Niamh Kennedy",
+    "party": "Independent",
+    "electoral_area": "Donegal",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Michael McMahon",
+    "party": "Sinn Féin",
+    "electoral_area": "Donegal",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Jimmy Brogan",
+    "party": "Independent",
+    "electoral_area": "Donegal",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+    {
+    "name": "Noel Andrew Jordan",
+    "party": "Sinn Féin",
+    "electoral_area": "Donegal",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Michael Boyle",
+    "party": "Fine Gael",
+    "electoral_area": "Donegal",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Brian Carr",
+    "party": "Sinn Féin",
+    "electoral_area": "Glenties",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Micheál Choilm Mac Giolla Easbuig",
+    "party": "Independent",
+    "electoral_area": "Glenties",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Michael McClafferty",
+    "party": "Independent",
+    "electoral_area": "Glenties",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Denis McGee",
+    "party": "100% Redress",
+    "electoral_area": "Glenties",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Anthony Molloy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Glenties",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "John Shéamais Ó Fearraigh",
+    "party": "Sinn Féin",
+    "electoral_area": "Glenties",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Donal Coyle",
+    "party": "Fianna Fáil",
+    "electoral_area": "Letterkenny",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Ciaran Brogan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Letterkenny",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Tomás Seán Devine",
+    "party": "100% Redress",
+    "electoral_area": "Letterkenny",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Gerry McMonagle",
+    "party": "Sinn Féin",
+    "electoral_area": "Letterkenny",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Jimmy Kavanagh",
+    "party": "Fine Gael",
+    "electoral_area": "Letterkenny",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Michael McBride",
+    "party": "Independent",
+    "electoral_area": "Letterkenny",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Donal 'Mandy' Kelly",
+    "party": "Fianna Fáil",
+    "electoral_area": "Letterkenny",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Gary Doherty",
+    "party": "Sinn Féin",
+    "electoral_area": "Lifford-Stranorlar",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Martin Harley",
+    "party": "Fine Gael",
+    "electoral_area": "Lifford-Stranorlar",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Frank McBrearty",
+    "party": "Independent",
+    "electoral_area": "Lifford-Stranorlar",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Patrick McGowan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Lifford-Stranorlar",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Dakota Nic Mheanman",
+    "party": "Sinn Féin",
+    "electoral_area": "Lifford-Stranorlar",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Martin Scanlon",
+    "party": "Independent",
+    "electoral_area": "Lifford-Stranorlar",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Declan Meehan",
+    "party": "Independent",
+    "electoral_area": "Milford",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Pauric McGarvey",
+    "party": "Independent",
+    "electoral_area": "Milford",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Liam Blaney",
+    "party": "Fianna Fáil",
+    "electoral_area": "Milford",
+    "role": "Councillor",
+    "county": "Donegal",
+    "local_authority": "Donegal County Council"
+  },
+  {
+    "name": "Pearse Doherty",
+    "party": "Sinn Féin",
+    "constituency": "Donegal",
+    "role": "TD",
+    "county": "Donegal",
+    "local_authority": null
+  },
+  {
+    "name": "Pádraig Mac Lochlainn",
+    "party": "Sinn Féin",
+    "constituency": "Donegal",
+    "role": "TD",
+    "county": "Donegal",
+    "local_authority": null
+  },
+  {
+    "name": "Pat \"the Cope\" Gallagher",
+    "party": "Fianna Fáil",
+    "constituency": "Donegal",
+    "role": "TD",
+    "county": "Donegal",
+    "local_authority": null
+  },
+  {
+    "name": "Charlie McConalogue",
+    "party": "Fianna Fáil",
+    "constituency": "Donegal",
+    "role": "TD",
+    "county": "Donegal",
+    "local_authority": null
+  },
+  {
+    "name": "Charles Ward",
+    "party": "100% Redress Party",
+    "constituency": "Donegal",
+    "role": "TD",
+    "county": "Donegal",
+    "local_authority": null
+  }
+]

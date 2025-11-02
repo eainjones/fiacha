@@ -1,0 +1,819 @@
+
+[
+  {
+    "name": "Noel O'Flynn",
+    "party": "Independent Ireland",
+    "electoral_area": "Cork City North-East",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "John Daniel Maher",
+    "party": "Labour Party",
+    "electoral_area": "Cork City North-East",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Joe Kavanagh",
+    "party": "Fine Gael",
+    "electoral_area": "Cork City North-East",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Margaret McDonnell",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cork City North-East",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Ted Tynan",
+    "party": "Workers' Party",
+    "electoral_area": "Cork City North-East",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Oliver Moran",
+    "party": "Green Party",
+    "electoral_area": "Cork City North-East",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Tony Fitzgerald",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cork City North-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Damian Boylan",
+    "party": "Fine Gael",
+    "electoral_area": "Cork City North-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "John Sheehan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cork City North-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Michelle Gould",
+    "party": "Sinn Féin",
+    "electoral_area": "Cork City North-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Kenneth Collins",
+    "party": "Sinn Féin",
+    "electoral_area": "Cork City North-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Brian McCarthy",
+    "party": "Solidarity Party - People Before Profit",
+    "electoral_area": "Cork City North-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Terry Shannon",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cork City South-East",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Kieran McCarthy",
+    "party": "Independent",
+    "electoral_area": "Cork City South-East",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Peter Horgan",
+    "party": "Labour",
+    "electoral_area": "Cork City South-East",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Mary Rose Desmond",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cork City South-East",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Des Cahill",
+    "party": "Fine Gael",
+    "electoral_area": "Cork City South-East",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Honore Kamegni",
+    "party": "Green Party",
+    "electoral_area": "Cork City South-East",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Fergal Dennehy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cork City South-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Colm Kelleher",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cork City South-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Joe Lynch",
+    "party": "Sinn Féin",
+    "electoral_area": "Cork City South-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Albert Deasy",
+    "party": "Non Party",
+    "electoral_area": "Cork City South-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Terry Coleman",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cork City South-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Gary O'Brien",
+    "party": "Fine Gael",
+    "electoral_area": "Cork City South-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Ciara O' Connor",
+    "party": "Labour Party",
+    "electoral_area": "Cork City South-West",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Shane O'Callaghan",
+    "party": "Fine Gael",
+    "electoral_area": "Cork City South-Central",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Seán Martin",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cork City South-Central",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Pádraig Rice",
+    "party": "Social Democrats",
+    "electoral_area": "Cork City South-Central",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Dan Boyle",
+    "party": "Green Party",
+    "electoral_area": "Cork City South-Central",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Paudie Dineen",
+    "party": "Independent",
+    "electoral_area": "Cork City South-Central",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Fiona Kerins",
+    "party": "Sinn Féin",
+    "electoral_area": "Cork City South-Central",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork City Council"
+  },
+  {
+    "name": "Alan Coleman",
+    "party": "Non-Party/Independent",
+    "electoral_area": "Bandon – Kinsale",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "John Collins",
+    "party": "Independent Ireland",
+    "electoral_area": "Bandon – Kinsale",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "John Michael Foley",
+    "party": "Fine Gael",
+    "electoral_area": "Bandon – Kinsale",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Ann Bambury",
+    "party": "Social Democrat",
+    "electoral_area": "Bandon – Kinsale",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Marie O’Sullivan",
+    "party": "Fine Gael",
+    "electoral_area": "Bandon – Kinsale",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Gillian Coughlan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Bandon – Kinsale",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Danny Collins",
+    "party": "Independent Ireland",
+    "electoral_area": "Bantry West Cork",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Finbarr Harrington",
+    "party": "Independent",
+    "electoral_area": "Bantry West Cork",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Caroline Cronin",
+    "party": "Fine Gael",
+    "electoral_area": "Bantry West Cork",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Patrick Gerard Murphy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Bantry West Cork",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Patrick Donovan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Carrigaline",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Ben Dalton O’Sullivan",
+    "party": "Independent",
+    "electoral_area": "Carrigaline",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Jack White",
+    "party": "Fine Gael",
+    "electoral_area": "Carrigaline",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Audrey Buckley",
+    "party": "Fianna Fáil",
+    "electoral_area": "Carrigaline",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Úna McCarthy",
+    "party": "Fine Gael",
+    "electoral_area": "Carrigaline",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Eoghan Fahy",
+    "party": "Sinn Féin",
+    "electoral_area": "Carrigaline",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Sheila O’Callaghan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cobh",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Anthony Barry",
+    "party": "Fine Gael",
+    "electoral_area": "Cobh",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Sinéad Sheppard",
+    "party": "Fine Gael",
+    "electoral_area": "Cobh",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Dominic Finn",
+    "party": "Fianna Fáil",
+    "electoral_area": "Cobh",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "William O’Leary",
+    "party": "Independent",
+    "electoral_area": "Fermoy",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Kay Dawson",
+    "party": "Fine Gael",
+    "electoral_area": "Fermoy",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Frank O’Flynn",
+    "party": "Fianna Fáil",
+    "electoral_area": "Fermoy",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Deirdre O’Brien",
+    "party": "Fianna Fáil",
+    "electoral_area": "Fermoy",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Peter O’Donoghue",
+    "party": "Independent",
+    "electoral_area": "Fermoy",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Nelius Cotter",
+    "party": "Fianna Fáil",
+    "electoral_area": "Fermoy",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Bernard Moynihan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kanturk",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "John Paul O'Shea",
+    "party": "Fine Gael",
+    "electoral_area": "Kanturk",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Trish Murphy",
+    "party": "Fine Gael",
+    "electoral_area": "Kanturk",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Ian Doyle",
+    "party": "Fianna Fáil",
+    "electoral_area": "Kanturk",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Gobnait Moynihan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Macroom",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Michael Creed",
+    "party": "Fine Gael",
+    "electoral_area": "Macroom",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Michael Looney",
+    "party": "Fianna Fáil",
+    "electoral_area": "Macroom",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Eileen Lynch",
+    "party": "Fine Gael",
+    "electoral_area": "Macroom",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Ted Lucey",
+    "party": "Fine Gael",
+    "electoral_area": "Macroom",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Martin Coughlan",
+    "party": "Independent",
+    "electoral_area": "Macroom",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Liam Madden",
+    "party": "Fine Gael",
+    "electoral_area": "Mallow",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Tony O’Shea",
+    "party": "Fine Gael",
+    "electoral_area": "Mallow",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Gearoid Murphy",
+    "party": "Fianna Fáil",
+    "electoral_area": "Mallow",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Ronan Sheehan",
+    "party": "Labour Party",
+    "electoral_area": "Mallow",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Patrick O’Donovan",
+    "party": "Fianna Fáil",
+    "electoral_area": "Mallow",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Rory Cocking",
+    "party": "Fine Gael",
+    "electoral_area": "Midleton",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Michael Hegarty",
+    "party": "Fine Gael",
+    "electoral_area": "Midleton",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Ann-Marie Ahern",
+    "party": "Fianna Fáil",
+    "electoral_area": "Midleton",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Mary Linehan Foley",
+    "party": "Non-Party",
+    "electoral_area": "Midleton",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Liam Quaide",
+    "party": "Social Democrats",
+    "electoral_area": "Midleton",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Noel O’Donovan",
+    "party": "Fine Gael",
+    "electoral_area": "Skibbereen West Cork",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Joe Carroll",
+    "party": "Fianna Fáil",
+    "electoral_area": "Skibbereen West Cork",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Isobel Towse",
+    "party": "Social Democrats",
+    "electoral_area": "Skibbereen West Cork",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Deirdre Kelly",
+    "party": "Fianna Fáil",
+    "electoral_area": "Skibbereen West Cork",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Daniel Sexton",
+    "party": "Independent Ireland",
+    "electoral_area": "Skibbereen West Cork",
+    "role": "Councillor",
+    "county": "Cork",
+    "local_authority": "Cork County Council"
+  },
+  {
+    "name": "Pat Buckley",
+    "party": "Sinn Féin",
+    "constituency": "Cork East",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Noel McCarthy",
+    "party": "Fine Gael",
+    "constituency": "Cork East",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "James O'Connor",
+    "party": "Fianna Fáil",
+    "constituency": "Cork East",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Liam Quaide",
+    "party": "Social Democrats",
+    "constituency": "Cork East",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Colm Burke",
+    "party": "Fine Gael",
+    "constituency": "Cork North-Central",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Thomas Gould",
+    "party": "Sinn Féin",
+    "constituency": "Cork North-Central",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Eoghan Kenny",
+    "party": "Labour Party",
+    "constituency": "Cork North-Central",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Ken O'Flynn",
+    "party": "Independent Ireland",
+    "constituency": "Cork North-Central",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Pádraig O'Sullivan",
+    "party": "Fianna Fáil",
+    "constituency": "Cork North-Central",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Aindrias Moynihan",
+    "party": "Fianna Fáil",
+    "constituency": "Cork North-West",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Michael Moynihan",
+    "party": "Fianna Fáil",
+    "constituency": "Cork North-West",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "John Paul O'Shea",
+    "party": "Fine Gael",
+    "constituency": "Cork North-West",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Jerry Buttimer",
+    "party": "Fine Gael",
+    "constituency": "Cork South-Central",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Micheál Martin",
+    "party": "Fianna Fáil",
+    "constituency": "Cork South-Central",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Séamus McGrath",
+    "party": "Fianna Fáil",
+    "constituency": "Cork South-Central",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Donnchadh Ó Laoghaire",
+    "party": "Sinn Féin",
+    "constituency": "Cork South-Central",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Pádraig Rice",
+    "party": "Social Democrats",
+    "constituency": "Cork South-Central",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Holly Cairns",
+    "party": "Social Democrats",
+    "constituency": "Cork South-West",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Michael Collins",
+    "party": "Independent Ireland",
+    "constituency": "Cork South-West",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  },
+  {
+    "name": "Christopher O'Sullivan",
+    "party": "Fianna Fáil",
+    "constituency": "Cork South-West",
+    "role": "TD",
+    "county": "Cork",
+    "local_authority": null
+  }
+]
