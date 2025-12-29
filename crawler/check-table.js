@@ -1,5 +1,5 @@
 const { Pool } = require('pg');
-require('dotenv').config({ path: '/Users/eainjones/Documents/GitHub/fiacha/crawler/.env' });
+require('dotenv').config();
 
 async function checkTable() {
   const pool = new Pool({

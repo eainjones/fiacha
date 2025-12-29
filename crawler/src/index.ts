@@ -8,6 +8,7 @@ import { createDatabaseClient } from './database/client';
 import { PoliticianMatcher, normalizePoliticianName } from './validators/politician-matcher';
 import { insertPromiseReview } from './database/queries';
 import { ExtractedPromiseType } from './types';
+import { EmailNotifier } from './notifications/email-notifier';
 
 // Load environment variables
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
@@ -68,6 +69,8 @@ async function main() {
     let totalExtracted = 0;
     let totalMatched = 0;
     let totalQueued = 0;
+    const allPromises: Array<{ promise: ExtractedPromiseType; matched: boolean }> = [];
+    const errors: string[] = [];
 
     for (const source of sources) {
       console.log(`\n   📡 Crawling: ${source.name}`);
@@ -117,6 +120,8 @@ async function main() {
               undefined
             );
 
+            const isMatched = !!match;
+
             if (match) {
               console.log(`      ✓ Matched: "${promise.politician_name}" → ${match.name} (${match.matchScore}%)`);
               totalMatched++;
@@ -128,6 +133,9 @@ async function main() {
             const reviewId = await insertPromiseReview(db, promise, match);
             console.log(`      📝 Queued for review (ID: ${reviewId})`);
             totalQueued++;
+
+            // Collect promise for email summary
+            allPromises.push({ promise, matched: isMatched });
           }
         }
 
@@ -135,7 +143,9 @@ async function main() {
           console.log('      No promises found in this source');
         }
       } catch (error) {
-        console.error(`      ✗ Error processing ${source.name}:`, error);
+        const errorMsg = `Error processing ${source.name}: ${error instanceof Error ? error.message : String(error)}`;
+        console.error(`      ✗ ${errorMsg}`);
+        errors.push(errorMsg);
       }
     }
 
@@ -150,6 +160,24 @@ async function main() {
     console.log('═'.repeat(50));
 
     console.log('\n✅ Crawl complete! Run "npm run review" to review extracted promises.\n');
+
+    // 7. Send email notification
+    try {
+      const emailNotifier = new EmailNotifier();
+      await emailNotifier.sendDailySummary({
+        timestamp: new Date(),
+        sourcesCrawled: sources.length,
+        promisesExtracted: totalExtracted,
+        politiciansMatched: totalMatched,
+        queuedForReview: totalQueued,
+        unmatched: totalExtracted - totalMatched,
+        promises: allPromises,
+        errors: errors.length > 0 ? errors : undefined,
+      });
+    } catch (error) {
+      console.error('[Email] Failed to initialize or send email notification:', error);
+      // Don't fail the whole crawl if email fails
+    }
 
     // Cleanup
     await db.close();
