@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 import dotenv from 'dotenv';
-import path from 'path';
 import { EmailNotifier } from './src/notifications/email-notifier';
 
-// Load environment variables
-dotenv.config({ path: path.join(__dirname, '.env') });
+// Load environment variables from current working directory
+dotenv.config();
 
 /**
  * Test script for email notifications
