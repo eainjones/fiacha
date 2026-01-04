@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
-import Link from 'next/link'
 import PartyBadge from './PartyBadge'
 
 interface Politician {
@@ -29,7 +28,6 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
     const positionParam = searchParams.get('position')
 
     if (countyParam) {
-      // Find county name by ID or name
       const county = politicians.find(p =>
         p.county_name?.toLowerCase() === countyParam.toLowerCase()
       )
@@ -58,31 +56,41 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
   // Count by position type
   const tdCount = politicians.filter(p => p.position_type === 'TD').length
   const councillorCount = politicians.filter(p => p.position_type === 'Councillor').length
+  const senatorCount = politicians.filter(p => p.position_type === 'Senator').length
+  const mlaCount = politicians.filter(p => p.position_type === 'MLA').length
 
   return (
     <>
       {/* Filter Controls */}
-      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 mb-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 p-4 md:p-6 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Position Type</label>
+            <label htmlFor="position-filter" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
+              Position Type
+            </label>
             <select
+              id="position-filter"
               value={positionFilter}
               onChange={(e) => setPositionFilter(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
             >
               <option value="all">All Positions ({politicians.length})</option>
               <option value="TD">TDs ({tdCount})</option>
+              <option value="Senator">Senators ({senatorCount})</option>
               <option value="Councillor">Councillors ({councillorCount})</option>
+              <option value="MLA">MLAs ({mlaCount})</option>
             </select>
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Party</label>
+            <label htmlFor="party-filter" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
+              Party
+            </label>
             <select
+              id="party-filter"
               value={partyFilter}
               onChange={(e) => setPartyFilter(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
             >
               <option value="all">All Parties</option>
               {parties.map(party => (
@@ -91,12 +99,15 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
             </select>
           </div>
 
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">County</label>
+          <div className="sm:col-span-2 lg:col-span-1">
+            <label htmlFor="county-filter" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
+              County
+            </label>
             <select
+              id="county-filter"
               value={countyFilter}
               onChange={(e) => setCountyFilter(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
             >
               <option value="all">All Counties</option>
               {counties.map(county => (
@@ -106,80 +117,127 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
           </div>
         </div>
 
-        <div className="mt-4 text-sm text-gray-600">
-          Showing <span className="font-bold text-emerald-600">{filteredPoliticians.length}</span> of {politicians.length} politicians
+        <div className="mt-4 text-sm text-gray-600 dark:text-slate-400">
+          Showing <span className="font-bold text-emerald-600 dark:text-emerald-400">{filteredPoliticians.length}</span> of {politicians.length} politicians
         </div>
       </div>
 
-      {/* Politicians Table */}
+      {/* Politicians List */}
       {filteredPoliticians.length === 0 ? (
-        <div className="bg-white rounded-lg shadow p-12 text-center">
-          <p className="text-gray-500">No politicians match your filters</p>
+        <div className="bg-white dark:bg-slate-900 rounded-lg shadow p-12 text-center">
+          <p className="text-gray-500 dark:text-slate-400">No politicians match your filters</p>
         </div>
       ) : (
-        <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gradient-to-r from-emerald-50 to-gray-50">
-              <tr>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                  Name
-                </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                  Party
-                </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                  Constituency/LEA
-                </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                  County
-                </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                  Authority
-                </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                  Role
-                </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                  Position
-                </th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-100">
-              {filteredPoliticians.map((pol: Politician) => (
-                <tr key={pol.id} className="hover:bg-emerald-50/30 transition-colors">
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm font-bold text-gray-900">{pol.name}</div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <PartyBadge party={pol.party} size="sm" />
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="text-sm text-gray-900">{pol.constituency}</div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-700 font-medium">{pol.county_name || 'N/A'}</div>
-                    {pol.province && <div className="text-xs text-gray-500">{pol.province}</div>}
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="text-sm text-gray-700">{pol.local_authority_name || 'National'}</div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="text-sm text-gray-700">{pol.role}</div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium ${
-                      pol.position_type === 'TD'
-                        ? 'bg-emerald-100 text-emerald-800'
-                        : 'bg-purple-100 text-purple-800'
-                    }`}>
-                      {pol.position_type}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <>
+          {/* Mobile Cards View */}
+          <div className="md:hidden space-y-4">
+            {filteredPoliticians.map((pol: Politician) => (
+              <div
+                key={pol.id}
+                className="bg-white dark:bg-slate-900 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 p-4"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 className="font-bold text-gray-900 dark:text-slate-100">{pol.name}</h3>
+                    <p className="text-sm text-gray-600 dark:text-slate-400">{pol.role}</p>
+                  </div>
+                  <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium ${
+                    pol.position_type === 'TD'
+                      ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300'
+                      : pol.position_type === 'Senator'
+                        ? 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300'
+                        : pol.position_type === 'MLA'
+                          ? 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300'
+                          : 'bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300'
+                  }`}>
+                    {pol.position_type}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2 mb-3">
+                  <PartyBadge party={pol.party} size="sm" />
+                </div>
+
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div>
+                    <span className="text-gray-500 dark:text-slate-500 text-xs uppercase tracking-wide">Constituency</span>
+                    <p className="text-gray-900 dark:text-slate-200">{pol.constituency || 'N/A'}</p>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 dark:text-slate-500 text-xs uppercase tracking-wide">County</span>
+                    <p className="text-gray-900 dark:text-slate-200">{pol.county_name || 'N/A'}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop Table View */}
+          <div className="hidden md:block bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200 dark:divide-slate-700">
+                <thead className="bg-gradient-to-r from-emerald-50 to-gray-50 dark:from-emerald-950 dark:to-slate-800">
+                  <tr>
+                    <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-700 dark:text-slate-300 uppercase tracking-wider">
+                      Name
+                    </th>
+                    <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-700 dark:text-slate-300 uppercase tracking-wider">
+                      Party
+                    </th>
+                    <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-700 dark:text-slate-300 uppercase tracking-wider">
+                      Constituency/LEA
+                    </th>
+                    <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-700 dark:text-slate-300 uppercase tracking-wider">
+                      County
+                    </th>
+                    <th scope="col" className="hidden lg:table-cell px-6 py-4 text-left text-xs font-semibold text-gray-700 dark:text-slate-300 uppercase tracking-wider">
+                      Authority
+                    </th>
+                    <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-700 dark:text-slate-300 uppercase tracking-wider">
+                      Position
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white dark:bg-slate-900 divide-y divide-gray-100 dark:divide-slate-800">
+                  {filteredPoliticians.map((pol: Politician) => (
+                    <tr key={pol.id} className="hover:bg-emerald-50/30 dark:hover:bg-emerald-950/20 transition-colors">
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm font-bold text-gray-900 dark:text-slate-100">{pol.name}</div>
+                        <div className="text-xs text-gray-500 dark:text-slate-400">{pol.role}</div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <PartyBadge party={pol.party} size="sm" />
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="text-sm text-gray-900 dark:text-slate-200">{pol.constituency}</div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-700 dark:text-slate-300 font-medium">{pol.county_name || 'N/A'}</div>
+                        {pol.province && <div className="text-xs text-gray-500 dark:text-slate-500">{pol.province}</div>}
+                      </td>
+                      <td className="hidden lg:table-cell px-6 py-4">
+                        <div className="text-sm text-gray-700 dark:text-slate-300">{pol.local_authority_name || 'National'}</div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium ${
+                          pol.position_type === 'TD'
+                            ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300'
+                            : pol.position_type === 'Senator'
+                              ? 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300'
+                              : pol.position_type === 'MLA'
+                                ? 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300'
+                                : 'bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300'
+                        }`}>
+                          {pol.position_type}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </>
       )}
     </>
   )
