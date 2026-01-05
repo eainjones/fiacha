@@ -30,8 +30,8 @@
 
 ### CRITICAL: Staging First, Always
 1. **Default environment is STAGING** - Never touch production without explicit user approval
-2. **Supabase CLI is linked to staging** (`phifyhudywiuqgwezumh`)
-3. **Production project ref**: `hgjefllkbbwevpyiazhx` - requires explicit `--project-ref` flag
+2. **Supabase CLI is linked to fiacha-staging** (`qsknxvethxnapioxsuqr`)
+3. **Production project ref**: `phifyhudywiuqgwezumh` - requires explicit `--project-ref` flag
 
 ### Before Any Migration
 1. **Always backup first**: `./scripts/backup-db.sh staging`
@@ -47,10 +47,10 @@
 
 ## Environment Configuration
 
-| Environment | Supabase Project | Database Host |
-|-------------|------------------|---------------|
-| Staging | `phifyhudywiuqgwezumh` | `aws-1-eu-west-1.pooler.supabase.com` |
-| Production | `hgjefllkbbwevpyiazhx` | `db.hgjefllkbbwevpyiazhx.supabase.co` |
+| Environment | Supabase Project | Project Ref |
+|-------------|------------------|-------------|
+| Staging | fiacha-staging | `qsknxvethxnapioxsuqr` |
+| Production | fiacha | `phifyhudywiuqgwezumh` |
 
 ### Vercel Environments
 - **Production**: Points to production DB, deploys from `main` branch
@@ -86,4 +86,4 @@ When modifying politician data:
 5. [ ] Deploy Vercel preview, test in browser
 6. [ ] Get user approval for production
 7. [ ] Backup production: `./scripts/backup-db.sh production`
-8. [ ] Push to production: `supabase db push --project-ref hgjefllkbbwevpyiazhx`
+8. [ ] Push to production: `supabase db push --project-ref phifyhudywiuqgwezumh`
