@@ -35,33 +35,35 @@ export default async function PoliticiansPage() {
 
   const tdCount = politicians.filter((p: any) => p.position_type === 'TD').length
   const councillorCount = politicians.filter((p: any) => p.position_type === 'Councillor').length
+  const senatorCount = politicians.filter((p: any) => p.position_type === 'Senator').length
+  const mlaCount = politicians.filter((p: any) => p.position_type === 'MLA').length
 
   return (
     <>
       <Nav />
-      <main className="min-h-screen bg-gradient-to-br from-gray-50 via-emerald-50/30 to-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex justify-between items-center mb-8">
+      <main className="min-h-screen bg-gradient-to-br from-gray-50 via-emerald-50/30 to-gray-50 dark:from-slate-950 dark:via-emerald-950/10 dark:to-slate-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6 md:mb-8">
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">Politicians</h1>
-              <p className="text-gray-600">
-                {tdCount} TDs · {councillorCount} Councillors · {politicians.length} Total
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-slate-50 mb-2">Politicians</h1>
+              <p className="text-gray-600 dark:text-slate-400 text-sm md:text-base">
+                {tdCount} TDs · {senatorCount} Senators · {councillorCount} Councillors · {mlaCount} MLAs · {politicians.length.toLocaleString()} Total
               </p>
             </div>
             <Link
               href="/add"
-              className="bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 font-semibold shadow-sm"
+              className="inline-flex items-center justify-center bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 font-semibold shadow-sm transition-colors"
             >
               + Add Politician
             </Link>
           </div>
 
           {politicians.length === 0 ? (
-            <div className="bg-white rounded-lg shadow p-12 text-center">
-              <p className="text-gray-500 mb-4">No politicians tracked yet</p>
+            <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 p-12 text-center">
+              <p className="text-gray-500 dark:text-slate-400 mb-4">No politicians tracked yet</p>
               <Link
                 href="/add"
-                className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 font-medium"
+                className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 font-semibold transition-colors"
               >
                 Add Your First Politician
               </Link>

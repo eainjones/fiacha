@@ -92,26 +92,26 @@ export default function SignInPage() {
   return (
     <>
       <Nav />
-      <main className="min-h-screen bg-gradient-to-br from-gray-50 via-emerald-50/30 to-gray-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 w-full max-w-md">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Sign In</h1>
-          <p className="text-gray-600 mb-6">Sign in to add new promises</p>
+      <main className="min-h-screen bg-gradient-to-br from-gray-50 via-emerald-50/30 to-gray-50 dark:from-slate-950 dark:via-emerald-950/10 dark:to-slate-950 flex items-center justify-center p-4">
+        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-gray-200 dark:border-slate-700 p-6 md:p-8 w-full max-w-md">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-slate-50 mb-2">Sign In</h1>
+          <p className="text-gray-600 dark:text-slate-400 mb-6">Sign in to add new promises</p>
 
           {error && (
-            <div className="bg-red-50 border border-red-200 text-red-800 rounded-lg p-4 mb-4">
+            <div className="bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-300 rounded-lg p-4 mb-4">
               {error}
             </div>
           )}
 
           {message && (
-            <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg p-4 mb-4">
+            <div className="bg-emerald-50 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 rounded-lg p-4 mb-4">
               {message}
             </div>
           )}
 
           <form onSubmit={handleSignIn} className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
                 Email
               </label>
               <input
@@ -120,13 +120,13 @@ export default function SignInPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 placeholder-gray-400 dark:placeholder-slate-500"
                 placeholder="your@email.com"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="password" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
                 Password
               </label>
               <input
@@ -136,7 +136,7 @@ export default function SignInPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 minLength={6}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 placeholder-gray-400 dark:placeholder-slate-500"
                 placeholder="••••••••"
               />
             </div>
@@ -145,7 +145,7 @@ export default function SignInPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700 font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="flex-1 bg-emerald-600 text-white py-2.5 px-4 rounded-lg hover:bg-emerald-700 font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 {loading ? 'Loading...' : 'Sign In'}
               </button>
@@ -154,7 +154,7 @@ export default function SignInPage() {
                 type="button"
                 onClick={handleSignUp}
                 disabled={loading}
-                className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="flex-1 bg-blue-600 text-white py-2.5 px-4 rounded-lg hover:bg-blue-700 font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 {loading ? 'Loading...' : 'Sign Up'}
               </button>
@@ -164,19 +164,19 @@ export default function SignInPage() {
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300"></div>
+                <div className="w-full border-t border-gray-300 dark:border-slate-700"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">Or continue with</span>
+                <span className="px-2 bg-white dark:bg-slate-900 text-gray-500 dark:text-slate-400">Or continue with</span>
               </div>
             </div>
 
             <button
               onClick={handleGoogleSignIn}
               disabled={loading}
-              className="mt-4 w-full flex items-center justify-center gap-3 bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="mt-4 w-full flex items-center justify-center gap-3 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-slate-200 py-2.5 px-4 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-700 font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
-              <svg className="w-5 h-5" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   fill="#4285F4"
                   d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -199,7 +199,7 @@ export default function SignInPage() {
           </div>
 
           <div className="mt-6 text-center">
-            <Link href="/" className="text-emerald-600 hover:text-emerald-700 text-sm font-medium">
+            <Link href="/" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 text-sm font-medium">
               ← Back to Home
             </Link>
           </div>
