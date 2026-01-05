@@ -1,10 +1,10 @@
 import { getDb } from '@/lib/db'
-import PartyBadge from '@/components/PartyBadge'
-import StatusBadge from '@/components/StatusBadge'
 import Nav from '@/components/Nav'
 import Link from 'next/link'
+import PartyBadge from '@/components/PartyBadge'
+import StatusBadge from '@/components/StatusBadge'
 
-async function getPromises() {
+async function getRecentPromises(limit: number) {
   try {
     const db = getDb()
     const result = await db.query(`
@@ -15,7 +15,8 @@ async function getPromises() {
       FROM promises p
       LEFT JOIN politicians pol ON p.politician_id = pol.id
       ORDER BY p.created_at DESC
-    `)
+      LIMIT $1
+    `, [limit])
     return result.rows
   } catch (error) {
     console.error('Error fetching promises:', error);
@@ -23,10 +24,10 @@ async function getPromises() {
   }
 }
 
-async function getPoliticians() {
+async function getPoliticianSummary(limit: number) {
   try {
     const db = getDb()
-    const result = await db.query(`
+    const listResult = await db.query(`
       SELECT
         p.*,
         c.name as county_name,
@@ -37,11 +38,41 @@ async function getPoliticians() {
       LEFT JOIN local_authorities la ON p.local_authority_id = la.id
       WHERE p.active = true
       ORDER BY p.name
+      LIMIT $1
+    `, [limit])
+
+    const countResult = await db.query(`
+      SELECT COUNT(*)::int as total
+      FROM politicians
+      WHERE active = true
     `)
-    return result.rows
+
+    return {
+      list: listResult.rows,
+      total: countResult.rows[0]?.total ?? 0,
+    }
   } catch (error) {
     console.error('Error fetching politicians:', error);
-    return []
+    return { list: [], total: 0 }
+  }
+}
+
+async function getPromiseCounts() {
+  try {
+    const db = getDb()
+    const result = await db.query(`
+      SELECT
+        COUNT(*)::int as total,
+        COUNT(*) FILTER (WHERE status = 'kept')::int as kept,
+        COUNT(*) FILTER (WHERE status = 'broken')::int as broken,
+        COUNT(*) FILTER (WHERE status = 'in_progress')::int as in_progress,
+        COUNT(*) FILTER (WHERE status = 'pending')::int as pending
+      FROM promises
+    `)
+    return result.rows[0]
+  } catch (error) {
+    console.error('Error fetching promise counts:', error);
+    return { total: 0, kept: 0, broken: 0, in_progress: 0, pending: 0 }
   }
 }
 
@@ -50,15 +81,13 @@ export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
 export default async function Home() {
-  const [promises, politicians] = await Promise.all([getPromises(), getPoliticians()])
+  const [promises, politicianSummary, statusCounts] = await Promise.all([
+    getRecentPromises(6),
+    getPoliticianSummary(5),
+    getPromiseCounts(),
+  ])
 
-  // Calculate status counts
-  const statusCounts = {
-    kept: promises.filter((p: any) => p.status === 'kept').length,
-    broken: promises.filter((p: any) => p.status === 'broken').length,
-    in_progress: promises.filter((p: any) => p.status === 'in_progress').length,
-    pending: promises.filter((p: any) => p.status === 'pending').length,
-  }
+  const politicians = politicianSummary.list
 
   return (
     <>
@@ -83,7 +112,7 @@ export default async function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <p className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">{promises.length}</p>
+              <p className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">{statusCounts.total}</p>
             </div>
             <div className="bg-white dark:bg-slate-900 p-4 md:p-6 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 hover:shadow-lg transition-shadow">
               <div className="flex items-center justify-between mb-2">
@@ -92,7 +121,7 @@ export default async function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <p className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">{politicians.length.toLocaleString()}</p>
+              <p className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">{politicianSummary.total.toLocaleString()}</p>
             </div>
             <div className="bg-white dark:bg-slate-900 p-4 md:p-6 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 hover:shadow-lg transition-shadow">
               <div className="flex items-center justify-between mb-2">
