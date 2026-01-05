@@ -1,5 +1,31 @@
 # Claude Code Guidelines for Fiacha
 
+## Git & Deployment Rules
+
+### CRITICAL: Never Push to Main Without Approval
+1. **All work happens on the `staging` branch** - Never commit directly to `main`
+2. **Push to `staging` branch** triggers Vercel Preview deployment (staging URL)
+3. **Share the preview URL** with user and wait for explicit approval
+4. **Only after user says "push to production"** → merge staging to main
+
+### Deployment Workflow
+```
+1. git checkout staging
+2. Make changes, commit to staging
+3. git push origin staging
+4. Share Vercel preview URL with user
+5. WAIT for user approval
+6. Only then: git checkout main && git merge staging && git push origin main
+```
+
+### Branch Structure
+| Branch | Purpose | Vercel Environment |
+|--------|---------|-------------------|
+| `main` | Production only | Production (fiacha.vercel.app) |
+| `staging` | All development work | Preview (auto-generated URL) |
+
+---
+
 ## Database Safety Rules
 
 ### CRITICAL: Staging First, Always
