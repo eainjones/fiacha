@@ -8,6 +8,8 @@ interface Politician {
   id: number
   name: string
   party: string
+  party_color: string | null
+  party_short_name: string | null
   constituency: string
   county_name: string | null
   province: string | null
@@ -155,7 +157,7 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
                 </div>
 
                 <div className="flex items-center gap-2 mb-3">
-                  <PartyBadge party={pol.party} size="sm" />
+                  <PartyBadge party={pol.party} color={pol.party_color} shortName={pol.party_short_name} size="sm" />
                 </div>
 
                 <div className="grid grid-cols-2 gap-2 text-sm">
@@ -206,7 +208,7 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
                         <div className="text-xs text-gray-500 dark:text-slate-400">{pol.role}</div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <PartyBadge party={pol.party} size="sm" />
+                        <PartyBadge party={pol.party} color={pol.party_color} shortName={pol.party_short_name} size="sm" />
                       </td>
                       <td className="px-6 py-4">
                         <div className="text-sm text-gray-900 dark:text-slate-200">{pol.constituency}</div>

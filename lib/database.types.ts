@@ -203,6 +203,42 @@ export type Database = {
           },
         ]
       }
+      parties: {
+        Row: {
+          active: boolean | null
+          color: string | null
+          created_at: string | null
+          id: number
+          logo_url: string | null
+          name: string
+          region: string | null
+          short_name: string | null
+          website: string | null
+        }
+        Insert: {
+          active?: boolean | null
+          color?: string | null
+          created_at?: string | null
+          id?: number
+          logo_url?: string | null
+          name: string
+          region?: string | null
+          short_name?: string | null
+          website?: string | null
+        }
+        Update: {
+          active?: boolean | null
+          color?: string | null
+          created_at?: string | null
+          id?: number
+          logo_url?: string | null
+          name?: string
+          region?: string | null
+          short_name?: string | null
+          website?: string | null
+        }
+        Relationships: []
+      }
       politicians: {
         Row: {
           active: boolean | null
@@ -214,6 +250,7 @@ export type Database = {
           local_authority_id: number | null
           name: string
           party: string | null
+          party_id: number | null
           position_type: string | null
           role: string | null
           term_end: string | null
@@ -230,6 +267,7 @@ export type Database = {
           local_authority_id?: number | null
           name: string
           party?: string | null
+          party_id?: number | null
           position_type?: string | null
           role?: string | null
           term_end?: string | null
@@ -246,6 +284,7 @@ export type Database = {
           local_authority_id?: number | null
           name?: string
           party?: string | null
+          party_id?: number | null
           position_type?: string | null
           role?: string | null
           term_end?: string | null
@@ -272,6 +311,13 @@ export type Database = {
             columns: ["local_authority_id"]
             isOneToOne: false
             referencedRelation: "local_authorities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "politicians_party_id_fkey"
+            columns: ["party_id"]
+            isOneToOne: false
+            referencedRelation: "parties"
             referencedColumns: ["id"]
           },
         ]

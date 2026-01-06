@@ -55,5 +55,9 @@ export type LocalAuthority = Database['public']['Tables']['local_authorities']['
 export type Milestone = Database['public']['Tables']['milestones']['Row']
 export type StatusHistory = Database['public']['Tables']['status_history']['Row']
 
+export type Party = Database['public']['Tables']['parties']['Row']
+export type PartyInsert = Database['public']['Tables']['parties']['Insert']
+export type PartyUpdate = Database['public']['Tables']['parties']['Update']
+
 // Re-export the full Database type for advanced usage
 export type { Database }

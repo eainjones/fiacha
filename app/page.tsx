@@ -11,9 +11,12 @@ async function getRecentPromises(limit: number) {
       SELECT
         p.*,
         pol.name as politician_name,
-        pol.party
+        pol.party,
+        pt.color as party_color,
+        pt.short_name as party_short_name
       FROM promises p
       LEFT JOIN politicians pol ON p.politician_id = pol.id
+      LEFT JOIN parties pt ON pol.party_id = pt.id
       ORDER BY p.created_at DESC
       LIMIT $1
     `, [limit])
@@ -32,10 +35,13 @@ async function getPoliticianSummary(limit: number) {
         p.*,
         c.name as county_name,
         c.province,
-        la.name as local_authority_name
+        la.name as local_authority_name,
+        pt.color as party_color,
+        pt.short_name as party_short_name
       FROM politicians p
       LEFT JOIN counties c ON p.county_id = c.id
       LEFT JOIN local_authorities la ON p.local_authority_id = la.id
+      LEFT JOIN parties pt ON p.party_id = pt.id
       WHERE p.active = true
       ORDER BY p.name
       LIMIT $1
@@ -167,7 +173,7 @@ export default async function Home() {
                         <h3 className="font-semibold text-gray-900 dark:text-slate-100">{pol.name}</h3>
                         <p className="text-sm text-gray-600 dark:text-slate-400">{pol.constituency}</p>
                       </div>
-                      <PartyBadge party={pol.party} size="sm" />
+                      <PartyBadge party={pol.party} color={pol.party_color} shortName={pol.party_short_name} size="sm" />
                     </div>
                   </div>
                 ))
@@ -193,7 +199,7 @@ export default async function Home() {
                       <tr key={pol.id} className="hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors">
                         <td className="px-6 py-4 whitespace-nowrap font-semibold text-gray-900 dark:text-slate-100">{pol.name}</td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          <PartyBadge party={pol.party} size="sm" />
+                          <PartyBadge party={pol.party} color={pol.party_color} shortName={pol.party_short_name} size="sm" />
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-gray-600 dark:text-slate-300">{pol.constituency}</td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-slate-400">{pol.role}</td>

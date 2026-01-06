@@ -49,9 +49,12 @@ async function getPromises(filters: PromiseFiltersInput, limit: number, offset: 
       SELECT
         p.*,
         pol.name as politician_name,
-        pol.party
+        pol.party,
+        pt.color as party_color,
+        pt.short_name as party_short_name
       FROM promises p
       LEFT JOIN politicians pol ON p.politician_id = pol.id
+      LEFT JOIN parties pt ON pol.party_id = pt.id
       ${whereClause}
       ORDER BY p.created_at DESC
       LIMIT $${params.length + 1}

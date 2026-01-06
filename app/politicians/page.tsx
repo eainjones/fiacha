@@ -16,10 +16,13 @@ async function getPoliticians() {
         p.*,
         c.name as county_name,
         c.province,
-        la.name as local_authority_name
+        la.name as local_authority_name,
+        pt.color as party_color,
+        pt.short_name as party_short_name
       FROM politicians p
       LEFT JOIN counties c ON p.county_id = c.id
       LEFT JOIN local_authorities la ON p.local_authority_id = la.id
+      LEFT JOIN parties pt ON p.party_id = pt.id
       WHERE p.active = true
       ORDER BY p.name
     `)
