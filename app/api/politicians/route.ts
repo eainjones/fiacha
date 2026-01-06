@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getDb } from '@/lib/db'
+import { getSystemDb } from '@/lib/db'
 import { createClient } from '@/lib/supabase-server'
 
 export async function GET() {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const result = await db.query(`
       SELECT
         p.*,
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const db = getDb()
+    const db = getSystemDb()
     const body = await request.json()
 
     const { name, party, constituency, role } = body

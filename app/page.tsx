@@ -1,4 +1,4 @@
-import { getDb } from '@/lib/db'
+import { getSystemDb } from '@/lib/db'
 import Nav from '@/components/Nav'
 import Link from 'next/link'
 import PartyBadge from '@/components/PartyBadge'
@@ -6,7 +6,7 @@ import StatusBadge from '@/components/StatusBadge'
 
 async function getRecentPromises(limit: number) {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const result = await db.query(`
       SELECT
         p.*,
@@ -26,7 +26,7 @@ async function getRecentPromises(limit: number) {
 
 async function getPoliticianSummary(limit: number) {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const listResult = await db.query(`
       SELECT
         p.*,
@@ -59,7 +59,7 @@ async function getPoliticianSummary(limit: number) {
 
 async function getPromiseCounts() {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const result = await db.query(`
       SELECT
         COUNT(*)::int as total,

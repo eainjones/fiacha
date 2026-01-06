@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getDb } from '@/lib/db'
+import { getSystemDb } from '@/lib/db'
 import { createClient } from '@/lib/supabase-server'
 
 export async function POST(request: NextRequest, { params }: { params: { id: string } }) {
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest, { params }: { params: { id: str
       return NextResponse.json({ error: 'Rejection reason is required' }, { status: 400 })
     }
 
-    const db = getDb()
+    const db = getSystemDb()
     const result = await db.query(
       `
       UPDATE promise_review_queue

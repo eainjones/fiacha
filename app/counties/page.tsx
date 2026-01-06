@@ -1,6 +1,6 @@
 import Nav from '@/components/Nav'
 import Link from 'next/link'
-import { getDb } from '@/lib/db'
+import { getSystemDb } from '@/lib/db'
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic'
@@ -8,7 +8,7 @@ export const revalidate = 0
 
 async function getCounties() {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const result = await db.query(`
       SELECT
         c.*,

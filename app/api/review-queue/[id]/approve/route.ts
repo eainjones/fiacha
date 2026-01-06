@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getDb } from '@/lib/db'
+import { getSystemDb } from '@/lib/db'
 import { createClient } from '@/lib/supabase-server'
 
 function parseDate(value: unknown) {
@@ -22,7 +22,7 @@ export async function POST(_request: NextRequest, { params }: { params: { id: st
       return NextResponse.json({ error: 'Invalid review id' }, { status: 400 })
     }
 
-    const db = getDb()
+    const db = getSystemDb()
     const client = await db.connect()
 
     try {

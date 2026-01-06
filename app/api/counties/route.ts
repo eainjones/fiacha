@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server'
-import { getDb } from '@/lib/db'
+import { getSystemDb } from '@/lib/db'
 
 export async function GET() {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const result = await db.query(`
       SELECT
         c.*,

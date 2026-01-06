@@ -11,7 +11,7 @@ import * as path from 'path'
 // Load environment variables
 dotenv.config({ path: path.join(__dirname, '..', '.env') })
 
-import { getDb } from '../lib/db'
+import { getSystemDb } from '../lib/db'
 
 interface ValidationResult {
   check: string
@@ -24,7 +24,7 @@ interface ValidationResult {
 const results: ValidationResult[] = []
 
 async function validateData() {
-  const db = getDb()
+  const db = getSystemDb()
 
   console.log('\n🔍 Starting Data Validation...\n')
 

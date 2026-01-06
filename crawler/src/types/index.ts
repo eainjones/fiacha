@@ -1,5 +1,14 @@
 import { z } from 'zod';
 
+// Import shared types from main app's generated database types
+// Run `npm run types:update` in root to regenerate
+import type { Database } from '../../../lib/database.types';
+
+// Re-export database row types for convenience
+export type DbPolitician = Database['public']['Tables']['politicians']['Row'];
+export type DbPromise = Database['public']['Tables']['promises']['Row'];
+export type DbEvidence = Database['public']['Tables']['evidence']['Row'];
+
 /**
  * Promise categories matching the main Fiacha database
  */
@@ -120,22 +129,7 @@ export interface CrawlResult {
   };
 }
 
-/**
- * Database politician record (matches main Fiacha schema)
- */
-export interface DbPolitician {
-  id: number;
-  name: string;
-  party: string;
-  constituency: string | null;
-  county_id: number | null;
-  local_authority_id: number | null;
-  electoral_area_id: number | null;
-  role: string;
-  position_type: 'TD' | 'Councillor';
-  active: boolean;
-  created_at: Date;
-}
+// DbPolitician is now imported from shared database types above
 
 /**
  * Promise to insert into database

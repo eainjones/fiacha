@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { getDb } from '@/lib/db'
+import { getSystemDb } from '@/lib/db'
 import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/Nav'
 import ReviewQueueActions from '@/components/ReviewQueueActions'
@@ -53,7 +53,7 @@ function buildReviewFilters(status?: string, search?: string) {
 
 async function getStatusCounts() {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const result = await db.query(`
       SELECT status, COUNT(*)::int as count
       FROM promise_review_queue
@@ -83,7 +83,7 @@ async function getStatusCounts() {
 
 async function getReviewItems(status: string | undefined, search: string | undefined, limit: number, offset: number) {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const { whereClause, params } = buildReviewFilters(status, search)
     const result = await db.query(
       `
@@ -105,7 +105,7 @@ async function getReviewItems(status: string | undefined, search: string | undef
 
 async function getReviewCount(status: string | undefined, search: string | undefined) {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const { whereClause, params } = buildReviewFilters(status, search)
     const result = await db.query(
       `
@@ -131,6 +131,9 @@ export default async function AdminReviewPage({ searchParams }: { searchParams: 
 
   if (!user) {
     redirect('/auth/sign-in')
+  }
+  if (user.email !== 'eain.jones@gmail.com') {
+    redirect('/')
   }
 
   const status = typeof searchParams.status === 'string' ? searchParams.status : undefined

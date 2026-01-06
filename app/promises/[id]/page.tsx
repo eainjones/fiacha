@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation'
-import { getDb } from '@/lib/db'
+import { getSystemDb } from '@/lib/db'
 import Nav from '@/components/Nav'
 import Link from 'next/link'
 
 async function getPromiseDetails(id: string) {
-  const db = getDb()
+  const db = getSystemDb()
 
   const promiseResult = await db.query(
     `SELECT p.*, pol.name as politician_name, pol.party, pol.constituency

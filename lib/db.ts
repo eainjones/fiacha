@@ -6,7 +6,17 @@ dns.setDefaultResultOrder('ipv4first')
 
 let pool: Pool | null = null
 
-export function getDb() {
+/**
+ * Get a direct PostgreSQL connection that BYPASSES Row Level Security (RLS).
+ *
+ * USE CASES:
+ * - System/admin operations (crawler, maintenance scripts)
+ * - Background jobs with no user session
+ * - Heavy data aggregation
+ *
+ * WARNING: For user-facing routes, prefer Supabase client which enforces RLS.
+ */
+export function getSystemDb() {
   if (!pool) {
     pool = new Pool({
       connectionString: process.env.DATABASE_URL,
@@ -21,38 +31,29 @@ export function getDb() {
   return pool
 }
 
-export type Politician = {
-  id: number
-  name: string
-  party: string | null
-  constituency: string | null
-  role: string | null
-  active: boolean
-  created_at: Date
-  updated_at: Date
-}
+/** @deprecated Use getSystemDb() instead - renamed for clarity */
+export const getDb = getSystemDb
 
-export type Promise = {
-  id: number
-  politician_id: number
-  title: string
-  description: string | null
-  category: string | null
-  promise_date: Date | null
-  target_date: Date | null
-  status: string
-  score: number | null
-  created_at: Date
-  updated_at: Date
-}
+// Re-export types from generated database types
+// Run `npm run types:update` to regenerate after schema changes
+import type { Database } from './database.types'
 
-export type Evidence = {
-  id: number
-  promise_id: number
-  source_type: string | null
-  source_url: string | null
-  title: string | null
-  description: string | null
-  published_date: Date | null
-  created_at: Date
-}
+export type Politician = Database['public']['Tables']['politicians']['Row']
+export type PoliticianInsert = Database['public']['Tables']['politicians']['Insert']
+export type PoliticianUpdate = Database['public']['Tables']['politicians']['Update']
+
+export type Promise = Database['public']['Tables']['promises']['Row']
+export type PromiseInsert = Database['public']['Tables']['promises']['Insert']
+export type PromiseUpdate = Database['public']['Tables']['promises']['Update']
+
+export type Evidence = Database['public']['Tables']['evidence']['Row']
+export type EvidenceInsert = Database['public']['Tables']['evidence']['Insert']
+export type EvidenceUpdate = Database['public']['Tables']['evidence']['Update']
+
+export type County = Database['public']['Tables']['counties']['Row']
+export type LocalAuthority = Database['public']['Tables']['local_authorities']['Row']
+export type Milestone = Database['public']['Tables']['milestones']['Row']
+export type StatusHistory = Database['public']['Tables']['status_history']['Row']
+
+// Re-export the full Database type for advanced usage
+export type { Database }

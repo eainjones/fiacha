@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation'
-import { getDb } from '@/lib/db'
+import { getSystemDb } from '@/lib/db'
 import { createClient } from '@/lib/supabase-server'
 import Nav from '@/components/Nav'
 import ReviewQueueActions from '@/components/ReviewQueueActions'
@@ -14,7 +14,7 @@ type ReviewQueueItem = {
 
 async function getPendingReviews(limit: number) {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const result = await db.query(
       `
       SELECT *
@@ -41,6 +41,9 @@ export default async function ReviewQueuePage() {
 
   if (!user) {
     redirect('/auth/sign-in')
+  }
+  if (user.email !== 'eain.jones@gmail.com') {
+    redirect('/')
   }
 
   const items = await getPendingReviews(50)

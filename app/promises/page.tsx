@@ -3,7 +3,7 @@ import Link from 'next/link'
 import PromisesList from '@/components/PromisesList'
 import PromiseFilters from '@/components/PromiseFilters'
 import PromisePagination from '@/components/PromisePagination'
-import { getDb } from '@/lib/db'
+import { getSystemDb } from '@/lib/db'
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic'
@@ -43,7 +43,7 @@ function buildPromiseFilters(filters: PromiseFiltersInput) {
 
 async function getPromises(filters: PromiseFiltersInput, limit: number, offset: number) {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const { whereClause, params } = buildPromiseFilters(filters)
     const result = await db.query(`
       SELECT
@@ -66,7 +66,7 @@ async function getPromises(filters: PromiseFiltersInput, limit: number, offset: 
 
 async function getPromiseCount(filters: PromiseFiltersInput) {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const { whereClause, params } = buildPromiseFilters(filters)
     const result = await db.query(`
       SELECT COUNT(*)::int as total
@@ -83,7 +83,7 @@ async function getPromiseCount(filters: PromiseFiltersInput) {
 
 async function getPoliticians() {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const result = await db.query(`
       SELECT
         p.*,
@@ -105,7 +105,7 @@ async function getPoliticians() {
 
 async function getCategories() {
   try {
-    const db = getDb()
+    const db = getSystemDb()
     const result = await db.query(`
       SELECT DISTINCT category
       FROM promises
