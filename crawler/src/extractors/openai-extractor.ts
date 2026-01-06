@@ -98,7 +98,8 @@ export class OpenAIPromiseExtractor extends BasePromiseExtractor {
           console.log(`[OpenAI] ✓ Validated promise: "${rawPromise.promise_title}"`);
         } catch (error) {
           console.warn('[OpenAI] ✗ Invalid promise schema, skipping');
-          console.warn('  Error:', error.errors?.[0]?.message || error.message);
+          const err = error as { errors?: { message: string }[]; message?: string };
+          console.warn('  Error:', err.errors?.[0]?.message || err.message);
           console.warn('  Promise title:', rawPromise.promise_title);
         }
       }

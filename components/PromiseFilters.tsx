@@ -1,14 +1,15 @@
 'use client'
 
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 interface PromiseFiltersProps {
   politicians: any[]
   categories: string[]
+  basePath?: string
 }
 
-export default function PromiseFilters({ politicians, categories }: PromiseFiltersProps) {
+export default function PromiseFilters({ politicians, categories, basePath = '/promises' }: PromiseFiltersProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -16,17 +17,24 @@ export default function PromiseFilters({ politicians, categories }: PromiseFilte
   const [category, setCategory] = useState(searchParams.get('category') || '')
   const [politicianId, setPoliticianId] = useState(searchParams.get('politician_id') || '')
   const [search, setSearch] = useState(searchParams.get('search') || '')
+  const isInitial = useRef(true)
 
   useEffect(() => {
+    if (isInitial.current) {
+      isInitial.current = false
+      return
+    }
+
     const params = new URLSearchParams()
     if (status) params.set('status', status)
     if (category) params.set('category', category)
     if (politicianId) params.set('politician_id', politicianId)
     if (search) params.set('search', search)
+    params.set('page', '1')
 
     const queryString = params.toString()
-    router.push(queryString ? `/?${queryString}` : '/')
-  }, [status, category, politicianId, search, router])
+    router.push(queryString ? `${basePath}?${queryString}` : basePath)
+  }, [status, category, politicianId, search, router, basePath])
 
   const handleReset = () => {
     setStatus('')

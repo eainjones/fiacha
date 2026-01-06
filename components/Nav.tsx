@@ -52,6 +52,9 @@ export default function Nav() {
     { href: '/promises', label: 'Promises' },
     { href: '/counties', label: 'Counties' },
   ]
+  const visibleLinks = user
+    ? [...navLinks, { href: '/review-queue', label: 'Review Queue' }, { href: '/admin/review', label: 'Admin Review' }]
+    : navLinks
 
   return (
     <nav className="bg-white shadow-md border-b border-gray-200 dark:bg-slate-900 dark:border-slate-700" role="navigation" aria-label="Main navigation">
@@ -63,7 +66,7 @@ export default function Nav() {
             </Link>
             {/* Desktop Navigation */}
             <div className="hidden sm:ml-10 sm:flex sm:space-x-1">
-              {navLinks.map((link) => (
+              {visibleLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -149,8 +152,8 @@ export default function Nav() {
         id="mobile-menu"
         className={`sm:hidden transition-all duration-200 ease-in-out ${mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-slate-700">
-          {navLinks.map((link) => (
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-slate-700">
+          {visibleLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}

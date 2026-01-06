@@ -9,6 +9,12 @@
     "start": "node dist/index.js",
     "review": "tsx src/review/cli-review.ts",
     "crawl": "tsx src/index.ts",
+    "crawl:councils": "tsx scrape-councils.ts",
+    "crawl:weekend": "tsx weekend-council-crawl.ts",
+    "crawl:weekend:batch": "tsx weekend-council-crawl.ts --batch",
+    "crawl:weekend:dry-run": "tsx weekend-council-crawl.ts --dry-run",
+    "council:status": "tsx council-status.ts",
+    "council:merge": "tsx merge-councillors.ts",
     "test": "tsx src/test.ts",
     "test:email": "tsx test-email.ts"
   },

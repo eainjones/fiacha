@@ -1,0 +1,61 @@
+{
+  "batches": [
+    {
+      "batchNumber": 1,
+      "day": "saturday",
+      "hour": 8,
+      "councils": ["dublin", "dun-laoghaire-rathdown", "south-dublin", "fingal", "carlow"]
+    },
+    {
+      "batchNumber": 2,
+      "day": "saturday",
+      "hour": 10,
+      "councils": ["cavan", "clare", "cork", "cork-city", "donegal"]
+    },
+    {
+      "batchNumber": 3,
+      "day": "saturday",
+      "hour": 12,
+      "councils": ["galway", "galway-city", "kerry", "kildare", "kilkenny"]
+    },
+    {
+      "batchNumber": 4,
+      "day": "saturday",
+      "hour": 14,
+      "councils": ["laois", "leitrim", "limerick", "longford", "louth"]
+    },
+    {
+      "batchNumber": 5,
+      "day": "sunday",
+      "hour": 8,
+      "councils": ["mayo", "meath", "monaghan", "offaly", "roscommon"]
+    },
+    {
+      "batchNumber": 6,
+      "day": "sunday",
+      "hour": 10,
+      "councils": ["sligo", "tipperary", "waterford", "westmeath", "wexford"]
+    },
+    {
+      "batchNumber": 7,
+      "day": "sunday",
+      "hour": 12,
+      "councils": ["wicklow"]
+    }
+  ],
+  "rateLimit": {
+    "interRequestDelayMs": 10000,
+    "rateLimitPauseMs": 1800000,
+    "maxRetries": 5,
+    "backoffMultiplier": 2,
+    "initialBackoffMs": 2000
+  },
+  "changeDetection": {
+    "suspiciousChangeThreshold": 0.5,
+    "requireManualConfirmationAboveThreshold": true
+  },
+  "notifications": {
+    "sendWeeklySummary": true,
+    "sendImmediateAlertOnSuspiciousChange": true
+  }
+}

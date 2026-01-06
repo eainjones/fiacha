@@ -2,14 +2,32 @@ import FirecrawlApp from '@mendable/firecrawl-js';
 import { CrawlResult, CrawlSourceType } from '../types';
 
 /**
+ * Rate limit error class for 429 handling
+ */
+export class RateLimitError extends Error {
+  constructor(message: string = 'Rate limit exceeded (429)') {
+    super(message);
+    this.name = 'RateLimitError';
+  }
+}
+
+/**
  * Firecrawl client wrapper with retry logic and error handling
  */
 export class FirecrawlClient {
   private client: FirecrawlApp;
   private maxRetries: number;
   private delayMs: number;
+  private rateLimitPauseMs: number;
+  private consecutiveRateLimits: number = 0;
+  private maxConsecutiveRateLimits: number = 3;
 
-  constructor(apiKey: string, maxRetries: number = 3, delayMs: number = 2000) {
+  constructor(
+    apiKey: string,
+    maxRetries: number = 3,
+    delayMs: number = 2000,
+    rateLimitPauseMs: number = 1800000 // 30 minutes default
+  ) {
     if (!apiKey) {
       throw new Error('FIRECRAWL_API_KEY is required');
     }
@@ -17,12 +35,48 @@ export class FirecrawlClient {
     this.client = new FirecrawlApp({ apiKey });
     this.maxRetries = maxRetries;
     this.delayMs = delayMs;
+    this.rateLimitPauseMs = rateLimitPauseMs;
+  }
+
+  /**
+   * Check if error is a rate limit (429) error
+   */
+  private isRateLimitError(error: any): boolean {
+    if (!error) return false;
+    const message = error.message || error.toString();
+    return message.includes('429') || message.includes('rate limit') || error.statusCode === 429;
+  }
+
+  /**
+   * Handle rate limit with extended pause
+   */
+  async handleRateLimit(): Promise<void> {
+    this.consecutiveRateLimits++;
+
+    if (this.consecutiveRateLimits >= this.maxConsecutiveRateLimits) {
+      throw new RateLimitError(
+        `Exceeded max consecutive rate limits (${this.maxConsecutiveRateLimits}). Batch should be skipped.`
+      );
+    }
+
+    const pauseMinutes = Math.round(this.rateLimitPauseMs / 60000);
+    console.log(`[Firecrawl] Rate limited. Pausing for ${pauseMinutes} minutes...`);
+    await this.delay(this.rateLimitPauseMs);
+    console.log(`[Firecrawl] Resuming after rate limit pause`);
+  }
+
+  /**
+   * Reset consecutive rate limit counter on successful request
+   */
+  resetRateLimitCounter(): void {
+    this.consecutiveRateLimits = 0;
   }
 
   /**
    * Scrape a single URL and return structured content
+   * Includes special handling for 429 rate limit errors
    */
-  async scrapeUrl(url: string): Promise<CrawlResult> {
+  async scrapeUrl(url: string, handleRateLimitExternally: boolean = false): Promise<CrawlResult> {
     console.log(`[Firecrawl] Scraping: ${url}`);
 
     let lastError: Error | null = null;
@@ -35,11 +89,18 @@ export class FirecrawlClient {
           waitFor: 1000, // Wait for dynamic content
         });
 
-        if (!result || !result.markdown) {
+        if (!result || !result.success) {
+          throw new Error('Firecrawl scrape failed');
+        }
+
+        if (!result.markdown) {
           throw new Error('No markdown content returned from Firecrawl');
         }
 
         console.log(`[Firecrawl] ✓ Scraped successfully (${result.markdown.length} chars)`);
+
+        // Reset rate limit counter on success
+        this.resetRateLimitCounter();
 
         return {
           url,
@@ -54,6 +115,25 @@ export class FirecrawlClient {
       } catch (error) {
         lastError = error as Error;
         console.error(`[Firecrawl] ✗ Attempt ${attempt}/${this.maxRetries} failed:`, error);
+
+        // Special handling for 429 rate limit errors
+        if (this.isRateLimitError(error)) {
+          if (handleRateLimitExternally) {
+            // Let the caller handle the rate limit (for batch operations)
+            throw new RateLimitError(`Rate limited on ${url}`);
+          }
+
+          // Handle rate limit internally with extended pause
+          try {
+            await this.handleRateLimit();
+            // Don't count this as a failed attempt - retry immediately
+            attempt--;
+            continue;
+          } catch (rateLimitError) {
+            // Too many consecutive rate limits
+            throw rateLimitError;
+          }
+        }
 
         if (attempt < this.maxRetries) {
           const backoffDelay = this.delayMs * Math.pow(2, attempt - 1);
@@ -119,7 +199,11 @@ export class FirecrawlClient {
         includePaths: options.includePaths,
       });
 
-      if (!crawlResult || !crawlResult.data) {
+      if (!crawlResult || !crawlResult.success) {
+        throw new Error('Website crawl failed');
+      }
+
+      if (!crawlResult.data) {
         throw new Error('No data returned from website crawl');
       }
 
@@ -171,12 +255,13 @@ export class FirecrawlClient {
  */
 export function createFirecrawlClient(): FirecrawlClient {
   const apiKey = process.env.FIRECRAWL_API_KEY;
-  const maxRetries = parseInt(process.env.MAX_RETRIES || '3', 10);
-  const delayMs = parseInt(process.env.CRAWL_DELAY_MS || '2000', 10);
+  const maxRetries = parseInt(process.env.MAX_RETRIES || '5', 10);
+  const delayMs = parseInt(process.env.CRAWL_DELAY_MS || '10000', 10); // 10 seconds default for council scraping
+  const rateLimitPauseMs = parseInt(process.env.RATE_LIMIT_PAUSE_MS || '1800000', 10); // 30 minutes
 
   if (!apiKey) {
     throw new Error('FIRECRAWL_API_KEY environment variable is not set');
   }
 
-  return new FirecrawlClient(apiKey, maxRetries, delayMs);
+  return new FirecrawlClient(apiKey, maxRetries, delayMs, rateLimitPauseMs);
 }

@@ -22,6 +22,7 @@ const TIER1_SOURCES: CrawlSourceType[] = [
     enabled: true,
     priority: 10,
     deepCrawl: false,
+    maxPages: 1,
   },
   {
     url: 'https://www.gov.ie/en/department-of-finance/campaigns/budget/',
@@ -31,6 +32,7 @@ const TIER1_SOURCES: CrawlSourceType[] = [
     enabled: true,
     priority: 9,
     deepCrawl: false,
+    maxPages: 1,
   },
   // Deep crawl sources (disabled for now to save API costs)
   {
@@ -75,6 +77,8 @@ const TIER2_SOURCES: CrawlSourceType[] = [
     sourceType: 'media',
     enabled: false, // Disabled for initial POC
     priority: 7,
+    deepCrawl: false,
+    maxPages: 1,
   },
   {
     url: 'https://www.irishtimes.com/politics/',
@@ -83,6 +87,8 @@ const TIER2_SOURCES: CrawlSourceType[] = [
     sourceType: 'media',
     enabled: false, // Disabled for initial POC
     priority: 6,
+    deepCrawl: false,
+    maxPages: 1,
   },
   {
     url: 'https://www.thejournal.ie/section/politics-2/',
@@ -91,6 +97,8 @@ const TIER2_SOURCES: CrawlSourceType[] = [
     sourceType: 'media',
     enabled: false, // Disabled for initial POC
     priority: 5,
+    deepCrawl: false,
+    maxPages: 1,
   },
 ];
 

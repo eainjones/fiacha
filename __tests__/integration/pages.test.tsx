@@ -7,6 +7,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 import { GET as getPoliticians } from '@/app/api/politicians/route'
 import { GET as getCounties } from '@/app/api/counties/route'
 import { GET as getPromises } from '@/app/api/promises/route'
+import { NextRequest } from 'next/server'
 
 describe('Page Integration Tests', () => {
   describe('Politicians API returns data for page', () => {
@@ -55,7 +56,8 @@ describe('Page Integration Tests', () => {
 
   describe('Promises API returns data for page', () => {
     it('should return data that can be displayed on promises page', async () => {
-      const response = await getPromises()
+      const request = new NextRequest('http://localhost/api/promises')
+      const response = await getPromises(request)
       const promises = await response.json()
 
       expect(promises.length).toBeGreaterThan(0)
@@ -74,7 +76,8 @@ describe('Page Integration Tests', () => {
       const politiciansResponse = await getPoliticians()
       const politicians = await politiciansResponse.json()
 
-      const promisesResponse = await getPromises()
+      const request = new NextRequest('http://localhost/api/promises')
+      const promisesResponse = await getPromises(request)
       const promises = await promisesResponse.json()
 
       // Every politician_id in promises should exist in politicians

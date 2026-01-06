@@ -1,7 +1,7 @@
-import { IPromiseExtractor } from './llm-interface';
+import type { IPromiseExtractor } from './llm-interface';
 import { createClaudeExtractor } from './claude-extractor';
 import { createOpenAIExtractor } from './openai-extractor';
-import { LLMProvider } from '../types';
+import type { LLMProvider } from '../types';
 
 /**
  * Factory function to create extractor based on environment configuration
@@ -21,6 +21,6 @@ export function createExtractor(provider?: LLMProvider): IPromiseExtractor {
   }
 }
 
-export { IPromiseExtractor } from './llm-interface';
+export type { IPromiseExtractor } from './llm-interface';
 export { ClaudePromiseExtractor } from './claude-extractor';
 export { OpenAIPromiseExtractor } from './openai-extractor';

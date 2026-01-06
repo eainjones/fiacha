@@ -92,8 +92,15 @@ export default function AddPage() {
     setSuccess('')
 
     const formData = new FormData(e.currentTarget)
+    const politicianIdValue = parseInt(formData.get('politician_id') as string, 10)
+    if (!Number.isInteger(politicianIdValue) || politicianIdValue <= 0) {
+      setError('Please select a valid politician.')
+      setLoading(false)
+      return
+    }
+
     const data = {
-      politician_id: parseInt(formData.get('politician_id') as string),
+      politician_id: politicianIdValue,
       title: formData.get('title'),
       description: formData.get('description'),
       category: formData.get('category'),

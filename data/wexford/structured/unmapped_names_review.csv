@@ -1,0 +1,11 @@
+name,count,notes,status
+D Kennedy,8,"Possibly Donal Kenny typo, or different person entirely",needs_research
+M Roche,5,"Unknown - not in current councillor list",needs_research
+O O'Connell,5,"Unknown - not in current councillor list",needs_research
+K,1,"Single letter - too ambiguous to map",skip
+Cllr A,1,"Ambiguous abbreviation",skip
+Pat Moore,1,"Could be Pat + Jim Moore combo, or different person",needs_research
+M Ball,1,"Unknown - not in current councillor list",needs_research
+Roche A,1,"Likely same as M Roche",needs_research
+Roche,1,"Likely same as M Roche",needs_research
+O'Connell To,1,"Parsing artifact from O O'Connell",needs_research

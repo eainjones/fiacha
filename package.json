@@ -10,15 +10,14 @@
     "test:api": "npx tsx scripts/test-endpoints.ts",
     "test:all": "npm run validate && npm run test:api",
     "validate": "npx tsx scripts/validate-data.ts",
-    "deploy:staging": "./scripts/deploy-staging.sh",
-    "deploy:production": "./scripts/deploy-production.sh",
-    "migrate:staging": "./scripts/apply-migrations-simple.sh fiacha-staging-db",
-    "migrate:production": "./scripts/apply-migrations-simple.sh fiacha-production-db",
-    "setup:supabase": "./scripts/setup-supabase.sh",
-    "migrate:supabase": "./scripts/migrate-supabase.sh",
-    "setup:vercel": "./scripts/setup-vercel.sh",
-    "vercel:deploy": "vercel",
-    "vercel:prod": "vercel --prod"
+    "deploy": "vercel",
+    "deploy:prod": "vercel --prod",
+    "db:push": "supabase db push",
+    "db:pull": "supabase db pull",
+    "db:reset": "supabase db reset",
+    "db:status": "supabase migration list",
+    "import:politicians": "npx tsx scripts/import-politicians.ts",
+    "import:politicians:dry": "DRY_RUN=true npx tsx scripts/import-politicians.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.7.0",

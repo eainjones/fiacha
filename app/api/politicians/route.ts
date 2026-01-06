@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getDb } from '@/lib/db'
+import { createClient } from '@/lib/supabase-server'
 
 export async function GET() {
   try {
@@ -29,12 +30,19 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   try {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
     const db = getDb()
     const body = await request.json()
 
     const { name, party, constituency, role } = body
 
-    if (!name) {
+    if (typeof name !== 'string' || name.trim().length === 0) {
       return NextResponse.json({ error: 'name is required' }, { status: 400 })
     }
 
@@ -42,7 +50,7 @@ export async function POST(request: NextRequest) {
       `INSERT INTO politicians (name, party, constituency, role)
        VALUES ($1, $2, $3, $4)
        RETURNING *`,
-      [name, party, constituency, role]
+      [name.trim(), party, constituency, role]
     )
 
     return NextResponse.json(result.rows[0], { status: 201 })

@@ -1,6 +1,3 @@
-'use client'
-
-import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import StatusBadge from './StatusBadge'
 
@@ -19,154 +16,19 @@ interface Promise {
 
 interface PromisesListProps {
   promises: Promise[]
-  politicians: any[]
 }
 
-export default function PromisesList({ promises, politicians }: PromisesListProps) {
-  const [searchTerm, setSearchTerm] = useState('')
-  const [statusFilter, setStatusFilter] = useState('')
-  const [categoryFilter, setCategoryFilter] = useState('')
-  const [politicianFilter, setPoliticianFilter] = useState('')
-
-  // Get unique categories
-  const categories = useMemo(() => {
-    const cats = new Set(promises.map(p => p.category).filter(Boolean))
-    return Array.from(cats).sort()
-  }, [promises])
-
-  // Filter promises
-  const filteredPromises = useMemo(() => {
-    return promises.filter(promise => {
-      // Search filter
-      if (searchTerm) {
-        const search = searchTerm.toLowerCase()
-        const matchesSearch =
-          promise.title.toLowerCase().includes(search) ||
-          promise.description?.toLowerCase().includes(search) ||
-          promise.politician_name.toLowerCase().includes(search)
-        if (!matchesSearch) return false
-      }
-
-      // Status filter
-      if (statusFilter && promise.status !== statusFilter) return false
-
-      // Category filter
-      if (categoryFilter && promise.category !== categoryFilter) return false
-
-      // Politician filter
-      if (politicianFilter && promise.politician_name !== politicianFilter) return false
-
-      return true
-    })
-  }, [promises, searchTerm, statusFilter, categoryFilter, politicianFilter])
-
-  const handleReset = () => {
-    setSearchTerm('')
-    setStatusFilter('')
-    setCategoryFilter('')
-    setPoliticianFilter('')
-  }
-
+export default function PromisesList({ promises }: PromisesListProps) {
   return (
     <>
-      {/* Filters */}
-      <div className="bg-white dark:bg-slate-900 p-4 md:p-6 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 mb-6">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-slate-100">Filters</h3>
-          <button
-            onClick={handleReset}
-            className="text-sm text-emerald-600 dark:text-emerald-400 hover:underline font-medium"
-          >
-            Reset Filters
-          </button>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div>
-            <label htmlFor="search" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
-              Search
-            </label>
-            <input
-              id="search"
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search promises..."
-              className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 placeholder-gray-400 dark:placeholder-slate-500"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="status" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
-              Status
-            </label>
-            <select
-              id="status"
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-            >
-              <option value="">All Statuses</option>
-              <option value="pending">Pending</option>
-              <option value="in_progress">In Progress</option>
-              <option value="kept">Kept</option>
-              <option value="broken">Broken</option>
-              <option value="compromised">Compromised</option>
-            </select>
-          </div>
-
-          <div>
-            <label htmlFor="category" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
-              Category
-            </label>
-            <select
-              id="category"
-              value={categoryFilter}
-              onChange={(e) => setCategoryFilter(e.target.value)}
-              className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-            >
-              <option value="">All Categories</option>
-              {categories.map((cat) => (
-                <option key={cat} value={cat}>
-                  {cat}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label htmlFor="politician" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
-              Politician
-            </label>
-            <select
-              id="politician"
-              value={politicianFilter}
-              onChange={(e) => setPoliticianFilter(e.target.value)}
-              className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-            >
-              <option value="">All Politicians</option>
-              {politicians.map((pol) => (
-                <option key={pol.id} value={pol.name}>
-                  {pol.name}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        <div className="mt-4 text-sm text-gray-600 dark:text-slate-400">
-          Showing <span className="font-bold text-emerald-600 dark:text-emerald-400">{filteredPromises.length}</span> of {promises.length} promises
-        </div>
-      </div>
-
       {/* Promises List */}
-      {filteredPromises.length === 0 ? (
+      {promises.length === 0 ? (
         <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 p-12 text-center">
           <p className="text-gray-500 dark:text-slate-400">No promises match your filters</p>
         </div>
       ) : (
         <div className="space-y-4">
-          {filteredPromises.map((promise) => (
+          {promises.map((promise) => (
             <Link key={promise.id} href={`/promises/${promise.id}`} className="block group">
               <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 hover:shadow-xl hover:border-emerald-200 dark:hover:border-emerald-800 transition-all cursor-pointer">
                 <div className="p-4 md:p-6">

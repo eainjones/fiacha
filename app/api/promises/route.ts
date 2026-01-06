@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getDb } from '@/lib/db'
+import { createClient } from '@/lib/supabase-server'
 
 export async function GET(request: NextRequest) {
   try {
@@ -9,6 +10,8 @@ export async function GET(request: NextRequest) {
     const status = searchParams.get('status')
     const category = searchParams.get('category')
     const politicianId = searchParams.get('politician_id')
+    const limit = Math.min(Number(searchParams.get('limit')) || 100, 100)
+    const offset = Math.max(Number(searchParams.get('offset')) || 0, 0)
 
     let query = `
       SELECT p.*, pol.name as politician_name, pol.party
@@ -32,7 +35,8 @@ export async function GET(request: NextRequest) {
       params.push(politicianId)
     }
 
-    query += ' ORDER BY p.created_at DESC LIMIT 100'
+    query += ` ORDER BY p.created_at DESC LIMIT $${paramCount++} OFFSET $${paramCount++}`
+    params.push(limit, offset)
 
     const result = await db.query(query, params)
 
@@ -45,20 +49,31 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
     const db = getDb()
     const body = await request.json()
 
     const { politician_id, title, description, category, promise_date, target_date } = body
 
-    if (!politician_id || !title) {
-      return NextResponse.json({ error: 'politician_id and title are required' }, { status: 400 })
+    const politicianId = Number(politician_id)
+    if (!Number.isInteger(politicianId) || politicianId <= 0) {
+      return NextResponse.json({ error: 'politician_id must be a positive integer' }, { status: 400 })
+    }
+    if (typeof title !== 'string' || title.trim().length === 0) {
+      return NextResponse.json({ error: 'title is required' }, { status: 400 })
     }
 
     const result = await db.query(
       `INSERT INTO promises (politician_id, title, description, category, promise_date, target_date, status)
        VALUES ($1, $2, $3, $4, $5, $6, 'pending')
        RETURNING *`,
-      [politician_id, title, description, category, promise_date, target_date]
+      [politicianId, title.trim(), description, category, promise_date, target_date]
     )
 
     return NextResponse.json(result.rows[0], { status: 201 })
