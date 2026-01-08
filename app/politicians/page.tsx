@@ -1,45 +1,19 @@
 import Nav from '@/components/Nav'
 import Link from 'next/link'
 import PoliticiansList from '@/components/PoliticiansList'
-
-import { getSystemDb } from '@/lib/db'
+import { getActivePoliticians } from '@/lib/db/queries'
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
-async function getPoliticians() {
-  try {
-    const db = getSystemDb()
-    const result = await db.query(`
-      SELECT
-        p.*,
-        c.name as county_name,
-        c.province,
-        la.name as local_authority_name,
-        pt.color as party_color,
-        pt.short_name as party_short_name
-      FROM politicians p
-      LEFT JOIN counties c ON p.county_id = c.id
-      LEFT JOIN local_authorities la ON p.local_authority_id = la.id
-      LEFT JOIN parties pt ON p.party_id = pt.id
-      WHERE p.active = true
-      ORDER BY p.name
-    `)
-    return result.rows
-  } catch (error) {
-    console.error('Error fetching politicians:', error);
-    return []
-  }
-}
-
 export default async function PoliticiansPage() {
-  const politicians = await getPoliticians()
+  const politicians = await getActivePoliticians()
 
-  const tdCount = politicians.filter((p: any) => p.position_type === 'TD').length
-  const councillorCount = politicians.filter((p: any) => p.position_type === 'Councillor').length
-  const senatorCount = politicians.filter((p: any) => p.position_type === 'Senator').length
-  const mlaCount = politicians.filter((p: any) => p.position_type === 'MLA').length
+  const tdCount = politicians.filter((p) => p.positionType === 'TD').length
+  const councillorCount = politicians.filter((p) => p.positionType === 'Councillor').length
+  const senatorCount = politicians.filter((p) => p.positionType === 'Senator').length
+  const mlaCount = politicians.filter((p) => p.positionType === 'MLA').length
 
   return (
     <>

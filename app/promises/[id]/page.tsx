@@ -1,44 +1,22 @@
 import { notFound } from 'next/navigation'
-import { getSystemDb } from '@/lib/db'
 import Nav from '@/components/Nav'
 import Link from 'next/link'
+import { getPromiseById, getEvidenceForPromise, getMilestonesForPromise, getStatusHistoryForPromise } from '@/lib/db/queries'
 
 async function getPromiseDetails(id: string) {
-  const db = getSystemDb()
+  const promiseId = parseInt(id, 10)
+  if (isNaN(promiseId)) return null
 
-  const promiseResult = await db.query(
-    `SELECT p.*, pol.name as politician_name, pol.party, pol.constituency
-     FROM promises p
-     LEFT JOIN politicians pol ON p.politician_id = pol.id
-     WHERE p.id = $1`,
-    [id]
-  )
+  const [promise, evidence, milestones, statusHistory] = await Promise.all([
+    getPromiseById(promiseId),
+    getEvidenceForPromise(promiseId),
+    getMilestonesForPromise(promiseId),
+    getStatusHistoryForPromise(promiseId),
+  ])
 
-  if (promiseResult.rows.length === 0) {
-    return null
-  }
+  if (!promise) return null
 
-  const evidence = await db.query(
-    'SELECT * FROM evidence WHERE promise_id = $1 ORDER BY published_date DESC',
-    [id]
-  )
-
-  const milestones = await db.query(
-    'SELECT * FROM milestones WHERE promise_id = $1 ORDER BY milestone_date DESC',
-    [id]
-  )
-
-  const statusHistory = await db.query(
-    'SELECT * FROM status_history WHERE promise_id = $1 ORDER BY created_at DESC',
-    [id]
-  )
-
-  return {
-    promise: promiseResult.rows[0],
-    evidence: evidence.rows,
-    milestones: milestones.rows,
-    statusHistory: statusHistory.rows,
-  }
+  return { promise, evidence, milestones, statusHistory }
 }
 
 export default async function PromiseDetailPage({ params }: { params: { id: string } }) {
@@ -73,8 +51,8 @@ export default async function PromiseDetailPage({ params }: { params: { id: stri
           <div className="bg-white dark:bg-slate-900 p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 mb-6 md:mb-8">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-6">
               <h1 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-slate-50 leading-tight">{promise.title}</h1>
-              <span className={`inline-flex self-start px-4 md:px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wide border ${statusColors[promise.status as keyof typeof statusColors] || 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-600'}`}>
-                {promise.status.replace('_', ' ')}
+              <span className={`inline-flex self-start px-4 md:px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wide border ${statusColors[(promise.status ?? 'pending') as keyof typeof statusColors] || 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-600'}`}>
+                {(promise.status ?? 'pending').replace('_', ' ')}
               </span>
             </div>
 
@@ -97,16 +75,16 @@ export default async function PromiseDetailPage({ params }: { params: { id: stri
                 <span className="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wide">Category</span>
                 <p className="text-base md:text-lg font-bold text-gray-900 dark:text-slate-100 mt-1">{promise.category}</p>
               </div>
-              {promise.promise_date && (
+              {promise.promiseDate && (
                 <div>
                   <span className="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wide">Promise Date</span>
-                  <p className="text-base md:text-lg font-bold text-gray-900 dark:text-slate-100 mt-1">{new Date(promise.promise_date).toLocaleDateString()}</p>
+                  <p className="text-base md:text-lg font-bold text-gray-900 dark:text-slate-100 mt-1">{new Date(promise.promiseDate).toLocaleDateString()}</p>
                 </div>
               )}
-              {promise.target_date && (
+              {promise.targetDate && (
                 <div>
                   <span className="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wide">Target Date</span>
-                  <p className="text-base md:text-lg font-bold text-gray-900 dark:text-slate-100 mt-1">{new Date(promise.target_date).toLocaleDateString()}</p>
+                  <p className="text-base md:text-lg font-bold text-gray-900 dark:text-slate-100 mt-1">{new Date(promise.targetDate).toLocaleDateString()}</p>
                 </div>
               )}
               {promise.score !== null && (
@@ -130,12 +108,12 @@ export default async function PromiseDetailPage({ params }: { params: { id: stri
                         {milestone.description && (
                           <p className="text-gray-600 dark:text-slate-400 mt-2 leading-relaxed">{milestone.description}</p>
                         )}
-                        {milestone.milestone_date && (
+                        {milestone.milestoneDate && (
                           <p className="text-sm text-gray-500 dark:text-slate-500 mt-3 flex items-center gap-2">
                             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            {new Date(milestone.milestone_date).toLocaleDateString()}
+                            {new Date(milestone.milestoneDate).toLocaleDateString()}
                           </p>
                         )}
                       </div>
@@ -167,24 +145,24 @@ export default async function PromiseDetailPage({ params }: { params: { id: stri
                           <p className="text-gray-600 dark:text-slate-400 mt-2">{item.description}</p>
                         )}
                         <div className="flex flex-wrap gap-3 md:gap-4 mt-3 text-sm">
-                          {item.source_type && (
+                          {item.sourceType && (
                             <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-300 font-medium capitalize">
-                              {item.source_type}
+                              {item.sourceType}
                             </span>
                           )}
-                          {item.published_date && (
+                          {item.publishedDate && (
                             <span className="inline-flex items-center gap-1 text-gray-500 dark:text-slate-500">
                               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                               </svg>
-                              {new Date(item.published_date).toLocaleDateString()}
+                              {new Date(item.publishedDate).toLocaleDateString()}
                             </span>
                           )}
                         </div>
                       </div>
-                      {item.source_url && (
+                      {item.sourceUrl && (
                         <a
-                          href={item.source_url}
+                          href={item.sourceUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-semibold text-sm"
@@ -224,14 +202,14 @@ export default async function PromiseDetailPage({ params }: { params: { id: stri
                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        {new Date(history.created_at).toLocaleDateString()}
+                        {history.createdAt ? new Date(history.createdAt).toLocaleDateString() : 'Unknown'}
                       </span>
-                      {history.changed_by && (
+                      {history.changedBy && (
                         <span className="flex items-center gap-1">
                           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
-                          {history.changed_by}
+                          {history.changedBy}
                         </span>
                       )}
                     </div>

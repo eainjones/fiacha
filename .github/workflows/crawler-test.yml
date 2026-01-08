@@ -1,0 +1,153 @@
+name: Crawler Integration Tests
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+    paths:
+      - 'crawler/**'
+      - '.github/workflows/crawler-test.yml'
+  pull_request:
+    branches:
+      - main
+      - staging
+    paths:
+      - 'crawler/**'
+      - '.github/workflows/crawler-test.yml'
+  # Allow manual trigger for testing
+  workflow_dispatch:
+
+concurrency:
+  group: crawler-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  crawler-typecheck:
+    name: Crawler Type Check
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: crawler
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: crawler/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run TypeScript type check
+        run: npx tsc --noEmit
+
+  crawler-build:
+    name: Crawler Build
+    runs-on: ubuntu-latest
+    needs: [crawler-typecheck]
+    defaults:
+      run:
+        working-directory: crawler
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: crawler/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build crawler
+        run: npm run build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: crawler-dist
+          path: crawler/dist
+          retention-days: 1
+
+  crawler-smoke-test:
+    name: Crawler Smoke Test
+    runs-on: ubuntu-latest
+    needs: [crawler-build]
+    # Only run smoke tests when we have the necessary secrets
+    if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
+    defaults:
+      run:
+        working-directory: crawler
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: crawler/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: crawler-dist
+          path: crawler/dist
+
+      - name: Run crawler smoke test
+        run: npm run test
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        timeout-minutes: 5
+
+  crawler-source-registry:
+    name: Validate Source Registry
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: crawler
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: crawler/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate source registry imports
+        run: |
+          # Verify the source registry can be imported without errors
+          npx tsx -e "
+            import { getEnabledSources, getSourcesByTier } from './src/crawlers/source-registry';
+            const sources = getEnabledSources();
+            const tier1 = getSourcesByTier('tier1');
+            console.log('Source Registry Validation:');
+            console.log('  Total enabled sources:', sources.length);
+            console.log('  Tier 1 sources:', tier1.length);
+            if (sources.length === 0) {
+              console.error('ERROR: No enabled sources found!');
+              process.exit(1);
+            }
+            console.log('Source registry validation passed!');
+          "

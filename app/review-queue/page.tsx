@@ -1,36 +1,9 @@
 import { redirect } from 'next/navigation'
-import { getSystemDb } from '@/lib/db'
 import { createClient } from '@/lib/supabase-server'
+import { isAdmin } from '@/lib/auth/admin'
 import Nav from '@/components/Nav'
 import ReviewQueueActions from '@/components/ReviewQueueActions'
-
-type ReviewQueueItem = {
-  id: number
-  extracted_promise: any
-  politician_match: any | null
-  status: string
-  created_at: string
-}
-
-async function getPendingReviews(limit: number) {
-  try {
-    const db = getSystemDb()
-    const result = await db.query(
-      `
-      SELECT *
-      FROM promise_review_queue
-      WHERE status = 'pending'
-      ORDER BY created_at DESC
-      LIMIT $1
-      `,
-      [limit]
-    )
-    return result.rows as ReviewQueueItem[]
-  } catch (error) {
-    console.error('Error fetching review queue:', error)
-    return []
-  }
-}
+import { getPendingReviews } from '@/lib/db/queries'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -42,7 +15,7 @@ export default async function ReviewQueuePage() {
   if (!user) {
     redirect('/auth/sign-in')
   }
-  if (user.email !== 'eain.jones@gmail.com') {
+  if (!isAdmin(user.email)) {
     redirect('/')
   }
 
@@ -67,8 +40,8 @@ export default async function ReviewQueuePage() {
           ) : (
             <div className="space-y-4">
               {items.map((item) => {
-                const extracted = item.extracted_promise || {}
-                const match = item.politician_match
+                const extracted = (item.extractedPromise ?? {}) as Record<string, unknown>
+                const match = item.politicianMatch as Record<string, unknown> | null
 
                 return (
                   <div
@@ -78,10 +51,10 @@ export default async function ReviewQueuePage() {
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                       <div className="flex-1">
                         <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-slate-100">
-                          {extracted.promise_title || 'Untitled Promise'}
+                          {String(extracted.promise_title ?? 'Untitled Promise')}
                         </h2>
                         <p className="text-sm text-gray-600 dark:text-slate-400 mt-1">
-                          {extracted.politician_name || 'Unknown'} {extracted.party ? `· ${extracted.party}` : ''}
+                          {String(extracted.politician_name ?? 'Unknown')} {extracted.party ? `· ${String(extracted.party)}` : ''}
                         </p>
                       </div>
                       {typeof extracted.confidence === 'number' && (
@@ -91,7 +64,7 @@ export default async function ReviewQueuePage() {
                       )}
                     </div>
 
-                    {extracted.description && (
+                    {typeof extracted.description === 'string' && extracted.description && (
                       <p className="text-gray-700 dark:text-slate-300 mt-3 leading-relaxed">
                         {extracted.description}
                       </p>
@@ -100,13 +73,13 @@ export default async function ReviewQueuePage() {
                     <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                       <div className="text-gray-600 dark:text-slate-400">
                         <span className="font-semibold text-gray-800 dark:text-slate-200">Source:</span>{' '}
-                        {extracted.source_type || 'Unknown'}
+                        {String(extracted.source_type ?? 'Unknown')}
                       </div>
                       <div className="text-gray-600 dark:text-slate-400">
                         <span className="font-semibold text-gray-800 dark:text-slate-200">Created:</span>{' '}
-                        {new Date(item.created_at).toLocaleString()}
+                        {item.createdAt ? new Date(item.createdAt).toLocaleString() : 'Unknown'}
                       </div>
-                      {extracted.source_url && (
+                      {typeof extracted.source_url === 'string' && extracted.source_url && (
                         <div className="sm:col-span-2">
                           <a
                             href={extracted.source_url}
@@ -121,7 +94,7 @@ export default async function ReviewQueuePage() {
                       {match && (
                         <div className="sm:col-span-2 text-gray-600 dark:text-slate-400">
                           <span className="font-semibold text-gray-800 dark:text-slate-200">Matched:</span>{' '}
-                          {match.name} {match.party ? `· ${match.party}` : ''} {match.matchScore ? `(${Math.round(match.matchScore)}%)` : ''}
+                          {String(match.name ?? '')} {match.party ? `· ${String(match.party)}` : ''} {typeof match.matchScore === 'number' ? `(${Math.round(match.matchScore)}%)` : ''}
                         </div>
                       )}
                     </div>

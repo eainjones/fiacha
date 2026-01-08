@@ -1,86 +1,8 @@
-import { getSystemDb } from '@/lib/db'
 import Nav from '@/components/Nav'
 import Link from 'next/link'
 import PartyBadge from '@/components/PartyBadge'
 import StatusBadge from '@/components/StatusBadge'
-
-async function getRecentPromises(limit: number) {
-  try {
-    const db = getSystemDb()
-    const result = await db.query(`
-      SELECT
-        p.*,
-        pol.name as politician_name,
-        pol.party,
-        pt.color as party_color,
-        pt.short_name as party_short_name
-      FROM promises p
-      LEFT JOIN politicians pol ON p.politician_id = pol.id
-      LEFT JOIN parties pt ON pol.party_id = pt.id
-      ORDER BY p.created_at DESC
-      LIMIT $1
-    `, [limit])
-    return result.rows
-  } catch (error) {
-    console.error('Error fetching promises:', error);
-    return []
-  }
-}
-
-async function getPoliticianSummary(limit: number) {
-  try {
-    const db = getSystemDb()
-    const listResult = await db.query(`
-      SELECT
-        p.*,
-        c.name as county_name,
-        c.province,
-        la.name as local_authority_name,
-        pt.color as party_color,
-        pt.short_name as party_short_name
-      FROM politicians p
-      LEFT JOIN counties c ON p.county_id = c.id
-      LEFT JOIN local_authorities la ON p.local_authority_id = la.id
-      LEFT JOIN parties pt ON p.party_id = pt.id
-      WHERE p.active = true
-      ORDER BY p.name
-      LIMIT $1
-    `, [limit])
-
-    const countResult = await db.query(`
-      SELECT COUNT(*)::int as total
-      FROM politicians
-      WHERE active = true
-    `)
-
-    return {
-      list: listResult.rows,
-      total: countResult.rows[0]?.total ?? 0,
-    }
-  } catch (error) {
-    console.error('Error fetching politicians:', error);
-    return { list: [], total: 0 }
-  }
-}
-
-async function getPromiseCounts() {
-  try {
-    const db = getSystemDb()
-    const result = await db.query(`
-      SELECT
-        COUNT(*)::int as total,
-        COUNT(*) FILTER (WHERE status = 'kept')::int as kept,
-        COUNT(*) FILTER (WHERE status = 'broken')::int as broken,
-        COUNT(*) FILTER (WHERE status = 'in_progress')::int as in_progress,
-        COUNT(*) FILTER (WHERE status = 'pending')::int as pending
-      FROM promises
-    `)
-    return result.rows[0]
-  } catch (error) {
-    console.error('Error fetching promise counts:', error);
-    return { total: 0, kept: 0, broken: 0, in_progress: 0, pending: 0 }
-  }
-}
+import { getRecentPromises, getPoliticianSummary, getPromiseStatusCounts } from '@/lib/db/queries'
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic'
@@ -90,7 +12,7 @@ export default async function Home() {
   const [promises, politicianSummary, statusCounts] = await Promise.all([
     getRecentPromises(6),
     getPoliticianSummary(5),
-    getPromiseCounts(),
+    getPromiseStatusCounts(),
   ])
 
   const politicians = politicianSummary.list

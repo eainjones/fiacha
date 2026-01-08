@@ -9,6 +9,7 @@ import { PoliticianMatcher, normalizePoliticianName } from './validators/politic
 import { insertPromiseReview } from './database/queries';
 import { ExtractedPromiseType } from './types';
 import { EmailNotifier } from './notifications/email-notifier';
+import { MetricsCollector, logMetricsJson, logMetricsReadable } from './metrics/crawler-metrics';
 
 // Load environment variables
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
@@ -66,6 +67,7 @@ async function main() {
 
     // 5. Crawl and extract
     console.log('\n[5/6] Crawling sources and extracting promises...');
+    const metricsCollector = new MetricsCollector();
     let totalExtracted = 0;
     let totalMatched = 0;
     let totalQueued = 0;
@@ -74,6 +76,7 @@ async function main() {
 
     for (const source of sources) {
       console.log(`\n   📡 Crawling: ${source.name}`);
+      metricsCollector.startSource(source.name);
 
       try {
         let crawlResults = [];
@@ -87,10 +90,12 @@ async function main() {
             excludePaths: source.excludePaths,
           });
           console.log(`      ✓ Crawled ${crawlResults.length} pages`);
+          metricsCollector.recordPagesCrawled(crawlResults.length);
         } else {
           // Single page scrape
           const singleResult = await firecrawl.scrapeUrl(source.url);
           crawlResults = [singleResult];
+          metricsCollector.recordPagesCrawled(1);
         }
 
         // Extract promises from each crawled page
@@ -103,6 +108,7 @@ async function main() {
 
           const promises = await extractor.extractPromises(enrichedResult as any);
           totalExtracted += promises.length;
+          metricsCollector.recordExtraction(promises.length);
 
           if (promises.length === 0) {
             continue;
@@ -122,6 +128,12 @@ async function main() {
 
             const isMatched = !!match;
 
+            // Record match metrics
+            metricsCollector.recordMatch(
+              match ? match.matchScore : null,
+              match ? match.isExactMatch : false
+            );
+
             if (match) {
               console.log(`      ✓ Matched: "${promise.politician_name}" → ${match.name} (${match.matchScore}%)`);
               totalMatched++;
@@ -133,6 +145,7 @@ async function main() {
             const reviewId = await insertPromiseReview(db, promise, match);
             console.log(`      📝 Queued for review (ID: ${reviewId})`);
             totalQueued++;
+            metricsCollector.recordQueueInsertion();
 
             // Collect promise for email summary
             allPromises.push({ promise, matched: isMatched });
@@ -146,10 +159,13 @@ async function main() {
         const errorMsg = `Error processing ${source.name}: ${error instanceof Error ? error.message : String(error)}`;
         console.error(`      ✗ ${errorMsg}`);
         errors.push(errorMsg);
+        metricsCollector.recordError();
       }
     }
 
-    // 6. Summary
+    // 6. Summary and Metrics
+    const finalMetrics = metricsCollector.finalize();
+
     console.log('\n[6/6] Summary');
     console.log('═'.repeat(50));
     console.log(`   Sources crawled: ${sources.length}`);
@@ -158,6 +174,10 @@ async function main() {
     console.log(`   Queued for review: ${totalQueued}`);
     console.log(`   Unmatched: ${totalExtracted - totalMatched}`);
     console.log('═'.repeat(50));
+
+    // Output structured metrics (for monitoring/logging systems)
+    logMetricsReadable(finalMetrics);
+    logMetricsJson(finalMetrics);
 
     console.log('\n✅ Crawl complete! Run "npm run review" to review extracted promises.\n');
 

@@ -3,124 +3,11 @@ import Link from 'next/link'
 import PromisesList from '@/components/PromisesList'
 import PromiseFilters from '@/components/PromiseFilters'
 import PromisePagination from '@/components/PromisePagination'
-import { getSystemDb } from '@/lib/db'
+import { getPromises, getPromiseCount, getActivePoliticians, getPromiseCategories } from '@/lib/db/queries'
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
-
-type PromiseFiltersInput = {
-  status?: string
-  category?: string
-  politicianId?: number
-  search?: string
-}
-
-function buildPromiseFilters(filters: PromiseFiltersInput) {
-  const conditions: string[] = []
-  const params: any[] = []
-
-  if (filters.status) {
-    params.push(filters.status)
-    conditions.push(`p.status = $${params.length}`)
-  }
-  if (filters.category) {
-    params.push(filters.category)
-    conditions.push(`p.category = $${params.length}`)
-  }
-  if (filters.politicianId) {
-    params.push(filters.politicianId)
-    conditions.push(`p.politician_id = $${params.length}`)
-  }
-  if (filters.search) {
-    params.push(`%${filters.search}%`)
-    conditions.push(`(p.title ILIKE $${params.length} OR p.description ILIKE $${params.length} OR pol.name ILIKE $${params.length})`)
-  }
-
-  const whereClause = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : ''
-  return { whereClause, params }
-}
-
-async function getPromises(filters: PromiseFiltersInput, limit: number, offset: number) {
-  try {
-    const db = getSystemDb()
-    const { whereClause, params } = buildPromiseFilters(filters)
-    const result = await db.query(`
-      SELECT
-        p.*,
-        pol.name as politician_name,
-        pol.party,
-        pt.color as party_color,
-        pt.short_name as party_short_name
-      FROM promises p
-      LEFT JOIN politicians pol ON p.politician_id = pol.id
-      LEFT JOIN parties pt ON pol.party_id = pt.id
-      ${whereClause}
-      ORDER BY p.created_at DESC
-      LIMIT $${params.length + 1}
-      OFFSET $${params.length + 2}
-    `, [...params, limit, offset])
-    return result.rows
-  } catch (error) {
-    console.error('Error fetching promises:', error);
-    return []
-  }
-}
-
-async function getPromiseCount(filters: PromiseFiltersInput) {
-  try {
-    const db = getSystemDb()
-    const { whereClause, params } = buildPromiseFilters(filters)
-    const result = await db.query(`
-      SELECT COUNT(*)::int as total
-      FROM promises p
-      LEFT JOIN politicians pol ON p.politician_id = pol.id
-      ${whereClause}
-    `, params)
-    return result.rows[0]?.total ?? 0
-  } catch (error) {
-    console.error('Error fetching promise count:', error);
-    return 0
-  }
-}
-
-async function getPoliticians() {
-  try {
-    const db = getSystemDb()
-    const result = await db.query(`
-      SELECT
-        p.*,
-        c.name as county_name,
-        c.province,
-        la.name as local_authority_name
-      FROM politicians p
-      LEFT JOIN counties c ON p.county_id = c.id
-      LEFT JOIN local_authorities la ON p.local_authority_id = la.id
-      WHERE p.active = true
-      ORDER BY p.name
-    `)
-    return result.rows
-  } catch (error) {
-    console.error('Error fetching politicians:', error);
-    return []
-  }
-}
-
-async function getCategories() {
-  try {
-    const db = getSystemDb()
-    const result = await db.query(`
-      SELECT DISTINCT category
-      FROM promises
-      WHERE category IS NOT NULL
-      ORDER BY category
-    `)
-    return result.rows.map((row: any) => row.category)
-  } catch (error) {
-    console.error('Error fetching categories:', error);
-    return []
-  }
-}
 
 export default async function PromisesPage({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
   const status = typeof searchParams.status === 'string' ? searchParams.status : undefined
@@ -140,8 +27,8 @@ export default async function PromisesPage({ searchParams }: { searchParams: { [
   const [promises, total, politicians, categories] = await Promise.all([
     getPromises(filters, pageSize, offset),
     getPromiseCount(filters),
-    getPoliticians(),
-    getCategories(),
+    getActivePoliticians(),
+    getPromiseCategories(),
   ])
 
   return (

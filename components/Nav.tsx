@@ -50,6 +50,7 @@ export default function Nav() {
     { href: '/', label: 'Dashboard', checkExact: true },
     { href: '/politicians', label: 'Politicians' },
     { href: '/promises', label: 'Promises' },
+    { href: '/parties', label: 'Parties' },
     { href: '/counties', label: 'Counties' },
   ]
   const visibleLinks = user

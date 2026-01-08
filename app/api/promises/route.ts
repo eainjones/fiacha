@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSystemDb } from '@/lib/db'
 import { createClient } from '@/lib/supabase-server'
+import { createPromiseSchema, parseBody } from '@/lib/validations'
 
 export async function GET(request: NextRequest) {
   try {
@@ -56,24 +57,20 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
+    // Validate request body with Zod schema
+    const parseResult = await parseBody(request, createPromiseSchema)
+    if (!parseResult.success) {
+      return NextResponse.json({ error: parseResult.error }, { status: parseResult.status })
+    }
+
+    const { politician_id, title, description, category, promise_date, target_date } = parseResult.data
+
     const db = getSystemDb()
-    const body = await request.json()
-
-    const { politician_id, title, description, category, promise_date, target_date } = body
-
-    const politicianId = Number(politician_id)
-    if (!Number.isInteger(politicianId) || politicianId <= 0) {
-      return NextResponse.json({ error: 'politician_id must be a positive integer' }, { status: 400 })
-    }
-    if (typeof title !== 'string' || title.trim().length === 0) {
-      return NextResponse.json({ error: 'title is required' }, { status: 400 })
-    }
-
     const result = await db.query(
       `INSERT INTO promises (politician_id, title, description, category, promise_date, target_date, status)
        VALUES ($1, $2, $3, $4, $5, $6, 'pending')
        RETURNING *`,
-      [politicianId, title.trim(), description, category, promise_date, target_date]
+      [politician_id, title, description, category, promise_date, target_date]
     )
 
     return NextResponse.json(result.rows[0], { status: 201 })

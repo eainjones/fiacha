@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSystemDb } from '@/lib/db'
 import { createClient } from '@/lib/supabase-server'
+import { isAdmin } from '@/lib/auth/admin'
+import { rejectReviewSchema, parseBody } from '@/lib/validations'
 
 export async function POST(request: NextRequest, { params }: { params: { id: string } }) {
   try {
@@ -11,16 +13,22 @@ export async function POST(request: NextRequest, { params }: { params: { id: str
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
+    if (!isAdmin(user.email)) {
+      return NextResponse.json({ error: 'Admin access required' }, { status: 403 })
+    }
+
     const reviewId = Number(params.id)
     if (!Number.isInteger(reviewId) || reviewId <= 0) {
       return NextResponse.json({ error: 'Invalid review id' }, { status: 400 })
     }
 
-    const body = await request.json()
-    const reason = typeof body.reason === 'string' ? body.reason.trim() : ''
-    if (!reason) {
-      return NextResponse.json({ error: 'Rejection reason is required' }, { status: 400 })
+    // Validate request body with Zod schema
+    const parseResult = await parseBody(request, rejectReviewSchema)
+    if (!parseResult.success) {
+      return NextResponse.json({ error: parseResult.error }, { status: parseResult.status })
     }
+
+    const { reason } = parseResult.data
 
     const db = getSystemDb()
     const result = await db.query(

@@ -18,16 +18,22 @@
     "db:status": "supabase migration list",
     "types:update": "supabase gen types typescript --linked 2>/dev/null > lib/database.types.ts",
     "import:politicians": "npx tsx scripts/import-politicians.ts",
-    "import:politicians:dry": "DRY_RUN=true npx tsx scripts/import-politicians.ts"
+    "import:politicians:dry": "DRY_RUN=true npx tsx scripts/import-politicians.ts",
+    "data:clean": "python3 scripts/clean_data.py",
+    "data:calculate-totals": "python3 scripts/calculate_motion_totals.py",
+    "data:all": "npm run data:clean && npm run data:calculate-totals && npm run validate"
   },
   "dependencies": {
     "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.78.0",
     "@types/pg": "^8.15.5",
+    "drizzle-kit": "^0.31.8",
+    "drizzle-orm": "^0.45.1",
     "next": "14.2.5",
     "pg": "^8.16.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "zod": "^4.3.5"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",

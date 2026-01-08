@@ -2,6 +2,92 @@ import Fuse from 'fuse.js';
 import { DbPolitician, PoliticianMatch } from '../types';
 
 /**
+ * ============================================================================
+ * FUZZY MATCHING CONFIGURATION
+ * ============================================================================
+ *
+ * These constants control the politician matching behavior.
+ * Adjust based on data quality and matching accuracy requirements.
+ *
+ * For TECH-IMPLEMENTATION.md compliance, all thresholds are documented here.
+ */
+export const MATCHING_CONFIG = {
+  /**
+   * FUSE_THRESHOLD - Fuse.js matching sensitivity
+   * Range: 0.0 (exact match only) to 1.0 (match anything)
+   * Current: 0.4 - Balances false positives vs. missed matches
+   *
+   * Lower values = stricter matching (fewer but more accurate matches)
+   * Higher values = looser matching (more matches but higher false positive rate)
+   *
+   * Recommended ranges:
+   * - 0.2-0.3: Very strict, use when data quality is high
+   * - 0.4-0.5: Balanced, good for mixed quality data
+   * - 0.6-0.7: Loose, use when catching all potential matches is priority
+   */
+  FUSE_THRESHOLD: 0.4,
+
+  /**
+   * MIN_MATCH_CHAR_LENGTH - Minimum characters for fuzzy matching
+   * Prevents matching on very short strings that may produce false positives
+   */
+  MIN_MATCH_CHAR_LENGTH: 3,
+
+  /**
+   * KEY_WEIGHTS - Relative importance of each field in matching
+   * Name is most important, followed by party, then constituency
+   */
+  KEY_WEIGHTS: {
+    name: 0.7,
+    party: 0.2,
+    constituency: 0.1,
+  },
+
+  /**
+   * MINIMUM_CONFIDENCE_SCORE - Below this score, matches are rejected
+   * Range: 0-100 (percentage)
+   * Current: 50 - Matches below 50% confidence are not returned
+   *
+   * This is the hard cutoff - matches below this are treated as "no match"
+   */
+  MINIMUM_CONFIDENCE_SCORE: 50,
+
+  /**
+   * LOW_CONFIDENCE_THRESHOLD - Below this score, matches are flagged as low confidence
+   * Range: 0-100 (percentage)
+   * Current: 70 - Matches 50-69% are logged as low confidence for review
+   *
+   * Used for metrics logging and identifying potentially incorrect matches
+   */
+  LOW_CONFIDENCE_THRESHOLD: 70,
+
+  /**
+   * HIGH_CONFIDENCE_THRESHOLD - Above this score, matches are considered high quality
+   * Range: 0-100 (percentage)
+   * Current: 90 - Matches >= 90% are high confidence
+   */
+  HIGH_CONFIDENCE_THRESHOLD: 90,
+
+  /**
+   * PARTY_MATCH_BONUS - Score boost when party name matches exactly
+   * Added to base score when extracted party matches database party
+   */
+  PARTY_MATCH_BONUS: 10,
+
+  /**
+   * CONSTITUENCY_MATCH_BONUS - Score boost when constituency matches exactly
+   * Added to base score when extracted constituency matches database constituency
+   */
+  CONSTITUENCY_MATCH_BONUS: 5,
+
+  /**
+   * MINIMUM_NAME_LENGTH - Minimum characters for a valid politician name
+   * Names shorter than this are rejected before matching
+   */
+  MINIMUM_NAME_LENGTH: 3,
+} as const;
+
+/**
  * Fuzzy matching to find politicians in database
  * Handles variations in name spelling, formatting, etc.
  */
@@ -13,28 +99,34 @@ export class PoliticianMatcher {
     this.politicians = politicians;
 
     // Configure Fuse.js for fuzzy matching
+    // See MATCHING_CONFIG for threshold documentation
     this.fuse = new Fuse(politicians, {
       keys: [
-        { name: 'name', weight: 0.7 },
-        { name: 'party', weight: 0.2 },
-        { name: 'constituency', weight: 0.1 },
+        { name: 'name', weight: MATCHING_CONFIG.KEY_WEIGHTS.name },
+        { name: 'party', weight: MATCHING_CONFIG.KEY_WEIGHTS.party },
+        { name: 'constituency', weight: MATCHING_CONFIG.KEY_WEIGHTS.constituency },
       ],
-      threshold: 0.4, // 0 = perfect match, 1 = match anything
+      threshold: MATCHING_CONFIG.FUSE_THRESHOLD,
       includeScore: true,
-      minMatchCharLength: 3,
+      minMatchCharLength: MATCHING_CONFIG.MIN_MATCH_CHAR_LENGTH,
     });
   }
 
   /**
    * Find politician by name with fuzzy matching
    * Returns best match with confidence score
+   *
+   * @param name - Politician name to search for
+   * @param party - Optional party name to boost match confidence
+   * @param constituency - Optional constituency to boost match confidence
+   * @returns PoliticianMatch if found above MINIMUM_CONFIDENCE_SCORE, null otherwise
    */
   findPolitician(
     name: string,
     party?: string,
     constituency?: string
   ): PoliticianMatch | null {
-    if (!name || name.length < 3) {
+    if (!name || name.length < MATCHING_CONFIG.MINIMUM_NAME_LENGTH) {
       return null;
     }
 
@@ -69,7 +161,7 @@ export class PoliticianMatcher {
     // If party is provided, boost score for matching party
     let adjustedScore = score;
     if (party && politician.party.toLowerCase() === party.toLowerCase()) {
-      adjustedScore = Math.min(100, score + 10);
+      adjustedScore = Math.min(100, score + MATCHING_CONFIG.PARTY_MATCH_BONUS);
     }
 
     // If constituency is provided, boost score for matching constituency
@@ -78,13 +170,18 @@ export class PoliticianMatcher {
       politician.constituency &&
       politician.constituency.toLowerCase() === constituency.toLowerCase()
     ) {
-      adjustedScore = Math.min(100, adjustedScore + 5);
+      adjustedScore = Math.min(100, adjustedScore + MATCHING_CONFIG.CONSTITUENCY_MATCH_BONUS);
     }
 
-    // Only return if confidence is reasonable
-    if (adjustedScore < 50) {
-      console.warn(`[Matcher] Low confidence match for "${name}": ${adjustedScore}%`);
+    // Only return if confidence is above minimum threshold
+    if (adjustedScore < MATCHING_CONFIG.MINIMUM_CONFIDENCE_SCORE) {
+      console.warn(`[Matcher] Low confidence match for "${name}": ${adjustedScore}% (below ${MATCHING_CONFIG.MINIMUM_CONFIDENCE_SCORE}% threshold)`);
       return null;
+    }
+
+    // Log warning for matches that are above minimum but below "good" threshold
+    if (adjustedScore < MATCHING_CONFIG.LOW_CONFIDENCE_THRESHOLD) {
+      console.warn(`[Matcher] Low confidence match for "${name}": ${adjustedScore}% (below ${MATCHING_CONFIG.LOW_CONFIDENCE_THRESHOLD}% threshold)`);
     }
 
     return {

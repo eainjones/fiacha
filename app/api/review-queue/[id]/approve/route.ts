@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSystemDb } from '@/lib/db'
 import { createClient } from '@/lib/supabase-server'
+import { isAdmin } from '@/lib/auth/admin'
 
 function parseDate(value: unknown) {
   if (!value) return null
@@ -15,6 +16,10 @@ export async function POST(_request: NextRequest, { params }: { params: { id: st
 
     if (!user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    if (!isAdmin(user.email)) {
+      return NextResponse.json({ error: 'Admin access required' }, { status: 403 })
     }
 
     const reviewId = Number(params.id)

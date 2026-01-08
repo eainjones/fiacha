@@ -7,14 +7,14 @@ import PartyBadge from './PartyBadge'
 interface Politician {
   id: number
   name: string
-  party: string
+  party: string | null
   party_color: string | null
   party_short_name: string | null
-  constituency: string
+  constituency: string | null
   county_name: string | null
   province: string | null
-  role: string
-  position_type: string
+  role: string | null
+  positionType: string | null
   local_authority_name: string | null
 }
 
@@ -49,17 +49,17 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
 
   // Apply filters
   const filteredPoliticians = politicians.filter(pol => {
-    if (positionFilter !== 'all' && pol.position_type !== positionFilter) return false
+    if (positionFilter !== 'all' && pol.positionType !== positionFilter) return false
     if (partyFilter !== 'all' && pol.party !== partyFilter) return false
     if (countyFilter !== 'all' && pol.county_name !== countyFilter) return false
     return true
   })
 
   // Count by position type
-  const tdCount = politicians.filter(p => p.position_type === 'TD').length
-  const councillorCount = politicians.filter(p => p.position_type === 'Councillor').length
-  const senatorCount = politicians.filter(p => p.position_type === 'Senator').length
-  const mlaCount = politicians.filter(p => p.position_type === 'MLA').length
+  const tdCount = politicians.filter(p => p.positionType === 'TD').length
+  const councillorCount = politicians.filter(p => p.positionType === 'Councillor').length
+  const senatorCount = politicians.filter(p => p.positionType === 'Senator').length
+  const mlaCount = politicians.filter(p => p.positionType === 'MLA').length
 
   return (
     <>
@@ -95,7 +95,7 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
               className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
             >
               <option value="all">All Parties</option>
-              {parties.map(party => (
+              {parties.filter((p): p is string => p !== null).map(party => (
                 <option key={party} value={party}>{party}</option>
               ))}
             </select>
@@ -144,20 +144,20 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
                     <p className="text-sm text-gray-600 dark:text-slate-400">{pol.role}</p>
                   </div>
                   <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium ${
-                    pol.position_type === 'TD'
+                    pol.positionType === 'TD'
                       ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300'
-                      : pol.position_type === 'Senator'
+                      : pol.positionType === 'Senator'
                         ? 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300'
-                        : pol.position_type === 'MLA'
+                        : pol.positionType === 'MLA'
                           ? 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300'
                           : 'bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300'
                   }`}>
-                    {pol.position_type}
+                    {pol.positionType}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2 mb-3">
-                  <PartyBadge party={pol.party} color={pol.party_color} shortName={pol.party_short_name} size="sm" />
+                  <PartyBadge party={pol.party ?? ''} color={pol.party_color} shortName={pol.party_short_name} size="sm" />
                 </div>
 
                 <div className="grid grid-cols-2 gap-2 text-sm">
@@ -208,7 +208,7 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
                         <div className="text-xs text-gray-500 dark:text-slate-400">{pol.role}</div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <PartyBadge party={pol.party} color={pol.party_color} shortName={pol.party_short_name} size="sm" />
+                        <PartyBadge party={pol.party ?? ''} color={pol.party_color} shortName={pol.party_short_name} size="sm" />
                       </td>
                       <td className="px-6 py-4">
                         <div className="text-sm text-gray-900 dark:text-slate-200">{pol.constituency}</div>
@@ -222,15 +222,15 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium ${
-                          pol.position_type === 'TD'
+                          pol.positionType === 'TD'
                             ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300'
-                            : pol.position_type === 'Senator'
+                            : pol.positionType === 'Senator'
                               ? 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300'
-                              : pol.position_type === 'MLA'
+                              : pol.positionType === 'MLA'
                                 ? 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300'
                                 : 'bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300'
                         }`}>
-                          {pol.position_type}
+                          {pol.positionType}
                         </span>
                       </td>
                     </tr>

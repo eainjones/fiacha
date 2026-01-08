@@ -1,46 +1,13 @@
 import Nav from '@/components/Nav'
 import Link from 'next/link'
-import { getSystemDb } from '@/lib/db'
+import { getCountiesWithStats } from '@/lib/db/queries'
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
-async function getCounties() {
-  try {
-    const db = getSystemDb()
-    const result = await db.query(`
-      SELECT
-        c.*,
-        COALESCE(pol_counts.politician_count, 0) as politician_count,
-        COALESCE(promise_counts.promise_count, 0) as promise_count
-      FROM counties c
-      LEFT JOIN (
-        SELECT
-          county_id,
-          COUNT(*) FILTER (WHERE active) as politician_count
-        FROM politicians
-        GROUP BY county_id
-      ) pol_counts ON pol_counts.county_id = c.id
-      LEFT JOIN (
-        SELECT
-          pol.county_id,
-          COUNT(pr.id) as promise_count
-        FROM promises pr
-        JOIN politicians pol ON pol.id = pr.politician_id
-        GROUP BY pol.county_id
-      ) promise_counts ON promise_counts.county_id = c.id
-      ORDER BY c.province, c.name
-    `)
-    return result.rows
-  } catch (error) {
-    console.error('Error fetching counties:', error);
-    return []
-  }
-}
-
 export default async function CountiesPage() {
-  const counties = await getCounties()
+  const counties = await getCountiesWithStats()
 
   // Group by province
   const provinces = counties.reduce((acc: any, county: any) => {

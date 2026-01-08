@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSystemDb } from '@/lib/db'
 import { createClient } from '@/lib/supabase-server'
+import { createPoliticianSchema, parseBody } from '@/lib/validations'
 
 export async function GET() {
   try {
@@ -37,20 +38,20 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const db = getSystemDb()
-    const body = await request.json()
-
-    const { name, party, constituency, role } = body
-
-    if (typeof name !== 'string' || name.trim().length === 0) {
-      return NextResponse.json({ error: 'name is required' }, { status: 400 })
+    // Validate request body with Zod schema
+    const parseResult = await parseBody(request, createPoliticianSchema)
+    if (!parseResult.success) {
+      return NextResponse.json({ error: parseResult.error }, { status: parseResult.status })
     }
 
+    const { name, party, constituency, role } = parseResult.data
+
+    const db = getSystemDb()
     const result = await db.query(
       `INSERT INTO politicians (name, party, constituency, role)
        VALUES ($1, $2, $3, $4)
        RETURNING *`,
-      [name.trim(), party, constituency, role]
+      [name, party, constituency, role]
     )
 
     return NextResponse.json(result.rows[0], { status: 201 })

@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { getSystemDb } from '@/lib/db'
 import { createClient } from '@/lib/supabase-server'
+import { isAdmin } from '@/lib/auth/admin'
 import Nav from '@/components/Nav'
 import ReviewQueueActions from '@/components/ReviewQueueActions'
 
@@ -132,7 +133,7 @@ export default async function AdminReviewPage({ searchParams }: { searchParams: 
   if (!user) {
     redirect('/auth/sign-in')
   }
-  if (user.email !== 'eain.jones@gmail.com') {
+  if (!isAdmin(user.email)) {
     redirect('/')
   }
 

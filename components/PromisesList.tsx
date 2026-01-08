@@ -1,21 +1,21 @@
 import Link from 'next/link'
 import StatusBadge from './StatusBadge'
 
-interface Promise {
+interface PromiseItem {
   id: number
   title: string
-  description: string
-  status: string
-  politician_name: string
-  party: string
-  category: string
-  promise_date: string
-  target_date: string
+  description: string | null
+  status: string | null
+  politician_name: string | null
+  party: string | null
+  category: string | null
+  promiseDate: string | null
+  targetDate: string | null
   score: number | null
 }
 
 interface PromisesListProps {
-  promises: Promise[]
+  promises: PromiseItem[]
 }
 
 export default function PromisesList({ promises }: PromisesListProps) {
@@ -34,7 +34,7 @@ export default function PromisesList({ promises }: PromisesListProps) {
                 <div className="p-4 md:p-6">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
                     <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">{promise.title}</h2>
-                    <StatusBadge status={promise.status} size="sm" />
+                    <StatusBadge status={promise.status ?? 'pending'} size="sm" />
                   </div>
 
                   {promise.description && (
@@ -64,24 +64,24 @@ export default function PromisesList({ promises }: PromisesListProps) {
                       </div>
                     )}
 
-                    {promise.promise_date && (
+                    {promise.promiseDate && (
                       <div className="flex items-center gap-2">
                         <svg className="h-4 w-4 text-gray-400 dark:text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                         <span className="text-gray-600 dark:text-slate-400">
-                          Made: {new Date(promise.promise_date).toLocaleDateString()}
+                          Made: {new Date(promise.promiseDate).toLocaleDateString()}
                         </span>
                       </div>
                     )}
 
-                    {promise.target_date && (
+                    {promise.targetDate && (
                       <div className="flex items-center gap-2">
                         <svg className="h-4 w-4 text-gray-400 dark:text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span className="text-gray-600 dark:text-slate-400">
-                          Target: {new Date(promise.target_date).toLocaleDateString()}
+                          Target: {new Date(promise.targetDate).toLocaleDateString()}
                         </span>
                       </div>
                     )}
