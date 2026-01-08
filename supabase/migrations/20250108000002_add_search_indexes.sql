@@ -13,9 +13,14 @@ CREATE INDEX IF NOT EXISTS idx_promises_fts ON promises USING gin (
   to_tsvector('english', COALESCE(title, '') || ' ' || COALESCE(description, ''))
 );
 
--- Step 4: Add GIN index for JSONB search in review queue
-CREATE INDEX IF NOT EXISTS idx_review_queue_extracted_promise ON promise_review_queue USING gin (extracted_promise);
-CREATE INDEX IF NOT EXISTS idx_review_queue_politician_match ON promise_review_queue USING gin (politician_match);
+-- Step 4: Add GIN index for JSONB search in review queue (if table exists)
+DO $$
+BEGIN
+  IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'promise_review_queue') THEN
+    CREATE INDEX IF NOT EXISTS idx_review_queue_extracted_promise ON promise_review_queue USING gin (extracted_promise);
+    CREATE INDEX IF NOT EXISTS idx_review_queue_politician_match ON promise_review_queue USING gin (politician_match);
+  END IF;
+END $$;
 
 -- Step 5: Add performance indexes for common queries
 -- Politicians by party
@@ -36,8 +41,13 @@ CREATE INDEX IF NOT EXISTS idx_promises_category ON promises(category);
 -- Promises by politician
 CREATE INDEX IF NOT EXISTS idx_promises_politician_id ON promises(politician_id);
 
--- Review queue by status (for pending items)
-CREATE INDEX IF NOT EXISTS idx_review_queue_status ON promise_review_queue(status);
+-- Review queue by status (for pending items) - if table exists
+DO $$
+BEGIN
+  IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'promise_review_queue') THEN
+    CREATE INDEX IF NOT EXISTS idx_review_queue_status ON promise_review_queue(status);
+  END IF;
+END $$;
 
 -- Counties and local authorities for quick lookups
 CREATE INDEX IF NOT EXISTS idx_counties_province ON counties(province);
