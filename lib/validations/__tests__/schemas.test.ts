@@ -298,7 +298,7 @@ describe('Validation Schemas', () => {
     })
 
     it('accepts all valid status values', () => {
-      const statuses = ['pending', 'in_progress', 'completed', 'broken', 'modified']
+      const statuses = ['pending', 'in_progress', 'kept', 'broken', 'compromised']
       for (const status of statuses) {
         const result = promisesQuerySchema.safeParse({ status })
         expect(result.success).toBe(true)

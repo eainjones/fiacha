@@ -97,7 +97,7 @@ export async function POST(_request: NextRequest, { params }: { params: { id: st
           extracted.source_url || null,
           extracted.source_url ? `Original source: ${extracted.source_url}` : 'Original source',
           extracted.quote || extracted.description,
-          promiseDate,
+          parseDate(extracted.source_published_date),
         ]
       )
 

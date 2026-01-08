@@ -8,13 +8,10 @@ export const revalidate = 0
 export default async function PartiesPage() {
   const parties = await getPartiesWithStats()
 
-  // Separate ROI and NI parties
-  const roiParties = parties.filter(
-    (p) => !['Democratic Unionist Party', 'Ulster Unionist Party', 'Alliance Party', 'Social Democratic and Labour Party', 'Traditional Unionist Voice'].includes(p.name)
-  )
-  const niParties = parties.filter((p) =>
-    ['Democratic Unionist Party', 'Ulster Unionist Party', 'Alliance Party', 'Social Democratic and Labour Party', 'Traditional Unionist Voice', 'Sinn Féin'].includes(p.name)
-  )
+  // Separate ROI, NI, and cross-border parties
+  const roiParties = parties.filter((p) => p.region === 'ROI')
+  const niParties = parties.filter((p) => p.region === 'NI')
+  const bothParties = parties.filter((p) => p.region === 'Both')
 
   // Stats
   const totalTDs = parties.reduce((sum, p) => sum + (p.td_count || 0), 0)
@@ -62,6 +59,18 @@ export default async function PartiesPage() {
               ))}
             </div>
           </section>
+
+          {/* Cross-border Parties */}
+          {bothParties.length > 0 && (
+            <section className="mb-10">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-slate-50 mb-6">All-Island</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {bothParties.map((party) => (
+                  <PartyCard key={party.id} party={party} />
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Northern Ireland Parties */}
           <section>

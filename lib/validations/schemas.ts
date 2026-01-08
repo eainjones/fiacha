@@ -164,7 +164,7 @@ export type ApproveReviewInput = z.infer<typeof approveReviewSchema>
  * Schema for promises list query parameters
  */
 export const promisesQuerySchema = z.object({
-  status: z.enum(['pending', 'in_progress', 'completed', 'broken', 'modified']).optional(),
+  status: z.enum(['pending', 'in_progress', 'kept', 'broken', 'compromised']).optional(),
   category: z.string().max(100).optional(),
   politician_id: z
     .string()

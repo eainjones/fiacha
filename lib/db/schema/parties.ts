@@ -8,6 +8,7 @@ export const parties = pgTable('parties', {
   color: varchar('color', { length: 7 }),
   logo: text('logo'),
   website: text('website'),
+  region: varchar('region', { length: 20 }).default('ROI'),
   foundedYear: integer('founded_year'),
   leader: varchar('leader', { length: 100 }),
   headquarters: varchar('headquarters', { length: 200 }),
