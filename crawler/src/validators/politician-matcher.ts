@@ -160,7 +160,7 @@ export class PoliticianMatcher {
 
     // If party is provided, boost score for matching party
     let adjustedScore = score;
-    if (party && politician.party.toLowerCase() === party.toLowerCase()) {
+    if (party && politician.party && politician.party.toLowerCase() === party.toLowerCase()) {
       adjustedScore = Math.min(100, score + MATCHING_CONFIG.PARTY_MATCH_BONUS);
     }
 
@@ -249,12 +249,14 @@ export class PoliticianMatcher {
     };
 
     for (const politician of this.politicians) {
-      // Count by party
-      stats.byParty[politician.party] = (stats.byParty[politician.party] || 0) + 1;
+      // Count by party (use 'Unknown' for null parties)
+      const party = politician.party || 'Unknown';
+      stats.byParty[party] = (stats.byParty[party] || 0) + 1;
 
       // Count by position type
-      stats.byPositionType[politician.position_type] =
-        (stats.byPositionType[politician.position_type] || 0) + 1;
+      const positionType = politician.position_type || 'Unknown';
+      stats.byPositionType[positionType] =
+        (stats.byPositionType[positionType] || 0) + 1;
     }
 
     return stats;

@@ -1,13 +1,59 @@
 import { z } from 'zod';
 
-// Import shared types from main app's generated database types
-// Run `npm run types:update` in root to regenerate
-import type { Database } from '../../../lib/database.types';
+/**
+ * Local type definitions for database entities
+ * These mirror the main app's database types but are defined locally
+ * to avoid TypeScript rootDir issues in the crawler module.
+ *
+ * When schema changes occur, update these types to match the main app.
+ */
 
-// Re-export database row types for convenience
-export type DbPolitician = Database['public']['Tables']['politicians']['Row'];
-export type DbPromise = Database['public']['Tables']['promises']['Row'];
-export type DbEvidence = Database['public']['Tables']['evidence']['Row'];
+// Politician row from database
+export interface DbPolitician {
+  id: number;
+  name: string;
+  party: string | null;
+  constituency: string | null;
+  county_id: number | null;
+  local_authority_id: number | null;
+  electoral_area_id: number | null;
+  role: string | null;
+  position_type: string | null;
+  active: boolean;
+  created_at: string;
+  website?: string | null;
+  email?: string | null;
+  phone?: string | null;
+  twitter?: string | null;
+  facebook?: string | null;
+}
+
+// Promise row from database
+export interface DbPromise {
+  id: number;
+  politician_id: number;
+  title: string;
+  description: string | null;
+  category: string;
+  status: string;
+  promise_date: string | null;
+  target_date: string | null;
+  score: number;
+  created_at: string;
+  updated_at: string;
+}
+
+// Evidence row from database
+export interface DbEvidence {
+  id: number;
+  promise_id: number;
+  source_type: string;
+  source_url: string;
+  title: string | null;
+  description: string | null;
+  published_date: string | null;
+  created_at: string;
+}
 
 /**
  * Promise categories matching the main Fiacha database
@@ -83,7 +129,7 @@ export type ExtractedPromiseType = z.infer<typeof ExtractedPromise>;
 export interface PoliticianMatch {
   id: number;
   name: string;
-  party: string;
+  party: string | null;
   constituency: string | null;
   matchScore: number;
   isExactMatch: boolean;
@@ -106,7 +152,7 @@ export interface PromiseReview {
 /**
  * LLM Provider configuration
  */
-export type LLMProvider = 'claude' | 'openai';
+export type LLMProvider = 'claude' | 'openai' | 'mastra';
 
 export interface LLMConfig {
   provider: LLMProvider;

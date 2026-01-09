@@ -3,13 +3,14 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { createFirecrawlClient } from './crawlers/firecrawl-client';
 import { getEnabledSources } from './crawlers/source-registry';
-import { createExtractor } from './extractors';
+import { createExtractor, MastraPromiseExtractor } from './extractors';
 import { createDatabaseClient } from './database/client';
 import { PoliticianMatcher, normalizePoliticianName } from './validators/politician-matcher';
 import { insertPromiseReview } from './database/queries';
 import { ExtractedPromiseType } from './types';
 import { EmailNotifier } from './notifications/email-notifier';
 import { MetricsCollector, logMetricsJson, logMetricsReadable } from './metrics/crawler-metrics';
+import { initBudgetDb, getTodaySummary } from './ai';
 
 // Load environment variables
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
@@ -29,6 +30,16 @@ async function main() {
     const firecrawl = createFirecrawlClient();
     const extractor = createExtractor();
     const db = createDatabaseClient();
+
+    // Initialize budget tracking if using Mastra extractor
+    if (extractor instanceof MastraPromiseExtractor) {
+      const pool = db.getPool();
+      if (pool) {
+        initBudgetDb(pool);
+        extractor.setDatabasePool(pool);
+        console.log('   • AI Budget Tracking: ✓');
+      }
+    }
 
     console.log(`   • Firecrawl: ✓`);
     console.log(`   • LLM Extractor: ${extractor.getProvider().toUpperCase()} (${extractor.getModelName()})`);

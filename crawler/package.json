@@ -28,6 +28,7 @@
   "license": "MIT",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",
+    "@mastra/core": "^0.24.9",
     "@mendable/firecrawl-js": "^1.10.0",
     "dotenv": "^16.4.5",
     "fuse.js": "^7.0.0",

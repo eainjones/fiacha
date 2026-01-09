@@ -119,6 +119,13 @@ export class DatabaseClient {
   }
 
   /**
+   * Get the underlying pool for direct access (e.g., AI budget tracking)
+   */
+  getPool(): Pool {
+    return this.pool;
+  }
+
+  /**
    * Execute query with automatic error handling
    */
   async query(sql: string, params?: any[]) {
