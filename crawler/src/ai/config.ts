@@ -132,6 +132,9 @@ export const PROMISE_CATEGORIES = [
   'Social Welfare',
   'Law & Order',
   'Infrastructure',
+  'Trade',
+  'Agriculture',
+  'Foreign Affairs',
   'Other',
 ] as const;
 

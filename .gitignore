@@ -10,3 +10,7 @@ node_modules
 
 # Database backups (sensitive)
 /backups/
+crawler/.mastra/
+.env.preview
+.env.prod
+.env.staging

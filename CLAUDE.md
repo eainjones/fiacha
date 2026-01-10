@@ -60,10 +60,30 @@
 
 | Script | Purpose |
 |--------|---------|
+| `npm run db:sync-staging` | Sync staging data from production |
 | `./scripts/backup-db.sh [staging\|production]` | Create database backup |
 | `./scripts/safe-db-push.sh [staging\|production]` | Safe migration with backup |
 | `./scripts/verify-staging-data.ts` | Verify politician counts in staging |
 | `./scripts/generate-politicians-migration.ts` | Generate safe upsert migration |
+
+## Keeping Staging in Sync
+
+### When to Sync
+- After adding new data to production (promises, politicians, etc.)
+- Before testing features that depend on production data
+- After production database migrations
+
+### How to Sync
+```bash
+npm run db:sync-staging
+```
+
+This copies all data from production → staging while preserving referential integrity.
+
+### Staging Database Notes
+- Staging uses Supabase connection pooler (IPv4) due to IPv6-only direct connection
+- Pooler URL: `aws-1-eu-west-1.pooler.supabase.com` (note: aws-1, not aws-0)
+- Username format for pooler: `postgres.qsknxvethxnapioxsuqr`
 
 ## Data Verification
 

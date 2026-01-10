@@ -14,6 +14,7 @@ export { localAuthorities, type LocalAuthority, type LocalAuthorityInsert } from
 export { electoralAreas, type ElectoralArea, type ElectoralAreaInsert } from './electoral_areas'
 export { parties, type Party, type PartyInsert } from './parties'
 export { promiseReviewQueue, type PromiseReviewQueueItem, type PromiseReviewQueueInsert } from './promise_review_queue'
+export { promiseSubmissions, type PromiseSubmission, type PromiseSubmissionInsert } from './promise_submissions'
 export { statusHistory, type StatusHistoryEntry, type StatusHistoryInsert } from './status_history'
 export { milestones, type Milestone, type MilestoneInsert } from './milestones'
 

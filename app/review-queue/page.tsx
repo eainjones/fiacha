@@ -2,8 +2,8 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { isAdmin } from '@/lib/auth/admin'
 import Nav from '@/components/Nav'
-import ReviewQueueActions from '@/components/ReviewQueueActions'
-import { getPendingReviews } from '@/lib/db/queries'
+import { getPendingSubmissions, getSubmissionCounts } from '@/lib/db/queries'
+import SubmissionReviewCard from '@/components/SubmissionReviewCard'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -19,7 +19,10 @@ export default async function ReviewQueuePage() {
     redirect('/')
   }
 
-  const items = await getPendingReviews(50)
+  const [submissions, counts] = await Promise.all([
+    getPendingSubmissions(50),
+    getSubmissionCounts(),
+  ])
 
   return (
     <>
@@ -27,84 +30,37 @@ export default async function ReviewQueuePage() {
       <main className="min-h-screen bg-gradient-to-br from-gray-50 via-emerald-50/30 to-gray-50 dark:from-slate-950 dark:via-emerald-950/10 dark:to-slate-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
           <header className="mb-8 md:mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">Review Queue</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">
+              AI Review Queue
+            </h1>
             <p className="text-gray-600 dark:text-slate-400 mt-2">
-              Pending promises extracted by the crawler for human review.
+              AI-extracted promises pending human review
             </p>
+            <div className="flex gap-4 mt-4 text-sm">
+              <span className="px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300">
+                {counts.pending} pending
+              </span>
+              <span className="px-3 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
+                {counts.approved} approved
+              </span>
+              <span className="px-3 py-1 rounded-full bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300">
+                {counts.rejected} rejected
+              </span>
+            </div>
           </header>
 
-          {items.length === 0 ? (
+          {submissions.length === 0 ? (
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 p-10 text-center">
-              <p className="text-gray-500 dark:text-slate-400">No pending reviews right now.</p>
+              <p className="text-gray-500 dark:text-slate-400">No pending submissions to review.</p>
+              <p className="text-gray-400 dark:text-slate-500 text-sm mt-2">
+                Run the crawler to extract more promises.
+              </p>
             </div>
           ) : (
             <div className="space-y-4">
-              {items.map((item) => {
-                const extracted = (item.extractedPromise ?? {}) as Record<string, unknown>
-                const match = item.politicianMatch as Record<string, unknown> | null
-
-                return (
-                  <div
-                    key={item.id}
-                    className="bg-white dark:bg-slate-900 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 p-5 md:p-6"
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-                      <div className="flex-1">
-                        <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-slate-100">
-                          {String(extracted.promise_title ?? 'Untitled Promise')}
-                        </h2>
-                        <p className="text-sm text-gray-600 dark:text-slate-400 mt-1">
-                          {String(extracted.politician_name ?? 'Unknown')} {extracted.party ? `· ${String(extracted.party)}` : ''}
-                        </p>
-                      </div>
-                      {typeof extracted.confidence === 'number' && (
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
-                          Confidence {Math.round(extracted.confidence)}%
-                        </span>
-                      )}
-                    </div>
-
-                    {typeof extracted.description === 'string' && extracted.description && (
-                      <p className="text-gray-700 dark:text-slate-300 mt-3 leading-relaxed">
-                        {extracted.description}
-                      </p>
-                    )}
-
-                    <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                      <div className="text-gray-600 dark:text-slate-400">
-                        <span className="font-semibold text-gray-800 dark:text-slate-200">Source:</span>{' '}
-                        {String(extracted.source_type ?? 'Unknown')}
-                      </div>
-                      <div className="text-gray-600 dark:text-slate-400">
-                        <span className="font-semibold text-gray-800 dark:text-slate-200">Created:</span>{' '}
-                        {item.createdAt ? new Date(item.createdAt).toLocaleString() : 'Unknown'}
-                      </div>
-                      {typeof extracted.source_url === 'string' && extracted.source_url && (
-                        <div className="sm:col-span-2">
-                          <a
-                            href={extracted.source_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium"
-                          >
-                            View source
-                          </a>
-                        </div>
-                      )}
-                      {match && (
-                        <div className="sm:col-span-2 text-gray-600 dark:text-slate-400">
-                          <span className="font-semibold text-gray-800 dark:text-slate-200">Matched:</span>{' '}
-                          {String(match.name ?? '')} {match.party ? `· ${String(match.party)}` : ''} {typeof match.matchScore === 'number' ? `(${Math.round(match.matchScore)}%)` : ''}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="mt-4">
-                      <ReviewQueueActions reviewId={item.id} />
-                    </div>
-                  </div>
-                )
-              })}
+              {submissions.map((submission) => (
+                <SubmissionReviewCard key={submission.id} submission={submission} />
+              ))}
             </div>
           )}
         </div>

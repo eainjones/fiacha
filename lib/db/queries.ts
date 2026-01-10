@@ -10,7 +10,7 @@
 
 import { db, schema } from './client'
 import { eq, desc, asc, sql, and, or, ilike, count, isNull, isNotNull } from 'drizzle-orm'
-import type { Politician, PromiseRecord, Evidence, County, LocalAuthority, Party, Milestone, StatusHistoryEntry, PromiseReviewQueueItem } from './schema'
+import type { Politician, PromiseRecord, Evidence, County, LocalAuthority, Party, Milestone, StatusHistoryEntry, PromiseReviewQueueItem, PromiseSubmission } from './schema'
 
 // ============================================================================
 // Promise Queries
@@ -633,6 +633,189 @@ export async function updateReviewStatus(
     .returning({ id: schema.promiseReviewQueue.id })
 
   return result.length > 0
+}
+
+// ============================================================================
+// Promise Submissions Queries (AI-extracted promises)
+// ============================================================================
+
+export type PromiseSubmissionWithPolitician = PromiseSubmission & {
+  matched_politician_name: string | null
+  matched_politician_party: string | null
+}
+
+/**
+ * Get pending AI-extracted promise submissions
+ */
+export async function getPendingSubmissions(limit = 50): Promise<PromiseSubmissionWithPolitician[]> {
+  const result = await db
+    .select({
+      id: schema.promiseSubmissions.id,
+      politicianName: schema.promiseSubmissions.politicianName,
+      politicianId: schema.promiseSubmissions.politicianId,
+      party: schema.promiseSubmissions.party,
+      title: schema.promiseSubmissions.title,
+      description: schema.promiseSubmissions.description,
+      category: schema.promiseSubmissions.category,
+      targetDate: schema.promiseSubmissions.targetDate,
+      sourceUrl: schema.promiseSubmissions.sourceUrl,
+      sourceType: schema.promiseSubmissions.sourceType,
+      sourceTitle: schema.promiseSubmissions.sourceTitle,
+      confidenceScore: schema.promiseSubmissions.confidenceScore,
+      extractionMetadata: schema.promiseSubmissions.extractionMetadata,
+      status: schema.promiseSubmissions.status,
+      reviewedBy: schema.promiseSubmissions.reviewedBy,
+      reviewedAt: schema.promiseSubmissions.reviewedAt,
+      rejectionReason: schema.promiseSubmissions.rejectionReason,
+      approvedPromiseId: schema.promiseSubmissions.approvedPromiseId,
+      createdAt: schema.promiseSubmissions.createdAt,
+      updatedAt: schema.promiseSubmissions.updatedAt,
+      matched_politician_name: schema.politicians.name,
+      matched_politician_party: schema.politicians.party,
+    })
+    .from(schema.promiseSubmissions)
+    .leftJoin(schema.politicians, eq(schema.promiseSubmissions.politicianId, schema.politicians.id))
+    .where(eq(schema.promiseSubmissions.status, 'pending_review'))
+    .orderBy(desc(schema.promiseSubmissions.createdAt))
+    .limit(limit)
+
+  return result as PromiseSubmissionWithPolitician[]
+}
+
+/**
+ * Get submission by ID
+ */
+export async function getSubmissionById(id: number): Promise<PromiseSubmissionWithPolitician | null> {
+  const result = await db
+    .select({
+      id: schema.promiseSubmissions.id,
+      politicianName: schema.promiseSubmissions.politicianName,
+      politicianId: schema.promiseSubmissions.politicianId,
+      party: schema.promiseSubmissions.party,
+      title: schema.promiseSubmissions.title,
+      description: schema.promiseSubmissions.description,
+      category: schema.promiseSubmissions.category,
+      targetDate: schema.promiseSubmissions.targetDate,
+      sourceUrl: schema.promiseSubmissions.sourceUrl,
+      sourceType: schema.promiseSubmissions.sourceType,
+      sourceTitle: schema.promiseSubmissions.sourceTitle,
+      confidenceScore: schema.promiseSubmissions.confidenceScore,
+      extractionMetadata: schema.promiseSubmissions.extractionMetadata,
+      status: schema.promiseSubmissions.status,
+      reviewedBy: schema.promiseSubmissions.reviewedBy,
+      reviewedAt: schema.promiseSubmissions.reviewedAt,
+      rejectionReason: schema.promiseSubmissions.rejectionReason,
+      approvedPromiseId: schema.promiseSubmissions.approvedPromiseId,
+      createdAt: schema.promiseSubmissions.createdAt,
+      updatedAt: schema.promiseSubmissions.updatedAt,
+      matched_politician_name: schema.politicians.name,
+      matched_politician_party: schema.politicians.party,
+    })
+    .from(schema.promiseSubmissions)
+    .leftJoin(schema.politicians, eq(schema.promiseSubmissions.politicianId, schema.politicians.id))
+    .where(eq(schema.promiseSubmissions.id, id))
+    .limit(1)
+
+  return (result[0] as PromiseSubmissionWithPolitician) ?? null
+}
+
+/**
+ * Approve a submission - creates a promise and updates submission status
+ */
+export async function approveSubmission(
+  id: number,
+  reviewedBy: string,
+  politicianId: number
+): Promise<{ success: boolean; promiseId?: number }> {
+  const submission = await getSubmissionById(id)
+  if (!submission || submission.status !== 'pending_review') {
+    return { success: false }
+  }
+
+  // Create the promise
+  const newPromise = await db
+    .insert(schema.promises)
+    .values({
+      politicianId,
+      title: submission.title,
+      description: submission.description,
+      category: submission.category,
+      targetDate: submission.targetDate,
+      status: 'pending',
+    })
+    .returning()
+
+  if (!newPromise[0]) {
+    return { success: false }
+  }
+
+  // Create evidence from source
+  await db.insert(schema.evidence).values({
+    promiseId: newPromise[0].id,
+    sourceType: submission.sourceType,
+    sourceUrl: submission.sourceUrl,
+    title: submission.sourceTitle,
+    description: `AI-extracted promise (confidence: ${submission.confidenceScore}%)`,
+  })
+
+  // Update submission status
+  await db
+    .update(schema.promiseSubmissions)
+    .set({
+      status: 'approved',
+      reviewedBy,
+      reviewedAt: new Date(),
+      approvedPromiseId: newPromise[0].id,
+    })
+    .where(eq(schema.promiseSubmissions.id, id))
+
+  return { success: true, promiseId: newPromise[0].id }
+}
+
+/**
+ * Reject a submission
+ */
+export async function rejectSubmission(
+  id: number,
+  reviewedBy: string,
+  rejectionReason?: string
+): Promise<boolean> {
+  const result = await db
+    .update(schema.promiseSubmissions)
+    .set({
+      status: 'rejected',
+      reviewedBy,
+      reviewedAt: new Date(),
+      rejectionReason: rejectionReason ?? null,
+    })
+    .where(and(eq(schema.promiseSubmissions.id, id), eq(schema.promiseSubmissions.status, 'pending_review')))
+    .returning({ id: schema.promiseSubmissions.id })
+
+  return result.length > 0
+}
+
+/**
+ * Get submission counts by status
+ */
+export async function getSubmissionCounts(): Promise<{
+  pending: number
+  approved: number
+  rejected: number
+}> {
+  const result = await db
+    .select({
+      pending: count(sql`CASE WHEN ${schema.promiseSubmissions.status} = 'pending_review' THEN 1 END`),
+      approved: count(sql`CASE WHEN ${schema.promiseSubmissions.status} = 'approved' THEN 1 END`),
+      rejected: count(sql`CASE WHEN ${schema.promiseSubmissions.status} = 'rejected' THEN 1 END`),
+    })
+    .from(schema.promiseSubmissions)
+
+  const row = result[0]
+  return {
+    pending: Number(row?.pending) || 0,
+    approved: Number(row?.approved) || 0,
+    rejected: Number(row?.rejected) || 0,
+  }
 }
 
 // ============================================================================
