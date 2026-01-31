@@ -173,7 +173,7 @@ export default async function AdminReviewPage({ searchParams }: { searchParams: 
             </p>
           </header>
 
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6">
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 p-4">
               <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-slate-400">Total</p>
               <p className="text-2xl font-bold text-gray-900 dark:text-slate-100">{counts.total}</p>
@@ -197,7 +197,7 @@ export default async function AdminReviewPage({ searchParams }: { searchParams: 
               <div className="flex flex-wrap gap-2">
                 <Link
                   href={buildLink()}
-                  className={`px-3 py-1.5 rounded-full text-sm font-semibold border ${
+                  className={`inline-flex items-center px-4 py-2.5 min-h-[44px] rounded-full text-sm font-semibold border ${
                     !status ? 'bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-950 dark:text-emerald-300 dark:border-emerald-800' : 'border-gray-200 dark:border-slate-700 text-gray-600 dark:text-slate-300'
                   }`}
                 >
@@ -207,7 +207,7 @@ export default async function AdminReviewPage({ searchParams }: { searchParams: 
                   <Link
                     key={item}
                     href={buildLink(item)}
-                    className={`px-3 py-1.5 rounded-full text-sm font-semibold border ${
+                    className={`inline-flex items-center px-4 py-2.5 min-h-[44px] rounded-full text-sm font-semibold border ${
                       status === item ? STATUS_STYLES[item] : 'border-gray-200 dark:border-slate-700 text-gray-600 dark:text-slate-300'
                     }`}
                   >
@@ -222,11 +222,11 @@ export default async function AdminReviewPage({ searchParams }: { searchParams: 
                   name="search"
                   defaultValue={search || ''}
                   placeholder="Search promises..."
-                  className="w-full md:w-72 px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full md:w-72 px-4 py-2.5 min-h-[44px] border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700"
+                  className="px-5 py-2.5 min-h-[44px] rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700"
                 >
                   Search
                 </button>
@@ -334,7 +334,7 @@ export default async function AdminReviewPage({ searchParams }: { searchParams: 
               <div className="flex items-center gap-3">
                 <Link
                   href={buildLink(status, Math.max(1, page - 1))}
-                  className={`px-4 py-2 rounded-md border border-gray-300 dark:border-slate-600 text-sm font-medium ${
+                  className={`inline-flex items-center px-5 py-2.5 min-h-[44px] rounded-lg border border-gray-300 dark:border-slate-600 text-sm font-medium ${
                     page <= 1 ? 'opacity-50 pointer-events-none' : 'text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-800'
                   }`}
                 >
@@ -342,7 +342,7 @@ export default async function AdminReviewPage({ searchParams }: { searchParams: 
                 </Link>
                 <Link
                   href={buildLink(status, Math.min(pageCount, page + 1))}
-                  className={`px-4 py-2 rounded-md border border-gray-300 dark:border-slate-600 text-sm font-medium ${
+                  className={`inline-flex items-center px-5 py-2.5 min-h-[44px] rounded-lg border border-gray-300 dark:border-slate-600 text-sm font-medium ${
                     page >= pageCount ? 'opacity-50 pointer-events-none' : 'text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-800'
                   }`}
                 >

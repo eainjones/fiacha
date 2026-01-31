@@ -2,18 +2,88 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { useForm, Controller } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+import { toast } from 'sonner'
 import Nav from '@/components/Nav'
 import { createClient } from '@/lib/supabase'
+import PoliticianCombobox from '@/components/PoliticianCombobox'
+import { cn } from '@/lib/utils'
+
+// ---------------------------------------------------------------------------
+// Client-side Zod schemas for form validation
+// ---------------------------------------------------------------------------
+
+const politicianFormSchema = z.object({
+  name: z.string().min(1, 'Name is required').max(255, 'Name cannot exceed 255 characters'),
+  party: z.string().max(100, 'Party cannot exceed 100 characters').optional().or(z.literal('')),
+  constituency: z.string().max(100, 'Constituency cannot exceed 100 characters').optional().or(z.literal('')),
+  role: z.string().max(100, 'Role cannot exceed 100 characters').optional().or(z.literal('')),
+})
+
+type PoliticianFormValues = z.infer<typeof politicianFormSchema>
+
+const promiseFormSchema = z.object({
+  politician_id: z.string().min(1, 'Please select a politician'),
+  title: z.string().min(1, 'Promise title is required').max(500, 'Title cannot exceed 500 characters'),
+  description: z.string().max(5000, 'Description cannot exceed 5000 characters').optional().or(z.literal('')),
+  category: z.string().optional().or(z.literal('')),
+  promise_date: z.string().optional().or(z.literal('')),
+  target_date: z.string().optional().or(z.literal('')),
+})
+
+type PromiseFormValues = z.infer<typeof promiseFormSchema>
+
+// ---------------------------------------------------------------------------
+// Shared input class names
+// ---------------------------------------------------------------------------
+
+const inputBase =
+  'w-full px-4 py-2.5 border rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500'
+const inputNormal = 'border-gray-300 dark:border-slate-600'
+const inputError = 'border-red-500 dark:border-red-500 focus:ring-red-500 focus:border-red-500'
+
+// ---------------------------------------------------------------------------
+// Component
+// ---------------------------------------------------------------------------
 
 export default function AddPage() {
   const router = useRouter()
   const supabase = createClient()
   const [activeTab, setActiveTab] = useState<'politician' | 'promise'>('politician')
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
   const [politicians, setPoliticians] = useState<any[]>([])
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
+
+  // --- Politician form ---
+  const {
+    register: registerPol,
+    handleSubmit: handleSubmitPol,
+    formState: { errors: polErrors, isSubmitting: polSubmitting },
+    reset: resetPol,
+  } = useForm<PoliticianFormValues>({
+    resolver: zodResolver(politicianFormSchema),
+    defaultValues: { name: '', party: '', constituency: '', role: '' },
+  })
+
+  // --- Promise form ---
+  const {
+    register: registerProm,
+    handleSubmit: handleSubmitProm,
+    control: promControl,
+    formState: { errors: promErrors, isSubmitting: promSubmitting },
+    reset: resetProm,
+  } = useForm<PromiseFormValues>({
+    resolver: zodResolver(promiseFormSchema),
+    defaultValues: {
+      politician_id: '',
+      title: '',
+      description: '',
+      category: '',
+      promise_date: '',
+      target_date: '',
+    },
+  })
 
   useEffect(() => {
     // Check authentication
@@ -52,78 +122,55 @@ export default function AddPage() {
     return null
   }
 
-  const handlePoliticianSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setLoading(true)
-    setError('')
-    setSuccess('')
+  // ---- Submit handlers ----
 
-    const formData = new FormData(e.currentTarget)
-    const data = {
-      name: formData.get('name'),
-      party: formData.get('party'),
-      constituency: formData.get('constituency'),
-      role: formData.get('role'),
-    }
-
+  const onPoliticianSubmit = async (values: PoliticianFormValues) => {
     try {
       const res = await fetch('/api/politicians', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          name: values.name,
+          party: values.party || null,
+          constituency: values.constituency || null,
+          role: values.role || null,
+        }),
       })
 
       if (!res.ok) throw new Error('Failed to create politician')
 
-      setSuccess('Politician added successfully!')
-      e.currentTarget.reset()
+      toast.success('Politician added successfully')
+      resetPol()
       setTimeout(() => router.push('/'), 1500)
-    } catch (err) {
-      setError('Failed to add politician. Please try again.')
-    } finally {
-      setLoading(false)
+    } catch {
+      toast.error('Failed to add politician. Please try again.')
     }
   }
 
-  const handlePromiseSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setLoading(true)
-    setError('')
-    setSuccess('')
-
-    const formData = new FormData(e.currentTarget)
-    const politicianIdValue = parseInt(formData.get('politician_id') as string, 10)
-    if (!Number.isInteger(politicianIdValue) || politicianIdValue <= 0) {
-      setError('Please select a valid politician.')
-      setLoading(false)
-      return
-    }
-
-    const data = {
-      politician_id: politicianIdValue,
-      title: formData.get('title'),
-      description: formData.get('description'),
-      category: formData.get('category'),
-      promise_date: formData.get('promise_date'),
-      target_date: formData.get('target_date'),
-    }
+  const onPromiseSubmit = async (values: PromiseFormValues) => {
+    const politicianIdValue = parseInt(values.politician_id, 10)
 
     try {
       const res = await fetch('/api/promises', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          politician_id: politicianIdValue,
+          title: values.title,
+          description: values.description || null,
+          category: values.category || null,
+          promise_date: values.promise_date || null,
+          target_date: values.target_date || null,
+        }),
       })
 
       if (!res.ok) throw new Error('Failed to create promise')
 
-      setSuccess('Promise added successfully!')
-      e.currentTarget.reset()
+      toast.success('Promise added successfully')
+      resetProm()
       setTimeout(() => router.push('/'), 1500)
-    } catch (err) {
-      setError('Failed to add promise. Please try again.')
-    } finally {
-      setLoading(false)
+    } catch {
+      toast.error('Failed to add promise. Please try again.')
     }
   }
 
@@ -161,131 +208,178 @@ export default function AddPage() {
             </div>
 
             <div className="p-6 md:p-8">
-              {error && (
-                <div className="mb-4 p-4 bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 rounded-lg">
-                  {error}
-                </div>
-              )}
-
-              {success && (
-                <div className="mb-4 p-4 bg-emerald-50 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 rounded-lg">
-                  {success}
-                </div>
-              )}
-
+              {/* ============================================================
+                  POLITICIAN FORM
+                  ============================================================ */}
               {activeTab === 'politician' ? (
-                <form onSubmit={handlePoliticianSubmit} className="space-y-6">
+                <form onSubmit={handleSubmitPol(onPoliticianSubmit)} className="space-y-6" noValidate>
+                  {/* Name */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
+                    <label htmlFor="pol-name" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
                       Name *
                     </label>
                     <input
+                      {...registerPol('name')}
                       type="text"
-                      id="name"
-                      name="name"
-                      required
-                      className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      id="pol-name"
+                      className={cn(inputBase, polErrors.name ? inputError : inputNormal)}
+                      aria-invalid={!!polErrors.name}
+                      aria-describedby={polErrors.name ? 'error-pol-name' : undefined}
                     />
+                    {polErrors.name && (
+                      <p id="error-pol-name" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {polErrors.name.message}
+                      </p>
+                    )}
                   </div>
 
+                  {/* Party */}
                   <div>
-                    <label htmlFor="party" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
+                    <label htmlFor="pol-party" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
                       Party
                     </label>
                     <input
+                      {...registerPol('party')}
                       type="text"
-                      id="party"
-                      name="party"
-                      className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      id="pol-party"
+                      className={cn(inputBase, polErrors.party ? inputError : inputNormal)}
+                      aria-invalid={!!polErrors.party}
+                      aria-describedby={polErrors.party ? 'error-pol-party' : undefined}
                     />
+                    {polErrors.party && (
+                      <p id="error-pol-party" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {polErrors.party.message}
+                      </p>
+                    )}
                   </div>
 
+                  {/* Constituency */}
                   <div>
-                    <label htmlFor="constituency" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
+                    <label htmlFor="pol-constituency" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
                       Constituency
                     </label>
                     <input
+                      {...registerPol('constituency')}
                       type="text"
-                      id="constituency"
-                      name="constituency"
-                      className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      id="pol-constituency"
+                      className={cn(inputBase, polErrors.constituency ? inputError : inputNormal)}
+                      aria-invalid={!!polErrors.constituency}
+                      aria-describedby={polErrors.constituency ? 'error-pol-constituency' : undefined}
                     />
+                    {polErrors.constituency && (
+                      <p id="error-pol-constituency" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {polErrors.constituency.message}
+                      </p>
+                    )}
                   </div>
 
+                  {/* Role */}
                   <div>
-                    <label htmlFor="role" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
+                    <label htmlFor="pol-role" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
                       Role
                     </label>
                     <input
+                      {...registerPol('role')}
                       type="text"
-                      id="role"
-                      name="role"
-                      className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      id="pol-role"
+                      className={cn(inputBase, polErrors.role ? inputError : inputNormal)}
+                      aria-invalid={!!polErrors.role}
+                      aria-describedby={polErrors.role ? 'error-pol-role' : undefined}
                     />
+                    {polErrors.role && (
+                      <p id="error-pol-role" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {polErrors.role.message}
+                      </p>
+                    )}
                   </div>
 
                   <button
                     type="submit"
-                    disabled={loading}
+                    disabled={polSubmitting}
                     className="w-full bg-emerald-600 text-white py-3 px-6 rounded-lg hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed font-semibold transition-colors"
                   >
-                    {loading ? 'Adding...' : 'Add Politician'}
+                    {polSubmitting ? 'Adding...' : 'Add Politician'}
                   </button>
                 </form>
               ) : (
-                <form onSubmit={handlePromiseSubmit} className="space-y-6">
+                /* ============================================================
+                   PROMISE FORM
+                   ============================================================ */
+                <form onSubmit={handleSubmitProm(onPromiseSubmit)} className="space-y-6" noValidate>
+                  {/* Politician */}
                   <div>
                     <label htmlFor="politician_id" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
                       Politician *
                     </label>
-                    <select
-                      id="politician_id"
+                    <Controller
                       name="politician_id"
-                      required
-                      className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                    >
-                      <option value="">Select a politician</option>
-                      {politicians.map(pol => (
-                        <option key={pol.id} value={pol.id}>
-                          {pol.name} - {pol.party}
-                        </option>
-                      ))}
-                    </select>
+                      control={promControl}
+                      render={({ field }) => (
+                        <PoliticianCombobox
+                          politicians={politicians}
+                          value={field.value}
+                          onChange={field.onChange}
+                        />
+                      )}
+                    />
+                    {promErrors.politician_id && (
+                      <p id="error-politician-id" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {promErrors.politician_id.message}
+                      </p>
+                    )}
                   </div>
 
+                  {/* Title */}
                   <div>
-                    <label htmlFor="title" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
+                    <label htmlFor="prom-title" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
                       Promise Title *
                     </label>
                     <input
+                      {...registerProm('title')}
                       type="text"
-                      id="title"
-                      name="title"
-                      required
-                      className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      id="prom-title"
+                      className={cn(inputBase, promErrors.title ? inputError : inputNormal)}
+                      aria-invalid={!!promErrors.title}
+                      aria-describedby={promErrors.title ? 'error-prom-title' : undefined}
                     />
+                    {promErrors.title && (
+                      <p id="error-prom-title" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {promErrors.title.message}
+                      </p>
+                    )}
                   </div>
 
+                  {/* Description */}
                   <div>
-                    <label htmlFor="description" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
+                    <label htmlFor="prom-description" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
                       Description
                     </label>
                     <textarea
-                      id="description"
-                      name="description"
+                      {...registerProm('description')}
+                      id="prom-description"
                       rows={4}
-                      className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      className={cn(inputBase, promErrors.description ? inputError : inputNormal)}
+                      aria-invalid={!!promErrors.description}
+                      aria-describedby={promErrors.description ? 'error-prom-description' : undefined}
                     />
+                    {promErrors.description && (
+                      <p id="error-prom-description" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {promErrors.description.message}
+                      </p>
+                    )}
                   </div>
 
+                  {/* Category */}
                   <div>
-                    <label htmlFor="category" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
+                    <label htmlFor="prom-category" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
                       Category
                     </label>
                     <select
-                      id="category"
-                      name="category"
-                      className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      {...registerProm('category')}
+                      id="prom-category"
+                      className={cn(inputBase, promErrors.category ? inputError : inputNormal)}
+                      aria-invalid={!!promErrors.category}
+                      aria-describedby={promErrors.category ? 'error-prom-category' : undefined}
                     >
                       <option value="">Select a category</option>
                       <option value="Housing">Housing</option>
@@ -301,40 +395,60 @@ export default function AddPage() {
                       <option value="Infrastructure">Infrastructure</option>
                       <option value="Other">Other</option>
                     </select>
+                    {promErrors.category && (
+                      <p id="error-prom-category" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {promErrors.category.message}
+                      </p>
+                    )}
                   </div>
 
+                  {/* Dates */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="promise_date" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
+                      <label htmlFor="prom-promise-date" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
                         Promise Date
                       </label>
                       <input
+                        {...registerProm('promise_date')}
                         type="date"
-                        id="promise_date"
-                        name="promise_date"
-                        className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        id="prom-promise-date"
+                        className={cn(inputBase, promErrors.promise_date ? inputError : inputNormal)}
+                        aria-invalid={!!promErrors.promise_date}
+                        aria-describedby={promErrors.promise_date ? 'error-prom-promise-date' : undefined}
                       />
+                      {promErrors.promise_date && (
+                        <p id="error-prom-promise-date" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                          {promErrors.promise_date.message}
+                        </p>
+                      )}
                     </div>
 
                     <div>
-                      <label htmlFor="target_date" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
+                      <label htmlFor="prom-target-date" className="block text-sm font-semibold text-gray-700 dark:text-slate-200 mb-2">
                         Target Date
                       </label>
                       <input
+                        {...registerProm('target_date')}
                         type="date"
-                        id="target_date"
-                        name="target_date"
-                        className="w-full px-4 py-2.5 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        id="prom-target-date"
+                        className={cn(inputBase, promErrors.target_date ? inputError : inputNormal)}
+                        aria-invalid={!!promErrors.target_date}
+                        aria-describedby={promErrors.target_date ? 'error-prom-target-date' : undefined}
                       />
+                      {promErrors.target_date && (
+                        <p id="error-prom-target-date" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                          {promErrors.target_date.message}
+                        </p>
+                      )}
                     </div>
                   </div>
 
                   <button
                     type="submit"
-                    disabled={loading}
+                    disabled={promSubmitting}
                     className="w-full bg-emerald-600 text-white py-3 px-6 rounded-lg hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed font-semibold transition-colors"
                   >
-                    {loading ? 'Adding...' : 'Add Promise'}
+                    {promSubmitting ? 'Adding...' : 'Add Promise'}
                   </button>
                 </form>
               )}

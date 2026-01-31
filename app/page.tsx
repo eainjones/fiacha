@@ -32,40 +32,40 @@ export default async function Home() {
           </header>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-8 md:mb-12">
             <div className="bg-white dark:bg-slate-900 p-4 md:p-6 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 hover:shadow-lg transition-shadow">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xs md:text-sm font-semibold text-gray-600 dark:text-slate-400 uppercase tracking-wide">Promises</h3>
+                <h3 className="text-xs sm:text-sm font-semibold text-gray-600 dark:text-slate-400 uppercase tracking-wide">Promises</h3>
                 <svg className="h-6 w-6 md:h-8 md:w-8 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <p className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">{statusCounts.total}</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">{statusCounts.total}</p>
             </div>
             <div className="bg-white dark:bg-slate-900 p-4 md:p-6 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 hover:shadow-lg transition-shadow">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xs md:text-sm font-semibold text-gray-600 dark:text-slate-400 uppercase tracking-wide">Politicians</h3>
+                <h3 className="text-xs sm:text-sm font-semibold text-gray-600 dark:text-slate-400 uppercase tracking-wide">Politicians</h3>
                 <svg className="h-6 w-6 md:h-8 md:w-8 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <p className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">{politicianSummary.total.toLocaleString()}</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">{politicianSummary.total.toLocaleString()}</p>
             </div>
             <div className="bg-white dark:bg-slate-900 p-4 md:p-6 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 hover:shadow-lg transition-shadow">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xs md:text-sm font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wide">Kept</h3>
+                <h3 className="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wide">Kept</h3>
                 <span className="text-emerald-600 dark:text-emerald-400 text-lg">✓</span>
               </div>
-              <p className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">{statusCounts.kept}</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">{statusCounts.kept}</p>
             </div>
             <div className="bg-white dark:bg-slate-900 p-4 md:p-6 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 hover:shadow-lg transition-shadow">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xs md:text-sm font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wide">In Progress</h3>
+                <h3 className="text-xs sm:text-sm font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wide">In Progress</h3>
                 <svg className="h-6 w-6 md:h-8 md:w-8 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <p className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">{statusCounts.in_progress}</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">{statusCounts.in_progress}</p>
             </div>
           </div>
 
@@ -75,7 +75,7 @@ export default async function Home() {
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-slate-50">Politicians</h2>
               <Link
                 href="/politicians"
-                className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium text-sm focus:outline-none focus:underline"
+                className="inline-flex items-center min-h-[44px] px-2 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium text-sm focus:outline-none focus:underline"
               >
                 View all →
               </Link>
@@ -89,14 +89,22 @@ export default async function Home() {
                 </div>
               ) : (
                 politicians.slice(0, 5).map((pol: any) => (
-                  <div key={pol.id} className="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-md border border-gray-100 dark:border-slate-700">
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h3 className="font-semibold text-gray-900 dark:text-slate-100">{pol.name}</h3>
-                        <p className="text-sm text-gray-600 dark:text-slate-400">{pol.constituency}</p>
+                  <div key={pol.id} className="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700">
+                    <div className="flex items-start justify-between gap-3 mb-2">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-base text-gray-900 dark:text-slate-100">{pol.name}</h3>
+                        {pol.role && (
+                          <p className="text-sm text-gray-500 dark:text-slate-400 mt-0.5">{pol.role}</p>
+                        )}
                       </div>
                       <PartyBadge party={pol.party} color={pol.party_color} shortName={pol.party_short_name} size="sm" />
                     </div>
+                    {pol.constituency && (
+                      <p className="text-sm text-gray-600 dark:text-slate-400 mt-1">
+                        <span className="text-gray-400 dark:text-slate-500">Constituency:</span>{' '}
+                        {pol.constituency}
+                      </p>
+                    )}
                   </div>
                 ))
               )}
@@ -139,7 +147,7 @@ export default async function Home() {
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-slate-50">Recent Promises</h2>
               <Link
                 href="/promises"
-                className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium text-sm focus:outline-none focus:underline"
+                className="inline-flex items-center min-h-[44px] px-2 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium text-sm focus:outline-none focus:underline"
               >
                 View all →
               </Link>
