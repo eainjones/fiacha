@@ -1,30 +1,47 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSystemDb } from '@/lib/db'
+import { getActivePoliticians, getActivePoliticiansCount, createPolitician } from '@/lib/db/queries'
 import { createClient } from '@/lib/supabase-server'
-import { createPoliticianSchema, parseBody } from '@/lib/validations'
+import { createPoliticianSchema, politiciansQuerySchema, parseBody, parseSearchParams } from '@/lib/validations'
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
-    const db = getSystemDb()
-    const result = await db.query(`
-      SELECT
-        p.*,
-        c.name as county_name,
-        c.province,
-        la.name as local_authority_name
-      FROM politicians p
-      LEFT JOIN counties c ON p.county_id = c.id
-      LEFT JOIN local_authorities la ON p.local_authority_id = la.id
-      WHERE p.active = true
-      ORDER BY
-        CASE WHEN p.position_type = 'TD' THEN 0 ELSE 1 END,
-        p.party,
-        p.name
-    `)
+    const { searchParams } = new URL(request.url)
 
-    return NextResponse.json(result.rows)
+    // Validate query parameters
+    const paramResult = parseSearchParams(searchParams, politiciansQuerySchema)
+    if (!paramResult.success) {
+      return NextResponse.json({ error: paramResult.error }, { status: 400 })
+    }
+
+    const { limit, offset } = paramResult.data
+    const isPaginated = limit !== undefined || offset !== undefined
+
+    if (isPaginated) {
+      // Paginated response: { data, total, limit, offset }
+      const paginationLimit = limit ?? 100
+      const paginationOffset = offset ?? 0
+
+      const [data, total] = await Promise.all([
+        getActivePoliticians(paginationLimit, paginationOffset),
+        getActivePoliticiansCount(),
+      ])
+
+      return NextResponse.json({
+        data,
+        total,
+        limit: paginationLimit,
+        offset: paginationOffset,
+      })
+    }
+
+    // Default: return flat array for backward compatibility
+    const result = await getActivePoliticians()
+    return NextResponse.json(result)
   } catch (error) {
-    console.error('Error fetching politicians:', error)
+    console.error('GET /api/politicians failed:', {
+      message: error instanceof Error ? error.message : String(error),
+      ...(process.env.NODE_ENV === 'development' && { stack: error instanceof Error ? error.stack : undefined }),
+    })
     return NextResponse.json({ error: 'Failed to fetch politicians' }, { status: 500 })
   }
 }
@@ -46,17 +63,14 @@ export async function POST(request: NextRequest) {
 
     const { name, party, constituency, role } = parseResult.data
 
-    const db = getSystemDb()
-    const result = await db.query(
-      `INSERT INTO politicians (name, party, constituency, role)
-       VALUES ($1, $2, $3, $4)
-       RETURNING *`,
-      [name, party, constituency, role]
-    )
+    const politician = await createPolitician({ name, party, constituency, role })
 
-    return NextResponse.json(result.rows[0], { status: 201 })
+    return NextResponse.json(politician, { status: 201 })
   } catch (error) {
-    console.error('Error creating politician:', error)
+    console.error('POST /api/politicians failed:', {
+      message: error instanceof Error ? error.message : String(error),
+      ...(process.env.NODE_ENV === 'development' && { stack: error instanceof Error ? error.stack : undefined }),
+    })
     return NextResponse.json({ error: 'Failed to create politician' }, { status: 500 })
   }
 }

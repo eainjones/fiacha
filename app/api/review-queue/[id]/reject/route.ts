@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSystemDb } from '@/lib/db'
+import { db } from '@/lib/db/client'
+import { promiseReviewQueue } from '@/lib/db/schema'
+import { eq, and } from 'drizzle-orm'
 import { createClient } from '@/lib/supabase-server'
 import { isAdmin } from '@/lib/auth/admin'
 import { rejectReviewSchema, parseBody } from '@/lib/validations'
@@ -30,27 +32,27 @@ export async function POST(request: NextRequest, { params }: { params: { id: str
 
     const { reason } = parseResult.data
 
-    const db = getSystemDb()
-    const result = await db.query(
-      `
-      UPDATE promise_review_queue
-      SET status = 'rejected',
-          reviewed_at = NOW(),
-          reviewed_by = $1,
-          rejection_reason = $2
-      WHERE id = $3 AND status = 'pending'
-      RETURNING id
-      `,
-      [user.email || 'reviewer', reason, reviewId]
-    )
+    const result = await db
+      .update(promiseReviewQueue)
+      .set({
+        status: 'rejected',
+        reviewedAt: new Date(),
+        reviewedBy: user.email || 'reviewer',
+        rejectionReason: reason,
+      })
+      .where(and(eq(promiseReviewQueue.id, reviewId), eq(promiseReviewQueue.status, 'pending')))
+      .returning({ id: promiseReviewQueue.id })
 
-    if (result.rows.length === 0) {
+    if (result.length === 0) {
       return NextResponse.json({ error: 'Review not found or not pending' }, { status: 404 })
     }
 
     return NextResponse.json({ ok: true })
   } catch (error) {
-    console.error('Failed to reject review:', error)
+    console.error('POST /api/review-queue/[id]/reject failed:', {
+      message: error instanceof Error ? error.message : String(error),
+      ...(process.env.NODE_ENV === 'development' && { stack: error instanceof Error ? error.stack : undefined }),
+    })
     return NextResponse.json({ error: 'Failed to reject review' }, { status: 500 })
   }
 }

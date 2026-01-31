@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSystemDb } from '@/lib/db'
+import { db } from '@/lib/db/client'
+import { promises, evidence, promiseReviewQueue } from '@/lib/db/schema'
+import { eq, and } from 'drizzle-orm'
 import { createClient } from '@/lib/supabase-server'
 import { isAdmin } from '@/lib/auth/admin'
 
@@ -27,101 +29,84 @@ export async function POST(_request: NextRequest, { params }: { params: { id: st
       return NextResponse.json({ error: 'Invalid review id' }, { status: 400 })
     }
 
-    const db = getSystemDb()
-    const client = await db.connect()
+    // Fetch the review item
+    const reviewRows = await db
+      .select()
+      .from(promiseReviewQueue)
+      .where(eq(promiseReviewQueue.id, reviewId))
+      .limit(1)
 
-    try {
-      await client.query('BEGIN')
-
-      const reviewResult = await client.query(
-        'SELECT * FROM promise_review_queue WHERE id = $1 FOR UPDATE',
-        [reviewId]
-      )
-
-      if (reviewResult.rows.length === 0) {
-        await client.query('ROLLBACK')
-        return NextResponse.json({ error: 'Review not found' }, { status: 404 })
-      }
-
-      const review = reviewResult.rows[0]
-      if (review.status !== 'pending') {
-        await client.query('ROLLBACK')
-        return NextResponse.json({ error: 'Review is not pending' }, { status: 400 })
-      }
-
-      const extracted = review.extracted_promise || {}
-      const match = review.politician_match
-
-      if (!match || !match.id) {
-        await client.query('ROLLBACK')
-        return NextResponse.json({ error: 'No politician match for review' }, { status: 400 })
-      }
-
-      if (!extracted.promise_title || !extracted.description) {
-        await client.query('ROLLBACK')
-        return NextResponse.json({ error: 'Review has incomplete promise data' }, { status: 400 })
-      }
-
-      const promiseDate = parseDate(extracted.promise_date)
-      const targetDate = parseDate(extracted.target_date)
-
-      const promiseResult = await client.query(
-        `
-        INSERT INTO promises (
-          politician_id, title, description, category,
-          promise_date, target_date, status, score, created_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, 'pending', 0, NOW())
-        RETURNING id
-        `,
-        [
-          match.id,
-          extracted.promise_title,
-          extracted.description,
-          extracted.category || null,
-          promiseDate,
-          targetDate,
-        ]
-      )
-
-      const promiseId = promiseResult.rows[0].id
-
-      await client.query(
-        `
-        INSERT INTO evidence (
-          promise_id, source_type, source_url, title, description, published_date, created_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, NOW())
-        `,
-        [
-          promiseId,
-          extracted.source_type || null,
-          extracted.source_url || null,
-          extracted.source_url ? `Original source: ${extracted.source_url}` : 'Original source',
-          extracted.quote || extracted.description,
-          parseDate(extracted.source_published_date),
-        ]
-      )
-
-      await client.query(
-        `
-        UPDATE promise_review_queue
-        SET status = 'approved', reviewed_at = NOW(), reviewed_by = $1
-        WHERE id = $2
-        `,
-        [user.email || 'reviewer', reviewId]
-      )
-
-      await client.query('COMMIT')
-
-      return NextResponse.json({ ok: true, promise_id: promiseId })
-    } catch (error) {
-      await client.query('ROLLBACK')
-      console.error('Failed to approve review:', error)
-      return NextResponse.json({ error: 'Failed to approve review' }, { status: 500 })
-    } finally {
-      client.release()
+    if (reviewRows.length === 0) {
+      return NextResponse.json({ error: 'Review not found' }, { status: 404 })
     }
+
+    const review = reviewRows[0]
+    if (review.status !== 'pending') {
+      return NextResponse.json({ error: 'Review is not pending' }, { status: 400 })
+    }
+
+    const extracted = (review.extractedPromise || {}) as Record<string, any>
+    const match = review.politicianMatch as Record<string, any> | null
+
+    if (!match || !match.id) {
+      return NextResponse.json({ error: 'No politician match for review' }, { status: 400 })
+    }
+
+    if (!extracted.promise_title || !extracted.description) {
+      return NextResponse.json({ error: 'Review has incomplete promise data' }, { status: 400 })
+    }
+
+    const promiseDate = parseDate(extracted.promise_date)
+    const targetDate = parseDate(extracted.target_date)
+
+    // Use Drizzle transaction for atomicity
+    const result = await db.transaction(async (tx) => {
+      // Insert the new promise
+      const promiseRows = await tx
+        .insert(promises)
+        .values({
+          politicianId: match.id,
+          title: extracted.promise_title,
+          description: extracted.description,
+          category: extracted.category || null,
+          promiseDate: promiseDate?.toISOString().split('T')[0] ?? null,
+          targetDate: targetDate?.toISOString().split('T')[0] ?? null,
+          status: 'pending',
+          score: 0,
+        })
+        .returning({ id: promises.id })
+
+      const promiseId = promiseRows[0].id
+
+      // Insert the evidence record
+      await tx.insert(evidence).values({
+        promiseId,
+        sourceType: extracted.source_type || null,
+        sourceUrl: extracted.source_url || null,
+        title: extracted.source_url ? `Original source: ${extracted.source_url}` : 'Original source',
+        description: extracted.quote || extracted.description,
+        publishedDate: parseDate(extracted.source_published_date)?.toISOString().split('T')[0] ?? null,
+      })
+
+      // Update review queue status
+      await tx
+        .update(promiseReviewQueue)
+        .set({
+          status: 'approved',
+          reviewedAt: new Date(),
+          reviewedBy: user.email || 'reviewer',
+        })
+        .where(eq(promiseReviewQueue.id, reviewId))
+
+      return promiseId
+    })
+
+    return NextResponse.json({ ok: true, promise_id: result })
   } catch (error) {
-    console.error('Failed to approve review:', error)
+    console.error('POST /api/review-queue/[id]/approve failed:', {
+      message: error instanceof Error ? error.message : String(error),
+      ...(process.env.NODE_ENV === 'development' && { stack: error instanceof Error ? error.stack : undefined }),
+    })
     return NextResponse.json({ error: 'Failed to approve review' }, { status: 500 })
   }
 }

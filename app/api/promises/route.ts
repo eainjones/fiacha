@@ -1,49 +1,42 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSystemDb } from '@/lib/db'
+import { getPromises, getPromiseCount, createPromise } from '@/lib/db/queries'
 import { createClient } from '@/lib/supabase-server'
-import { createPromiseSchema, parseBody } from '@/lib/validations'
+import { createPromiseSchema, promisesQuerySchema, parseBody, parseSearchParams } from '@/lib/validations'
 
 export async function GET(request: NextRequest) {
   try {
-    const db = getSystemDb()
     const { searchParams } = new URL(request.url)
 
-    const status = searchParams.get('status')
-    const category = searchParams.get('category')
-    const politicianId = searchParams.get('politician_id')
-    const limit = Math.min(Number(searchParams.get('limit')) || 100, 100)
-    const offset = Math.max(Number(searchParams.get('offset')) || 0, 0)
-
-    let query = `
-      SELECT p.*, pol.name as politician_name, pol.party
-      FROM promises p
-      LEFT JOIN politicians pol ON p.politician_id = pol.id
-      WHERE 1=1
-    `
-    const params: any[] = []
-    let paramCount = 1
-
-    if (status) {
-      query += ` AND p.status = $${paramCount++}`
-      params.push(status)
-    }
-    if (category) {
-      query += ` AND p.category = $${paramCount++}`
-      params.push(category)
-    }
-    if (politicianId) {
-      query += ` AND p.politician_id = $${paramCount++}`
-      params.push(politicianId)
+    // Validate query parameters with Zod schema
+    const paramResult = parseSearchParams(searchParams, promisesQuerySchema)
+    if (!paramResult.success) {
+      return NextResponse.json({ error: paramResult.error }, { status: 400 })
     }
 
-    query += ` ORDER BY p.created_at DESC LIMIT $${paramCount++} OFFSET $${paramCount++}`
-    params.push(limit, offset)
+    const { status, category, politician_id, limit, offset } = paramResult.data
 
-    const result = await db.query(query, params)
+    const filters = {
+      status,
+      category,
+      politicianId: politician_id,
+    }
 
-    return NextResponse.json(result.rows)
+    const [data, total] = await Promise.all([
+      getPromises(filters, limit, offset),
+      getPromiseCount(filters),
+    ])
+
+    return NextResponse.json({
+      data,
+      total,
+      limit,
+      offset,
+    })
   } catch (error) {
-    console.error('Error fetching promises:', error)
+    console.error('GET /api/promises failed:', {
+      message: error instanceof Error ? error.message : String(error),
+      ...(process.env.NODE_ENV === 'development' && { stack: error instanceof Error ? error.stack : undefined }),
+    })
     return NextResponse.json({ error: 'Failed to fetch promises' }, { status: 500 })
   }
 }
@@ -65,17 +58,21 @@ export async function POST(request: NextRequest) {
 
     const { politician_id, title, description, category, promise_date, target_date } = parseResult.data
 
-    const db = getSystemDb()
-    const result = await db.query(
-      `INSERT INTO promises (politician_id, title, description, category, promise_date, target_date, status)
-       VALUES ($1, $2, $3, $4, $5, $6, 'pending')
-       RETURNING *`,
-      [politician_id, title, description, category, promise_date, target_date]
-    )
+    const promise = await createPromise({
+      politicianId: politician_id,
+      title,
+      description,
+      category,
+      promiseDate: promise_date,
+      targetDate: target_date,
+    })
 
-    return NextResponse.json(result.rows[0], { status: 201 })
+    return NextResponse.json(promise, { status: 201 })
   } catch (error) {
-    console.error('Error creating promise:', error)
+    console.error('POST /api/promises failed:', {
+      message: error instanceof Error ? error.message : String(error),
+      ...(process.env.NODE_ENV === 'development' && { stack: error instanceof Error ? error.stack : undefined }),
+    })
     return NextResponse.json({ error: 'Failed to create promise' }, { status: 500 })
   }
 }

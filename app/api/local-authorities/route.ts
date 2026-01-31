@@ -1,19 +1,19 @@
 import { NextResponse } from 'next/server'
-import { getSystemDb } from '@/lib/db'
+import { getLocalAuthorities } from '@/lib/db/queries'
 
 export async function GET() {
   try {
-    const db = getSystemDb()
-    const result = await db.query(`
-      SELECT la.*, c.name as county_name, c.province
-      FROM local_authorities la
-      LEFT JOIN counties c ON la.county_id = c.id
-      ORDER BY c.province, c.name, la.name
-    `)
+    const localAuthorities = await getLocalAuthorities()
 
-    return NextResponse.json(result.rows)
+    return NextResponse.json({
+      data: localAuthorities,
+      total: localAuthorities.length,
+    })
   } catch (error) {
-    console.error('Error fetching local authorities:', error)
+    console.error('GET /api/local-authorities failed:', {
+      message: error instanceof Error ? error.message : String(error),
+      ...(process.env.NODE_ENV === 'development' && { stack: error instanceof Error ? error.stack : undefined }),
+    })
     return NextResponse.json({ error: 'Failed to fetch local authorities' }, { status: 500 })
   }
 }
