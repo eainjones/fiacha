@@ -86,7 +86,14 @@ async function testEndpoints() {
 
   // Test 2: /api/counties
   try {
-    const counties = await fetchJSON(`${BASE_URL}/api/counties`)
+    const countiesResponse = await fetchJSON(`${BASE_URL}/api/counties`)
+    const counties = countiesResponse.data
+
+    results.push({
+      test: 'GET /api/counties - Returns paginated envelope',
+      passed: Array.isArray(counties) && typeof countiesResponse.total === 'number',
+      details: `Returned { data: [...${counties.length}], total: ${countiesResponse.total} }`
+    })
 
     results.push({
       test: 'GET /api/counties - Returns 26 counties',
@@ -134,7 +141,15 @@ async function testEndpoints() {
 
   // Test 3: /api/promises
   try {
-    const promises = await fetchJSON(`${BASE_URL}/api/promises`)
+    const promisesResponse = await fetchJSON(`${BASE_URL}/api/promises`)
+    const promises = promisesResponse.data
+
+    results.push({
+      test: 'GET /api/promises - Returns paginated envelope',
+      passed: Array.isArray(promises) && typeof promisesResponse.total === 'number'
+        && typeof promisesResponse.limit === 'number' && typeof promisesResponse.offset === 'number',
+      details: `Returned { data: [...${promises.length}], total: ${promisesResponse.total}, limit: ${promisesResponse.limit}, offset: ${promisesResponse.offset} }`
+    })
 
     results.push({
       test: 'GET /api/promises - Returns data',
@@ -169,8 +184,10 @@ async function testEndpoints() {
   // Test 4: Data consistency
   try {
     const politicians = await fetchJSON(`${BASE_URL}/api/politicians`)
-    const promises = await fetchJSON(`${BASE_URL}/api/promises`)
-    const counties = await fetchJSON(`${BASE_URL}/api/counties`)
+    const promisesResponse = await fetchJSON(`${BASE_URL}/api/promises`)
+    const countiesResponse = await fetchJSON(`${BASE_URL}/api/counties`)
+    const promises = promisesResponse.data
+    const counties = countiesResponse.data
 
     const politicianIds = new Set(politicians.map((p: any) => p.id))
     const promisesPoliticiansExist = promises.every((pr: any) => politicianIds.has(pr.politician_id))

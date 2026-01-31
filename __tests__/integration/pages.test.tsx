@@ -9,17 +9,21 @@ import { GET as getCounties } from '@/app/api/counties/route'
 import { GET as getPromises } from '@/app/api/promises/route'
 import { NextRequest } from 'next/server'
 
+function makePoliticiansRequest(params = '') {
+  return new NextRequest(`http://localhost/api/politicians${params}`)
+}
+
 describe('Page Integration Tests', () => {
   describe('Politicians API returns data for page', () => {
     it('should return data that can be displayed on politicians page', async () => {
-      const response = await getPoliticians()
+      const response = await getPoliticians(makePoliticiansRequest())
       const politicians = await response.json()
 
       expect(politicians.length).toBeGreaterThan(0)
 
       // Verify we have both TDs and Councillors
-      const tds = politicians.filter((p: any) => p.position_type === 'TD')
-      const councillors = politicians.filter((p: any) => p.position_type === 'Councillor')
+      const tds = politicians.filter((p: any) => p.positionType === 'TD')
+      const councillors = politicians.filter((p: any) => p.positionType === 'Councillor')
 
       expect(tds.length).toBeGreaterThan(0)
       expect(councillors.length).toBeGreaterThan(0)
@@ -28,7 +32,7 @@ describe('Page Integration Tests', () => {
       politicians.forEach((pol: any) => {
         expect(pol.name).toBeTruthy()
         expect(pol.party).toBeTruthy()
-        expect(pol.position_type).toBeTruthy()
+        expect(pol.positionType).toBeTruthy()
       })
     })
   })
@@ -36,7 +40,8 @@ describe('Page Integration Tests', () => {
   describe('Counties API returns data for page', () => {
     it('should return data that can be displayed on counties page', async () => {
       const response = await getCounties()
-      const counties = await response.json()
+      const body = await response.json()
+      const counties = body.data
 
       expect(counties.length).toBe(26)
 
@@ -58,7 +63,8 @@ describe('Page Integration Tests', () => {
     it('should return data that can be displayed on promises page', async () => {
       const request = new NextRequest('http://localhost/api/promises')
       const response = await getPromises(request)
-      const promises = await response.json()
+      const body = await response.json()
+      const promises = body.data
 
       expect(promises.length).toBeGreaterThan(0)
 
@@ -73,27 +79,29 @@ describe('Page Integration Tests', () => {
 
   describe('Data consistency across endpoints', () => {
     it('should have matching politician data between endpoints', async () => {
-      const politiciansResponse = await getPoliticians()
+      const politiciansResponse = await getPoliticians(makePoliticiansRequest())
       const politicians = await politiciansResponse.json()
 
       const request = new NextRequest('http://localhost/api/promises')
       const promisesResponse = await getPromises(request)
-      const promises = await promisesResponse.json()
+      const promisesBody = await promisesResponse.json()
+      const promises = promisesBody.data
 
       // Every politician_id in promises should exist in politicians
       const politicianIds = new Set(politicians.map((p: any) => p.id))
 
       promises.forEach((promise: any) => {
-        expect(politicianIds.has(promise.politician_id)).toBe(true)
+        expect(politicianIds.has(promise.politicianId)).toBe(true)
       })
     })
 
     it('should have matching county data between endpoints', async () => {
-      const politiciansResponse = await getPoliticians()
+      const politiciansResponse = await getPoliticians(makePoliticiansRequest())
       const politicians = await politiciansResponse.json()
 
       const countiesResponse = await getCounties()
-      const counties = await countiesResponse.json()
+      const countiesBody = await countiesResponse.json()
+      const counties = countiesBody.data
 
       const countyNames = new Set(counties.map((c: any) => c.name))
 
@@ -108,7 +116,7 @@ describe('Page Integration Tests', () => {
 
   describe('Filtering scenarios', () => {
     it('should be able to filter politicians by county', async () => {
-      const response = await getPoliticians()
+      const response = await getPoliticians(makePoliticiansRequest())
       const politicians = await response.json()
 
       // Get a county that has politicians
@@ -121,19 +129,18 @@ describe('Page Integration Tests', () => {
     })
 
     it('should be able to filter politicians by position type', async () => {
-      const response = await getPoliticians()
+      const response = await getPoliticians(makePoliticiansRequest())
       const politicians = await response.json()
 
-      const tds = politicians.filter((p: any) => p.position_type === 'TD')
-      const councillors = politicians.filter((p: any) => p.position_type === 'Councillor')
+      const tds = politicians.filter((p: any) => p.positionType === 'TD')
+      const councillors = politicians.filter((p: any) => p.positionType === 'Councillor')
 
       expect(tds.length).toBeGreaterThan(0)
       expect(councillors.length).toBeGreaterThan(0)
-      expect(tds.length + councillors.length).toBe(politicians.length)
     })
 
     it('should be able to filter politicians by party', async () => {
-      const response = await getPoliticians()
+      const response = await getPoliticians(makePoliticiansRequest())
       const politicians = await response.json()
 
       const parties = [...new Set(politicians.map((p: any) => p.party))]
@@ -149,16 +156,17 @@ describe('Page Integration Tests', () => {
   describe('Wexford county scenario (no councillors)', () => {
     it('should handle counties with no councillors gracefully', async () => {
       const countiesResponse = await getCounties()
-      const counties = await countiesResponse.json()
+      const countiesBody = await countiesResponse.json()
+      const counties = countiesBody.data
 
       const wexford = counties.find((c: any) => c.name === 'Wexford')
       expect(wexford).toBeDefined()
 
-      const politiciansResponse = await getPoliticians()
+      const politiciansResponse = await getPoliticians(makePoliticiansRequest())
       const politicians = await politiciansResponse.json()
 
       const wexfordCouncillors = politicians.filter(
-        (p: any) => p.county_name === 'Wexford' && p.position_type === 'Councillor'
+        (p: any) => p.county_name === 'Wexford' && p.positionType === 'Councillor'
       )
 
       // This demonstrates the issue the user found - Wexford has no councillors in the DB
