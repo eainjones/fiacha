@@ -132,18 +132,20 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
       ) : (
         <>
           {/* Mobile Cards View */}
-          <div className="md:hidden space-y-4">
+          <div className="md:hidden space-y-3">
             {filteredPoliticians.map((pol: Politician) => (
               <div
                 key={pol.id}
-                className="bg-white dark:bg-slate-900 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 p-4"
+                className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 p-4 min-h-[44px]"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <h3 className="font-bold text-gray-900 dark:text-slate-100">{pol.name}</h3>
-                    <p className="text-sm text-gray-600 dark:text-slate-400">{pol.role}</p>
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-base text-gray-900 dark:text-slate-100 leading-tight">{pol.name}</h3>
+                    {pol.role && (
+                      <p className="text-sm text-gray-500 dark:text-slate-400 mt-0.5 truncate">{pol.role}</p>
+                    )}
                   </div>
-                  <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium ${
+                  <span className={`inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold shrink-0 ${
                     pol.positionType === 'TD'
                       ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300'
                       : pol.positionType === 'Senator'
@@ -156,18 +158,18 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2 mb-3">
+                <div className="mb-3">
                   <PartyBadge party={pol.party ?? ''} color={pol.party_color} shortName={pol.party_short_name} size="sm" />
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 text-sm">
+                <div className="border-t border-gray-100 dark:border-slate-700/50 pt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
                   <div>
-                    <span className="text-gray-500 dark:text-slate-500 text-xs uppercase tracking-wide">Constituency</span>
-                    <p className="text-gray-900 dark:text-slate-200">{pol.constituency || 'N/A'}</p>
+                    <span className="text-gray-400 dark:text-slate-500 text-xs font-medium uppercase tracking-wide">Constituency</span>
+                    <p className="text-gray-800 dark:text-slate-200 mt-0.5 leading-snug">{pol.constituency || 'N/A'}</p>
                   </div>
                   <div>
-                    <span className="text-gray-500 dark:text-slate-500 text-xs uppercase tracking-wide">County</span>
-                    <p className="text-gray-900 dark:text-slate-200">{pol.county_name || 'N/A'}</p>
+                    <span className="text-gray-400 dark:text-slate-500 text-xs font-medium uppercase tracking-wide">County</span>
+                    <p className="text-gray-800 dark:text-slate-200 mt-0.5 leading-snug">{pol.county_name || 'N/A'}</p>
                   </div>
                 </div>
               </div>

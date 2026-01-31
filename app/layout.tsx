@@ -1,4 +1,5 @@
 import './globals.css'
+import { Toaster } from '@/components/ui/sonner'
 
 export const metadata = {
   title: 'Fiacha - Promise Tracker',
@@ -30,7 +31,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <Toaster richColors />
+      </body>
     </html>
   )
 }
