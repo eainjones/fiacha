@@ -1,10 +1,4 @@
-import { Pool } from 'pg'
-import * as dns from 'dns'
-
-// Force IPv4 resolution for Supabase (Vercel doesn't support IPv6)
-dns.setDefaultResultOrder('ipv4first')
-
-let pool: Pool | null = null
+import { pool } from './db/client'
 
 /**
  * Get a direct PostgreSQL connection that BYPASSES Row Level Security (RLS).
@@ -17,17 +11,6 @@ let pool: Pool | null = null
  * WARNING: For user-facing routes, prefer Supabase client which enforces RLS.
  */
 export function getSystemDb() {
-  if (!pool) {
-    pool = new Pool({
-      connectionString: process.env.DATABASE_URL,
-      ssl: {
-        rejectUnauthorized: false,
-      },
-      max: 1, // Limit connections for serverless
-      idleTimeoutMillis: 0, // Disable idle timeout
-      connectionTimeoutMillis: 10000, // 10 second connection timeout
-    })
-  }
   return pool
 }
 

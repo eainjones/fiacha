@@ -93,7 +93,5 @@ export function isDevelopment(): boolean {
   return process.env.NODE_ENV === 'development'
 }
 
-// Validate on import in production (comment out during development if needed)
-if (isProduction()) {
-  validateEnv()
-}
+// Validate on import in all environments to fail fast on missing config
+validateEnv()

@@ -161,6 +161,22 @@ export type ApproveReviewInput = z.infer<typeof approveReviewSchema>
 // ============================================================================
 
 /**
+ * Schema for politicians list query parameters
+ */
+export const politiciansQuerySchema = z.object({
+  limit: z
+    .string()
+    .optional()
+    .transform((s) => (s !== undefined ? Math.min(Math.max(Number(s) || 100, 1), 200) : undefined)),
+  offset: z
+    .string()
+    .optional()
+    .transform((s) => (s !== undefined ? Math.max(Number(s) || 0, 0) : undefined)),
+})
+
+export type PoliticiansQueryParams = z.infer<typeof politiciansQuerySchema>
+
+/**
  * Schema for promises list query parameters
  */
 export const promisesQuerySchema = z.object({

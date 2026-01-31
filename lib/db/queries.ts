@@ -282,10 +282,13 @@ export type PoliticianWithDetails = Politician & {
 }
 
 /**
- * Get all active politicians with county and party info
+ * Get active politicians with county and party info, with optional pagination
  */
-export async function getActivePoliticians(): Promise<PoliticianWithDetails[]> {
-  const result = await db
+export async function getActivePoliticians(
+  limit?: number,
+  offset?: number
+): Promise<PoliticianWithDetails[]> {
+  let query = db
     .select({
       id: schema.politicians.id,
       name: schema.politicians.name,
@@ -317,8 +320,30 @@ export async function getActivePoliticians(): Promise<PoliticianWithDetails[]> {
     .leftJoin(schema.parties, eq(schema.politicians.partyId, schema.parties.id))
     .where(eq(schema.politicians.active, true))
     .orderBy(asc(schema.politicians.name))
+    .$dynamic()
+
+  if (limit !== undefined) {
+    query = query.limit(limit)
+  }
+  if (offset !== undefined) {
+    query = query.offset(offset)
+  }
+
+  const result = await query
 
   return result as PoliticianWithDetails[]
+}
+
+/**
+ * Get total count of active politicians
+ */
+export async function getActivePoliticiansCount(): Promise<number> {
+  const result = await db
+    .select({ total: count() })
+    .from(schema.politicians)
+    .where(eq(schema.politicians.active, true))
+
+  return result[0]?.total ?? 0
 }
 
 /**
@@ -402,6 +427,8 @@ export async function createPolitician(data: {
 
 export type CountyWithStats = County & {
   politician_count: number
+  td_count: number
+  councillor_count: number
   promise_count: number
 }
 
@@ -409,17 +436,21 @@ export type CountyWithStats = County & {
  * Get all counties with politician and promise counts
  */
 export async function getCountiesWithStats(): Promise<CountyWithStats[]> {
-  // Complex aggregation query - using raw SQL for efficiency
+  // Complex aggregation query - using raw SQL via Drizzle for efficiency
   const result = await db.execute(sql`
     SELECT
       c.*,
       COALESCE(pol_counts.politician_count, 0)::int as politician_count,
+      COALESCE(pol_counts.td_count, 0)::int as td_count,
+      COALESCE(pol_counts.councillor_count, 0)::int as councillor_count,
       COALESCE(promise_counts.promise_count, 0)::int as promise_count
     FROM counties c
     LEFT JOIN (
       SELECT
         county_id,
-        COUNT(*) FILTER (WHERE active) as politician_count
+        COUNT(*) FILTER (WHERE active) as politician_count,
+        COUNT(*) FILTER (WHERE active AND position_type = 'TD') as td_count,
+        COUNT(*) FILTER (WHERE active AND position_type = 'Councillor') as councillor_count
       FROM politicians
       GROUP BY county_id
     ) pol_counts ON pol_counts.county_id = c.id

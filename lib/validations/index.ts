@@ -21,6 +21,8 @@ export {
   // Politician schemas
   createPoliticianSchema,
   type CreatePoliticianInput,
+  politiciansQuerySchema,
+  type PoliticiansQueryParams,
   positionTypes,
   type PositionType,
 
