@@ -21,18 +21,42 @@ export async function insertPromiseReview(
   politicianMatch: PoliticianMatch | null
 ): Promise<number> {
   const query = `
-    INSERT INTO promise_review_queue (
-      extracted_promise,
-      politician_match,
+    INSERT INTO promise_submissions (
+      politician_name,
+      politician_id,
+      party,
+      title,
+      description,
+      category,
+      target_date,
+      source_url,
+      source_type,
+      confidence_score,
+      extraction_metadata,
       status,
-      created_at
-    ) VALUES ($1, $2, 'pending', NOW())
+      created_at,
+      updated_at
+    ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, 'pending_review', NOW(), NOW())
     RETURNING id
   `;
 
   const result = await db.query(query, [
-    JSON.stringify(extractedPromise),
-    JSON.stringify(politicianMatch),
+    extractedPromise.politician_name,
+    politicianMatch?.id || null,
+    extractedPromise.party || politicianMatch?.party || null,
+    extractedPromise.promise_title,
+    extractedPromise.description,
+    extractedPromise.category,
+    extractedPromise.target_date || null,
+    extractedPromise.source_url,
+    extractedPromise.source_type,
+    extractedPromise.confidence,
+    JSON.stringify({
+      quote: extractedPromise.quote,
+      promise_date: extractedPromise.promise_date,
+      match_score: politicianMatch?.matchScore,
+      match_exact: politicianMatch?.isExactMatch,
+    }),
   ]);
 
   return result.rows[0].id;
@@ -229,10 +253,10 @@ export async function cleanupReviewQueue(
   const query = `
     DELETE FROM promise_review_queue
     WHERE status IN ('approved', 'rejected')
-    AND reviewed_at < NOW() - INTERVAL '${olderThanDays} days'
+    AND reviewed_at < NOW() - make_interval(days => $1)
   `;
 
-  const result = await db.query(query);
+  const result = await db.query(query, [olderThanDays]);
   const deletedCount = result.rowCount || 0;
 
   console.log(`[Database] ✓ Cleaned up ${deletedCount} old reviews`);

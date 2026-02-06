@@ -55,9 +55,9 @@ export function StatusIcon({ status }: { status: string }) {
     <span
       className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold ${config.className}`}
       title={config.label}
-      aria-label={config.label}
     >
-      {config.icon}
+      <span aria-hidden="true">{config.icon}</span>
+      <span className="sr-only">{config.label}</span>
     </span>
   )
 }
