@@ -8,7 +8,13 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "review": "tsx src/review/cli-review.ts",
-    "crawl": "tsx src/index.ts",
+    "crawl": "tsx src/index.ts all",
+    "crawl:oireachtas": "tsx src/index.ts oireachtas",
+    "crawl:rss": "tsx src/index.ts rss",
+    "crawl:web": "tsx src/index.ts web",
+    "crawl:tier1": "tsx src/index.ts tier1",
+    "crawl:tier2": "tsx src/index.ts tier2",
+    "crawl:tier3": "tsx src/index.ts tier3",
     "crawl:councils": "tsx scrape-councils.ts",
     "crawl:weekend": "tsx weekend-council-crawl.ts",
     "crawl:weekend:batch": "tsx weekend-council-crawl.ts --batch",
@@ -16,6 +22,7 @@
     "council:status": "tsx council-status.ts",
     "council:merge": "tsx merge-councillors.ts",
     "test": "tsx src/test.ts",
+    "crawl:schedule": "tsx src/scheduler.ts",
     "test:email": "tsx test-email.ts"
   },
   "keywords": [
@@ -28,7 +35,7 @@
   "license": "MIT",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",
-    "@mastra/core": "^0.24.9",
+    "@mastra/core": "^1.1.0",
     "@mendable/firecrawl-js": "^1.10.0",
     "dotenv": "^16.4.5",
     "fuse.js": "^7.0.0",

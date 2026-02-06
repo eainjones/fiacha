@@ -7,11 +7,13 @@
  */
 
 import { Mastra } from '@mastra/core';
-import { promiseExtractor, evidenceFinder } from './agents';
+import { promiseExtractor, evidenceFinder, debateAnalyzer, sourceClassifier } from './agents';
 
 export const mastra = new Mastra({
   agents: {
     promiseExtractor,
     evidenceFinder,
+    debateAnalyzer,
+    sourceClassifier,
   },
 });

@@ -61,16 +61,37 @@ export abstract class BasePromiseExtractor implements IPromiseExtractor {
    */
   protected parseJsonResponse(response: string): any {
     // Remove markdown code blocks if present
-    const cleaned = response
+    let cleaned = response
       .replace(/```json\n?/g, '')
       .replace(/```\n?/g, '')
       .trim();
 
+    // Try direct parse first
     try {
-      return JSON.parse(cleaned);
-    } catch (error) {
-      console.error('[Extractor] Failed to parse JSON response:', cleaned);
-      throw new Error(`Invalid JSON response from LLM: ${error}`);
+      const parsed = JSON.parse(cleaned);
+      // If the response was wrapped in {"promises": [...]}, unwrap it
+      if (parsed && typeof parsed === 'object' && !Array.isArray(parsed) && Array.isArray(parsed.promises)) {
+        return parsed.promises;
+      }
+      return parsed;
+    } catch {
+      // LLMs sometimes add explanatory text after JSON — extract the JSON object/array
+      const jsonMatch = cleaned.match(/(\{[\s\S]*\}|\[[\s\S]*\])/);
+      if (jsonMatch) {
+        try {
+          const parsed = JSON.parse(jsonMatch[1]);
+          // If the response was wrapped in {"promises": [...]}, unwrap it
+          if (parsed && typeof parsed === 'object' && !Array.isArray(parsed) && Array.isArray(parsed.promises)) {
+            return parsed.promises;
+          }
+          return parsed;
+        } catch (innerError) {
+          console.error('[Extractor] Failed to parse extracted JSON:', jsonMatch[1].substring(0, 200));
+          throw new Error(`Invalid JSON response from LLM: ${innerError}`);
+        }
+      }
+      console.error('[Extractor] No JSON found in response:', cleaned.substring(0, 200));
+      throw new Error('No JSON found in LLM response');
     }
   }
 

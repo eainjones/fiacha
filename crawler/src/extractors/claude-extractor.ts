@@ -12,7 +12,7 @@ export class ClaudePromiseExtractor extends BasePromiseExtractor {
 
   constructor(
     apiKey: string,
-    model: string = 'claude-3-5-sonnet-20240620',
+    model: string = 'claude-3-5-haiku-20241022',
     temperature: number = 0.2,
     maxTokens: number = 4096
   ) {
@@ -68,11 +68,13 @@ export class ClaudePromiseExtractor extends BasePromiseExtractor {
         throw new Error('No text response from Claude');
       }
 
-      // Parse JSON response
-      const rawPromises = this.parseJsonResponse(textContent.text);
+      // Parse JSON response (handles both raw arrays and {"promises": [...]} format)
+      const parsed = this.parseJsonResponse(textContent.text);
 
-      if (!Array.isArray(rawPromises)) {
-        console.warn('[Claude] Response is not an array, returning empty');
+      // Normalize to array
+      const rawPromises = Array.isArray(parsed) ? parsed : [];
+      if (rawPromises.length === 0 && parsed && typeof parsed === 'object') {
+        console.log('[Claude] No promises array found in response');
         return [];
       }
 

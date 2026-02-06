@@ -10,8 +10,28 @@
   },
   "crons": [
     {
-      "path": "/api/cron/run-crawler",
+      "path": "/api/cron/crawl-rss",
+      "schedule": "0 2 * * *"
+    },
+    {
+      "path": "/api/cron/crawl-oireachtas",
       "schedule": "0 6 * * *"
+    },
+    {
+      "path": "/api/cron/crawl-rss",
+      "schedule": "0 10 * * *"
+    },
+    {
+      "path": "/api/cron/crawl-web",
+      "schedule": "0 14 * * *"
+    },
+    {
+      "path": "/api/cron/crawl-rss",
+      "schedule": "0 18 * * *"
+    },
+    {
+      "path": "/api/cron/crawl-oireachtas",
+      "schedule": "0 22 * * *"
     }
   ]
 }

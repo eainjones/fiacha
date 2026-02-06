@@ -110,6 +110,22 @@ export const AGENT_CONFIG = {
     model: AI_MODELS.HAIKU,
     maxTokensPerRequest: 2048,
   },
+
+  // Debate Analyzer Agent
+  DEBATE_ANALYZER: {
+    id: 'debate-analyzer',
+    name: 'Debate Analyzer',
+    model: AI_MODELS.HAIKU,
+    maxTokensPerRequest: 4096,
+  },
+
+  // Source Classifier Agent
+  SOURCE_CLASSIFIER: {
+    id: 'source-classifier',
+    name: 'Source Classifier',
+    model: AI_MODELS.HAIKU,
+    maxTokensPerRequest: 512,
+  },
 } as const;
 
 // ============================================================================

@@ -19,11 +19,11 @@ export class DatabaseClient {
     // Set DNS to prefer IPv4 for Supabase (same as main app)
     dns.setDefaultResultOrder('ipv4first');
 
+    const isLocal = dbUrl.includes('localhost') || dbUrl.includes('127.0.0.1');
+
     this.pool = new Pool({
       connectionString: dbUrl,
-      ssl: {
-        rejectUnauthorized: false,
-      },
+      ssl: isLocal ? false : { rejectUnauthorized: false },
       max: 5, // Connection pool size
       idleTimeoutMillis: 30000,
       connectionTimeoutMillis: 10000,

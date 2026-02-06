@@ -63,3 +63,7 @@ Given a promise, search for:
 Provide links and summaries of relevant evidence.`,
   model: AGENT_CONFIG.PROMISE_EXTRACTOR.model,
 });
+
+// Re-export specialized agents
+export { debateAnalyzer } from './debate-analyzer';
+export { sourceClassifier } from './source-classifier';

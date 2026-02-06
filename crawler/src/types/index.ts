@@ -70,6 +70,9 @@ export const PromiseCategory = z.enum([
   'Social Welfare',
   'Law & Order',
   'Infrastructure',
+  'Trade',
+  'Agriculture',
+  'Foreign Affairs',
   'Other'
 ]);
 

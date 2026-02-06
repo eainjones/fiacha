@@ -126,7 +126,9 @@ ${truncatedContent}`,
         },
       ],
       {
-        output: ExtractionResponseSchema as any,
+        structuredOutput: {
+          schema: ExtractionResponseSchema as any,
+        },
       }
     );
 
