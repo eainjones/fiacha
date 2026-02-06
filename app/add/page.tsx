@@ -52,7 +52,6 @@ export default function AddPage() {
   const router = useRouter()
   const supabase = createClient()
   const [activeTab, setActiveTab] = useState<'politician' | 'promise'>('politician')
-  const [politicians, setPoliticians] = useState<any[]>([])
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
 
   // --- Politician form ---
@@ -97,12 +96,6 @@ export default function AddPage() {
     }
 
     checkAuth()
-
-    // Fetch politicians for the dropdown in promise form
-    fetch('/api/politicians')
-      .then(res => res.json())
-      .then(data => setPoliticians(data))
-      .catch(err => console.error('Failed to load politicians', err))
   }, [router, supabase.auth])
 
   // Show loading state while checking auth
@@ -316,7 +309,6 @@ export default function AddPage() {
                       control={promControl}
                       render={({ field }) => (
                         <PoliticianCombobox
-                          politicians={politicians}
                           value={field.value}
                           onChange={field.onChange}
                         />

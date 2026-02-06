@@ -8,6 +8,7 @@
  * - Single source of truth for data access patterns
  */
 
+import { unstable_cache } from 'next/cache'
 import { db, schema } from './client'
 import { eq, desc, asc, sql, and, or, ilike, count, isNull, isNotNull } from 'drizzle-orm'
 import type { Politician, PromiseRecord, Evidence, County, LocalAuthority, Party, Milestone, StatusHistoryEntry, PromiseReviewQueueItem, PromiseSubmission } from './schema'
@@ -284,7 +285,7 @@ export type PoliticianWithDetails = Politician & {
 /**
  * Get active politicians with county and party info, with optional pagination
  */
-export async function getActivePoliticians(
+async function _getActivePoliticians(
   limit?: number,
   offset?: number
 ): Promise<PoliticianWithDetails[]> {
@@ -333,6 +334,12 @@ export async function getActivePoliticians(
 
   return result as PoliticianWithDetails[]
 }
+
+export const getActivePoliticians = unstable_cache(
+  _getActivePoliticians,
+  ['active-politicians'],
+  { revalidate: 3600 } // 1 hour
+)
 
 /**
  * Get total count of active politicians
@@ -435,7 +442,7 @@ export type CountyWithStats = County & {
 /**
  * Get all counties with politician and promise counts
  */
-export async function getCountiesWithStats(): Promise<CountyWithStats[]> {
+async function _getCountiesWithStats(): Promise<CountyWithStats[]> {
   // Complex aggregation query - using raw SQL via Drizzle for efficiency
   const result = await db.execute(sql`
     SELECT
@@ -467,6 +474,12 @@ export async function getCountiesWithStats(): Promise<CountyWithStats[]> {
 
   return result.rows as CountyWithStats[]
 }
+
+export const getCountiesWithStats = unstable_cache(
+  _getCountiesWithStats,
+  ['counties-with-stats'],
+  { revalidate: 86400 } // 24 hours
+)
 
 // ============================================================================
 // Local Authority Queries
@@ -513,7 +526,7 @@ export type PartyWithStats = Party & {
 /**
  * Get all active parties with member and promise counts
  */
-export async function getPartiesWithStats(): Promise<PartyWithStats[]> {
+async function _getPartiesWithStats(): Promise<PartyWithStats[]> {
   const result = await db.execute(sql`
     SELECT
       p.*,
@@ -531,6 +544,12 @@ export async function getPartiesWithStats(): Promise<PartyWithStats[]> {
 
   return result.rows as PartyWithStats[]
 }
+
+export const getPartiesWithStats = unstable_cache(
+  _getPartiesWithStats,
+  ['parties-with-stats'],
+  { revalidate: 86400 } // 24 hours
+)
 
 /**
  * Get party by slug

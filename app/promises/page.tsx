@@ -3,6 +3,7 @@ import Link from 'next/link'
 import PromisesList from '@/components/PromisesList'
 import PromiseFilters from '@/components/PromiseFilters'
 import PromisePagination from '@/components/PromisePagination'
+import ExportCsvButton from '@/components/ExportCsvButton'
 import { getPromises, getPromiseCount, getActivePoliticians, getPromiseCategories } from '@/lib/db/queries'
 
 // Force dynamic rendering
@@ -41,12 +42,15 @@ export default async function PromisesPage({ searchParams }: { searchParams: { [
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-slate-50">All Promises</h1>
               <p className="text-gray-600 dark:text-slate-400 mt-1">{total} promises tracked</p>
             </div>
-            <Link
-              href="/add"
-              className="inline-flex items-center justify-center bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 font-semibold shadow-sm transition-colors"
-            >
-              + Add Promise
-            </Link>
+            <div className="flex items-center gap-3">
+              <ExportCsvButton promises={promises} />
+              <Link
+                href="/add"
+                className="inline-flex items-center justify-center bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 font-semibold shadow-sm transition-colors"
+              >
+                + Add Promise
+              </Link>
+            </div>
           </div>
 
           <PromiseFilters politicians={politicians} categories={categories} />

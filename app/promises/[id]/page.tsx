@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
 import Link from 'next/link'
+import CopyLinkButton from '@/components/CopyLinkButton'
 import { getPromiseById, getEvidenceForPromise, getMilestonesForPromise, getStatusHistoryForPromise } from '@/lib/db/queries'
 
 async function getPromiseDetails(id: string) {
@@ -49,11 +50,14 @@ export default async function PromiseDetailPage({ params }: { params: { id: stri
           </Link>
 
           <div className="bg-white dark:bg-slate-900 p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 mb-6 md:mb-8">
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
               <h1 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-slate-50 leading-tight">{promise.title}</h1>
               <span className={`inline-flex self-start px-4 md:px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wide border ${statusColors[(promise.status ?? 'pending') as keyof typeof statusColors] || 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-600'}`}>
                 {(promise.status ?? 'pending').replace('_', ' ')}
               </span>
+            </div>
+            <div className="mb-6">
+              <CopyLinkButton />
             </div>
 
             <p className="text-gray-700 dark:text-slate-300 text-base md:text-lg mb-6 md:mb-8 leading-relaxed">{promise.description}</p>
