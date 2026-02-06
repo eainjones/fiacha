@@ -17,6 +17,7 @@ export { promiseReviewQueue, type PromiseReviewQueueItem, type PromiseReviewQueu
 export { promiseSubmissions, type PromiseSubmission, type PromiseSubmissionInsert } from './promise_submissions'
 export { statusHistory, type StatusHistoryEntry, type StatusHistoryInsert } from './status_history'
 export { milestones, type Milestone, type MilestoneInsert } from './milestones'
+export { crawlRuns, type CrawlRun, type CrawlRunInsert } from './crawl_runs'
 
 // Relations
 export {

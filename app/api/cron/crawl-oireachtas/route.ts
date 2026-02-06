@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { guardCronRequest, logCrawlRun } from '../_shared';
+import { guardCronRequest, startCrawlRun, completeCrawlRun } from '../_shared';
 
 export const maxDuration = 300; // 5 minutes max (Vercel Pro)
 export const dynamic = 'force-dynamic';
@@ -8,6 +8,7 @@ export async function GET(request: NextRequest) {
   const guard = await guardCronRequest(request, 'oireachtas');
   if (guard) return guard;
 
+  const runId = await startCrawlRun('oireachtas');
   const startTime = Date.now();
 
   try {
@@ -19,7 +20,7 @@ export async function GET(request: NextRequest) {
       skipEmail: true,
     });
 
-    await logCrawlRun('oireachtas', result);
+    await completeCrawlRun(runId, result);
 
     return NextResponse.json({
       success: result.success,
@@ -33,6 +34,15 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     console.error('[Cron] Oireachtas pipeline error:', errorMessage);
+
+    await completeCrawlRun(runId, {
+      success: false,
+      promisesExtracted: 0,
+      politiciansMatched: 0,
+      queuedForReview: 0,
+      errors: [errorMessage],
+      duration: Date.now() - startTime,
+    });
 
     return NextResponse.json(
       {

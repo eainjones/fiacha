@@ -69,10 +69,30 @@ export async function checkBudget(): Promise<{
 }
 
 /**
- * Log a crawl run to the ai_usage_log table
+ * Insert a crawl_runs row at the START of a crawl.
+ * Returns the row id so we can update it when complete.
  */
-export async function logCrawlRun(
-  pipeline: string,
+export async function startCrawlRun(pipeline: string): Promise<number | null> {
+  const db = getSystemDb();
+  try {
+    const result = await db.query(
+      `INSERT INTO crawl_runs (pipeline, status, started_at)
+       VALUES ($1, 'running', NOW())
+       RETURNING id`,
+      [pipeline]
+    );
+    return result.rows[0]?.id ?? null;
+  } catch (error) {
+    console.warn('[Cron] Failed to start crawl run log:', error);
+    return null;
+  }
+}
+
+/**
+ * Update a crawl_runs row when the crawl finishes (success or error).
+ */
+export async function completeCrawlRun(
+  runId: number | null,
   result: {
     success: boolean;
     promisesExtracted: number;
@@ -82,29 +102,34 @@ export async function logCrawlRun(
     duration: number;
   }
 ): Promise<void> {
-  const db = getSystemDb();
+  if (runId === null) return;
 
+  const db = getSystemDb();
   try {
     await db.query(
-      `
-      INSERT INTO ai_usage_log (agent_name, model, input_tokens, output_tokens, cost_usd, metadata)
-      VALUES ($1, $2, $3, $4, $5, $6)
-    `,
+      `UPDATE crawl_runs
+       SET status = $1,
+           promises_found = $2,
+           politicians_matched = $3,
+           queued_for_review = $4,
+           error_count = $5,
+           error_message = $6,
+           duration_ms = $7,
+           completed_at = NOW()
+       WHERE id = $8`,
       [
-        `crawler-cron-${pipeline}`,
-        'system',
-        0,
-        0,
-        0,
-        JSON.stringify({
-          type: 'crawl_run',
-          pipeline,
-          ...result,
-        }),
+        result.success ? 'success' : 'error',
+        result.promisesExtracted,
+        result.politiciansMatched,
+        result.queuedForReview,
+        result.errors.length,
+        result.errors.length > 0 ? result.errors[0].slice(0, 2000) : null,
+        result.duration,
+        runId,
       ]
     );
   } catch (error) {
-    console.warn('[Cron] Failed to log crawl run:', error);
+    console.warn('[Cron] Failed to complete crawl run log:', error);
   }
 }
 
