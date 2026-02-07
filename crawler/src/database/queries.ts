@@ -5,8 +5,8 @@ import {
   ExtractedPromiseType,
   PoliticianMatch,
   PromiseReview,
-} from '../types';
-import { DatabaseClient } from './client';
+} from '../types/index.js';
+import { DatabaseClient } from './client.js';
 
 /**
  * Database queries for promise review and insertion

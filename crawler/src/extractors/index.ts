@@ -1,7 +1,7 @@
-import type { IPromiseExtractor } from './llm-interface';
-import { createClaudeExtractor } from './claude-extractor';
-import { createOpenAIExtractor } from './openai-extractor';
-import { createMastraExtractor } from './mastra-extractor';
+import type { IPromiseExtractor } from './llm-interface.js';
+import { createClaudeExtractor } from './claude-extractor.js';
+import { createOpenAIExtractor } from './openai-extractor.js';
+import { createMastraExtractor } from './mastra-extractor.js';
 
 // Extended LLMProvider type to include 'mastra'
 type ExtendedLLMProvider = 'claude' | 'openai' | 'mastra';
@@ -31,7 +31,7 @@ export function createExtractor(provider?: ExtendedLLMProvider): IPromiseExtract
   }
 }
 
-export type { IPromiseExtractor } from './llm-interface';
-export { ClaudePromiseExtractor } from './claude-extractor';
-export { OpenAIPromiseExtractor } from './openai-extractor';
-export { MastraPromiseExtractor, createMastraExtractor } from './mastra-extractor';
+export type { IPromiseExtractor } from './llm-interface.js';
+export { ClaudePromiseExtractor } from './claude-extractor.js';
+export { OpenAIPromiseExtractor } from './openai-extractor.js';
+export { MastraPromiseExtractor, createMastraExtractor } from './mastra-extractor.js';

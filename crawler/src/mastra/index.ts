@@ -7,7 +7,15 @@
  */
 
 import { Mastra } from '@mastra/core';
-import { promiseExtractor, evidenceFinder, debateAnalyzer, sourceClassifier } from './agents';
+import { Observability } from '@mastra/observability';
+import { promiseExtractor, evidenceFinder, debateAnalyzer, sourceClassifier } from './agents/index.js';
+import {
+  politicianLookupTool,
+  promiseSaveTool,
+  budgetCheckTool,
+  dedupCheckTool,
+} from './tools/index.js';
+import { extractionQualityScorer, matchingAccuracyScorer } from './evals/index.js';
 
 export const mastra = new Mastra({
   agents: {
@@ -16,4 +24,21 @@ export const mastra = new Mastra({
     debateAnalyzer,
     sourceClassifier,
   },
+  tools: {
+    politicianLookupTool,
+    promiseSaveTool,
+    budgetCheckTool,
+    dedupCheckTool,
+  },
+  scorers: {
+    extractionQuality: extractionQualityScorer,
+    matchingAccuracy: matchingAccuracyScorer,
+  },
+  observability: new Observability({
+    configs: {
+      default: {
+        serviceName: 'fiacha-crawler',
+      },
+    },
+  }),
 });

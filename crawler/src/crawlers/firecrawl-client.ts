@@ -1,5 +1,5 @@
 import FirecrawlApp from '@mendable/firecrawl-js';
-import { CrawlResult, CrawlSourceType } from '../types';
+import { CrawlResult, CrawlSourceType } from '../types/index.js';
 
 /**
  * Rate limit error class for 429 handling

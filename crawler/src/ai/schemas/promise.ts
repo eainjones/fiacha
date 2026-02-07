@@ -6,7 +6,7 @@
  */
 
 import { z } from 'zod';
-import { PROMISE_CATEGORIES, type PromiseCategory } from '../config';
+import { PROMISE_CATEGORIES, type PromiseCategory } from '../config.js';
 
 /**
  * Schema for a single extracted promise

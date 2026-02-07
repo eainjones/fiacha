@@ -6,7 +6,7 @@
  */
 
 import { Pool } from 'pg';
-import { BUDGET_CONFIG, calculateCost } from '../config';
+import { BUDGET_CONFIG, calculateCost } from '../config.js';
 
 // Database connection (reuse from main crawler)
 let dbPool: Pool | null = null;

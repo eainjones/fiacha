@@ -6,9 +6,9 @@
  */
 
 import { Agent } from '@mastra/core/agent';
-import { AGENT_CONFIG, PROMISE_CATEGORIES } from '../config';
-import { ExtractionResponseSchema, type ExtractedPromise, type ExtractionResponse, filterByConfidence, generateTitle } from '../schemas/promise';
-import { checkBudget, logUsage } from '../tools/budget-checker';
+import { AGENT_CONFIG, PROMISE_CATEGORIES } from '../config.js';
+import { ExtractionResponseSchema, type ExtractedPromise, type ExtractionResponse, filterByConfidence, generateTitle } from '../schemas/promise.js';
+import { checkBudget, logUsage } from '../tools/budget-checker.js';
 
 // ============================================================================
 // SYSTEM PROMPT

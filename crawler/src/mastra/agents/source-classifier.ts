@@ -12,7 +12,7 @@
  */
 
 import { Agent } from '@mastra/core/agent';
-import { AGENT_CONFIG } from '../../ai/config';
+import { AGENT_CONFIG } from '../../ai/config.js';
 
 export const sourceClassifier = new Agent({
   id: 'source-classifier',

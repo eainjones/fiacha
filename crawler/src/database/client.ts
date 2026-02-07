@@ -1,6 +1,6 @@
 import { Pool, PoolClient } from 'pg';
 import dns from 'dns';
-import { DbPolitician } from '../types';
+import { DbPolitician } from '../types/index.js';
 
 /**
  * Database client for Fiacha PostgreSQL database

@@ -1,6 +1,10 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { ChangeResult } from './change-detector';
+import { fileURLToPath } from 'url';
+import { ChangeResult } from './change-detector.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export interface CrawlLogEntry {
   timestamp: string;

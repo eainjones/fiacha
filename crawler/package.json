@@ -2,6 +2,7 @@
   "name": "fiacha-crawler",
   "version": "1.0.0",
   "description": "Automated promise extraction service using Firecrawl",
+  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx src/index.ts",
@@ -23,7 +24,8 @@
     "council:merge": "tsx merge-councillors.ts",
     "test": "tsx src/test.ts",
     "crawl:schedule": "tsx src/scheduler.ts",
-    "test:email": "tsx test-email.ts"
+    "test:email": "tsx test-email.ts",
+    "eval": "tsx src/mastra/evals/run-evals.ts"
   },
   "keywords": [
     "firecrawl",
@@ -36,6 +38,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",
     "@mastra/core": "^1.1.0",
+    "@mastra/observability": "^1.2.0",
     "@mendable/firecrawl-js": "^1.10.0",
     "dotenv": "^16.4.5",
     "fuse.js": "^7.0.0",

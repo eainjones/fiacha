@@ -5,7 +5,7 @@
  * Much more reliable than scraping listing pages.
  */
 
-import { CrawlResult } from '../types';
+import { CrawlResult } from '../types/index.js';
 
 export interface RSSItem {
   title: string;

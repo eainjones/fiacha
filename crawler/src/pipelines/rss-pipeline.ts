@@ -8,13 +8,13 @@
  * article URLs with dates, which we then scrape for full text.
  */
 
-import { fetchRSSFeed, RSSItem } from '../crawlers/rss-parser';
-import { IPromiseExtractor } from '../extractors/llm-interface';
-import { PoliticianMatcher, normalizePoliticianName } from '../validators/politician-matcher';
-import { insertPromiseReview } from '../database/queries';
-import { DatabaseClient } from '../database/client';
-import { CrawlSourceType, CrawlResult } from '../types';
-import { MetricsCollector } from '../metrics/crawler-metrics';
+import { fetchRSSFeed, RSSItem } from '../crawlers/rss-parser.js';
+import { IPromiseExtractor } from '../extractors/llm-interface.js';
+import { PoliticianMatcher, normalizePoliticianName } from '../validators/politician-matcher.js';
+import { insertPromiseReview } from '../database/queries.js';
+import { DatabaseClient } from '../database/client.js';
+import { CrawlSourceType, CrawlResult } from '../types/index.js';
+import { MetricsCollector } from '../metrics/crawler-metrics.js';
 
 interface FirecrawlClient {
   scrapeUrl(url: string): Promise<CrawlResult>;

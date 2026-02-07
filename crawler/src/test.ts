@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 import dotenv from 'dotenv';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
@@ -42,7 +46,7 @@ async function runTests() {
   // Test 2: Database connection
   console.log('\n[2/6] Testing database connection...');
   try {
-    const { createDatabaseClient } = await import('./database/client');
+    const { createDatabaseClient } = await import('./database/client.js');
     const db = createDatabaseClient();
     const healthy = await db.healthCheck();
 
@@ -66,8 +70,8 @@ async function runTests() {
   // Test 3: Politician matcher
   console.log('\n[3/6] Testing politician matcher...');
   try {
-    const { createDatabaseClient } = await import('./database/client');
-    const { PoliticianMatcher } = await import('./validators/politician-matcher');
+    const { createDatabaseClient } = await import('./database/client.js');
+    const { PoliticianMatcher } = await import('./validators/politician-matcher.js');
 
     const db = createDatabaseClient();
     const politicians = await db.getAllPoliticians();
@@ -100,7 +104,7 @@ async function runTests() {
   // Test 4: Firecrawl client
   console.log('\n[4/6] Testing Firecrawl client...');
   try {
-    const { createFirecrawlClient } = await import('./crawlers/firecrawl-client');
+    const { createFirecrawlClient } = await import('./crawlers/firecrawl-client.js');
     const firecrawl = createFirecrawlClient();
 
     // Test with a simple, reliable page
@@ -121,7 +125,7 @@ async function runTests() {
   // Test 5: LLM extractor
   console.log('\n[5/6] Testing LLM extractor...');
   try {
-    const { createExtractor } = await import('./extractors');
+    const { createExtractor } = await import('./extractors/index.js');
     const extractor = createExtractor();
 
     console.log(`   ✓ LLM extractor initialized`);
@@ -139,7 +143,7 @@ async function runTests() {
   // Test 6: Source registry
   console.log('\n[6/6] Testing source registry...');
   try {
-    const { getEnabledSources, getSourcesByTier } = await import('./crawlers/source-registry');
+    const { getEnabledSources, getSourcesByTier } = await import('./crawlers/source-registry.js');
 
     const allSources = getEnabledSources();
     const tier1Sources = getSourcesByTier('tier1');

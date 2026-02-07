@@ -5,7 +5,7 @@
  */
 
 import { Agent } from '@mastra/core/agent';
-import { AGENT_CONFIG, PROMISE_CATEGORIES } from '../../ai/config';
+import { AGENT_CONFIG, PROMISE_CATEGORIES } from '../../ai/config.js';
 
 /**
  * Promise Extraction Agent
@@ -65,5 +65,5 @@ Provide links and summaries of relevant evidence.`,
 });
 
 // Re-export specialized agents
-export { debateAnalyzer } from './debate-analyzer';
-export { sourceClassifier } from './source-classifier';
+export { debateAnalyzer } from './debate-analyzer.js';
+export { sourceClassifier } from './source-classifier.js';

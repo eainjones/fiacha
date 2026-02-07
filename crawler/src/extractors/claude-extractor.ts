@@ -1,7 +1,7 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { BasePromiseExtractor } from './llm-interface';
-import { ExtractedPromise, ExtractedPromiseType, CrawlResult, LLMProvider } from '../types';
-import { PROMISE_EXTRACTION_SYSTEM_PROMPT, buildPromiseExtractionPrompt } from './prompt-templates';
+import { BasePromiseExtractor } from './llm-interface.js';
+import { ExtractedPromise, ExtractedPromiseType, CrawlResult, LLMProvider } from '../types/index.js';
+import { PROMISE_EXTRACTION_SYSTEM_PROMPT, buildPromiseExtractionPrompt } from './prompt-templates.js';
 
 /**
  * Claude-based promise extractor using Anthropic API

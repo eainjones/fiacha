@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 import * as readline from 'readline/promises';
-import { createDatabaseClient } from '../database/client';
+import { createDatabaseClient } from '../database/client.js';
 import {
   getPendingReviews,
   approvePromiseReview,
   rejectPromiseReview,
   getReviewStats,
-} from '../database/queries';
-import { PromiseReview } from '../types';
+} from '../database/queries.js';
+import { PromiseReview } from '../types/index.js';
 
 /**
  * Interactive CLI for reviewing extracted promises
@@ -145,8 +145,8 @@ class PromiseReviewer {
   }
 }
 
-// Run if executed directly
-if (require.main === module) {
+// Run if executed directly (ESM)
+{
   const reviewer = new PromiseReviewer();
   reviewer.start().catch(console.error);
 }

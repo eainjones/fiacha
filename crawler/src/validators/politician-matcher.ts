@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js';
-import { DbPolitician, PoliticianMatch } from '../types';
+import { DbPolitician, PoliticianMatch } from '../types/index.js';
 
 /**
  * ============================================================================

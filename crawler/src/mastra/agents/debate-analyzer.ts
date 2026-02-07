@@ -16,7 +16,7 @@
  */
 
 import { Agent } from '@mastra/core/agent';
-import { AGENT_CONFIG, PROMISE_CATEGORIES } from '../../ai/config';
+import { AGENT_CONFIG, PROMISE_CATEGORIES } from '../../ai/config.js';
 
 export const debateAnalyzer = new Agent({
   id: 'debate-analyzer',

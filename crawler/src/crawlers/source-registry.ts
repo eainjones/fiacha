@@ -1,4 +1,4 @@
-import { CrawlSource, CrawlSourceType } from '../types';
+import { CrawlSource, CrawlSourceType } from '../types/index.js';
 
 /**
  * Registry of sources to crawl for political promises

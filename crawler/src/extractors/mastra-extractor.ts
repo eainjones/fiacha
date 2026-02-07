@@ -5,8 +5,8 @@
  * This is the recommended extractor for production use.
  */
 
-import { BasePromiseExtractor, type IPromiseExtractor } from './llm-interface';
-import { CrawlResult, ExtractedPromiseType, SourceTypeType } from '../types';
+import { BasePromiseExtractor, type IPromiseExtractor } from './llm-interface.js';
+import { CrawlResult, ExtractedPromiseType, SourceTypeType } from '../types/index.js';
 import {
   extractPromises as aiExtractPromises,
   type ExtractedPromise as AIExtractedPromise,
@@ -15,7 +15,7 @@ import {
   checkBudget,
   getTodaySummary,
   AGENT_CONFIG,
-} from '../ai';
+} from '../ai/index.js';
 import { Pool } from 'pg';
 
 /**

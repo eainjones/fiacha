@@ -5,13 +5,13 @@
  */
 
 // Configuration
-export * from './config';
+export * from './config.js';
 
 // Mastra client
-export { mastra, isAIConfigured, getAnthropicApiKey } from './mastra-client';
+export { mastra, isAIConfigured, getAnthropicApiKey } from './mastra-client.js';
 
 // Schemas
-export * from './schemas/promise';
+export * from './schemas/promise.js';
 
 // Tools
 export {
@@ -22,7 +22,7 @@ export {
   getTodaySummary,
   withBudgetGuard,
   type BudgetStatus,
-} from './tools/budget-checker';
+} from './tools/budget-checker.js';
 
 // Agents
-export { extractPromises, extractPromisesBatch } from './agents/promise-extractor';
+export { extractPromises, extractPromisesBatch } from './agents/promise-extractor.js';

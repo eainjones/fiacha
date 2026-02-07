@@ -13,13 +13,13 @@ import {
   debateToMarkdown,
   OireachtasQuestion,
   OireachtasDebateSection,
-} from '../crawlers/oireachtas-api';
-import { IPromiseExtractor } from '../extractors/llm-interface';
-import { PoliticianMatcher, normalizePoliticianName } from '../validators/politician-matcher';
-import { insertPromiseReview } from '../database/queries';
-import { DatabaseClient } from '../database/client';
-import { ExtractedPromiseType, CrawlResult } from '../types';
-import { MetricsCollector } from '../metrics/crawler-metrics';
+} from '../crawlers/oireachtas-api.js';
+import { IPromiseExtractor } from '../extractors/llm-interface.js';
+import { PoliticianMatcher, normalizePoliticianName } from '../validators/politician-matcher.js';
+import { insertPromiseReview } from '../database/queries.js';
+import { DatabaseClient } from '../database/client.js';
+import { ExtractedPromiseType, CrawlResult } from '../types/index.js';
+import { MetricsCollector } from '../metrics/crawler-metrics.js';
 
 export interface OireachtasPipelineOptions {
   /** Number of recent PQs to fetch (default: 20) */

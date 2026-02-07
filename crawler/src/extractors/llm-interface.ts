@@ -1,4 +1,4 @@
-import { ExtractedPromiseType, CrawlResult, LLMProvider } from '../types';
+import { ExtractedPromiseType, CrawlResult, LLMProvider } from '../types/index.js';
 
 /**
  * Abstract interface for LLM promise extractors

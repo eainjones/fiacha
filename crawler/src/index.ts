@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 import dotenv from 'dotenv';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Load environment variables BEFORE any other imports that read env vars
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
-import { runPipeline, CrawlMode } from './pipelines/run-pipeline';
-import { EmailNotifier } from './notifications/email-notifier';
+import { runPipeline, CrawlMode } from './pipelines/run-pipeline.js';
+import { EmailNotifier } from './notifications/email-notifier.js';
 /**
  * CLI entry point for the crawler.
  * Delegates to the shared runPipeline function and adds CLI-specific
@@ -61,9 +65,7 @@ async function main() {
   }
 }
 
-// Run if executed directly
-if (require.main === module) {
-  main();
-}
+// Run if executed directly (ESM pattern)
+main();
 
 export { main };

@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-import type { ExtractedPromiseType } from '../types';
+import type { ExtractedPromiseType } from '../types/index.js';
 
 interface CrawlSummary {
   timestamp: Date;
