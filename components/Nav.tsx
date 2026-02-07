@@ -54,7 +54,7 @@ export default function Nav() {
     { href: '/counties', label: 'Counties' },
   ]
   const visibleLinks = user
-    ? [...navLinks, { href: '/review-queue', label: 'Review Queue' }, { href: '/admin/review', label: 'Admin Review' }]
+    ? [...navLinks, { href: '/review-queue', label: 'Review' }]
     : navLinks
 
   return (
