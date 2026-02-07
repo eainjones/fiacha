@@ -27,7 +27,7 @@ const ClassificationSchema = z.object({
 });
 
 /** Minimum relevance score to proceed with extraction */
-const MIN_RELEVANCE_SCORE = 50;
+const MIN_RELEVANCE_SCORE = 35;
 
 /**
  * Pre-filter content using source classifier agent.
@@ -106,7 +106,7 @@ export const processFeedStep = createStep({
   inputSchema: z.object({
     url: z.string(),
     name: z.string(),
-    maxArticlesPerFeed: z.number().default(5),
+    maxArticlesPerFeed: z.number().default(15),
     delayMs: z.number().default(2000),
     maxAgeDays: z.number().default(7),
   }),
@@ -238,7 +238,7 @@ export async function runRssWorkflow(options: {
   maxAgeDays?: number;
 }): Promise<SourceResult> {
   const {
-    maxArticlesPerFeed = 5,
+    maxArticlesPerFeed = 15,
     delayMs = 2000,
     maxAgeDays = 7,
   } = options;

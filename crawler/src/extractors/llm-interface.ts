@@ -32,22 +32,17 @@ export abstract class BasePromiseExtractor implements IPromiseExtractor {
    */
   protected validatePromises(promises: ExtractedPromiseType[]): ExtractedPromiseType[] {
     return promises.filter(promise => {
-      // Must have action verb in title
-      const hasActionVerb = /^(Build|Deliver|Increase|Reduce|Introduce|Create|Establish|Implement|Provide|Expand|Launch|Develop|Pass|Enact|Commence|Invest|Achieve|Complete|Construct|Fund|Allocate|Approve|Support)/i.test(
-        promise.promise_title
-      );
-
-      // Must be reasonably specific (has a number or specific target)
-      const hasSpecifics = /\d+|specific|new|additional/i.test(promise.promise_title);
-
       // Must have minimum description length
-      const hasDescription = promise.description.length >= 20;
+      const hasDescription = promise.description && promise.description.length >= 10;
 
       // Must have reasonable confidence
-      const hasConfidence = promise.confidence >= 30;
+      const hasConfidence = promise.confidence >= 40;
 
-      if (!hasActionVerb || !hasSpecifics || !hasDescription || !hasConfidence) {
-        console.warn(`[Extractor] Filtered out low-quality promise: "${promise.promise_title}"`);
+      // Must have a non-empty title
+      const hasTitle = promise.promise_title && promise.promise_title.length >= 5;
+
+      if (!hasTitle || !hasDescription || !hasConfidence) {
+        console.warn(`[Extractor] Filtered out low-quality promise: "${promise.promise_title}" (confidence: ${promise.confidence})`);
         return false;
       }
 

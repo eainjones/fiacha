@@ -61,10 +61,10 @@ export function calculateCost(
 
 export const BUDGET_CONFIG = {
   // Daily budget limit in USD
-  DAILY_LIMIT_USD: Number(process.env.AI_DAILY_BUDGET_USD) || 10.00,
+  DAILY_LIMIT_USD: Number(process.env.AI_DAILY_BUDGET_USD) || 50.00,
 
   // Monthly budget limit in USD
-  MONTHLY_LIMIT_USD: Number(process.env.AI_MONTHLY_BUDGET_USD) || 100.00,
+  MONTHLY_LIMIT_USD: Number(process.env.AI_MONTHLY_BUDGET_USD) || 500.00,
 
   // Alert threshold (percentage of daily budget)
   ALERT_THRESHOLD: 0.80, // Alert at 80% of daily budget

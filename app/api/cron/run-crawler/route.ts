@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { guardCronRequest, logCrawlRun } from '../_shared';
+import { guardCronRequest, startCrawlRun, completeCrawlRun } from '../_shared';
 
 /**
  * Full crawler run — dispatches all pipelines sequentially.
@@ -31,6 +31,7 @@ async function handleCrawlRequest(request: NextRequest) {
   if (guard) return guard;
 
   const startTime = Date.now();
+  const runId = await startCrawlRun('all');
 
   try {
     const { runPipeline } = await import('../../../../crawler/src/pipelines/run-pipeline');
@@ -42,7 +43,7 @@ async function handleCrawlRequest(request: NextRequest) {
       skipEmail: true,
     });
 
-    await logCrawlRun('all', result);
+    await completeCrawlRun(runId, result);
 
     return NextResponse.json({
       success: result.success,
@@ -57,12 +58,22 @@ async function handleCrawlRequest(request: NextRequest) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     console.error('[Cron] Full crawler error:', errorMessage);
 
+    const duration = Date.now() - startTime;
+    await completeCrawlRun(runId, {
+      success: false,
+      promisesExtracted: 0,
+      politiciansMatched: 0,
+      queuedForReview: 0,
+      errors: [errorMessage],
+      duration,
+    });
+
     return NextResponse.json(
       {
         success: false,
         pipeline: 'all',
         error: errorMessage,
-        duration: Date.now() - startTime,
+        duration,
       },
       { status: 500 }
     );

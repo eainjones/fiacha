@@ -67,7 +67,8 @@ For each promise found:
 - 90-100: Direct ministerial commitment with specifics ("We will build 5,000 homes by 2027")
 - 70-89: Clear commitment but details pending ("Legislation will be brought forward")
 - 50-69: Indicative commitment ("We are working on a scheme")
-- Below 50: Don't include
+- 40-49: Weak signal but worth human review
+- Below 40: Don't include
 
 Focus on IRISH and NORTHERN IRISH politics only.
 Return empty array if no commitments found — this is common and expected.`,

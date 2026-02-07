@@ -99,7 +99,7 @@ ${truncated}`,
     }
 
     // Filter by confidence and convert to ExtractedPromiseType
-    const promises = filterByConfidence(extraction.promises, 50).map((p) => ({
+    const promises = filterByConfidence(extraction.promises, 40).map((p) => ({
       politician_name: p.politician_name,
       party: p.party || undefined,
       promise_title: p.title || generateTitle(p.promise_text),

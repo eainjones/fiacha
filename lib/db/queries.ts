@@ -694,10 +694,35 @@ export type PromiseSubmissionWithPolitician = PromiseSubmission & {
   matched_politician_party: string | null
 }
 
+export type SubmissionFilters = {
+  status?: string
+  search?: string
+}
+
 /**
- * Get pending AI-extracted promise submissions
+ * Get AI-extracted promise submissions with optional filters and pagination
  */
-export async function getPendingSubmissions(limit = 50): Promise<PromiseSubmissionWithPolitician[]> {
+export async function getSubmissions(
+  filters: SubmissionFilters = {},
+  limit = 25,
+  offset = 0
+): Promise<PromiseSubmissionWithPolitician[]> {
+  const conditions = []
+
+  if (filters.status) {
+    conditions.push(eq(schema.promiseSubmissions.status, filters.status))
+  }
+  if (filters.search) {
+    const searchPattern = `%${filters.search}%`
+    conditions.push(
+      or(
+        ilike(schema.promiseSubmissions.title, searchPattern),
+        ilike(schema.promiseSubmissions.politicianName, searchPattern),
+        ilike(schema.promiseSubmissions.description, searchPattern)
+      )
+    )
+  }
+
   const result = await db
     .select({
       id: schema.promiseSubmissions.id,
@@ -725,11 +750,47 @@ export async function getPendingSubmissions(limit = 50): Promise<PromiseSubmissi
     })
     .from(schema.promiseSubmissions)
     .leftJoin(schema.politicians, eq(schema.promiseSubmissions.politicianId, schema.politicians.id))
-    .where(eq(schema.promiseSubmissions.status, 'pending_review'))
+    .where(conditions.length > 0 ? and(...conditions) : undefined)
     .orderBy(desc(schema.promiseSubmissions.createdAt))
     .limit(limit)
+    .offset(offset)
 
   return result as PromiseSubmissionWithPolitician[]
+}
+
+/**
+ * Get pending AI-extracted promise submissions (convenience wrapper)
+ */
+export async function getPendingSubmissions(limit = 50): Promise<PromiseSubmissionWithPolitician[]> {
+  return getSubmissions({ status: 'pending_review' }, limit, 0)
+}
+
+/**
+ * Get total submission count matching filters
+ */
+export async function getSubmissionCount(filters: SubmissionFilters = {}): Promise<number> {
+  const conditions = []
+
+  if (filters.status) {
+    conditions.push(eq(schema.promiseSubmissions.status, filters.status))
+  }
+  if (filters.search) {
+    const searchPattern = `%${filters.search}%`
+    conditions.push(
+      or(
+        ilike(schema.promiseSubmissions.title, searchPattern),
+        ilike(schema.promiseSubmissions.politicianName, searchPattern),
+        ilike(schema.promiseSubmissions.description, searchPattern)
+      )
+    )
+  }
+
+  const result = await db
+    .select({ total: count() })
+    .from(schema.promiseSubmissions)
+    .where(conditions.length > 0 ? and(...conditions) : undefined)
+
+  return result[0]?.total ?? 0
 }
 
 /**

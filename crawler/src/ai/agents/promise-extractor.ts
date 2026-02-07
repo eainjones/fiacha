@@ -49,7 +49,8 @@ For each promise, extract:
 - 90-100: Direct quote with clear commitment and specific details
 - 70-89: Clear commitment but paraphrased or lacking some details
 - 50-69: Implied commitment or ambiguous wording
-- Below 50: Don't include - too uncertain
+- 40-49: Weak signal but worth human review
+- Below 40: Don't include - too uncertain
 
 ## Important Notes
 - Focus on IRISH politics (Republic of Ireland and Northern Ireland)
@@ -90,7 +91,7 @@ function createPromiseExtractorAgent(): Agent {
 export async function extractPromises(
   content: string,
   sourceUrl?: string,
-  minConfidence: number = 50
+  minConfidence: number = 40
 ): Promise<ExtractedPromise[]> {
   // Check budget before proceeding
   const budgetStatus = await checkBudget();
@@ -179,7 +180,7 @@ ${truncatedContent}`,
  */
 export async function extractPromisesBatch(
   documents: Array<{ content: string; url: string }>,
-  minConfidence: number = 50
+  minConfidence: number = 40
 ): Promise<Array<{ url: string; promises: ExtractedPromise[] }>> {
   const results: Array<{ url: string; promises: ExtractedPromise[] }> = [];
 
