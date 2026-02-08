@@ -7,7 +7,7 @@
  */
 
 import { Mastra } from '@mastra/core';
-import { Observability } from '@mastra/observability';
+import { Observability, ConsoleExporter } from '@mastra/observability';
 import { promiseExtractor, evidenceFinder, debateAnalyzer, sourceClassifier } from './agents/index.js';
 import {
   politicianLookupTool,
@@ -38,6 +38,7 @@ export const mastra = new Mastra({
     configs: {
       default: {
         serviceName: 'fiacha-crawler',
+        exporters: [new ConsoleExporter()],
       },
     },
   }),
