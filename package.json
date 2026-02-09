@@ -30,7 +30,10 @@
     "data:all": "npm run data:clean && npm run data:calculate-totals && npm run validate"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.0",
     "@hookform/resolvers": "^5.2.2",
+    "@mastra/core": "^1.1.0",
+    "@mendable/firecrawl-js": "^1.10.0",
     "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-popover": "^1.1.6",
     "@radix-ui/react-slot": "^1.1.2",
@@ -42,16 +45,19 @@
     "cmdk": "^1.0.4",
     "drizzle-kit": "^0.31.8",
     "drizzle-orm": "^0.45.1",
+    "fuse.js": "^7.0.0",
     "lucide-react": "^0.468.0",
     "next": "14.2.5",
+    "openai": "^4.77.0",
     "pg": "^8.16.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.71.1",
+    "resend": "^6.4.2",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^4.3.5"
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",

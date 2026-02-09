@@ -5,6 +5,14 @@ const nextConfig = {
 
   reactStrictMode: true,
 
+  // Allow webpack to resolve .js imports to .ts files (ESM crawler uses .js extensions)
+  webpack: (config) => {
+    config.resolve.extensionAlias = {
+      '.js': ['.ts', '.tsx', '.js', '.jsx'],
+    };
+    return config;
+  },
+
   // Keep more pages compiled in dev to reduce recompilation churn
   onDemandEntries: {
     // Keep compiled pages in memory for 5 minutes (default 15s is too aggressive)

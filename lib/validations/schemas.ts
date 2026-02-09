@@ -16,36 +16,36 @@ import { z } from 'zod'
  */
 export const createPromiseSchema = z.object({
   politician_id: z
-    .number({ error: 'politician_id must be a number' })
-    .int({ error: 'politician_id must be an integer' })
-    .positive({ error: 'politician_id must be a positive integer' }),
+    .number({ invalid_type_error: 'politician_id must be a number', required_error: 'politician_id is required' })
+    .int({ message: 'politician_id must be an integer' })
+    .positive({ message: 'politician_id must be a positive integer' }),
   title: z
-    .string({ error: 'title is required' })
-    .max(500, { error: 'title cannot exceed 500 characters' })
+    .string({ required_error: 'title is required' })
+    .max(500, { message: 'title cannot exceed 500 characters' })
     .transform((s) => s.trim())
-    .refine((s) => s.length > 0, { error: 'title cannot be empty' }),
+    .refine((s) => s.length > 0, { message: 'title cannot be empty' }),
   description: z
     .string()
-    .max(5000, { error: 'description cannot exceed 5000 characters' })
+    .max(5000, { message: 'description cannot exceed 5000 characters' })
     .optional()
     .nullable(),
   category: z
     .string()
-    .max(100, { error: 'category cannot exceed 100 characters' })
+    .max(100, { message: 'category cannot exceed 100 characters' })
     .optional()
     .nullable(),
   promise_date: z
     .string()
-    .datetime({ error: 'promise_date must be a valid ISO date' })
+    .datetime({ message: 'promise_date must be a valid ISO date' })
     .optional()
     .nullable()
-    .or(z.string().regex(/^\d{4}-\d{2}-\d{2}$/, { error: 'promise_date must be YYYY-MM-DD format' }).optional().nullable()),
+    .or(z.string().regex(/^\d{4}-\d{2}-\d{2}$/, { message: 'promise_date must be YYYY-MM-DD format' }).optional().nullable()),
   target_date: z
     .string()
-    .datetime({ error: 'target_date must be a valid ISO date' })
+    .datetime({ message: 'target_date must be a valid ISO date' })
     .optional()
     .nullable()
-    .or(z.string().regex(/^\d{4}-\d{2}-\d{2}$/, { error: 'target_date must be YYYY-MM-DD format' }).optional().nullable()),
+    .or(z.string().regex(/^\d{4}-\d{2}-\d{2}$/, { message: 'target_date must be YYYY-MM-DD format' }).optional().nullable()),
 })
 
 export type CreatePromiseInput = z.infer<typeof createPromiseSchema>
@@ -65,23 +65,23 @@ export type PositionType = (typeof positionTypes)[number]
  */
 export const createPoliticianSchema = z.object({
   name: z
-    .string({ error: 'name is required' })
-    .max(255, { error: 'name cannot exceed 255 characters' })
+    .string({ required_error: 'name is required' })
+    .max(255, { message: 'name cannot exceed 255 characters' })
     .transform((s) => s.trim())
-    .refine((s) => s.length > 0, { error: 'name cannot be empty' }),
+    .refine((s) => s.length > 0, { message: 'name cannot be empty' }),
   party: z
     .string()
-    .max(100, { error: 'party cannot exceed 100 characters' })
+    .max(100, { message: 'party cannot exceed 100 characters' })
     .optional()
     .nullable(),
   constituency: z
     .string()
-    .max(100, { error: 'constituency cannot exceed 100 characters' })
+    .max(100, { message: 'constituency cannot exceed 100 characters' })
     .optional()
     .nullable(),
   role: z
     .string()
-    .max(100, { error: 'role cannot exceed 100 characters' })
+    .max(100, { message: 'role cannot exceed 100 characters' })
     .optional()
     .nullable(),
   position_type: z.enum(positionTypes).optional().nullable(),
@@ -120,9 +120,9 @@ export const reviewIdParamSchema = z.object({
     .transform((s) => Number(s))
     .pipe(
       z
-        .number({ error: 'Invalid review id' })
-        .int({ error: 'Review id must be an integer' })
-        .positive({ error: 'Review id must be positive' })
+        .number({ invalid_type_error: 'Invalid review id' })
+        .int({ message: 'Review id must be an integer' })
+        .positive({ message: 'Review id must be positive' })
     ),
 })
 
@@ -133,10 +133,10 @@ export type ReviewIdParam = z.infer<typeof reviewIdParamSchema>
  */
 export const rejectReviewSchema = z.object({
   reason: z
-    .string({ error: 'reason is required' })
-    .max(2000, { error: 'Rejection reason cannot exceed 2000 characters' })
+    .string({ required_error: 'reason is required' })
+    .max(2000, { message: 'Rejection reason cannot exceed 2000 characters' })
     .transform((s) => s.trim())
-    .refine((s) => s.length > 0, { error: 'Rejection reason is required' }),
+    .refine((s) => s.length > 0, { message: 'Rejection reason is required' }),
 })
 
 export type RejectReviewInput = z.infer<typeof rejectReviewSchema>
@@ -149,7 +149,7 @@ export const approveReviewSchema = z.object({
   // Optional fields that could be added for approval notes
   notes: z
     .string()
-    .max(2000, { error: 'Notes cannot exceed 2000 characters' })
+    .max(2000, { message: 'Notes cannot exceed 2000 characters' })
     .optional()
     .nullable(),
 })
