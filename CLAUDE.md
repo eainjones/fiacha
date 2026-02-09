@@ -64,8 +64,8 @@ npm run dev             # Start Next.js dev server
 | Environment | Supabase Project | Project Ref |
 |-------------|------------------|-------------|
 | Local | Local Docker | N/A |
-| Staging | fiacha-staging | `qsknxvethxnapioxsuqr` |
-| Production | Fiach | `hgjefllkbbwevpyiazhx` |
+| Staging | fiacha-staging | `xmzbdojusmdclziqxssf` |
+| Production | fiacha-production | `tvzlyodgwsxfzlaowmvm` |
 
 ### Before Any Remote Migration
 1. **Always backup first**: `./scripts/backup-db.sh staging`

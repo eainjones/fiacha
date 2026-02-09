@@ -1,0 +1,94 @@
+name: Database Backup
+
+on:
+  schedule:
+    # Weekly backups: Sunday at 3am UTC
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Which database to backup'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+          - both
+
+env:
+  PRODUCTION_REF: tvzlyodgwsxfzlaowmvm
+  STAGING_REF: xmzbdojusmdclziqxssf
+
+jobs:
+  backup-production:
+    if: >
+      github.event_name == 'schedule' ||
+      github.event.inputs.environment == 'production' ||
+      github.event.inputs.environment == 'both'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Create production backup
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
+        run: |
+          # Link to production project
+          mkdir -p supabase && echo '{"projectId": ""}' > supabase/config.toml || true
+          supabase init --force
+          supabase link --project-ref $PRODUCTION_REF -p "$SUPABASE_DB_PASSWORD"
+
+          # Dump the database
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+          FILENAME="backup-production-${TIMESTAMP}.sql"
+          supabase db dump --linked -f "$FILENAME"
+
+          echo "Backup created: $FILENAME ($(wc -c < "$FILENAME") bytes)"
+          echo "BACKUP_FILE=$FILENAME" >> $GITHUB_ENV
+
+      - name: Upload backup artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: db-backup-production-${{ github.run_id }}
+          path: ${{ env.BACKUP_FILE }}
+          retention-days: 90
+
+  backup-staging:
+    if: >
+      github.event_name == 'schedule' ||
+      github.event.inputs.environment == 'staging' ||
+      github.event.inputs.environment == 'both'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Create staging backup
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.STAGING_DB_PASSWORD }}
+        run: |
+          mkdir -p supabase && echo '{"projectId": ""}' > supabase/config.toml || true
+          supabase init --force
+          supabase link --project-ref $STAGING_REF -p "$SUPABASE_DB_PASSWORD"
+
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+          FILENAME="backup-staging-${TIMESTAMP}.sql"
+          supabase db dump --linked -f "$FILENAME"
+
+          echo "Backup created: $FILENAME ($(wc -c < "$FILENAME") bytes)"
+          echo "BACKUP_FILE=$FILENAME" >> $GITHUB_ENV
+
+      - name: Upload backup artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: db-backup-staging-${{ github.run_id }}
+          path: ${{ env.BACKUP_FILE }}
+          retention-days: 90
