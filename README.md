@@ -3,6 +3,8 @@
 
 This project is a prototype for an Irish Political Promise Tracker. It aims to provide a platform to track the promises made by politicians and their fulfillment.
 
+For the current codebase architecture and runtime flow, see `docs/CURRENT_ARCHITECTURE.md`.
+
 ## Data Cleaning
 
 A significant challenge in this project is the regulation of councillor names, as they are often recorded in various formats in the raw data. To address this, a mechanism has been created to clean and standardize councillor names.

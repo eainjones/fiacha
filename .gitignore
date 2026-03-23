@@ -14,3 +14,4 @@ crawler/.mastra/
 .env.preview
 .env.prod
 .env.staging
+.claude/
