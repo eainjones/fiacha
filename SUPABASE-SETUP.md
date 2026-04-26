@@ -1,69 +1,41 @@
 # Supabase Setup Guide
 
-This guide covers setting up Supabase as the database for Fiacha.
+Fiacha uses a **single Supabase project** with **Branching** for environment isolation.
+Production lives on the main branch; staging and feature branches get their own
+isolated databases automatically.
+
+| Environment | Supabase | Source |
+|-------------|----------|--------|
+| Local | Docker (`supabase start`) | N/A |
+| Staging / PRs | Auto-created branch DB | `staging` / feature git branch |
+| Production | Persistent project `hgjefllkbbwevpyiazhx` | `main` git branch |
 
 ## Quick Start
 
-1. **Install Supabase CLI** (if not already installed):
+1. **Install Supabase CLI**:
    ```bash
    brew install supabase/tap/supabase
    ```
 
-2. **Login to Supabase**:
+2. **Login and link**:
    ```bash
    supabase login
+   ./scripts/setup-supabase.sh
    ```
 
-3. **Setup project**:
+3. **Local development**:
    ```bash
-   npm run setup:supabase
+   supabase start     # starts Postgres, Auth, Studio
+   npm run dev        # starts Next.js
    ```
 
-4. **Run migrations**:
-   ```bash
-   npm run migrate:supabase
-   ```
+## Enabling Branching (one-time)
 
-## Manual Setup
-
-### Step 1: Create Supabase Project
-
-1. Go to [supabase.com/dashboard](https://supabase.com/dashboard)
-2. Click "New Project"
-3. Configure:
-   - **Name**: `fiacha` (or your preferred name)
-   - **Database Password**: Save this password!
-   - **Region**: Choose closest to your users
-   - **Pricing Plan**: Free tier is fine for development
-
-### Step 2: Get Connection String
-
-1. In Supabase dashboard → **Settings** → **Database**
-2. Under **Connection String**, copy the **URI** (not the Pooler URI)
-3. Format: `postgresql://postgres:[YOUR-PASSWORD]@db.xxxxx.supabase.co:5432/postgres`
-4. Replace `[YOUR-PASSWORD]` with your actual password
-
-### Step 3: Link Local Project
-
-```bash
-supabase link --project-ref YOUR_PROJECT_REF
-```
-
-Find your project ref in:
-- Supabase dashboard URL: `https://supabase.com/dashboard/project/xxxxx`
-- Or run `supabase projects list`
-
-### Step 4: Apply Migrations
-
-Migrations are located in `supabase/migrations/`:
-
-```bash
-# Push all migrations
-supabase db push
-
-# Or use the npm script
-npm run migrate:supabase
-```
+1. In Supabase Dashboard → Project (`hgjefllkbbwevpyiazhx`) → Settings → Branching
+2. Connect to GitHub repo `eainjones/fiacha`
+3. Set production branch to `main`
+4. Install the Supabase-Vercel integration so preview deployments
+   get branch-specific env vars automatically
 
 ## Local Development
 
@@ -175,8 +147,9 @@ Note the port change from `5432` to `6543` and the `pgbouncer=true` parameter.
 
 ### For Vercel
 
-Set in Vercel dashboard → Settings → Environment Variables:
-- Add `DATABASE_URL` for Production, Preview, and Development environments
+With the Supabase-Vercel integration enabled, `DATABASE_URL`,
+`NEXT_PUBLIC_SUPABASE_URL`, and `NEXT_PUBLIC_SUPABASE_ANON_KEY` are
+injected automatically per deployment. No manual env var setup is needed.
 
 ### For Local Development
 

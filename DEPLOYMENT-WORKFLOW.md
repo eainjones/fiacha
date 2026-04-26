@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project uses a fully automated CI/CD pipeline powered by GitHub Actions. All deployments and database migrations are handled automatically based on the branch you push to. Manual deployment steps have been eliminated to ensure stability.
+This project uses Vercel for deployments and Supabase Branching for database environments. A single Supabase project (`hgjefllkbbwevpyiazhx`) serves both production and preview/staging environments via isolated database branches.
 
 ## How It Works
 
@@ -18,46 +18,42 @@ This project uses a fully automated CI/CD pipeline powered by GitHub Actions. Al
    │  main   │            │ staging  │
    └────┬────┘            └────┬─────┘
         │                      │
-        │  (GitHub Actions)      │  (GitHub Actions)
         ▼                      ▼
 ┌──────────────────┐  ┌──────────────────┐
-│ 1. Install Deps  │  │ 1. Install Deps  │
-│ 2. Migrate DB    │  │ 2. Migrate DB    │
-│ 3. Build Project │  │ 3. Build Project │
-│ 4. Deploy        │  │ 4. Deploy        │
+│ Supabase: prod   │  │ Supabase: branch │
+│ (persistent DB)  │  │ (isolated DB)    │
 └──────────────────┘  └──────────────────┘
         │                      │
         ▼                      ▼
-┌──────────────┐      ┌──────────────┐
-│  Production  │      │   Staging    │
-│  (Vercel)    │      │  (Vercel)    │
-└──────────────┘      └──────────────┘
+┌──────────────────┐  ┌──────────────────┐
+│ Vercel: prod     │  │ Vercel: preview  │
+│ fiacha.vercel.app│  │ (auto-gen URL)   │
+└──────────────────┘  └──────────────────┘
 ```
 
-1.  **Push to `main`**: Triggers a **Production** deployment.
-    - Runs database migrations against the production database.
-    - Deploys the application to Vercel production.
-2.  **Push to `staging`**: Triggers a **Staging** deployment.
-    - Runs database migrations against the staging database.
-    - Deploys the application to Vercel preview (staging).
+1. **Push to `main`**: Triggers a production Vercel deployment against the persistent production database.
+2. **Push to `staging` (or any branch)**: Supabase auto-creates an isolated database branch; Vercel deploys a preview with branch-specific env vars injected by the Supabase-Vercel integration.
+
+## Database Branching
+
+- Supabase Branching applies `supabase/migrations/` automatically to each new database branch.
+- `supabase/seed.sql` populates new branches with minimal test data.
+- Branches are disposable — deleted when the git branch is merged/closed.
+- The `staging` branch can optionally be kept as a long-lived persistent branch.
 
 ## Configuration
 
-The entire CI/CD process is defined in a single file: `.github/workflows/ci-cd.yml`.
+### GitHub Secrets
 
-### Environment Variables & Secrets
+| Secret | Purpose |
+|--------|---------|
+| `SUPABASE_ACCESS_TOKEN` | Supabase personal access token |
+| `PROD_PROJECT_ID` | Production Supabase project ID (`hgjefllkbbwevpyiazhx`) |
+| `PROD_DB_PASSWORD` | Production database password |
+| `VERCEL_TOKEN` | Vercel access token |
+| `VERCEL_ORG_ID` | Vercel organization ID |
+| `VERCEL_PROJECT_ID` | Vercel project ID |
 
-All secrets (API keys, database passwords) and environment-specific variables are stored in GitHub repository secrets. They are securely injected into the pipeline at runtime.
+### Supabase-Vercel Integration
 
-**Action Required:** The following secrets must be configured in your GitHub repository settings under `Settings > Secrets and variables > Actions`:
-
-*   `SUPABASE_ACCESS_TOKEN`: Your Supabase personal access token.
-*   `STAGING_PROJECT_ID`: Your staging Supabase project ID.
-*   `PROD_PROJECT_ID`: Your production Supabase project ID.
-*   `STAGING_DB_PASSWORD`: Your staging Supabase database password.
-*   `PROD_DB_PASSWORD`: Your production Supabase database password.
-*   `VERCEL_TOKEN`: Your Vercel access token.
-*   `VERCEL_ORG_ID`: Your Vercel organization ID.
-*   `VERCEL_PROJECT_ID`: Your Vercel project ID.
-
-There are no other configuration files or manual steps required.
+The Supabase-Vercel integration automatically injects the correct environment variables (`DATABASE_URL`, `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`) into each Vercel deployment based on the branch. No manual `.env.*` files are needed for remote environments.

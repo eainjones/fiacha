@@ -21,7 +21,6 @@
     "db:pull": "supabase db pull",
     "db:reset": "supabase db reset",
     "db:status": "supabase migration list",
-    "db:sync-staging": "npx tsx scripts/sync-staging-from-prod.ts",
     "types:update": "supabase gen types typescript --local > lib/database.types.ts",
     "import:politicians": "npx tsx scripts/import-politicians.ts",
     "import:politicians:dry": "DRY_RUN=true npx tsx scripts/import-politicians.ts",

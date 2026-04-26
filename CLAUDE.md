@@ -53,69 +53,75 @@ npm run dev             # Start Next.js dev server
 
 ---
 
+## Database Architecture: Single-Project Supabase with Branching
+
+Fiacha uses **one Supabase project** (`hgjefllkbbwevpyiazhx`) with **Supabase Branching**
+to manage staging and production environments.
+
+### How It Works
+- The `main` git branch maps to the **production** database (the persistent project).
+- The `staging` git branch (and any PR/feature branches) get **isolated database branches**
+  with their own URL, anon key, and service role key.
+- Supabase auto-applies migrations from `supabase/migrations/` when a branch is created.
+- Seed data from `supabase/seed.sql` populates new branches automatically.
+- The Supabase-Vercel integration injects the correct branch-specific env vars
+  into each Vercel deployment (production or preview).
+
+### Environment Hierarchy: Local → Branch → Production
+1. **Develop locally first** using `supabase start` (no risk to any remote data)
+2. **Push to staging/feature branch** — Supabase creates an isolated database branch
+3. **Production** requires explicit user approval and merge to `main`
+
+### Supabase References
+| Environment | Source | Database |
+|-------------|--------|----------|
+| Local | `supabase start` (Docker) | Local Postgres |
+| Staging | Supabase Branch (auto-created from `staging` git branch) | Isolated branch DB |
+| Feature branches | Supabase Branch (auto-created per PR) | Isolated branch DB |
+| Production | Main project `hgjefllkbbwevpyiazhx` | Persistent prod DB |
+
+### Key Differences from Old Two-Project Setup
+- No more `sync-staging-from-prod.ts` — branches inherit schema via migrations + seed
+- No more hardcoded staging project refs or pooler URLs
+- Vercel env vars are injected automatically via the Supabase integration (not manual `.env.*` files)
+- Backup script targets production only (branches are disposable)
+
+---
+
 ## Database Safety Rules
 
-### Environment Hierarchy: Local → Staging → Production
-1. **Develop locally first** using `supabase start` (no risk to any remote data)
-2. **Push to staging** for integration testing: `supabase db push --linked`
-3. **Production** requires explicit user approval and `--project-ref` flag
-
-### Remote Supabase References
-| Environment | Supabase Project | Project Ref |
-|-------------|------------------|-------------|
-| Local | Local Docker | N/A |
-| Staging | fiacha-staging | `xmzbdojusmdclziqxssf` |
-| Production | fiacha-production | `tvzlyodgwsxfzlaowmvm` |
-
-### Before Any Remote Migration
-1. **Always backup first**: `./scripts/backup-db.sh staging`
-2. **Use safe-db-push**: `./scripts/safe-db-push.sh staging` (includes backup + confirmation)
-3. **Never use DELETE FROM** in migrations - use `INSERT ... ON CONFLICT DO UPDATE` (upserts)
-4. **Verify on staging** before asking user to approve production push
+### Before Any Production Migration
+1. **Always backup first**: `./scripts/backup-db.sh`
+2. **Never use DELETE FROM** in migrations — use `INSERT ... ON CONFLICT DO UPDATE` (upserts)
+3. **Verify on staging branch** before asking user to approve production push
 
 ### Migration Best Practices
 - **Canonical migration directory**: `supabase/migrations/` (timestamped SQL files, used by Supabase CLI and CI/CD)
-- **Legacy migrations**: `db/migrations-archive/` contains old manually-numbered files (001_-009_), kept for reference only
-- **Do NOT use** `db/migrations/` -- it is empty and deprecated
+- **Legacy migrations**: `db/migrations-archive/` contains old manually-numbered files (001_–009_), kept for reference only
+- **Do NOT use** `db/migrations/` — it is empty and deprecated
 - **Workflow**: Create a new migration with `supabase migration new <name>`, test locally with `supabase db reset`, then push
 - Migrations must be **additive** (add columns, don't drop)
 - Use `ON CONFLICT DO UPDATE` instead of delete-then-insert
 - Include `IF NOT EXISTS` for DDL statements
 - Test locally with `supabase db reset` first
-- Then push to staging with `supabase db push --linked`
+
+### Seed Data (`supabase/seed.sql`)
+- Contains a minimal representative dataset (6 politicians, 6 promises, core parties/counties)
+- Runs automatically on `supabase db reset` and when new Supabase branches are created
+- Uses `ON CONFLICT DO NOTHING` so it's safe to re-run
+- For testing with production-scale data, use `pg_dump` from prod → restore into branch
 
 ### Vercel Environments
-- **Production**: Points to production DB, deploys from `main` branch
-- **Preview**: Points to staging DB, deploys from PRs/branches
+- **Production**: Supabase-Vercel integration injects prod DB vars, deploys from `main`
+- **Preview**: Supabase-Vercel integration injects branch DB vars, deploys from PRs/branches
 
 ## Scripts Reference
 
 | Script | Purpose |
 |--------|---------|
-| `npm run db:sync-staging` | Sync staging data from production |
-| `./scripts/backup-db.sh [staging\|production]` | Create database backup |
-| `./scripts/safe-db-push.sh [staging\|production]` | Safe migration with backup |
-| `./scripts/verify-staging-data.ts` | Verify politician counts in staging |
+| `./scripts/backup-db.sh` | Create production database backup |
+| `./scripts/verify-staging-data.ts` | Verify politician counts in a database |
 | `./scripts/generate-politicians-migration.ts` | Generate safe upsert migration |
-
-## Keeping Staging in Sync
-
-### When to Sync
-- After adding new data to production (promises, politicians, etc.)
-- Before testing features that depend on production data
-- After production database migrations
-
-### How to Sync
-```bash
-npm run db:sync-staging
-```
-
-This copies all data from production → staging while preserving referential integrity.
-
-### Staging Database Notes
-- Staging uses Supabase connection pooler (IPv4) due to IPv6-only direct connection
-- Pooler URL: `aws-1-eu-west-1.pooler.supabase.com` (note: aws-1, not aws-0)
-- Username format for pooler: `postgres.qsknxvethxnapioxsuqr`
 
 ## Data Verification
 
@@ -133,10 +139,7 @@ Run verification: `npx tsx scripts/verify-staging-data.ts`
 When modifying politician data:
 1. [ ] Generate migration with upserts (no DELETEs)
 2. [ ] Test locally: `supabase db reset` and verify in Studio
-3. [ ] Backup staging: `./scripts/backup-db.sh staging`
-4. [ ] Push to staging: `supabase db push --linked`
-5. [ ] Verify: `npx tsx scripts/verify-staging-data.ts`
-6. [ ] Deploy Vercel preview, test in browser
-7. [ ] Get user approval for production
-8. [ ] Backup production: `./scripts/backup-db.sh production`
-9. [ ] Push to production: `supabase db push --project-ref hgjefllkbbwevpyiazhx`
+3. [ ] Push to staging branch, verify Vercel preview
+4. [ ] Get user approval for production
+5. [ ] Backup production: `./scripts/backup-db.sh`
+6. [ ] Merge staging → main (triggers production deploy + migration)
