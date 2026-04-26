@@ -15,7 +15,10 @@ Google OAuth is **already implemented** in the codebase. Just needs Supabase con
 ### 1. Supabase Dashboard
 
 **Production**: https://supabase.com/dashboard/project/hgjefllkbbwevpyiazhx
-**Staging**: https://supabase.com/dashboard/project/phifyhudywiuqgwezumh
+
+With Supabase Branching enabled, staging/preview branches get their own auth
+endpoints automatically. Configure the Google provider on the main (production)
+project — branches inherit the config.
 
 Navigate to: **Authentication** → **Providers** → **Google** → Enable
 
@@ -25,7 +28,7 @@ Navigate to: **Authentication** → **Providers** → **Google** → Enable
 2. Create OAuth 2.0 Client ID (Web application)
 3. Add authorized redirect URIs:
    - Production: `https://hgjefllkbbwevpyiazhx.supabase.co/auth/v1/callback`
-   - Staging: `https://phifyhudywiuqgwezumh.supabase.co/auth/v1/callback`
+   - Branch callbacks are auto-registered by Supabase Branching
 4. Copy Client ID and Client Secret to Supabase provider settings
 
 ### 3. Test

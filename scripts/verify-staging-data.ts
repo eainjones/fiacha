@@ -1,11 +1,23 @@
 #!/usr/bin/env npx tsx
 /**
- * Verify staging database has correct politician counts
+ * Verify database has correct politician counts
  * Expected: 1,737 total (174 TDs, 60 Senators, 949 ROI Councillors, 93 MLAs, 461 NI Councillors)
+ *
+ * Usage:
+ *   SUPABASE_URL=https://xxx.supabase.co SUPABASE_ANON_KEY=yyy npx tsx scripts/verify-staging-data.ts
+ *
+ * With Supabase Branching, pass the branch-specific URL and key (shown in the
+ * Supabase dashboard under the branch details).
  */
 
-const STAGING_URL = "https://phifyhudywiuqgwezumh.supabase.co";
-const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBoaWZ5aHVkeXdpdXFnd2V6dW1oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI2MTIxNzgsImV4cCI6MjA3ODE4ODE3OH0.VC_keEUD3OAxfrss0TI5EAQvwkkB_wU2D67KH-3mA48";
+const SUPABASE_URL = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+const ANON_KEY = process.env.SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+if (!SUPABASE_URL || !ANON_KEY) {
+  console.error("Set SUPABASE_URL and SUPABASE_ANON_KEY environment variables.");
+  console.error("Example: SUPABASE_URL=https://xxx.supabase.co SUPABASE_ANON_KEY=yyy npx tsx scripts/verify-staging-data.ts");
+  process.exit(1);
+}
 
 interface ExpectedCounts {
   total: number;
@@ -26,7 +38,7 @@ const EXPECTED: ExpectedCounts = {
 };
 
 async function getCount(filter?: string): Promise<number> {
-  const url = `${STAGING_URL}/rest/v1/politicians?select=id${filter ? `&${filter}` : ""}`;
+  const url = `${SUPABASE_URL}/rest/v1/politicians?select=id${filter ? `&${filter}` : ""}`;
   const response = await fetch(url, {
     headers: {
       apikey: ANON_KEY,
@@ -45,7 +57,7 @@ async function getCount(filter?: string): Promise<number> {
 }
 
 async function main() {
-  console.log("=== Staging Database Verification ===\n");
+  console.log(`=== Database Verification (${SUPABASE_URL}) ===\n`);
 
   const results: { name: string; expected: number; actual: number; pass: boolean }[] = [];
 
