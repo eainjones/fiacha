@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import PartyBadge from '@/components/party/PartyBadge'
+import type { PoliticalParty } from '@/types/party'
 
 interface Politician {
   id: number
@@ -14,6 +16,12 @@ interface Politician {
   role: string
   position_type: string
   local_authority_name: string | null
+  party_obj_id: number | null
+  party_obj_name: string | null
+  party_obj_abbreviation: string | null
+  party_obj_color: string | null
+  party_obj_text_color: string | null
+  party_obj_icon_url: string | null
 }
 
 export default function PoliticiansList({ politicians }: { politicians: Politician[] }) {
@@ -21,6 +29,23 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
   const [positionFilter, setPositionFilter] = useState<string>('all')
   const [partyFilter, setPartyFilter] = useState<string>('all')
   const [countyFilter, setCountyFilter] = useState<string>('all')
+
+  const getPartyObject = (pol: Politician): PoliticalParty | null => {
+    if (!pol.party_obj_id || !pol.party_obj_name || !pol.party_obj_abbreviation) {
+      return null
+    }
+    return {
+      id: pol.party_obj_id,
+      name: pol.party_obj_name,
+      abbreviation: pol.party_obj_abbreviation,
+      color: pol.party_obj_color || '#9E9E9E',
+      text_color: pol.party_obj_text_color || '#FFFFFF',
+      icon_url: pol.party_obj_icon_url,
+      description: null,
+      active: true,
+      display_order: 0
+    }
+  }
 
   // Initialize filters from URL params
   useEffect(() => {
@@ -43,13 +68,14 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
   }, [searchParams, politicians])
 
   // Get unique values for filters
-  const parties = Array.from(new Set(politicians.map(p => p.party))).sort()
+  const parties = Array.from(new Set(politicians.map(p => p.party_obj_name || p.party))).filter(Boolean).sort()
   const counties = Array.from(new Set(politicians.map(p => p.county_name).filter((c): c is string => Boolean(c)))).sort()
 
   // Apply filters
   const filteredPoliticians = politicians.filter(pol => {
     if (positionFilter !== 'all' && pol.position_type !== positionFilter) return false
-    if (partyFilter !== 'all' && pol.party !== partyFilter) return false
+    const polParty = pol.party_obj_name || pol.party
+    if (partyFilter !== 'all' && polParty !== partyFilter) return false
     if (countyFilter !== 'all' && pol.county_name !== countyFilter) return false
     return true
   })
@@ -150,9 +176,16 @@ export default function PoliticiansList({ politicians }: { politicians: Politici
                     <div className="text-sm font-bold text-gray-900">{pol.name}</div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
-                      {pol.party}
-                    </span>
+                    {(() => {
+                      const partyObj = getPartyObject(pol)
+                      return partyObj ? (
+                        <PartyBadge party={partyObj} showIcon={!!partyObj.icon_url} size="md" />
+                      ) : (
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-800">
+                          {pol.party || 'Unknown'}
+                        </span>
+                      )
+                    })()}
                   </td>
                   <td className="px-6 py-4">
                     <div className="text-sm text-gray-900">{pol.constituency}</div>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Nav from '@/components/Nav'
 import { createClient } from '@/lib/supabase'
+import PartySelector from '@/components/party/PartySelector'
 
 export default function AddPage() {
   const router = useRouter()
@@ -14,6 +15,7 @@ export default function AddPage() {
   const [success, setSuccess] = useState('')
   const [politicians, setPoliticians] = useState<any[]>([])
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
+  const [selectedPartyId, setSelectedPartyId] = useState<number | null>(null)
 
   useEffect(() => {
     // Check authentication
@@ -61,7 +63,7 @@ export default function AddPage() {
     const formData = new FormData(e.currentTarget)
     const data = {
       name: formData.get('name'),
-      party: formData.get('party'),
+      party_id: selectedPartyId,
       constituency: formData.get('constituency'),
       role: formData.get('role'),
     }
@@ -185,11 +187,9 @@ export default function AddPage() {
                     <label htmlFor="party" className="block text-sm font-medium text-gray-700 mb-2">
                       Party
                     </label>
-                    <input
-                      type="text"
-                      id="party"
-                      name="party"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    <PartySelector
+                      value={selectedPartyId}
+                      onChange={setSelectedPartyId}
                     />
                   </div>
 
